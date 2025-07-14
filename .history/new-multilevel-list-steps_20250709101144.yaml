@@ -1,0 +1,53 @@
+New Blank Doc
+
+Open Word → New Blank Document.
+
+Define Multilevel List
+
+Home tab ▶ Multilevel List ▼ ▶ Define New Multilevel List…
+
+Click More >> to expand all settings.
+
+Configure Level 1 (Parts)
+
+Select Level 1 in the left pane.
+
+Link to style: Heading 1
+
+Number style: “1, 2, 3…”
+
+Number format: Click Insert Level Number ▶ Level 1 (inserts %1), then type .0 → shows %1.0
+
+Position: Left indent 0″, Tab after 0.25″
+
+Start at: 1
+
+Configure Level 2 (Subsections)
+
+Select Level 2.
+
+Link to style: Heading 2
+
+Number style: “01, 02, 03…” (two-digit for .01, .02)
+
+Number format: Insert Level 1 → type “.” → Insert Level 2 → shows %1.%2
+
+Restart list after: Level 1 (this forces 2.01 under “2.0”)
+
+Position: Left indent 0.25″, Tab after 0.5″
+
+Start at: 1
+
+Configure Levels 3–6
+
+Level 3 (Items): Link to Heading 3, Number style “A, B, C…”, format %3.; indent 0.5″, tab 0.75″
+
+Level 4 (Lists): Link to List Paragraph, Number style “1, 2, 3…”, format %4.; indent 0.75″, tab 1.0″
+
+Level 5 (Sub-items): Link to List Paragraph, Number style “a, b, c…”, format %5.; indent 1.0″, tab 1.25″
+
+Level 6 (Sub-sub-lists): Link to List Paragraph, Number style “i, ii, iii…”, format %6.; indent 1.25″, tab 1.5″
+
+Save as Template
+
+File ▶ Save As ▶ Word Template (*.dotx) ▶ name it spec_template.dotx.

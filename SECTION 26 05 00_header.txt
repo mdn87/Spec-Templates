@@ -1,0 +1,15 @@
+HEADER AND MARGIN DATA FROM DOCUMENT
+==================================================
+
+HEADER INFORMATION:
+--------------------
+No header information found
+
+MARGIN SETTINGS:
+--------------------
+Top Margin: 1.0 inches
+Bottom Margin: 1.0 inches
+Left Margin: 1.0833333333333333 inches
+Right Margin: 1.0833333333333333 inches
+Header Distance: 1.0 inches
+Footer Distance: 1.0 inches

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "paragraphs": [
+      "BW&A 26 05 26 05 00-1",
+      "RW 7-7-25Common Work Results for Electrical"
+    ],
+    "tables": [],
+    "text_boxes": []
+  },
+  "footer": {
+    "paragraphs": [
+      "JUST SOME TEXT"
+    ],
+    "tables": [],
+    "text_boxes": []
+  },
+  "margins": {
+    "top_margin": 1.0,
+    "bottom_margin": 1.0,
+    "left_margin": 1.0833333333333333,
+    "right_margin": 1.0833333333333333,
+    "header_distance": 1.0,
+    "footer_distance": 1.0
+  }
+}

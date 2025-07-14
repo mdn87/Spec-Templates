@@ -1,0 +1,36 @@
+{
+  "comments": [
+    {
+      "text": "Remove part \"D\" is project is new construction",
+      "ref": null,
+      "author": "Rahn Williams",
+      "timestamp": "2022-11-23 16:52:00+00:00",
+      "comment_id": null,
+      "initials": "RW"
+    },
+    {
+      "text": "Confirm applicable code year for your project",
+      "ref": null,
+      "author": "Rahn Williams",
+      "timestamp": "2022-11-23 16:53:00+00:00",
+      "comment_id": "1",
+      "initials": "RW"
+    },
+    {
+      "text": "Remove items not needed for your project. If you are not sure which items should be left or removed consult your signing PE.",
+      "ref": null,
+      "author": "Rahn Williams",
+      "timestamp": "2025-07-07 14:27:00+00:00",
+      "comment_id": "2",
+      "initials": "RW"
+    },
+    {
+      "text": "This section can be removed unless energy code requires it.",
+      "ref": null,
+      "author": "Rahn Williams",
+      "timestamp": "2025-07-07 14:28:00+00:00",
+      "comment_id": "3",
+      "initials": "RW"
+    }
+  ]
+}

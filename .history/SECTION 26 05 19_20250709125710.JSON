@@ -1,0 +1,450 @@
+{
+    "section_number": "26 05 19",
+    "section_title": "Low-Voltage (600V) Electrical Power Conductors and Cables",
+    "parts": [
+      {
+        "part_title": "GENERAL",
+        "subsections": [
+          {
+            "title": "DESCRIPTION",
+            "items": [
+              {
+                "text": "This Section describes the basic materials and installation methods that are acceptable for conductors and applicable to Division 26."
+              },
+              {
+                "text": "Construct connections including feeders and branch circuits using wire, cables, and connectors as specified herein."
+              },
+              {
+                "text": "All work specified in this Section shall comply with the provisions of Section 26 05 00."
+              },
+              {
+                "text": "The project includes the following types of conductors and cables:",
+                "lists": [
+                  { "text": "Building wire" },
+                  { "text": "Metal-clad (Type MC) cable" },
+                  { "text": "VFD motor supply cable" },
+                  { "text": "Fire-rated cable" },
+                  { "text": "Nonmetallic Cable (Type NM-B)" },
+                  { "text": "Tray Cable (Type TC-ER)" }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "STANDARDS",
+            "items": [
+              {
+                "text": "Conductors shall comply with the following",
+                "lists": [
+                  { "text": "ASTM – B3, B8, B787 (Copper Conductors)" },
+                  { "text": "ASTM – B800, B801, B836 (8000 Series Aluminum Alloy Conductors)" },
+                  { "text": "UL Standard – 83 (Thermoplastic Insulation - THHN/THWN-2)" },
+                  { "text": "UL Standard – 44 (Thermoset Insulation – XHHW-2, RHW-2)" },
+                  { "text": "UL Standard – 1569 (Type MC cable)" },
+                  { "text": "NEMA WC 70 (ICEA S-95-658)" },
+                  { "text": "NFPA 70 (National Electrical Code – (NEC))" },
+                  { "text": "Federal Specification A-A-59544" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "part_title": "PRODUCTS",
+        "subsections": [
+          {
+            "title": "CONDUCTORS",
+            "items": [
+              {
+                "text": "Conductors shall be soft or annealed uncoated copper per ASTM B3, B8, or B787."
+              },
+              {
+                "text": "Conductor sizes are specified in American Wire Gauge (AWG) for No. 4/0 (0000) and smaller and in kilo-circular mils (kcmil) for all sizes larger than No. 4/0."
+              },
+              {
+                "text": "The minimum conductor size is No. 12. Branch circuits are sized at No. 12 unless noted otherwise on the plans."
+              },
+              {
+                "text": "All conductors shall have a minimum voltage rating of 600 volts unless noted otherwise."
+              },
+              {
+                "text": "Acceptable thermoplastic insulation is type THHN/THWN-2 nylon coated polyvinyl chloride (PVC) rated for a maximum operating temperature of 90°C (194°F) or greater in wet and dry locations."
+              },
+              {
+                "text": "Acceptable thermoset insulation types are XHHW-2 and RHW-2 cross-linked polyethylene (XLPE) rated for a maximum operating temperature of 90°C or greater in wet and dry locations."
+              },
+              {
+                "text": "Conductors shall be concentric-lay stranded or 19-wire combination unilay-stranded per ASTM B8 and B787. Only size No.12 and No. 10 conductors are permitted to be solid (1-strand)."
+              },
+              {
+                "text": "Aluminum may be substituted for copper in the construction of certain incoming service lines and feeders where the size is increased to match or exceed the ampacity of copper as indicated NEC table 310.16 for 75°C (167°F) temperature ratings. The minimum size of aluminum conductors shall be No. 1 with an ampacity of 100 amps."
+              },
+              {
+                "text": "Incoming service lines from utility transformers to building distribution equipment including switchboards, switchgear, or panelboards are permitted to be aluminum. Service entrance conductors to fire pump controllers shall be copper."
+              },
+              {
+                "text": "Feeders permitted to use aluminum conductors include those between switchboards, panelboards, and automatic transfer switches (ATS’s). Primary and secondary feeders to dry-type transformers shall be copper."
+              },
+              {
+                "text": "All branch circuits shall be copper including those for receptacles, lighting and equipment including elevators, HVAC, plumbing, fire protection, etc."
+              },
+              {
+                "text": "Copper conductors shall be used for final connections to vibrating equipment including all motors and HVAC equipment."
+              },
+              {
+                "text": "Aluminum conductors shall be 8000 Series alloy per ASTM B800 and concentric-lay stranded or compact round stranded using single input wire (SIW) per ASTM B801 and B836. Insulation shall meet the same requirements set for copper conductors."
+              }
+            ]
+          },
+          {
+            "title": "BUILDING WIRE",
+            "items": [
+              {
+                "text": "Self-lubricated coatings to facilitate pulling in conduit installations are acceptable."
+              },
+              {
+                "text": "Provide building wire to meet the conductor specifications included herein. Acceptable manufacturers are:",
+                "lists": [
+                  { "text": "Southwire" },
+                  { "text": "General Cable" },
+                  { "text": "Cerrowire" },
+                  { "text": "Republic Wire Inc." },
+                  { "text": "Houston Wire & Cable" },
+                  { "text": "Okonite" },
+                  { "text": "Service Wire Co." },
+                  { "text": "Encore Wire" }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "METAL-CLAD CABLE",
+            "items": [
+              {
+                "text": "Use of metal-clad cable is limited to Type MC (NEC Article 330). Refer to Part 3.0 for acceptable locations. Type AC armored cable is not permitted."
+              },
+              {
+                "text": "Cable armor shall be interlocked galvanized steel."
+              },
+              {
+                "text": "Cables shall include a green insulated ground wire. All wiring shall be cabled together using binder tape to separate from armor."
+              },
+              {
+                "text": "Type MC use shall be limited to branch circuits requiring size No. 12 or No. 10 copper conductors. Conductors and insulation shall meet the requirements indicated in part 2.01."
+              },
+              {
+                "text": "Cables shall be listed for through penetrations in 1, 2, and 3-hour firestop systems tested to UL 1479."
+              },
+              {
+                "text": "Type MC cable installed in patient care areas of Health Care Facilities shall meet the requirements of NEC 517.13(A) & (B) for redundant equipment grounding conductors. The cables shall include a bare aluminum conductor in direct contact with the steel armor in addition to the green insulated copper ground wire. MC-cable specifically manufactured for HCF applications shall be provided. Use of MC-cable is limited to normal power (non-essential) branch circuits and locations permitted by part 3.0."
+              },
+              {
+                "text": "Type MC cable shall not be used for wiring of Essential Electrical Systems (ESS) required by NEC 517 for Health Care Facilities. ESS wiring shall be mechanically protected in raceways per NEC 517.31(C)(3)."
+              },
+              {
+                "text": "Cables shall be CT-rated for use in cable trays and pass UL and IEEE flame tests."
+              },
+              {
+                "text": "Provide Type MC cable to meet the conductor and metal-clad specifications included herein. Acceptable Type MC cable manufacturers are:",
+                "lists": [
+                  { "text": "Southwire" },
+                  { "text": "Atkore AFC Cable" },
+                  { "text": "Encore Wire" }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "VFD MOTOR SUPPLY CABLE",
+            "items": [
+              {
+                "text": "Connections from output of variable frequency drives (VFD’s) to motor terminals shall be flexible cable suitable for VFD applications and wet locations."
+              },
+              {
+                "text": "Cables serving 3-phase motors shall include three (3) bare grounding conductors symmetrically arranged with insulated phase conductors and fillers to maintain a round cross-section. Grounding conductor shall meet NEC 250.122. The phase conductors shall have XHHW-2 or RHW-2 thermoset insulation. All conductors shall be ASTM B-3 uncoated copper or ASTM B-33 tinned coated copper."
+              },
+              {
+                "text": "Cables shall be type TC-ER cable or type MC-HL as specified in this section."
+              },
+              {
+                "text": "Conductors for type TC-ER cable shall be wrapped with overlapping, bare, copper tape shielding with PVC jacket listed to UL 1277."
+              },
+              {
+                "text": "Conductors for type MC-HL VFD cable shall be enclosed in a continuous, corrugated, aluminum sheath protected by a PVC jacket listed to UL2225."
+              },
+              {
+                "text": "Provide VFD cable for motor supplies to meet the specifications herein. Acceptable manufacturers include:",
+                "lists": [
+                  { "text": "Belden" },
+                  { "text": "Okonite" },
+                  { "text": "General Cable" },
+                  { "text": "Southwire" }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "FIRE-RATED CABLE",
+            "items": [
+              {
+                "text": "Fire-rated cable shall be used where required by codes for pathway survivability of connections for life safety systems and equipment."
+              },
+              {
+                "text": "Fire-rated cable shall be listed to UL 2196 fire test standard for circuit integrity and appear in the UL Fire Resistance Directory as an electrical circuit integrity system (FHIT). Cables shall also be provided and installed for compliance with NEC 700.10(D)(2) or (3) as being protected by or being a listed electrical circuit protective system and NEC 728."
+              },
+              {
+                "text": "Fire-rated cable systems shall have a minimum 2-hour fire resistance rating (FRR) for horizontal and vertical installations unless noted otherwise."
+              },
+              {
+                "text": "Typical applications requiring fire-rated cable include the following:",
+                "lists": [
+                  { "text": "Fire pump supply conductors routed inside of a building and not encased in concrete require fire-rated cable per NEC 695.6(A)(2). Supply conductors include feeders to the fire pump controller for normal power and for emergency power, where provided, from an on-site generator providing an alternate source for fire pump controllers with an automatic transfer switch (ATS)." },
+                  { "text": "All circuits for fire access elevators or occupant evacuation elevators in high-rise buildings shall be constructed with fire-rated cables per section 3007.8.1 or 3008.8.2 of the International Building Code (IBC) where not protected by fire-resistant construction having a 2-hour rating. Protected circuits shall include all branch circuits for power to elevator controllers, cars, and HVAC equipment for the hoistways or machine/control rooms. All feeder conductors for upstream distribution to these branch circuits shall also be protected for 2-hours; these feeders typically connect panelboards and/or switchboards that are part of the emergency (NEC 700) and legally required standby (NEC 701) systems served by an onsite generator as an alternate power source." },
+                  { "text": "Mechanical equipment including fan motors and dampers for smoke control systems required for exit stairways in high-rise buildings shall be supplied by fire-rated cable per IBC 909.20.6.1 where the circuits are routed within the building and outside 2-hour fire barrier construction including the smokeproof enclosures for the stairways. The requirement for 2-hour protection includes the branch circuits serving the equipment and all the upstream feeder conductors in the distribution to the panelboards or switchboards from which those branch circuits originate. Smoke control equipment is typically served by the legally required standby (NEC 701) system using an onsite generator as an alternate power source." },
+                  { "text": "Emergency feeders per NEC 700.10(D) located in high-rise buildings or large assembly and educational occupancies shall be constructed with fire-rated cables where not fully protected by an automatic fire protection system. These feeders serve panelboards or switchboards for the emergency (NEC 700) system which are typically supported by an on-site generator serving as an alternate power source." },
+                  { "text": "All circuits for elevators considered part of an accessible means of egress in buildings with a required accessible floor is four or more stories above the level of discharge shall be constructed with fire-rated cable per sections 1009.4 and 3008.8.1 of the North Carolina State Building Code where not protected by fire-resistant construction having a 2-hour rating. Protected circuits shall include all branch circuits for power to elevator controllers, cars, and HVAC equipment for the hoistways or machine/control rooms. All feeder conductors for upstream distribution to these branch circuits shall also be protected for 2-hours; these feeders typically connect panelboards and/or switchboards that are part of the emergency (NEC 700) and legally required standby (NEC 701) systems served by an onsite generator as an alternate power source." }
+                ]
+              },
+              {
+                "text": "Fire-rated cable shall be low-smoke zero halogen (LSZH) and rated for 600 volts. The cables shall be one of the following:",
+                "lists": [
+                  { "text": "nVent Pyrotenax System 1850 - type MI mineral insulated, metal-sheathed per NEC 332. Cable constructed with solid copper conductors insulated by magnesium oxide in seamless copper sheathing. Conduit not required. Single- or multiple-conductor cables dependent on wire size; large wiring sizes are single conductor." },
+                  { "text": "Prysmian Group Draka Lifeline Power Cable in Atkore FRE Composites Breathsaver XW conduit – type RWH-2 single-conductor cables routed in conduit. Cables include stranded copper conductors with ceramifiable silicon insulation layer and cross-linked polyolefin (XLPO) jacket. Cables shall be installed in extra heavy wall rigid nonmetallic phenolic fiberglass conduit (RTRC - reinforced thermosetting resin conduit) per cable manufacturer’s instructions." },
+                  { "text": "RSCC VITAlink MC or Prysmian Group Draka Lifeline MC – Single- or multi-conductor type MC cable with copper conductors and ceramifiable silcon insulation and inner jacket with continuously welded and corrugated copper armor sheathing. Armor to serve as an equipment grounding conductor. Ground wire and conduit not required." }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "NONMETALLIC-SHEATHED CABLE",
+            "items": [
+              {
+                "text": "Branch circuits up to size No. 2 installed in multi-family residential wood frame construction may use type NM-B cable if permitted by NEC Article 334 and the local authority having jurisdiction for the building construction type."
+              },
+              {
+                "text": "Provide type NM-B cable with copper conductors and thermoplastic insulation rated for 90°C and a bare copper equipment ground conductor with flame-retardant separator assembled in a paper sheath with a PVC outer jacket. UL 719 listing, 600V rating. Conductors are limited to 60°C ampacities per NEC table 310.16."
+              },
+              {
+                "text": "Type NM-B cable shall be only be used in indoor areas not subject to moisture."
+              },
+              {
+                "text": "Acceptable type NM-B cable manufacturers are:",
+                "lists": [
+                  { "text": "Southwire Romex" },
+                  { "text": "Encore Wire" },
+                  { "text": "Cerrowire" }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "TRAY CABLE",
+            "items": [
+              {
+                "text": "Tray cable where permitted shall be type TC-ER cable (NEC Article 336) listed for exposed runs."
+              },
+              {
+                "text": "Conductors shall be copper with type XHHW-2 insulation meeting the requirements indicated in part 2.01. 90°C continuous rating, 130°C emergency overload rating, 250°C short circuit rating."
+              },
+              {
+                "text": "Cables shall include three (3) or four (4) conductors with ground wire(s) enclosed in a black jacket. The jacket shall be sunlight and moisture-resistant PVC or CPE."
+              },
+              {
+                "text": "Tray cable shall be listed to UL 1277 and meet IEEE 1202 flame test. Acceptable type TC-ER cable manufacturers are:",
+                "lists": [
+                  { "text": "Southwire" },
+                  { "text": "General Cable" },
+                  { "text": "Okonite" },
+                  { "text": "Encore Wire" },
+                  { "text": "Houston Wire and Cable" }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "WIRING CONNECTORS",
+            "items": [
+              {
+                "text": "Provide connectors suitable for wire size and current rating to meet or exceed equipment rating. Connectors shall establish a low-resistance contact, resist corrosion, and maintain mechanical integrity over the life of the connection."
+              },
+              {
+                "text": "Connectors shall be solderless pressure-type and make direct contact with conductors stripped of insulation."
+              },
+              {
+                "text": "Provide connectors with 600V rating or greater. Minimum 90°C temperature rating."
+              },
+              {
+                "text": "Mechanical connectors shall utilize a clamping action that evenly applies pressure to conductors by tightening a screw or nut while minimizing distortion and damage. Set screws, nuts, bolts and other hardware shall be provided with the connector. Aluminum connectors shall be electro tin-plated high strength alloy dual-rated AL9CU or CU9AL for use with copper or aluminum conductors. Copper or copper alloy connectors shall only be used with copper conductors. Select the connector wire range based on the conductor size. Torque to manufacturer’s recommendation for the particular wire range."
+              },
+              {
+                "text": "Compression lugs and splices shall have seamless barrels with internal chamfer; compression taps shall be H-type. All compression connectors require an engineered tooling system to uniformly crimp to the conductors. Install using tools certified by the manufacturer for use with the specific connector and conductor size necessary for a UL listing and consistent crimping. Match dies with color code. Aluminum connectors shall be electro tin-plated and dual-rated AL9CU or CU9AL for use with copper or aluminum conductors. Copper connectors shall be electro tin-plated and only be used with copper conductors. Match connectors to the specific size conductors."
+              },
+              {
+                "text": "Power connectors shall be listed to UL486A-486B standard. Acceptable manufacturers are:",
+                "lists": [
+                  { "text": "Burndy (Hubbell)" },
+                  { "text": "Blackburn (Thomas & Betts/ABB)" },
+                  { "text": "Ilsco" },
+                  { "text": "NSI/Polaris" },
+                  { "text": "ASKPower" },
+                  { "text": "Panduit" },
+                  { "text": "3M" },
+                  { "text": "PennUnion" },
+                  { "text": "Supplied by switchgear manufacturer." }
+                ]
+              },
+              {
+                "text": "Twist-type (wing-nut) wire connectors may be used for splices and taps of No. 12 and No. 10 copper branch circuits. Provide plastic insulated winged connectors with internal springs suitable for wire size and quantity of application. 600V, 105°C ratings, UL 94V-2 flame retardant shell. UL 486C listed. Provide connectors pre-filled with silicon in damp or wet locations.  Acceptable manufacturers are:",
+                "lists": [
+                  { "text": "Ideal" },
+                  { "text": "3M" },
+                  { "text": "NSi Industries" }
+                ]
+              },
+              {
+                "text": "Provide lugs with tongue and hole size and spacing to match the studs on the equipment pads or terminal blocks to which the cables will be attached."
+              },
+              {
+                "text": "Provide insulated multi-port mechanical connectors for taps in service or distribution wire troughs. Provide quantity of cable ports necessary for each parallel set of feeder conductors and future tap conductors to tenant disconnect switches. Provide caps for spare ports."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "part_title": "EXECUTION",
+        "subsections": [
+          {
+            "title": "WIRING",
+            "items": [
+              {
+                "text": "All circuits operating at more than 50 volts and less than 600 volts shall be constructed using conductors meeting the requirements of part 2.01."
+              },
+              {
+                "text": "All conductors shall be installed in nonpliable raceway or wireway unless flexible cables or conduits are specifically permitted otherwise for the application."
+              },
+              {
+                "text": "No conductors shall be pulled into conduit until the conduit system is complete. Interior conduits shall be protected from weather and plaster dry prior to pulling conductors. Provide wire pulling lubricant unless the conductor insulation is provided with a manufacturer applied low-friction coating designed to be self-lubricating."
+              },
+              {
+                "text": "Wire pulling lubricant shall be UL Listed, temperature stable, silicon-free, non-flammable, non-cementing, and free of waxes and greases. Provide lubricants compatible with the cable and conduit types, and suitable for the installation conditions. Use polymer-based colorless non-staining lubricant. Apply lubricant liberally and according to manufacturer’s instructions and within temperature range specification. Acceptable manufacturers are Ideal Industries, 3M, NSi, Greenlee, and American Polywater with appropriate product selected for the application to minimize the coefficient of friction."
+              },
+              {
+                "text": "Install conductors in accordance with the manufacturer’s instructions to prevent damage. Do not exceed NEC minimum bending radii. Pulling tensions and sidewall pressures shall be kept less than the maximum allowable as determined using calculations outlined in the manufacturer installation guidelines. Perform calculations based on the tensile strength for the conductor material, size, and quantity to be pulled; and, specific to straight segment lengths and bends comprising the conduit route. Calculations shall also consider the coefficient of friction, cable weight, cable configuration, conduit size, conduit type, bend angle, bend radius, and direction of pull. Measure pulling tension with a dynamometer to verify maximum allowable pulling tensions are not exceeded. Increase conduit size and bend radii and decrease pull lengths and number of bends as required to reduce pulling tensions to acceptable levels. Assure speed of pull is kept below the cable’s limit."
+              },
+              {
+                "text": "Reference manufacturer product data for dimensions of the supplied conduit and cable. Verify jam ratio of conduit inner diameter to cable outer diameter presents a low probability of jamming when pulling three or more cables. Confirm cross sectional areas result in a conductor fill less than the percentages indicated in Table 1 of NEC Chapter 9. Increase conduit size if necessary to avoid jamming and lower fill percentage."
+              },
+              {
+                "text": "Thoroughly clear dirt and debris from conduit interior prior to cable pull. Pull all conductors into a raceway at the same time. Avoid pulling additional conductors in conduit with previously installed conductors where abrasions to insulation from pulling rope are likely."
+              },
+              {
+                "text": "Support conductors in vertical raceways per NEC 300.19 to prevent strain on terminations. Provide O-Z/Gedney Pozi-grip fittings or equal suitable for application and conditions."
+              },
+              {
+                "text": "Branch circuit conductors shall be continuous from outlet to outlet and from outlet to junction box or pull box.  All splices and joints shall be carefully and securely made to be mechanically and electrically solid with pressure type connectors."
+              },
+              {
+                "text": "Splices and taps shall be made in accessible outlet boxes, junction boxes, pull boxes, or handholes only."
+              },
+              {
+                "text": "Service conductors shall be continuous and free of splices and taps. Avoid splicing and tapping conductors used for feeders and individual branch circuits larger than No. 10 unless plans indicate divided circuits."
+              },
+              {
+                "text": "Each conduit shall have a minimum of two (2) line conductors and a ground conductor unless noted otherwise on plans as being for systems other than electrical circuitry and/or future use or unless noted otherwise."
+              },
+              {
+                "text": "Conductors shall identifiable with factory-colored insulation throughout unless noted otherwise. Provide standard systems with the following color code:",
+                "lists": [
+                  { "text": "Phase A - Black / Phase A - Brown" },
+                  { "text": "Phase B - Red   / Phase B - Orange" },
+                  { "text": "Phase C - Blue  / Phase C - Yellow" },
+                  { "text": "Neutral - White / Neutral - Gray" },
+                  { "text": "Ground - Green  / Ground - Green" }
+                ]
+              },
+              {
+                "text": "Where differing color codes have been established for existing buildings identify new conductors to match the existing color codes."
+              },
+              {
+                "text": "Conductors for systems other than 208/120 volts or 480/277 volts should be identified by alternative color codes. Identify conductors for these systems by using colored vinyl electrical tape applied to black conductors within 6” of all termination points. Establish a consistent color code for each nonstandard voltage and provide distribution equipment with permanent bakelite signs denoting the color code."
+              },
+              {
+                "text": "Branch circuit conductors shall not be smaller than No. 12."
+              },
+              {
+                "text": "Branch circuits with a length of 100'-0\" or more from the panel center of the load shall have minimum No. 10 conductors. Refer to plans for additional requirements and upsizing to limit voltage drop to 3% for branch circuits and 2% for feeders."
+              },
+              {
+                "text": "For branch circuits terminating in outlet without device, leave minimum of 12\" of slack wire coiled for connection of equipment.  All conductors shall be identified with proper circuit numbers at terminals, junction boxes at panelboards within 6\" of conductor ends."
+              },
+              {
+                "text": "Complete circuits constructed with No. 12 or No. 10 gauge wire using insulated winged twist-on connectors."
+              },
+              {
+                "text": "Wire sizes indicated on plans are for copper conductors unless noted otherwise. Sizing is generally based on ampacities indicated in NEC Table 310.16 for a 60°C temperature rating for circuits rated 100amps or less (no. 12 to no. 1) and a 75°C temperature rating for circuits rated over 100Amps (no. 1/0 and larger)."
+              },
+              {
+                "text": "Prepare conductor ends using cable cutting and stripping tools. Conductor strands shall be cut straight and square and free of nicks. Strip insulation per manufacturer’s instruction to fully insert conductor end into connector and minimize exposure of bare conductor. Verify conductor is fully seated in connector prior to completing attachment. Insulate bare connectors using listed electrical tape, heat shrink, covers, or epoxy resin rated for a minimum 600V and 90°C."
+              },
+              {
+                "text": "Brush aluminum conductors and apply oxide inhibiting joint compound prior to installing connectors. Provide compression lugs with prefilled oxide inhibitor."
+              },
+              {
+                "text": "Crimp compression connectors per manufacturer’s instructions using certified tools. Select dies for specific conductor sizes or color codes which leave die index embossed on barrels after crimping. Provide lugs manufactured to the required connecting angle (0°,45°, 90°); do not void the UL listing by bending the tongues."
+              },
+              {
+                "text": "Tighten all set screws and terminal hardware to connector or equipment manufacturers’ recommended torque values."
+              },
+              {
+                "text": "All nuts, bolts, and washers used for connections shall be corrosion resistant."
+              },
+              {
+                "text": "Provide conductors with type XHHW-2 or RHW-2 insulation where for circuits installed underground, outdoors, or in manufacturing facilities. Make connectors located underground or outdoors water tight."
+              },
+              {
+                "text": "Type MC cable, other than fire-rated, is only permitted for No. 12 and No. 10 circuits where installed indoors and in dry and non-corrosive environments. Applications shall be limited to the following:",
+                "lists": [
+                  { "text": "Where concealed in stud walls, millwork, or framework above drywall ceilings." },
+                  { "text": "For light fixtures and outlets mounted in accessible ceiling grids with no more than 10-ft of cable allowed from junction box to light fixture or outlet; line-side of junction boxes shall be EMT." },
+                  { "text": "On cable trays which are indicated on plans as serving power circuits." }
+                ]
+              },
+              {
+                "text": "Type MC cable is not allowed to be exposed in electrical rooms or other rooms with surface-mounted panels except for circuits noted on plans being fire-rated or routed on cable tray. Conventional MC cable shall not penetrate fire-rated walls."
+              },
+              {
+                "text": "Install type MC cable using listed connectors and fittings."
+              },
+              {
+                "text": "Type MC cable used in healthcare facilities shall be HCF type. Verify continuity of metallic armor and fittings provide an effective ground-fault current path."
+              },
+              {
+                "text": "Type MC cable is not permitted for ESS systems per part III of NEC Article 517. Refer to paragraphs F and G of part 2.03."
+              },
+              {
+                "text": "Refer to paragraphs H, I, J of part 2.01 restrictions on the use of aluminum conductors."
+              },
+              {
+                "text": "Connect the outputs of variable frequency drives to motors using VFD cable. Route the final 6-ft in liquid tight flexible metal conduit for vibration isolation at motor. See Part 2.04."
+              },
+              {
+                "text": "Wiring for emergency systems shall be routed separately from other systems in accordance with NEC 700.10(B)."
+              },
+              {
+                "text": "Refer to plans for conductors requiring fire ratings. Install fire-rated cable systems according to the manufacturer’s instructions. Provide terminations and fittings specific to the system. Support fire-rated cable systems on 2-hour construction. See part 2.05."
+              },
+              {
+                "text": "Type NM cable is limited to residential applications indicated in paragraph A of part 2.06 only. Confirm construction type with architect."
+              },
+              {
+                "text": "Refer to plans for equipment to be served by type TC-ER cable."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

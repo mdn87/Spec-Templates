@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListTemplates><ListTemplate Name="">
+<Level LevelNumber="1" NumberFormat="%1.0" NumberStyle="0" StartAt="1" TrailingCharacter="0" Alignment="0" ResetOnHigher="0" LinkedStyle="LEVEL 1 - JE" NumberPosition="0" TextPosition="36" TabPosition="9999999"/>
+<Level LevelNumber="2" NumberFormat="%1.%2" NumberStyle="22" StartAt="1" TrailingCharacter="0" Alignment="0" ResetOnHigher="1" LinkedStyle="LEVEL 2 - JE" NumberPosition="0" TextPosition="36" TabPosition="9999999"/>
+<Level LevelNumber="3" NumberFormat="%3." NumberStyle="3" StartAt="1" TrailingCharacter="0" Alignment="0" ResetOnHigher="2" LinkedStyle="LEVEL 3 - JE" NumberPosition="18" TextPosition="54" TabPosition="9999999"/>
+<Level LevelNumber="4" NumberFormat="%4." NumberStyle="0" StartAt="1" TrailingCharacter="0" Alignment="0" ResetOnHigher="3" LinkedStyle="LEVEL 4 - JE" NumberPosition="72" TextPosition="108" TabPosition="108"/>
+<Level LevelNumber="5" NumberFormat="%5." NumberStyle="4" StartAt="1" TrailingCharacter="0" Alignment="0" ResetOnHigher="4" LinkedStyle="" NumberPosition="108" TextPosition="144" TabPosition="108"/>
+<Level LevelNumber="6" NumberFormat="%6." NumberStyle="2" StartAt="1" TrailingCharacter="0" Alignment="0" ResetOnHigher="5" LinkedStyle="" NumberPosition="144" TextPosition="180" TabPosition="144"/>
+<Level LevelNumber="7" NumberFormat="%7." NumberStyle="0" StartAt="1" TrailingCharacter="0" Alignment="0" ResetOnHigher="6" LinkedStyle="" NumberPosition="144" TextPosition="180" TabPosition="144"/>
+<Level LevelNumber="8" NumberFormat="%8." NumberStyle="4" StartAt="1" TrailingCharacter="0" Alignment="0" ResetOnHigher="7" LinkedStyle="" NumberPosition="126" TextPosition="144" TabPosition="9999999"/>
+<Level LevelNumber="9" NumberFormat="%9." NumberStyle="2" StartAt="1" TrailingCharacter="0" Alignment="0" ResetOnHigher="8" LinkedStyle="" NumberPosition="144" TextPosition="162" TabPosition="9999999"/>
+</ListTemplate></ListTemplates>

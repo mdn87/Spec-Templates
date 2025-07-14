@@ -1,0 +1,382 @@
+{
+  "header": {
+    "bwa_number": "2025-XXXX",
+    "client_number": "ZZZ# 00000",
+    "project_name": "PROJECT NAME",
+    "company_name": "CLIENT NAME",
+    "section_number": "26 05 00",
+    "section_title": "Common Work Results for Electrical"
+  },
+  "footer": {
+    "paragraphs": [
+      "FOOTER TEXT"
+    ],
+    "tables": [],
+    "text_boxes": []
+  },
+  "margins": {
+    "top_margin": 1.0,
+    "bottom_margin": 1.0,
+    "left_margin": 1.0833333333333333,
+    "right_margin": 1.0833333333333333,
+    "header_distance": 1.0,
+    "footer_distance": 1.0
+  },
+  "comments": [
+    {
+      "text": "Remove part \"D\" is project is new construction",
+      "ref": null,
+      "author": "Rahn Williams",
+      "timestamp": "2022-11-23 16:52:00+00:00",
+      "comment_id": null,
+      "initials": "RW"
+    },
+    {
+      "text": "Confirm applicable code year for your project",
+      "ref": null,
+      "author": "Rahn Williams",
+      "timestamp": "2022-11-23 16:53:00+00:00",
+      "comment_id": "1",
+      "initials": "RW"
+    },
+    {
+      "text": "Remove items not needed for your project. If you are not sure which items should be left or removed consult your signing PE.",
+      "ref": null,
+      "author": "Rahn Williams",
+      "timestamp": "2025-07-07 14:27:00+00:00",
+      "comment_id": "2",
+      "initials": "RW"
+    },
+    {
+      "text": "This section can be removed unless energy code requires it.",
+      "ref": null,
+      "author": "Rahn Williams",
+      "timestamp": "2025-07-07 14:28:00+00:00",
+      "comment_id": "3",
+      "initials": "RW"
+    }
+  ],
+  "section_number": "26 05 00",
+  "section_title": "Common Work Results for Electrical",
+  "parts": [
+    {
+      "part_number": "1.0",
+      "title": "GENERAL",
+      "subsections": [
+        {
+          "subsection_number": "1.01",
+          "title": "SCOPE",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "Division 26 includes all Specifications in the 26 00 00 Series and the accompanying Electrical Drawings.  Provide all labor, materials and equipment, and all necessary operations to provide the complete scope of the electrical systems intended under this Division.  Division 26 is not a stand alone document, but a part of the complete Project Documents."
+            },
+            {
+              "item_number": "B",
+              "text": "Attention is called to the fact that there are many interfaces between the work required in this Division and the work required in other Divisions.  Provide the necessary interface and coordination with other Divisions to provide a complete project."
+            }
+          ]
+        },
+        {
+          "subsection_number": "1.02",
+          "title": "EXISTING CONDITIONS",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "Attention is called to the fact that the work is to be performed within an existing, operational facility.  Prior to the submission of bids, each bidder shall visit the project site, thoroughly investigate and be familiar with all existing conditions, which will affect their work; especially the work to be performed above the existing ceilings."
+            },
+            {
+              "item_number": "B",
+              "text": "When this project is finished, the work under this Division shall be complete in every respect, completely integrated with all the existing systems, and left in perfect operating condition.  The electrical service to the building shall not be interrupted at any time without written coordination of the building’s Owner.  All existing electrical equipment removed during the project shall be removed from the site after inspection of the building’s Owner.  All existing electrical systems required to be operating at the project’s completion or required to remain in use during the project shall be reconnected, replaced, rerouted or otherwise made to fit with proper workmanship techniques and left in safe working order."
+            },
+            {
+              "item_number": "C",
+              "text": "Connect new work to existing work in a neat and workmanlike manner.  Where an existing structure must be cut or existing utilities interfere, such obstructions shall be bypassed, removed, replaced or relocated, patched and repaired.  Work disturbed or damaged shall be replaced or repaired to its prior condition."
+            },
+            {
+              "item_number": "D",
+              "text": "Prior to the start of any demolition or construction, secure the services of a qualified, EPA Certified asbestos abatement agency to check the existing insulation, etc. for asbestos.  Should asbestos be found, do not proceed with demolition or construction; notify the Architect in any case in writing of the agency’s findings."
+            }
+          ]
+        },
+        {
+          "subsection_number": "1.03",
+          "title": "CODES AND REGULATIONS",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "All work under this Division shall comply with all local building codes, laws, regulations, ordinances and the requirements of the 2023 National Electrical Code."
+            },
+            {
+              "item_number": "B",
+              "text": "Where conflicts of installation requirements occur between the aforementioned codes, regulations or the Contract Documents, the most restrictive shall govern."
+            },
+            {
+              "item_number": "C",
+              "text": "Obtain all permits and licenses and pay all fees required by local authorities.  Arrange for all necessary inspections required by the authorities having jurisdiction and provide written certificates of approval to the project Owner or his designated representative."
+            }
+          ]
+        },
+        {
+          "subsection_number": "1.04",
+          "title": "DEFINITIONS",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "Contract Documents:  The complete set of project Drawings and Specifications."
+            },
+            {
+              "item_number": "B",
+              "text": "Provide:  Furnish, install and connect."
+            },
+            {
+              "item_number": "C",
+              "text": "Work:  All materials installed, including all labor to provide complete system."
+            },
+            {
+              "item_number": "D",
+              "text": "Wiring or Wired:  All wire or cable installed in conduit from panelboard to equipment and connected at both ends with all required boxes, connectors, couplings, etc."
+            },
+            {
+              "item_number": "E",
+              "text": "Conduit:  Rigid steel conduit intermediate metal conduit (I.M.C.), electrical metallic tubing (EMT) plastic conduit (PVC), electrical non-metal tubing (ENT), or flexible steel conduit."
+            }
+          ]
+        },
+        {
+          "subsection_number": "1.05",
+          "title": "DRAWINGS AND SPECIFICATIONS",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "The Drawings and Specifications together are to be considered as the Contract Documents. Any work shown in one and not shown in the other, or implied by either, shall be provided to give a complete project."
+            },
+            {
+              "item_number": "B",
+              "text": "Should any conflicts exist between the Drawings and Specifications or there is an item shown/called for which is not clearly defined, immediately submit a request for clarification.  No additional monies will be granted later when a conflict is resolved or an item is more clearly defined."
+            },
+            {
+              "item_number": "C",
+              "text": "The Drawings are schematic and are not intended to show the exact location outlets, etc. or the routing of conduit."
+            },
+            {
+              "item_number": "D",
+              "text": "The exact location of equipment requiring electrical connections (mechanical equipment, elevators, lights, etc.) shall be as located by other Divisions of the Contract Documents. Refer to the Architectural, Structural and Mechanical Documents for dimensions and details of building construction and provide work described in this Division so that it conforms to the details of the project.  The right is reserved to relocate any receptacle, switch or other outlet a maximum of 10'-0\" before it is permanently installed without incurring additions to the Contract amount."
+            }
+          ]
+        },
+        {
+          "subsection_number": "1.06",
+          "title": "SITE VISIT",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "Visit the site and become familiar with all aspects of the site and existing conditions before submitting Contract price."
+            },
+            {
+              "item_number": "B",
+              "text": "No allowance will be made for lack of knowledge of existing conditions."
+            }
+          ]
+        },
+        {
+          "subsection_number": "1.07",
+          "title": "DEVIATIONS",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "No deviations from the Contract Documents shall be made without the full knowledge and written consent of the Architect."
+            },
+            {
+              "item_number": "B",
+              "text": "If the existing conditions make it desirable to modify the Contract Documents in regard to any item, provide a written request to the Architect."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part_number": "2.0",
+      "title": "PRODUCTS",
+      "subsections": [
+        {
+          "subsection_number": "2.01",
+          "title": "STANDARDS FOR MATERIALS AND WORKMANSHIP",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "All materials used shall be new and shall be stamped with the label of Underwriters Laboratories, Inc. (UL), or other approved third-party listing agency."
+            },
+            {
+              "item_number": "B",
+              "text": "All materials shall meet the standards of the following associations and institutes where applicable:",
+              "lists": [
+                { "list_number": "1", "text": "National Fire Protection Association (NFPA)" },
+                { "list_number": "2", "text": "American Society of Testing Materials (ASTM)" },
+                { "list_number": "3", "text": "American National Standards Institute (ANSI)" },
+                { "list_number": "4", "text": "National Electrical Manufacturer's Association (NEMA)" },
+                { "list_number": "5", "text": "Institute of Electrical and Electronic Engineers (IEEE)" },
+                { "list_number": "6", "text": "National Electrical Installation Standards (NECA)" }
+              ]
+            },
+            {
+              "item_number": "C",
+              "text": "Manufacturer’s names and catalog numbers specified herein are intended to describe the material and set the standard of quality. All bids shall be based on material specified.  Requests for approval of material not specified shall be considered if the request is in written form and submitted to the Architect no later than fourteen (14) days before bid date.  All requests shall conform with the provisions of the general and supplementary conditions.  If alternate/substitute equipment is submitted, it is the contractor’s responsibility to provide redesign required in order to make, a code compliant, complete working system."
+            },
+            {
+              "item_number": "D",
+              "text": "Samples of materials requested to be substituted shall be furnished upon the request of the Architect."
+            }
+          ]
+        },
+        {
+          "subsection_number": "2.02",
+          "title": "SHOP DRAWINGS AND SUBMITTAL",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "The Engineer’s review of shop drawings or submittals is a cursory review to check for general compliances of submittals with the design intent of the Contract Documents.  The Engineer’s review does not relieve the Contractor of his responsibility of complying with the Contract Documents.  All coordination of the work in strict compliance with the Contract Documents is the sole responsibility of the Contractor."
+            },
+            {
+              "item_number": "B",
+              "text": "The following items shall be submitted for review:",
+              "lists": [
+                { "list_number": "1", "text": "Conduit and wire" },
+                { "list_number": "2", "text": "Grounding system" },
+                { "list_number": "3", "text": "Devices" },
+                { "list_number": "4", "text": "Coverplates" },
+                { "list_number": "5", "text": "Under floor duct" },
+                { "list_number": "6", "text": "Metering equipment" },
+                { "list_number": "7", "text": "Panelboards" },
+                { "list_number": "8", "text": "Switchboards" },
+                { "list_number": "9", "text": "Transformers" },
+                { "list_number": "10", "text": "Fuses" },
+                { "list_number": "11", "text": "Overcurrent devices" },
+                { "list_number": "12", "text": "Busway" },
+                { "list_number": "13", "text": "Ground fault system" },
+                { "list_number": "14", "text": "Disconnect switches" },
+                { "list_number": "15", "text": "Lighting fixtures" },
+                { "list_number": "16", "text": "Lighting control system" },
+                { "list_number": "17", "text": "Dimming system" },
+                { "list_number": "18", "text": "Life safety system" },
+                { "list_number": "19", "text": "Emergency system" },
+                { "list_number": "20", "text": "Motor starters" },
+                { "list_number": "21", "text": "Motor control center" },
+                { "list_number": "22", "text": "Surge Protective Devices" },
+                { "list_number": "23", "text": "Lightning Protection System" }
+              ]
+            },
+            {
+              "item_number": "C",
+              "text": "All shop drawings and submittals shall be submitted in compliance with the requirements of the general and supplementary conditions.  All submittals are to be received electronically in .pdf format only."
+            },
+            {
+              "item_number": "D",
+              "text": "All submittals shall bear the name of the manufacturer to be used.  All selections to be made for product options critical to design."
+            },
+            {
+              "item_number": "E",
+              "text": "All shop drawings and submittals shall include a stamped indication signifying that the submittal has been reviewed for compliance with the Contract Documents by the Electrical and General Contractors.  This stamped indication also represents the fact that the Contractor has checked this submittal for its interaction with all other Divisions and certifies by his signature or initials that all coordination has taken place.  The stamp shall include the date, name of the Contracting Firm, the signature of the Contractor, certification of compliance and approval.  This stamp shall be on the submittal before the Engineer will review it."
+            },
+            {
+              "item_number": "F",
+              "text": "The engineer will review an individual submittal not more than twice.  If the submittal is rejected again on the second review, the contractor will bear all responsibility for paying for the engineer’s time for additional reviews.  Such payments to the engineer shall be withheld from the next monthly pay application."
+            },
+            {
+              "item_number": "G",
+              "text": "Submittal to be dated upon creation. Engineer to have at least one (1) working week of review time."
+            }
+          ]
+        },
+        {
+          "subsection_number": "2.03",
+          "title": "RECORD (AS-BUILT) DRAWINGS AND MAINTENANCE MANUALS",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "At job completion, submit to the Architect, a set of prints showing all deviations from the Contract Documents.  The Drawings shall also have dimensions locating all underground conduits."
+            },
+            {
+              "item_number": "B",
+              "text": "At job completion, submit to the Architect, color .pdf format document of maintenance, instruction manuals, final submittals, record shop drawings and sequence of operations for all equipment/systems furnished on the project. Confirm with owner if hard copies are required."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part_number": "3.0",
+      "title": "EXECUTION",
+      "subsections": [
+        {
+          "subsection_number": "3.01",
+          "title": "COORDINATION",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "Coordinate all space requirements with all other Divisions before installing any work.  Install work such that adequate space will be allotted for all other work from other Divisions to be installed and also will allow room for future access for repair and maintenance."
+            },
+            {
+              "item_number": "B",
+              "text": "Any work installed without proper coordination shall be relocated at the Architect’s direction without increasing the contract price."
+            },
+            {
+              "item_number": "C",
+              "text": "During the bidding process or the pricing for a guaranteed maximum price, coordinate with all other Divisions for the total amount of work required in Division 26, as well as, any alternate equipment that would cause deviations in the contract price.  Any work shown or implied in another Division requiring work in Division 26 shall be included in the contract price regardless of whether or not it is addressed in Division 26."
+            }
+          ]
+        },
+        {
+          "subsection_number": "3.02",
+          "title": "PROTECTION OF MATERIALS",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "All equipment shall have the original finish when the building is turned over to the Owner."
+            },
+            {
+              "item_number": "B",
+              "text": "Protect equipment during construction from dirt, water, chemical, mechanical damage, etc.  Protect all conduit openings so that no foreign material will enter the conduit."
+            }
+          ]
+        },
+        {
+          "subsection_number": "3.03",
+          "title": "TESTS, DEMONSTRATION AND INSTRUCTIONS",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "Functional Testing:\n\nTest all systems described in this Division in the presence of the Owner or a designated representative upon completion of the work.  Demonstrate that the installation is in accordance with Contract Documents.\nFor all new lighting and lighting control systems within the contract documents, the contractor shall obtain the service of a licensed professional engineer (registered in the state this project is within) to perform system commissioning in compliance with local energy conservation codes.  The contractor shall demonstrate in the presence of the commissioning agent that the installation of such systems are in accordance with the contract documents."
+            },
+            {
+              "item_number": "B",
+              "text": "Any work found not to be in compliance with the Contract Documents shall be repaired or replaced without incurring any additions to the Contract price."
+            },
+            {
+              "item_number": "C",
+              "text": "Provide to the Owner, all instruction on maintenance and operation of all systems and equipment provided under this Division.  Provide all necessary tools and personnel to thoroughly present these instructions. The documentation shall include the following, at a minimum:\n1. Submittal data including all selected options.\n2. Operation and maintenance manual for all equipment and systems, Include routine maintenance actions and cleaning procedures.\n3. A schedule for inspecting and recalibrating, where applicable.\n4. A narrative of how each system is intended to operate including any recommended set points where adjustment is available."
+            },
+            {
+              "item_number": "D",
+              "text": "At project completion, prior to obtaining Certificate of Occupancy, present at final inspection to the jurisdiction AHJ a signed and dated statement of system commissioning for all lighting and lighting control systems.  The format of the statement of system commissioning shall be in the format of the state’s energy conservation codes and/or AHJ requirements.  The document shall be signed by the contractor’s licensed professional representative."
+            }
+          ]
+        },
+        {
+          "subsection_number": "3.04",
+          "title": "GUARANTEE",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "All systems, equipment, components, work, etc. provided under this Division shall be covered by a one year guarantee starting at the time of final acceptance of the work by the Owner.  Any defects in the work, systems, equipment or components found during this year shall be corrected at no charge.  The guarantee shall include providing all necessary cutting, patchwork, repainting, etc. to make the work complete and new."
+            },
+            {
+              "item_number": "B",
+              "text": "Present this guarantee and any additional warranties or guarantees on furnished equipment or systems to the Architect.  All equipment or system guarantees are in addition to the general guarantee."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "section_number": "00 00 00",
+  "section_title": "SECTION TITLE",
+  "parts": [
+    {
+      "part_number": "1.0",
+      "title": "BWA-PART",
+      "subsections": [
+        {
+          "subsection_number": "1.01",
+          "title": "BWA-SUBSECTION1",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "BWA-Item1",
+              "lists": [
+                { "list_number": "1", "text": "BWA-List1" },
+                { "list_number": "2", "text": "BWA-List2" }
+              ],
+              "subitems": [
+                { "subitem_number": "a", "text": "BWA-SubItem1" },
+                { "subitem_number": "b", "text": "BWA-SubItem2" }
+              ],
+              "subsubitems": [],
+              "subsublists": [
+                { "subsublist_number": "i", "text": "BWA-SubList1" },
+                { "subsublist_number": "ii", "text": "BWA-SubList2" }
+              ]
+            },
+            {
+              "item_number": "B",
+              "text": "BWA-Item2",
+              "lists": [
+                { "list_number": "1", "text": "BWA-List1" },
+                { "list_number": "2", "text": "BWA-List2" }
+              ],
+              "subitems": [
+                { "subitem_number": "a", "text": "BWA-SubItem1" },
+                { "subitem_number": "b", "text": "BWA-SubItem2" }
+              ],
+              "subsubitems": [],
+              "subsublists": [
+                { "subsublist_number": "i", "text": "BWA-SubList1" },
+                { "subsublist_number": "ii", "text": "BWA-SubList2" }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_number": "1.02",
+          "title": "BWA-SUBSECTION2",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "BWA-Item1",
+              "lists": [
+                { "list_number": "1", "text": "BWA-List1" },
+                { "list_number": "2", "text": "BWA-List2" }
+              ],
+              "subitems": [
+                { "subitem_number": "a", "text": "BWA-SubItem1" },
+                { "subitem_number": "b", "text": "BWA-SubItem2" }
+              ],
+              "subsubitems": [],
+              "subsublists": [
+                { "subsublist_number": "i", "text": "BWA-SubList1" },
+                { "subsublist_number": "ii", "text": "BWA-SubList2" }
+              ]
+            },
+            {
+              "item_number": "B",
+              "text": "BWA-Item2",
+              "lists": [
+                { "list_number": "1", "text": "BWA-List1" },
+                { "list_number": "2", "text": "BWA-List2" }
+              ],
+              "subitems": [
+                { "subitem_number": "a", "text": "BWA-SubItem1" },
+                { "subitem_number": "b", "text": "BWA-SubItem2" }
+              ],
+              "subsubitems": [],
+              "subsublists": [
+                { "subsublist_number": "i", "text": "BWA-SubList1" },
+                { "subsublist_number": "ii", "text": "BWA-SubList2" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part_number": "2.0",
+      "title": "BWA-PART2",
+      "subsections": [
+        {
+          "subsection_number": "2.01",
+          "title": "BWA-SUBSECTION1",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "BWA-Item1",
+              "lists": [
+                { "list_number": "1", "text": "BWA-List1" },
+                { "list_number": "2", "text": "BWA-List2" }
+              ],
+              "subitems": [
+                { "subitem_number": "a", "text": "BWA-SubItem1" },
+                { "subitem_number": "b", "text": "BWA-SubItem2" }
+              ],
+              "subsubitems": [],
+              "subsublists": [
+                { "subsublist_number": "i", "text": "BWA-SubList1" },
+                { "subsublist_number": "ii", "text": "BWA-SubList2" }
+              ]
+            },
+            {
+              "item_number": "B",
+              "text": "BWA-Item2",
+              "lists": [
+                { "list_number": "1", "text": "BWA-List1" },
+                { "list_number": "2", "text": "BWA-List2" }
+              ],
+              "subitems": [
+                { "subitem_number": "a", "text": "BWA-SubItem1" },
+                { "subitem_number": "b", "text": "BWA-SubItem2" }
+              ],
+              "subsubitems": [],
+              "subsublists": [
+                { "subsublist_number": "i", "text": "BWA-SubList1" },
+                { "subsublist_number": "ii", "text": "BWA-SubList2" }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_number": "2.02",
+          "title": "BWA-SUBSECTION2",
+          "items": [
+            {
+              "item_number": "A",
+              "text": "BWA-Item1",
+              "lists": [
+                { "list_number": "1", "text": "BWA-List1" },
+                { "list_number": "2", "text": "BWA-List2" }
+              ],
+              "subitems": [
+                { "subitem_number": "a", "text": "BWA-SubItem1" },
+                { "subitem_number": "b", "text": "BWA-SubItem2" }
+              ],
+              "subsubitems": [],
+              "subsublists": [
+                { "subsublist_number": "i", "text": "BWA-SubList1" },
+                { "subsublist_number": "ii", "text": "BWA-SubList2" }
+              ]
+            },
+            {
+              "item_number": "B",
+              "text": "BWA-Item2",
+              "lists": [
+                { "list_number": "1", "text": "BWA-List1" },
+                { "list_number": "2", "text": "BWA-List2" }
+              ],
+              "subitems": [
+                { "subitem_number": "a", "text": "BWA-SubItem1" },
+                { "subitem_number": "b", "text": "BWA-SubItem2" }
+              ],
+              "subsubitems": [],
+              "subsublists": [
+                { "subsublist_number": "i", "text": "BWA-SubList1" },
+                { "subsublist_number": "ii", "text": "BWA-SubList2" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

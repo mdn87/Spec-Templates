@@ -1,0 +1,137 @@
+{
+    "section_number": "00 00 00",
+    "section_title": "SECTION TITLE",
+    "parts": [
+      {
+        "part_title": "PART1",
+        "subsections": [
+          {
+            "title": "SUBSECTION1",
+            "items": [
+              {
+                "text": "Item1"
+              },
+              {
+                "text": "Item2",
+                "lists": [
+                  {
+                    "text": "List1"
+                  },
+                  {
+                    "text": "List2"
+                  }
+                ]
+              },
+              {
+                "text": "SubItem1",
+                "sublists": [
+                  {
+                    "text": "SubList1"
+                  },
+                  {
+                    "text": "SubList2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "SUBSECTION2",
+            "items": [
+              {
+                "text": "Item1"
+              },
+              {
+                "text": "Item2",
+                "lists": [
+                  {
+                    "text": "List1"
+                  },
+                  {
+                    "text": "List2"
+                  }
+                ]
+              },
+              {
+                "text": "SubItem1",
+                "sublists": [
+                  {
+                    "text": "SubList1"
+                  },
+                  {
+                    "text": "SubList2"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "part_title": "PART2",
+        "subsections": [
+          {
+            "title": "SUBSECTION1",
+            "items": [
+              {
+                "text": "Item1"
+              },
+              {
+                "text": "Item2",
+                "lists": [
+                  {
+                    "text": "List1"
+                  },
+                  {
+                    "text": "List2"
+                  }
+                ]
+              },
+              {
+                "text": "SubItem1",
+                "sublists": [
+                  {
+                    "text": "SubList1"
+                  },
+                  {
+                    "text": "SubList2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "SUBSECTION2",
+            "items": [
+              {
+                "text": "Item1"
+              },
+              {
+                "text": "Item2",
+                "lists": [
+                  {
+                    "text": "List1"
+                  },
+                  {
+                    "text": "List2"
+                  }
+                ]
+              },
+              {
+                "text": "SubItem1",
+                "sublists": [
+                  {
+                    "text": "SubList1"
+                  },
+                  {
+                    "text": "SubList2"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
