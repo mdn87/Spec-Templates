@@ -1,0 +1,55 @@
+HEADER, FOOTER, AND MARGIN DATA FROM DOCUMENT
+============================================================
+
+HEADER CONTENT:
+--------------------
+Paragraphs:
+  1. BW&A 26 05 26 05 00-1
+  2. RW 7-7-25Common Work Results for Electrical
+
+
+FOOTER CONTENT:
+--------------------
+Paragraphs:
+  1. JUST SOME TEXT
+
+
+MARGIN SETTINGS:
+--------------------
+Top Margin: 1.0 inches
+Bottom Margin: 1.0 inches
+Left Margin: 1.0833333333333333 inches
+Right Margin: 1.0833333333333333 inches
+Header Distance: 1.0 inches
+Footer Distance: 1.0 inches
+
+
+COMMENTS:
+--------------------
+Comment 1:
+  Text: Remove part "D" is project is new construction
+  Author: Rahn Williams
+  Timestamp: 2022-11-23 16:52:00+00:00
+  Initials: RW
+------------------------------
+Comment 2:
+  Text: Confirm applicable code year for your project
+  Author: Rahn Williams
+  Timestamp: 2022-11-23 16:53:00+00:00
+  Initials: RW
+  Comment ID: 1
+------------------------------
+Comment 3:
+  Text: Remove items not needed for your project. If you are not sure which items should be left or removed consult your signing PE.
+  Author: Rahn Williams
+  Timestamp: 2025-07-07 14:27:00+00:00
+  Initials: RW
+  Comment ID: 2
+------------------------------
+Comment 4:
+  Text: This section can be removed unless energy code requires it.
+  Author: Rahn Williams
+  Timestamp: 2025-07-07 14:28:00+00:00
+  Initials: RW
+  Comment ID: 3
+------------------------------

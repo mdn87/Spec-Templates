@@ -1,0 +1,761 @@
+#!/usr/bin/env python3
+"""
+Specification Content Extractor - Version 3
+
+This script extracts multi-level list content from Word documents (.docx) and converts it to JSON format.
+It combines the best of both approaches:
+- JSON output structure (working well)
+- Header/footer/margin extraction from rip scripts
+- Comments extraction
+- BWA list level detection and mapping
+- Template-based validation
+
+Features:
+- Extracts section headers, titles, parts, subsections, items, and lists
+- Handles both numbered and unnumbered structures
+- Validates numbering sequences and reports errors
+- Extracts header, footer, margin, and comment information
+- Maps content to BWA list levels from template
+- Outputs comprehensive JSON with level information
+- Generates detailed error reports
+
+Usage:
+    python extract_spec_content_v3.py <docx_file> [output_dir] [template_file]
+
+Example:
+    python extract_spec_content_v3.py "SECTION 26 05 00.docx"
+"""
+
+from docx import Document
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+import json
+import os
+import re
+import sys
+import zipfile
+import xml.etree.ElementTree as ET
+from typing import Dict, List, Optional, Tuple, Any
+from dataclasses import dataclass
+from datetime import datetime
+
+# Import the header/footer extractor module
+from header_footer_extractor import HeaderFooterExtractor
+
+@dataclass
+class ExtractionError:
+    """Represents an error found during content extraction"""
+    line_number: int
+    error_type: str
+    message: str
+    context: str
+    expected: Optional[str] = None
+    found: Optional[str] = None
+
+@dataclass
+class ContentBlock:
+    """Represents a content block with level information"""
+    text: str
+    level_type: str
+    number: Optional[str] = None
+    content: str = ""
+    level_number: Optional[int] = None
+    bwa_level_name: Optional[str] = None
+    numbering_id: Optional[str] = None
+    numbering_level: Optional[int] = None
+    style_name: Optional[str] = None
+
+class SpecContentExtractorV3:
+    """Extracts specification content with comprehensive metadata"""
+    
+    def __init__(self, template_path: Optional[str] = None):
+        self.errors: List[ExtractionError] = []
+        self.line_count = 0
+        self.section_header_found = False
+        self.section_title_found = False
+        
+        # Document structure
+        self.section_number = ""
+        self.section_title = ""
+        self.end_of_section = ""
+        
+        # Template analysis
+        self.template_path = template_path
+        self.bwa_list_levels = {}
+        self.template_numbering = {}
+        
+        # Content blocks
+        self.content_blocks: List[ContentBlock] = []
+        
+        # Regex patterns
+        self.section_pattern = re.compile(r'^SECTION\s+(.+)$', re.IGNORECASE)
+        self.end_section_pattern = re.compile(r'^END\s+OF\s+SECTION\s*(.+)?$', re.IGNORECASE)
+        self.part_pattern = re.compile(r'^(\d+\.0)\s+(.+)$')
+        self.subsection_pattern = re.compile(r'^(\d+\.\d{2})\s+(.+)$')
+        self.subsection_alt_pattern = re.compile(r'^(\d+\.\d)\s+(.+)$')
+        self.item_pattern = re.compile(r'^([A-Z])\.\s+(.+)$')
+        self.list_pattern = re.compile(r'^(\d+)\.\s+(.+)$')
+        self.sub_list_pattern = re.compile(r'^([a-z])\.\s+(.+)$')
+        
+        # Load template if provided
+        if template_path:
+            self.load_template_analysis(template_path)
+    
+    def load_template_analysis(self, template_path: str):
+        """Load and analyze template structure for BWA list levels"""
+        try:
+            print(f"Loading template analysis from: {template_path}")
+            
+            # Extract numbering definitions from template
+            self.extract_template_numbering(template_path)
+            
+            # Find BWA-labeled list levels
+            self.find_bwa_list_levels(template_path)
+            
+            print(f"Template loaded: {len(self.bwa_list_levels)} BWA list levels found")
+            
+        except Exception as e:
+            print(f"Warning: Could not load template analysis: {e}")
+    
+    def extract_template_numbering(self, template_path: str):
+        """Extract numbering definitions from template"""
+        try:
+            with zipfile.ZipFile(template_path) as zf:
+                if "word/numbering.xml" in zf.namelist():
+                    num_xml = zf.read("word/numbering.xml")
+                    root = ET.fromstring(num_xml)
+                    ns = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
+                    
+                    # Extract abstract numbering definitions
+                    for abstract_num in root.findall(".//w:abstractNum", ns):
+                        abstract_num_id = abstract_num.get(f"{{{ns['w']}}}abstractNumId")
+                        self.template_numbering[abstract_num_id] = {
+                            "levels": {},
+                            "bwa_label": None
+                        }
+                        
+                        # Check for BWA label in first level
+                        first_level = abstract_num.find("w:lvl", ns)
+                        if first_level is not None:
+                            lvl_text_elem = first_level.find("w:lvlText", ns)
+                            if lvl_text_elem is not None:
+                                lvl_text = lvl_text_elem.get(f"{{{ns['w']}}}val", "")
+                                if "BWA" in lvl_text.upper():
+                                    self.template_numbering[abstract_num_id]["bwa_label"] = lvl_text
+                        
+                        # Extract all levels
+                        for lvl in abstract_num.findall("w:lvl", ns):
+                            ilvl = lvl.get(f"{{{ns['w']}}}ilvl")
+                            lvl_text_elem = lvl.find("w:lvlText", ns)
+                            num_fmt_elem = lvl.find("w:numFmt", ns)
+                            
+                            self.template_numbering[abstract_num_id]["levels"][ilvl] = {
+                                "lvlText": lvl_text_elem.get(f"{{{ns['w']}}}val") if lvl_text_elem is not None else None,
+                                "numFmt": num_fmt_elem.get(f"{{{ns['w']}}}val") if num_fmt_elem is not None else None
+                            }
+                    
+                    # Extract num mappings
+                    for num_elem in root.findall(".//w:num", ns):
+                        num_id = num_elem.get(f"{{{ns['w']}}}numId")
+                        abstract_num_ref = num_elem.find("w:abstractNumId", ns)
+                        if abstract_num_ref is not None:
+                            abstract_num_id = abstract_num_ref.get(f"{{{ns['w']}}}val")
+                            self.template_numbering[f"num_{num_id}"] = {
+                                "abstract_num_id": abstract_num_id,
+                                "bwa_label": self.template_numbering.get(abstract_num_id, {}).get("bwa_label")
+                            }
+                            
+        except Exception as e:
+            print(f"Error extracting template numbering: {e}")
+    
+    def find_bwa_list_levels(self, template_path: str):
+        """Find BWA-labeled list levels in template"""
+        try:
+            doc = Document(template_path)
+            for paragraph in doc.paragraphs:
+                if paragraph.style and "BWA" in paragraph.style.name.upper():
+                    level = self.get_paragraph_level(paragraph)
+                    numbering_id = self.get_paragraph_numbering_id(paragraph)
+                    
+                    self.bwa_list_levels[paragraph.style.name] = {
+                        "name": paragraph.style.name,
+                        "level": level,
+                        "numbering_id": numbering_id
+                    }
+                    
+                    # Map numbering ID to BWA level
+                    if numbering_id:
+                        self.bwa_list_levels[f"num_{numbering_id}"] = {
+                            "name": paragraph.style.name,
+                            "level": level,
+                            "numbering_id": numbering_id
+                        }
+                        
+        except Exception as e:
+            print(f"Error finding BWA list levels: {e}")
+    
+    def get_paragraph_level(self, paragraph) -> Optional[int]:
+        """Get the list level of a paragraph"""
+        try:
+            pPr = paragraph._p.pPr
+            if pPr is not None and pPr.numPr is not None:
+                if pPr.numPr.ilvl is not None:
+                    return pPr.numPr.ilvl.val
+        except:
+            pass
+        return None
+    
+    def get_paragraph_numbering_id(self, paragraph) -> Optional[str]:
+        """Get the numbering ID of a paragraph"""
+        try:
+            pPr = paragraph._p.pPr
+            if pPr is not None and pPr.numPr is not None:
+                if pPr.numPr.numId is not None:
+                    return str(pPr.numPr.numId.val)
+        except:
+            pass
+        return None
+    
+    def extract_header_footer_margins(self, docx_path: str) -> Dict[str, Any]:
+        """Extract header, footer, and margin information using rip script functionality"""
+        try:
+            doc = Document(docx_path)
+            sec = doc.sections[0]
+            
+            # Extract margin settings
+            margins = {}
+            try:
+                if sec.top_margin:
+                    margins["top_margin"] = sec.top_margin.inches
+                if sec.bottom_margin:
+                    margins["bottom_margin"] = sec.bottom_margin.inches
+                if sec.left_margin:
+                    margins["left_margin"] = sec.left_margin.inches
+                if sec.right_margin:
+                    margins["right_margin"] = sec.right_margin.inches
+                if sec.header_distance:
+                    margins["header_distance"] = sec.header_distance.inches
+                if sec.footer_distance:
+                    margins["footer_distance"] = sec.footer_distance.inches
+            except Exception as e:
+                print(f"Warning: Could not extract margin settings: {e}")
+            
+            # Extract header content
+            header_content = {"paragraphs": [], "tables": [], "text_boxes": []}
+            try:
+                if sec.header:
+                    header_element = sec.header._element
+                    header_content = self.extract_content_from_section(header_element, header_element.nsmap)
+            except Exception as e:
+                print(f"Warning: Could not extract header content: {e}")
+            
+            # Extract footer content
+            footer_content = {"paragraphs": [], "tables": [], "text_boxes": []}
+            try:
+                if sec.footer:
+                    footer_element = sec.footer._element
+                    footer_content = self.extract_content_from_section(footer_element, footer_element.nsmap)
+            except Exception as e:
+                print(f"Warning: Could not extract footer content: {e}")
+            
+            return {
+                "header": header_content,
+                "footer": footer_content,
+                "margins": margins
+            }
+            
+        except Exception as e:
+            print(f"Error extracting header/footer/margins: {e}")
+            return {"header": {}, "footer": {}, "margins": {}}
+    
+    def extract_content_from_section(self, section_element, nsmap):
+        """Extract content from header or footer section"""
+        content = {
+            "paragraphs": [],
+            "tables": [],
+            "text_boxes": []
+        }
+        
+        # Extract paragraphs
+        for p in section_element.findall('.//w:p', namespaces=nsmap):
+            text = self.extract_text_from_element(p, nsmap)
+            if text:
+                content["paragraphs"].append(text)
+        
+        # Extract tables
+        for tbl in section_element.findall('.//w:tbl', namespaces=nsmap):
+            table_data = []
+            for row in tbl.findall('.//w:tr', namespaces=nsmap):
+                row_data = []
+                for cell in row.findall('.//w:tc', namespaces=nsmap):
+                    cell_text = self.extract_text_from_element(cell, nsmap)
+                    row_data.append(cell_text)
+                if row_data:
+                    table_data.append(row_data)
+            if table_data:
+                content["tables"].append(table_data)
+        
+        # Extract text boxes
+        for drawing in section_element.findall('.//w:txbxContent', namespaces=nsmap):
+            textbox_data = []
+            for p in drawing.findall('.//w:p', namespaces=nsmap):
+                text = self.extract_text_from_element(p, nsmap)
+                if text:
+                    textbox_data.append(text)
+            if textbox_data:
+                content["text_boxes"].append(textbox_data)
+        
+        return content
+    
+    def extract_text_from_element(self, element, nsmap):
+        """Extract all text from an element and its children"""
+        texts = []
+        for text_elem in element.findall('.//w:t', namespaces=nsmap):
+            if text_elem.text:
+                texts.append(text_elem.text)
+        return ''.join(texts).strip()
+    
+    def extract_comments(self, docx_path: str) -> List[Dict[str, Any]]:
+        """Extract comments from document using rip script functionality"""
+        try:
+            doc = Document(docx_path)
+            comments = []
+            
+            # Check if the document has comments
+            if hasattr(doc.part, '_comments_part') and doc.part._comments_part is not None:
+                for c in doc.part._comments_part.comments:
+                    # Assemble the full comment text
+                    full_text = "\n".join(p.text for p in c.paragraphs).strip()
+                    
+                    comment_data = {
+                        "text": full_text,
+                        "ref": None
+                    }
+                    
+                    # Get comment metadata
+                    try:
+                        comment_data["author"] = str(c.author) if c.author else None
+                    except:
+                        comment_data["author"] = None
+                    
+                    try:
+                        comment_data["timestamp"] = str(c.timestamp) if c.timestamp else None
+                    except:
+                        comment_data["timestamp"] = None
+                    
+                    try:
+                        comment_data["comment_id"] = str(c.comment_id) if c.comment_id else None
+                    except:
+                        comment_data["comment_id"] = None
+                    
+                    try:
+                        comment_data["initials"] = str(c.initials) if c.initials else None
+                    except:
+                        comment_data["initials"] = None
+                    
+                    comments.append(comment_data)
+            else:
+                print("No comments found in the document")
+            
+            return comments
+            
+        except Exception as e:
+            print(f"Error extracting comments: {e}")
+            return []
+    
+    def classify_paragraph_level(self, text: str) -> Tuple[str, Optional[str], str]:
+        """
+        Classify a paragraph into its hierarchical level
+        Returns: (level_type, number, content)
+        """
+        text = text.strip()
+        if not text:
+            return "empty", None, ""
+        
+        # Check for section header (must be the very first line)
+        if text.upper().startswith("SECTION") and not self.section_header_found:
+            match = self.section_pattern.match(text)
+            if match:
+                self.section_header_found = True
+                return "section", match.group(1), ""
+        elif text.upper().startswith("SECTION") and self.section_header_found:
+            self.add_error("Structure Error", "Multiple section headers found", text)
+            return "content", None, text
+        
+        # Check for section title (must be the second line after section header)
+        if (self.section_header_found and 
+            not self.section_title_found and
+            len(text.strip()) > 0):
+            self.section_title_found = True
+            return "title", None, text
+        
+        # Check for end of section
+        if text.upper().startswith("END OF SECTION"):
+            match = self.end_section_pattern.match(text)
+            if match:
+                self.end_of_section = match.group(1).strip() if match.group(1) else ""
+                return "end_of_section", None, self.end_of_section
+        
+        # Check for part level with numbering (1.0, 2.0, etc.)
+        match = self.part_pattern.match(text)
+        if match:
+            return "part", match.group(1), match.group(2)
+        
+        # Check for part titles with various formats
+        part_names = ["DESCRIPTION", "PRODUCTS", "EXECUTION", "GENERAL"]
+        for part_name in part_names:
+            match = re.match(rf'(?:PART\s*)?(\d+)\.0?\s*[-]?\s*{part_name}$', text.upper())
+            if match:
+                part_number = f"{match.group(1)}.0"
+                return "part_title", part_number, part_name
+            elif text.strip().upper() == part_name:
+                part_number = f"{len([b for b in self.content_blocks if b.level_type == 'part']) + 1}.0"
+                return "part_title", part_number, part_name
+        
+        # Check for subsection level with numbering (1.01, 1.02, etc.)
+        match = self.subsection_pattern.match(text)
+        if match:
+            return "subsection", match.group(1), match.group(2)
+        
+        # Check for subsection level with alternative numbering (1.1, 1.2, etc.)
+        match = self.subsection_alt_pattern.match(text)
+        if match:
+            return "subsection", match.group(1), match.group(2)
+        
+        # Check for subsection titles without numbering
+        subsection_titles = [
+            "SCOPE", "EXISTING CONDITIONS", "CODES AND REGULATIONS", "DEFINITIONS",
+            "DRAWINGS AND SPECIFICATIONS", "SITE VISIT", "DEVIATIONS",
+            "STANDARDS FOR MATERIALS AND WORKMANSHIP", "SHOP DRAWINGS AND SUBMITTAL",
+            "RECORD (AS-BUILT) DRAWINGS AND MAINTENANCE MANUALS",
+            "COORDINATION", "PROTECTION OF MATERIALS", "TESTS, DEMONSTRATION AND INSTRUCTIONS",
+            "GUARANTEE"
+        ]
+        
+        # Check for exact match
+        if text.upper() in [title.upper() for title in subsection_titles]:
+            return "subsection_title", None, text
+        
+        # Check for partial matches
+        text_upper = text.upper().strip()
+        for title in subsection_titles:
+            if title.upper() in text_upper or text_upper in title.upper():
+                return "subsection_title", None, title
+        
+        # Check for item level (A., B., C., etc.)
+        match = self.item_pattern.match(text)
+        if match:
+            return "item", match.group(1), match.group(2)
+        
+        # Check for list level (1., 2., etc.)
+        match = self.list_pattern.match(text)
+        if match:
+            return "list", match.group(1), match.group(2)
+        
+        # Check for sub-list level (a., b., etc.)
+        match = self.sub_list_pattern.match(text)
+        if match:
+            return "sub_list", match.group(1), match.group(2)
+        
+        # If no pattern matches, it's regular content
+        return "content", None, text
+    
+    def map_to_bwa_level(self, paragraph, level_type: str) -> Tuple[Optional[int], Optional[str]]:
+        """Map paragraph to BWA list level based on template analysis"""
+        try:
+            # Get paragraph numbering info
+            level = self.get_paragraph_level(paragraph)
+            numbering_id = self.get_paragraph_numbering_id(paragraph)
+            style_name = paragraph.style.name if paragraph.style else None
+            
+            # Try to find BWA level by numbering ID first
+            if numbering_id and f"num_{numbering_id}" in self.bwa_list_levels:
+                bwa_info = self.bwa_list_levels[f"num_{numbering_id}"]
+                return bwa_info["level"], bwa_info["name"]
+            
+            # Try to find BWA level by style name
+            if style_name and style_name in self.bwa_list_levels:
+                bwa_info = self.bwa_list_levels[style_name]
+                return bwa_info["level"], bwa_info["name"]
+            
+            # Fallback: map based on level type
+            level_mapping = {
+                "part": 0,
+                "part_title": 0,
+                "subsection": 1,
+                "subsection_title": 1,
+                "item": 2,
+                "list": 3,
+                "sub_list": 4
+            }
+            
+            if level_type in level_mapping:
+                return level_mapping[level_type], f"BWA_Level_{level_mapping[level_type]}"
+            
+            return level, None
+            
+        except Exception as e:
+            print(f"Error mapping to BWA level: {e}")
+            return None, None
+    
+    def add_error(self, error_type: str, message: str, context: str = "", 
+                  expected: Optional[str] = None, found: Optional[str] = None):
+        """Add an error to the error list"""
+        error = ExtractionError(
+            line_number=self.line_count,
+            error_type=error_type,
+            message=message,
+            context=context,
+            expected=expected,
+            found=found
+        )
+        self.errors.append(error)
+    
+    def extract_content(self, docx_path: str) -> Dict[str, Any]:
+        """Extract content from a Word document"""
+        try:
+            doc = Document(docx_path)
+            
+            # Extract header, footer, margin, and comment information
+            header_footer_data = self.extract_header_footer_margins(docx_path)
+            comments = self.extract_comments(docx_path)
+            
+            # Extract all paragraphs
+            paragraphs = []
+            for paragraph in doc.paragraphs:
+                text = paragraph.text.strip()
+                if text:  # Only include non-empty paragraphs
+                    paragraphs.append((text, paragraph))
+                    self.line_count += 1
+            
+            # Extract section header and title
+            section_number, section_title = self.extract_section_header_and_title([p[0] for p in paragraphs])
+            
+            # Process each paragraph
+            for text, paragraph in paragraphs:
+                level_type, number, content = self.classify_paragraph_level(text)
+                
+                # Skip empty content
+                if level_type == "empty":
+                    continue
+                
+                # Map to BWA level
+                level_number, bwa_level_name = self.map_to_bwa_level(paragraph, level_type)
+                
+                # Get numbering information
+                numbering_id = self.get_paragraph_numbering_id(paragraph)
+                numbering_level = self.get_paragraph_level(paragraph)
+                style_name = paragraph.style.name if paragraph.style else None
+                
+                # Create content block
+                block = ContentBlock(
+                    text=text,
+                    level_type=level_type,
+                    number=number,
+                    content=content,
+                    level_number=level_number,
+                    bwa_level_name=bwa_level_name,
+                    numbering_id=numbering_id,
+                    numbering_level=numbering_level,
+                    style_name=style_name
+                )
+                
+                self.content_blocks.append(block)
+            
+            # Build the final data structure
+            extracted_data = {
+                "header": header_footer_data["header"],
+                "footer": header_footer_data["footer"],
+                "margins": header_footer_data["margins"],
+                "comments": comments,
+                "section_number": section_number,
+                "section_title": section_title,
+                "end_of_section": self.end_of_section,
+                "content_blocks": [
+                    {
+                        "text": block.text,
+                        "level_type": block.level_type,
+                        "number": block.number,
+                        "content": block.content,
+                        "level_number": block.level_number,
+                        "bwa_level_name": block.bwa_level_name,
+                        "numbering_id": block.numbering_id,
+                        "numbering_level": block.numbering_level,
+                        "style_name": block.style_name
+                    }
+                    for block in self.content_blocks
+                ],
+                "template_info": {
+                    "template_path": self.template_path,
+                    "bwa_list_levels": self.bwa_list_levels,
+                    "template_numbering": self.template_numbering
+                }
+            }
+            
+            return extracted_data
+            
+        except Exception as e:
+            self.add_error("Extraction Error", f"Failed to extract content: {str(e)}", "")
+            return {}
+    
+    def extract_section_header_and_title(self, paragraphs: List[str]) -> Tuple[str, str]:
+        """Extract section header and title from the first few paragraphs"""
+        section_number = ""
+        section_title = ""
+        
+        if len(paragraphs) >= 2:
+            # First paragraph should be section header
+            section_text = paragraphs[0].strip()
+            if section_text.upper().startswith("SECTION"):
+                section_match = re.search(r'^SECTION\s+(.+)$', section_text, re.IGNORECASE)
+                if section_match:
+                    section_content = section_match.group(1).strip()
+                    
+                    # Try to extract section number from various formats
+                    number_match = re.search(r'(\d+)\s+(\d+)\s+(\d+)', section_content)
+                    if number_match:
+                        section_number = f"{number_match.group(1)}{number_match.group(2)}{number_match.group(3)}"
+                    else:
+                        number_match = re.search(r'(\d+)-(\d+)-(\d+)', section_content)
+                        if number_match:
+                            section_number = f"{number_match.group(1)}{number_match.group(2)}{number_match.group(3)}"
+                        else:
+                            number_match = re.search(r'(\d{6})', section_content)
+                            if number_match:
+                                section_number = number_match.group(1)
+                            else:
+                                section_number = section_content.replace(" ", "").replace("-", "")
+            
+            # Second paragraph should be section title
+            title_text = paragraphs[1].strip()
+            if title_text and not title_text.upper().startswith("SECTION"):
+                section_title = title_text
+        
+        return section_number, section_title
+    
+    def generate_error_report(self) -> str:
+        """Generate a comprehensive error report"""
+        if not self.errors:
+            return "No errors found during extraction.\n"
+        
+        report = f"ERROR REPORT - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+        report += "=" * 60 + "\n\n"
+        
+        # Group errors by type
+        error_types = {}
+        for error in self.errors:
+            if error.error_type not in error_types:
+                error_types[error.error_type] = []
+            error_types[error.error_type].append(error)
+        
+        for error_type, errors in error_types.items():
+            report += f"{error_type} ERRORS ({len(errors)} found):\n"
+            report += "-" * 40 + "\n"
+            
+            for i, error in enumerate(errors, 1):
+                report += f"{i}. Line {error.line_number}: {error.message}\n"
+                if error.context:
+                    report += f"   Context: {error.context}\n"
+                if error.expected and error.found:
+                    report += f"   Expected: {error.expected}, Found: {error.found}\n"
+                report += "\n"
+        
+        # Add summary statistics
+        report += "SUMMARY:\n"
+        report += "-" * 20 + "\n"
+        total_errors = len(self.errors)
+        report += f"Total errors: {total_errors}\n"
+        for error_type, errors in error_types.items():
+            report += f"{error_type}: {len(errors)} errors\n"
+        
+        return report
+    
+    def save_to_json(self, data: Dict[str, Any], output_path: str):
+        """Save extracted data to JSON file"""
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+    
+    def save_error_report(self, report: str, output_path: str):
+        """Save error report to text file"""
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(report)
+
+def main():
+    """Main function to run the extraction"""
+    if len(sys.argv) < 2:
+        print("Usage: python extract_spec_content_v3.py <docx_file> [output_dir] [template_file]")
+        print("Example: python extract_spec_content_v3.py 'SECTION 26 05 00.docx'")
+        print("Note: All output files will be saved to <output_dir>/output/")
+        sys.exit(1)
+    
+    docx_path = sys.argv[1]
+    output_dir = sys.argv[2] if len(sys.argv) > 2 else "."
+    template_path = sys.argv[3] if len(sys.argv) > 3 else None
+    
+    if not os.path.exists(docx_path):
+        print(f"Error: File '{docx_path}' not found.")
+        sys.exit(1)
+    
+    # Auto-detect cleaned template if no template specified
+    if not template_path:
+        possible_templates = [
+            "test_template_cleaned.docx",
+            "template_cleaned.docx", 
+            "spec_template_cleaned.docx"
+        ]
+        for template in possible_templates:
+            if os.path.exists(template):
+                template_path = template
+                print(f"Auto-detected cleaned template: {template_path}")
+                break
+    
+    if template_path and not os.path.exists(template_path):
+        print(f"Warning: Template file '{template_path}' not found. Proceeding without template validation.")
+        template_path = None
+    
+    # Create output directory if it doesn't exist
+    output_dir = os.path.join(output_dir, "output")
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Initialize extractor with template if provided
+    extractor = SpecContentExtractorV3(template_path)
+    
+    # Extract content
+    print(f"Extracting content from '{docx_path}'...")
+    data = extractor.extract_content(docx_path)
+    
+    if not data:
+        print("Error: Failed to extract content.")
+        sys.exit(1)
+    
+    # Generate output filenames
+    base_name = os.path.splitext(os.path.basename(docx_path))[0]
+    json_path = os.path.join(output_dir, f"{base_name}_v3.json")
+    error_path = os.path.join(output_dir, f"{base_name}_v3_errors.txt")
+    
+    # Save results
+    extractor.save_to_json(data, json_path)
+    print(f"Content saved to: {json_path}")
+    
+    # Generate and save error report
+    error_report = extractor.generate_error_report()
+    extractor.save_error_report(error_report, error_path)
+    print(f"Error report saved to: {error_path}")
+    
+    # Print summary
+    print(f"\nExtraction Summary:")
+    print(f"- Content blocks found: {len(data.get('content_blocks', []))}")
+    print(f"- Header paragraphs: {len(data.get('header', {}).get('paragraphs', []))}")
+    print(f"- Footer paragraphs: {len(data.get('footer', {}).get('paragraphs', []))}")
+    print(f"- Comments found: {len(data.get('comments', []))}")
+    print(f"- BWA list levels: {len(data.get('template_info', {}).get('bwa_list_levels', {}))}")
+    print(f"- Errors found: {len(extractor.errors)}")
+    
+    if extractor.errors:
+        print(f"\nWARNING: {len(extractor.errors)} errors were found during extraction.")
+        print(f"Please review the error report: {error_path}")
+    else:
+        print("\nExtraction completed successfully with no errors.")
+
+if __name__ == "__main__":
+    main() 
