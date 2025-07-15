@@ -88,7 +88,7 @@
       "number": "1.0",
       "content": "GENERAL",
       "level_number": 0,
-      "bwa_level_name": "BWA_Level_0",
+      "bwa_level_name": "BWA-PART",
       "numbering_id": "6",
       "numbering_level": 0,
       "style_name": "Normal"
@@ -99,29 +99,29 @@
       "number": null,
       "content": "SCOPE",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": "7",
       "numbering_level": 0,
       "style_name": "Normal"
     },
     {
       "text": "A.\tDivision 26 includes all Specifications in the 26 00 00 Series and the accompanying Electrical Drawings.  Provide all labor, materials and equipment, and all necessary operations to provide the complete scope of the electrical systems intended under this Division.  Division 26 is not a stand alone document, but a part of the complete Project Documents.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "SCOPE",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "A",
+      "content": "Division 26 includes all Specifications in the 26 00 00 Series and the accompanying Electrical Drawings.  Provide all labor, materials and equipment, and all necessary operations to provide the complete scope of the electrical systems intended under this Division.  Division 26 is not a stand alone document, but a part of the complete Project Documents.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "B.\tAttention is called to the fact that there are many interfaces between the work required in this Division and the work required in other Divisions.  Provide the necessary interface and coordination with other Divisions to provide a complete project.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "COORDINATION",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "B",
+      "content": "Attention is called to the fact that there are many interfaces between the work required in this Division and the work required in other Divisions.  Provide the necessary interface and coordination with other Divisions to provide a complete project.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -132,29 +132,29 @@
       "number": null,
       "content": "EXISTING CONDITIONS",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": "7",
       "numbering_level": 0,
       "style_name": "Normal"
     },
     {
       "text": "A.\tAttention is called to the fact that the work is to be performed within an existing, operational facility.  Prior to the submission of bids, each bidder shall visit the project site, thoroughly investigate and be familiar with all existing conditions, which will affect their work; especially the work to be performed above the existing ceilings.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "EXISTING CONDITIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "A",
+      "content": "Attention is called to the fact that the work is to be performed within an existing, operational facility.  Prior to the submission of bids, each bidder shall visit the project site, thoroughly investigate and be familiar with all existing conditions, which will affect their work; especially the work to be performed above the existing ceilings.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "B.\tWhen this project is finished, the work under this Division shall be complete in every respect, completely integrated with all the existing systems, and left in perfect operating condition.  The electrical service to the building shall not be interrupted at any time without written coordination of the building's Owner.  All existing electrical equipment removed during the project shall be removed from the site after inspection of the building's Owner.  All existing electrical systems required to be operating at the project's completion or required to remain in use during the project shall be reconnected, replaced, rerouted or otherwise made to fit with proper workmanship techniques and left in safe working order.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "COORDINATION",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "B",
+      "content": "When this project is finished, the work under this Division shall be complete in every respect, completely integrated with all the existing systems, and left in perfect operating condition.  The electrical service to the building shall not be interrupted at any time without written coordination of the building's Owner.  All existing electrical equipment removed during the project shall be removed from the site after inspection of the building's Owner.  All existing electrical systems required to be operating at the project's completion or required to remain in use during the project shall be reconnected, replaced, rerouted or otherwise made to fit with proper workmanship techniques and left in safe working order.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -165,7 +165,7 @@
       "number": "C",
       "content": "Connect new work to existing work in a neat and workmanlike manner.  Where an existing structure must be cut or existing utilities interfere, such obstructions shall be bypassed, removed, replaced or relocated, patched and repaired.  Work disturbed or damaged shall be replaced or repaired to its prior condition.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -176,7 +176,7 @@
       "number": "D",
       "content": "Prior to the start of any demolition or construction, secure the services of a qualified, EPA Certified asbestos abatement agency to check the existing insulation, etc. for asbestos.  Should asbestos be found, do not proceed with demolition or construction; notify the Architect in any case in writing of the agency's findings.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -187,7 +187,7 @@
       "number": null,
       "content": "CODES AND REGULATIONS",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": "7",
       "numbering_level": 0,
       "style_name": "Normal"
@@ -198,7 +198,7 @@
       "number": "A",
       "content": "All work under this Division shall comply with all local building codes, laws, regulations, ordinances and the requirements of the 2023 National Electrical Code.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -209,7 +209,7 @@
       "number": "B",
       "content": "Where conflicts of installation requirements occur between the aforementioned codes, regulations or the Contract Documents, the most restrictive shall govern.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -220,7 +220,7 @@
       "number": "C",
       "content": "Obtain all permits and licenses and pay all fees required by local authorities.  Arrange for all necessary inspections required by the authorities having jurisdiction and provide written certificates of approval to the project Owner or his designated representative.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -231,18 +231,18 @@
       "number": null,
       "content": "DEFINITIONS",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": "7",
       "numbering_level": 0,
       "style_name": "Normal"
     },
     {
       "text": "A.\tContract Documents:  The complete set of project Drawings and Specifications.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "DRAWINGS AND SPECIFICATIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "A",
+      "content": "Contract Documents:  The complete set of project Drawings and Specifications.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -253,7 +253,7 @@
       "number": "B",
       "content": "Provide:  Furnish, install and connect.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -264,7 +264,7 @@
       "number": "C",
       "content": "Work:  All materials installed, including all labor to provide complete system.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -275,7 +275,7 @@
       "number": "D",
       "content": "Wiring or Wired:  All wire or cable installed in conduit from panelboard to equipment and connected at both ends with all required boxes, connectors, couplings, etc.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -286,7 +286,7 @@
       "number": "E",
       "content": "Conduit:  Rigid steel conduit intermediate metal conduit (I.M.C.), electrical metallic tubing () plastic conduit (PVC), electrical non-metal tubing (), or flexible steel conduit.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -296,7 +296,7 @@
       "level_type": "content",
       "number": null,
       "content": "DRAWINGS  SPECIFICATIONS",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "7",
       "numbering_level": 0,
@@ -304,22 +304,22 @@
     },
     {
       "text": "A.\tThe Drawings and Specifications together are to be considered as the Contract Documents. Any work shown in one and not shown in the other, or implied by either, shall be provided to give a complete project.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "DRAWINGS AND SPECIFICATIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "A",
+      "content": "The Drawings and Specifications together are to be considered as the Contract Documents. Any work shown in one and not shown in the other, or implied by either, shall be provided to give a complete project.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "B.\tShould any conflicts exist between the Drawings and Specifications or there is an item shown/called for which is not clearly defined, immediately submit a request for clarification.  No additional monies will be granted later when a conflict is resolved or an item is more clearly defined.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "DRAWINGS AND SPECIFICATIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "B",
+      "content": "Should any conflicts exist between the Drawings and Specifications or there is an item shown/called for which is not clearly defined, immediately submit a request for clarification.  No additional monies will be granted later when a conflict is resolved or an item is more clearly defined.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -330,7 +330,7 @@
       "number": "C",
       "content": "The Drawings are schematic and are not intended to show the exact location outlets, etc. or the routing of conduit.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -341,7 +341,7 @@
       "number": "D",
       "content": "The exact location of equipment requiring electrical connections (mechanical equipment, elevators, lights, etc.) shall be as located by other Divisions of the Contract Documents. Refer to the Architectural, Structural and Mechanical Documents for dimensions and details of building construction and provide work described in this Division so that it conforms to the details of the project.  The right is reserved to relocate any receptacle, switch or other outlet a maximum of 10'-0\" before it is permanently installed without incurring additions to the Contract amount.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -352,29 +352,29 @@
       "number": null,
       "content": "SITE VISIT",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": "7",
       "numbering_level": 0,
       "style_name": "Normal"
     },
     {
       "text": "A.\tVisit the site and become familiar with all aspects of the site and existing conditions before submitting Contract price.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "EXISTING CONDITIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "A",
+      "content": "Visit the site and become familiar with all aspects of the site and existing conditions before submitting Contract price.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "B.\tNo allowance will be made for lack of knowledge of existing conditions.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "EXISTING CONDITIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "B",
+      "content": "No allowance will be made for lack of knowledge of existing conditions.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -385,29 +385,29 @@
       "number": null,
       "content": "DEVIATIONS",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": "7",
       "numbering_level": 0,
       "style_name": "Normal"
     },
     {
       "text": "A.\tNo deviations from the Contract Documents shall be made without the full knowledge and written consent of the Architect.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "DEVIATIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "A",
+      "content": "No deviations from the Contract Documents shall be made without the full knowledge and written consent of the Architect.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "B.\tIf the existing conditions make it desirable to modify the Contract Documents in regard to any item, provide a written request to the Architect.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "EXISTING CONDITIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "B",
+      "content": "If the existing conditions make it desirable to modify the Contract Documents in regard to any item, provide a written request to the Architect.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -418,7 +418,7 @@
       "number": "2.0",
       "content": "PRODUCTS",
       "level_number": 0,
-      "bwa_level_name": "BWA_Level_0",
+      "bwa_level_name": "BWA-PART",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -429,7 +429,7 @@
       "number": "2.01",
       "content": "STANDARDS FOR MATERIALS  WORKMANSHIP",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": "9",
       "numbering_level": 0,
       "style_name": "Normal"
@@ -440,7 +440,7 @@
       "number": "A",
       "content": "All materials used shall be new and shall be stamped with the label of Underwriters Laboratories, Inc. (UL), or other approved third-party listing agency.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -451,7 +451,7 @@
       "number": "B",
       "content": "All materials shall meet the standards of the following associations and institutes where applicable:",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -462,7 +462,7 @@
       "number": "1",
       "content": "National Fire Protection Association (NFPA)",
       "level_number": 3,
-      "bwa_level_name": "BWA_Level_3",
+      "bwa_level_name": "BWA-List",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -473,7 +473,7 @@
       "number": "2",
       "content": "American Society of Testing Materials ()",
       "level_number": 3,
-      "bwa_level_name": "BWA_Level_3",
+      "bwa_level_name": "BWA-List",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -484,7 +484,7 @@
       "number": "3",
       "content": "American National Standards Institute ()",
       "level_number": 3,
-      "bwa_level_name": "BWA_Level_3",
+      "bwa_level_name": "BWA-List",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -495,7 +495,7 @@
       "number": "4",
       "content": "National Electrical Manufacturer's Association (NEMA)",
       "level_number": 3,
-      "bwa_level_name": "BWA_Level_3",
+      "bwa_level_name": "BWA-List",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -506,7 +506,7 @@
       "number": "5",
       "content": "Institute of Electrical and Electronic Engineers (IEEE)",
       "level_number": 3,
-      "bwa_level_name": "BWA_Level_3",
+      "bwa_level_name": "BWA-List",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -517,7 +517,7 @@
       "number": "6",
       "content": "National Electrical Installation Standards (NECA)",
       "level_number": 3,
-      "bwa_level_name": "BWA_Level_3",
+      "bwa_level_name": "BWA-List",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -528,7 +528,7 @@
       "number": "C",
       "content": "Manufacturer’s names and catalog numbers specified herein are intended to describe the material and set the standard of quality. All bids shall be based on material specified.  Requests for approval of material not specified shall be considered if the request is in written form and submitted to the Architect no later than fourteen (14) days before bid date.  All requests shall conform with the provisions of the general and supplementary conditions. If alternate/substitute equipment is submitted, it is the contractors responsibility to provide redesign required in order to make, a code compliant, complete working system.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -539,7 +539,7 @@
       "number": "D",
       "content": "Samples of materials requested to be substituted shall be furnished upon the request of the Architect.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -550,18 +550,18 @@
       "number": "2.02",
       "content": "DRAWINGS  SUBMITTAL",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "A.\tThe Engineer's review of shop drawings or submittals is a cursory review to check for general compliances of submittals with the design intent of the Contract Documents.  The Engineer's review does not relieve the Contractor of his responsibility of complying with the Contract Documents.  All coordination of the work in strict compliance with the Contract Documents is the sole responsibility of the Contractor.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "COORDINATION",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "A",
+      "content": "The Engineer's review of shop drawings or submittals is a cursory review to check for general compliances of submittals with the design intent of the Contract Documents.  The Engineer's review does not relieve the Contractor of his responsibility of complying with the Contract Documents.  All coordination of the work in strict compliance with the Contract Documents is the sole responsibility of the Contractor.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -572,7 +572,7 @@
       "number": "B",
       "content": "The following items shall be submitted for review:",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -582,7 +582,7 @@
       "level_type": "content",
       "number": null,
       "content": "Conduit and wire",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -593,7 +593,7 @@
       "level_type": "content",
       "number": null,
       "content": "Grounding system",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -604,7 +604,7 @@
       "level_type": "content",
       "number": null,
       "content": "Devices",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -615,7 +615,7 @@
       "level_type": "content",
       "number": null,
       "content": "Coverplates",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -626,7 +626,7 @@
       "level_type": "content",
       "number": null,
       "content": "Under floor duct",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -637,7 +637,7 @@
       "level_type": "content",
       "number": null,
       "content": "Metering equipment",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -648,7 +648,7 @@
       "level_type": "content",
       "number": null,
       "content": "Panelboards",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -659,7 +659,7 @@
       "level_type": "content",
       "number": null,
       "content": "Switchboards",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -670,7 +670,7 @@
       "level_type": "content",
       "number": null,
       "content": "Transformers",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -681,7 +681,7 @@
       "level_type": "content",
       "number": null,
       "content": "Fuses",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -692,7 +692,7 @@
       "level_type": "content",
       "number": null,
       "content": "Overcurrent devices",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -703,7 +703,7 @@
       "level_type": "content",
       "number": null,
       "content": "Busway",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -714,7 +714,7 @@
       "level_type": "content",
       "number": null,
       "content": "Ground fault system",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -725,7 +725,7 @@
       "level_type": "content",
       "number": null,
       "content": "Disconnect switches",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -736,7 +736,7 @@
       "level_type": "content",
       "number": null,
       "content": "Lighting fixtures",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -747,7 +747,7 @@
       "level_type": "content",
       "number": null,
       "content": "Lighting control system",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -758,7 +758,7 @@
       "level_type": "content",
       "number": null,
       "content": "Dimming system",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -769,7 +769,7 @@
       "level_type": "content",
       "number": null,
       "content": "Life safety system",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -780,7 +780,7 @@
       "level_type": "content",
       "number": null,
       "content": "Emergency system",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -791,7 +791,7 @@
       "level_type": "content",
       "number": null,
       "content": "Motor starters",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -802,7 +802,7 @@
       "level_type": "content",
       "number": null,
       "content": "Motor control center",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -813,7 +813,7 @@
       "level_type": "content",
       "number": null,
       "content": "Surge Protective Devices",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -824,7 +824,7 @@
       "level_type": "content",
       "number": null,
       "content": "Lightning Protection System",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "2",
       "numbering_level": 0,
@@ -832,11 +832,11 @@
     },
     {
       "text": "C.\tAll shop drawings and submittals shall be submitted in compliance with the requirements of the general and supplementary conditions. All submittals are to be received electronically in .pdf format only.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "SHOP DRAWINGS AND SUBMITTAL",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "C",
+      "content": "All shop drawings and submittals shall be submitted in compliance with the requirements of the general and supplementary conditions. All submittals are to be received electronically in .pdf format only.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -847,18 +847,18 @@
       "number": "D",
       "content": "All submittals shall bear the name of the manufacturer to be used. All selections to be made for product options critical to design.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "E.\tAll shop drawings and submittals shall include a stamped indication signifying that the submittal has been reviewed for compliance with the Contract Documents by the Electrical and General Contractors.  This stamped indication also represents the fact that the Contractor has checked this submittal for its interaction with all other Divisions and certifies by his signature or initials that all coordination has taken place.  The stamp shall include the date, name of the Contracting Firm, the signature of the Contractor, certification of compliance and approval.  This stamp shall be on the submittal before the Engineer will review it.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "SHOP DRAWINGS AND SUBMITTAL",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "E",
+      "content": "All shop drawings and submittals shall include a stamped indication signifying that the submittal has been reviewed for compliance with the Contract Documents by the Electrical and General Contractors.  This stamped indication also represents the fact that the Contractor has checked this submittal for its interaction with all other Divisions and certifies by his signature or initials that all coordination has taken place.  The stamp shall include the date, name of the Contracting Firm, the signature of the Contractor, certification of compliance and approval.  This stamp shall be on the submittal before the Engineer will review it.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -869,7 +869,7 @@
       "number": "F",
       "content": "The engineer will review an individual submittal not more than twice.  If the submittal is rejected again on the second review, the contractor will bare all responsibility for paying for the engineer's time for additional reviews.  Such payments to the engineer shall be withheld from the next monthly pay application.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -880,7 +880,7 @@
       "number": "G",
       "content": "submittal to be dated upon creation. Engineer to have at least one (1) working week of review time.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -891,18 +891,18 @@
       "number": "2.03",
       "content": "RECORD (AS-BUILT) DRAWINGS  MAINTENANCE MANUALS",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "A.\tAt job completion, submit to the Architect, a set of prints showing all deviations from the Contract Documents.  The Drawings shall also have dimensions locating all underground conduits.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "DEVIATIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "A",
+      "content": "At job completion, submit to the Architect, a set of prints showing all deviations from the Contract Documents.  The Drawings shall also have dimensions locating all underground conduits.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -913,7 +913,7 @@
       "number": "B",
       "content": "At job completion, submit to the Architect, color .pdf format document of maintenance, instruction manuals, final submittals, record shop drawings and sequence of operations for all equipment/systems furnished on the project. Confirm with owner if hard copies are required.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -924,7 +924,7 @@
       "number": "3.0",
       "content": "EXECUTION",
       "level_number": 0,
-      "bwa_level_name": "BWA_Level_0",
+      "bwa_level_name": "BWA-PART",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -935,7 +935,7 @@
       "number": "3.01",
       "content": "COORDINATION",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -946,29 +946,29 @@
       "number": "A",
       "content": "Coordinate all space requirements with all other Divisions before installing any work.  Install work such that adequate space will be allotted for all other work from other Divisions to be installed and also will allow room for future access for repair and maintenance.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "B.\tAny work installed without proper coordination shall be relocated at the Architect's direction without increasing the contract price.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "COORDINATION",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "B",
+      "content": "Any work installed without proper coordination shall be relocated at the Architect's direction without increasing the contract price.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "C.\tDuring the bidding process or the pricing for a guaranteed maximum price, coordinate with all other Divisions for the total amount of work required in Division 26, as well as, any alternate equipment that would cause deviations in the contract price.  Any work shown or implied in another Division requiring work in Division 26 shall be included in the contract price regardless of whether or not it is addressed in Division 26.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "DEVIATIONS",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "C",
+      "content": "During the bidding process or the pricing for a guaranteed maximum price, coordinate with all other Divisions for the total amount of work required in Division 26, as well as, any alternate equipment that would cause deviations in the contract price.  Any work shown or implied in another Division requiring work in Division 26 shall be included in the contract price regardless of whether or not it is addressed in Division 26.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -979,7 +979,7 @@
       "number": "3.02",
       "content": "PROTECTION OF MATERIALS",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -990,7 +990,7 @@
       "number": "A",
       "content": "All equipment shall have the original finish when the building is turned over to the Owner.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -1001,7 +1001,7 @@
       "number": "B",
       "content": "Protect equipment during construction from dirt, water, chemical, mechanical damage, etc.  Protect all conduit openings so that no foreign material will enter the conduit.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -1012,7 +1012,7 @@
       "number": "3.03",
       "content": "TESTS, DEMONSTRATION  INSTRUCTIONS",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -1023,7 +1023,7 @@
       "number": "A",
       "content": "Functional Testing:",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -1033,7 +1033,7 @@
       "level_type": "content",
       "number": null,
       "content": "Test all systems described in this Division in the presence of the Owner or a designated representative upon completion of the work.  Demonstrate that the installation is in accordance with Contract Documents.",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "3",
       "numbering_level": 0,
@@ -1044,7 +1044,7 @@
       "level_type": "content",
       "number": null,
       "content": "For all new lighting ad lighting control systems within the contract documents, the contractor shall obtain the service of a licensed professional engineer (registered in the state this project is within) to perform system commissioning in compliance with local energy conservation codes. The contractor shall demonstrate in the presence of the commissioning agent that the installation of such systems are in accordance with the contract documents.",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "3",
       "numbering_level": 0,
@@ -1056,7 +1056,7 @@
       "number": "B",
       "content": "Any work found not to be in compliance with the Contract Documents shall be repaired or replaced without incurring any additions to the Contract price.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -1067,7 +1067,7 @@
       "number": "C",
       "content": "Provide to the Owner, all instruction on maintenance and operation of all systems and equipment provided under this Division.  Provide all necessary tools and personnel to thoroughly present these instructions. The documentation shall include the following, at a minimum:",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -1077,7 +1077,7 @@
       "level_type": "content",
       "number": null,
       "content": "Submittal data including all selected options.",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "4",
       "numbering_level": 0,
@@ -1088,7 +1088,7 @@
       "level_type": "content",
       "number": null,
       "content": "Operation and maintenance manual for all equipment and systems, Include routine maintenance actions and cleaning procedures.",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "4",
       "numbering_level": 0,
@@ -1099,7 +1099,7 @@
       "level_type": "content",
       "number": null,
       "content": "A schedule for inspecting and recalibrating, where applicable.",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "4",
       "numbering_level": 0,
@@ -1110,7 +1110,7 @@
       "level_type": "content",
       "number": null,
       "content": "A narrative of how each system is intended to operate including any recommended set points where adjustment is available.",
-      "level_number": 0,
+      "level_number": null,
       "bwa_level_name": null,
       "numbering_id": "4",
       "numbering_level": 0,
@@ -1122,7 +1122,7 @@
       "number": "D",
       "content": "At project completion, prior to obtaining Certificate of Occupancy, present at final inspection to the jurisdiction AHJ a signed and dated statement of system commissioning for all lighting and lighting control systems. The format of the statement of system commissioning shall be in the format of the state’s energy conservations codes and/or AHJ requirements. The document shall be signed by the contractor’s licensed professional representative.",
       "level_number": 2,
-      "bwa_level_name": "BWA_Level_2",
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -1133,29 +1133,29 @@
       "number": "3.04",
       "content": "GUARANTEE",
       "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "A.\tAll systems, equipment, components, work, etc. provided under this Division shall be covered by a one year guarantee starting at the time of final acceptance of the work by the Owner.  Any defects in the work, systems, equipment or components found during this year shall be corrected at no charge.  The guarantee shall include providing all necessary cutting, patchwork, repainting, etc. to make the work complete and new.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "GUARANTEE",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "A",
+      "content": "All systems, equipment, components, work, etc. provided under this Division shall be covered by a one year guarantee starting at the time of final acceptance of the work by the Owner.  Any defects in the work, systems, equipment or components found during this year shall be corrected at no charge.  The guarantee shall include providing all necessary cutting, patchwork, repainting, etc. to make the work complete and new.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
     },
     {
       "text": "B.\tPresent this guarantee and any additional warranties or guarantees on furnished equipment or systems to the Architect.  All equipment or system guarantees are in addition to the general guarantee.",
-      "level_type": "subsection_title",
-      "number": null,
-      "content": "GUARANTEE",
-      "level_number": 1,
-      "bwa_level_name": "BWA_Level_1",
+      "level_type": "item",
+      "number": "B",
+      "content": "Present this guarantee and any additional warranties or guarantees on furnished equipment or systems to the Architect.  All equipment or system guarantees are in addition to the general guarantee.",
+      "level_number": 2,
+      "bwa_level_name": "BWA-Item",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal"
@@ -1173,11 +1173,24 @@
     }
   ],
   "template_analysis": {
-    "template_path": "test_template_cleaned.docx",
+    "template_path": "templates\\test_template_cleaned.docx",
     "bwa_list_levels": {
+      "BWA-PART": {
+        "level_number": -1,
+        "numbering_id": null,
+        "abstract_num_id": null,
+        "level_text": null,
+        "number_format": null,
+        "start_value": null,
+        "suffix": null,
+        "justification": null,
+        "style_name": "BWA-PART",
+        "bwa_label": null,
+        "is_bwa_level": true
+      },
       "BWA-SUBSECTION": {
-        "level_number": 0,
-        "numbering_id": "0",
+        "level_number": -1,
+        "numbering_id": null,
         "abstract_num_id": null,
         "level_text": null,
         "number_format": null,
@@ -1189,7 +1202,7 @@
         "is_bwa_level": true
       },
       "BWA-Item": {
-        "level_number": null,
+        "level_number": -1,
         "numbering_id": null,
         "abstract_num_id": null,
         "level_text": null,
@@ -1202,7 +1215,7 @@
         "is_bwa_level": true
       },
       "BWA-List": {
-        "level_number": null,
+        "level_number": -1,
         "numbering_id": null,
         "abstract_num_id": null,
         "level_text": null,
@@ -1215,7 +1228,7 @@
         "is_bwa_level": true
       },
       "BWA-SubItem": {
-        "level_number": null,
+        "level_number": -1,
         "numbering_id": null,
         "abstract_num_id": null,
         "level_text": null,
@@ -1228,7 +1241,7 @@
         "is_bwa_level": true
       },
       "BWA-SubList": {
-        "level_number": null,
+        "level_number": -1,
         "numbering_id": null,
         "abstract_num_id": null,
         "level_text": null,
@@ -1241,7 +1254,7 @@
         "is_bwa_level": true
       },
       "BWA-SubSubItem": {
-        "level_number": null,
+        "level_number": -1,
         "numbering_id": null,
         "abstract_num_id": null,
         "level_text": null,
@@ -1254,7 +1267,7 @@
         "is_bwa_level": true
       },
       "BWA-SubSubList": {
-        "level_number": null,
+        "level_number": -1,
         "numbering_id": null,
         "abstract_num_id": null,
         "level_text": null,
@@ -1263,32 +1276,6 @@
         "suffix": null,
         "justification": null,
         "style_name": "BWA-SubSubList",
-        "bwa_label": null,
-        "is_bwa_level": true
-      },
-      "BWA-PART": {
-        "level_number": null,
-        "numbering_id": null,
-        "abstract_num_id": null,
-        "level_text": null,
-        "number_format": null,
-        "start_value": null,
-        "suffix": null,
-        "justification": null,
-        "style_name": "BWA-PART",
-        "bwa_label": null,
-        "is_bwa_level": true
-      },
-      "num_0": {
-        "level_number": 0,
-        "numbering_id": "0",
-        "abstract_num_id": null,
-        "level_text": null,
-        "number_format": null,
-        "start_value": null,
-        "suffix": null,
-        "justification": null,
-        "style_name": "BWA-SUBSECTION",
         "bwa_label": null,
         "is_bwa_level": true
       }
@@ -1372,7 +1359,7 @@
             "start": "1",
             "suff": null,
             "lvlJc": "left",
-            "pStyle": null,
+            "pStyle": "RPA3-PR2",
             "pPr": {
               "indent": {
                 "left": "1440",
@@ -1390,7 +1377,7 @@
             "start": "1",
             "suff": null,
             "lvlJc": "left",
-            "pStyle": null,
+            "pStyle": "RPA3-PR3",
             "pPr": {
               "indent": {
                 "left": "2016",
@@ -1408,7 +1395,7 @@
             "start": "1",
             "suff": null,
             "lvlJc": "left",
-            "pStyle": null,
+            "pStyle": "RPA3-PR4",
             "pPr": {
               "indent": {
                 "left": "2592",
@@ -1426,7 +1413,7 @@
             "start": "1",
             "suff": null,
             "lvlJc": "left",
-            "pStyle": null,
+            "pStyle": "RPA3-PR5",
             "pPr": {
               "indent": {
                 "left": "3168",
@@ -1444,266 +1431,6 @@
         "tmpl": null
       },
       "1": {
-        "levels": {
-          "0": {
-            "ilvl": "0",
-            "lvlText": "%1.0",
-            "numFmt": "decimal",
-            "start": "1",
-            "suff": null,
-            "lvlJc": "left",
-            "pStyle": null,
-            "pPr": {
-              "indent": {
-                "left": "576",
-                "right": null,
-                "hanging": "576",
-                "firstLine": null
-              }
-            },
-            "rPr": {
-              "rFonts": {
-                "ascii": "Arial",
-                "hAnsi": "Arial",
-                "eastAsia": null,
-                "cs": null
-              },
-              "sz": "20",
-              "bold": "0",
-              "italic": "0"
-            }
-          },
-          "1": {
-            "ilvl": "1",
-            "lvlText": "%1.%2",
-            "numFmt": "decimalZero",
-            "start": "1",
-            "suff": null,
-            "lvlJc": "left",
-            "pStyle": null,
-            "pPr": {
-              "indent": {
-                "left": "1152",
-                "right": null,
-                "hanging": "576",
-                "firstLine": null
-              }
-            },
-            "rPr": {
-              "rFonts": {
-                "ascii": "Arial",
-                "hAnsi": "Arial",
-                "eastAsia": null,
-                "cs": null
-              },
-              "sz": "20",
-              "bold": "0",
-              "italic": "0"
-            }
-          },
-          "2": {
-            "ilvl": "2",
-            "lvlText": "%3.",
-            "numFmt": "upperLetter",
-            "start": "1",
-            "suff": null,
-            "lvlJc": "left",
-            "pStyle": null,
-            "pPr": {
-              "indent": {
-                "left": "1728",
-                "right": null,
-                "hanging": "576",
-                "firstLine": null
-              }
-            },
-            "rPr": {
-              "rFonts": {
-                "ascii": "Arial",
-                "hAnsi": "Arial",
-                "eastAsia": null,
-                "cs": null
-              },
-              "sz": "20",
-              "bold": "0",
-              "italic": "0"
-            }
-          },
-          "3": {
-            "ilvl": "3",
-            "lvlText": "%4.",
-            "numFmt": "decimal",
-            "start": "1",
-            "suff": null,
-            "lvlJc": "left",
-            "pStyle": null,
-            "pPr": {
-              "indent": {
-                "left": "2304",
-                "right": null,
-                "hanging": "576",
-                "firstLine": null
-              }
-            },
-            "rPr": {
-              "rFonts": {
-                "ascii": "Arial",
-                "hAnsi": "Arial",
-                "eastAsia": null,
-                "cs": null
-              },
-              "sz": "20",
-              "bold": "0",
-              "italic": "0"
-            }
-          },
-          "4": {
-            "ilvl": "4",
-            "lvlText": "%5.",
-            "numFmt": "lowerLetter",
-            "start": "1",
-            "suff": null,
-            "lvlJc": "left",
-            "pStyle": null,
-            "pPr": {
-              "indent": {
-                "left": "2880",
-                "right": null,
-                "hanging": "576",
-                "firstLine": null
-              }
-            },
-            "rPr": {
-              "rFonts": {
-                "ascii": "Arial",
-                "hAnsi": "Arial",
-                "eastAsia": null,
-                "cs": null
-              },
-              "sz": "20",
-              "bold": "0",
-              "italic": "0"
-            }
-          },
-          "5": {
-            "ilvl": "5",
-            "lvlText": "%6.",
-            "numFmt": "lowerRoman",
-            "start": "1",
-            "suff": null,
-            "lvlJc": "left",
-            "pStyle": null,
-            "pPr": {
-              "indent": {
-                "left": "3456",
-                "right": null,
-                "hanging": "576",
-                "firstLine": null
-              }
-            },
-            "rPr": {
-              "rFonts": {
-                "ascii": "Arial",
-                "hAnsi": "Arial",
-                "eastAsia": null,
-                "cs": null
-              },
-              "sz": "20",
-              "bold": "0",
-              "italic": "0"
-            }
-          },
-          "6": {
-            "ilvl": "6",
-            "lvlText": "%7)",
-            "numFmt": "decimal",
-            "start": "1",
-            "suff": null,
-            "lvlJc": "left",
-            "pStyle": null,
-            "pPr": {
-              "indent": {
-                "left": "4032",
-                "right": null,
-                "hanging": "576",
-                "firstLine": null
-              }
-            },
-            "rPr": {
-              "rFonts": {
-                "ascii": "Arial",
-                "hAnsi": "Arial",
-                "eastAsia": null,
-                "cs": null
-              },
-              "sz": "20",
-              "bold": "0",
-              "italic": "0"
-            }
-          },
-          "7": {
-            "ilvl": "7",
-            "lvlText": "%8)",
-            "numFmt": "lowerLetter",
-            "start": "1",
-            "suff": null,
-            "lvlJc": "left",
-            "pStyle": null,
-            "pPr": {
-              "indent": {
-                "left": "4608",
-                "right": null,
-                "hanging": "576",
-                "firstLine": null
-              }
-            },
-            "rPr": {
-              "rFonts": {
-                "ascii": "Arial",
-                "hAnsi": "Arial",
-                "eastAsia": null,
-                "cs": null
-              },
-              "sz": "20",
-              "bold": "0",
-              "italic": "0"
-            }
-          },
-          "8": {
-            "ilvl": "8",
-            "lvlText": "%9)",
-            "numFmt": "lowerRoman",
-            "start": "1",
-            "suff": null,
-            "lvlJc": "left",
-            "pStyle": null,
-            "pPr": {
-              "indent": {
-                "left": "5184",
-                "right": null,
-                "hanging": "576",
-                "firstLine": null
-              }
-            },
-            "rPr": {
-              "rFonts": {
-                "ascii": "Arial",
-                "hAnsi": "Arial",
-                "eastAsia": null,
-                "cs": null
-              },
-              "sz": "20",
-              "bold": "0",
-              "italic": "0"
-            }
-          }
-        },
-        "bwa_label": null,
-        "nsid": null,
-        "multiLevelType": null,
-        "tmpl": null
-      },
-      "2": {
         "levels": {
           "0": {
             "ilvl": "0",
@@ -1963,7 +1690,7 @@
         "multiLevelType": null,
         "tmpl": null
       },
-      "3": {
+      "2": {
         "levels": {
           "0": {
             "ilvl": "0",
@@ -2197,7 +1924,7 @@
         "multiLevelType": null,
         "tmpl": null
       },
-      "4": {
+      "3": {
         "levels": {
           "0": {
             "ilvl": "0",
@@ -2431,11 +2158,11 @@
         "tmpl": null
       },
       "num_1": {
-        "abstract_num_id": "4",
+        "abstract_num_id": "3",
         "bwa_label": null
       },
       "num_2": {
-        "abstract_num_id": "3",
+        "abstract_num_id": "2",
         "bwa_label": null
       },
       "num_3": {
@@ -2467,21 +2194,13 @@
         "bwa_label": null
       },
       "num_10": {
-        "abstract_num_id": "2",
-        "bwa_label": null
-      },
-      "num_11": {
-        "abstract_num_id": "2",
-        "bwa_label": null
-      },
-      "num_12": {
         "abstract_num_id": "1",
         "bwa_label": null
       }
     },
     "level_mappings": {
-      "1": "4",
-      "2": "3",
+      "1": "3",
+      "2": "2",
       "3": "0",
       "4": "0",
       "5": "0",
@@ -2489,17 +2208,15 @@
       "7": "0",
       "8": "0",
       "9": "0",
-      "10": "2",
-      "11": "2",
-      "12": "1"
+      "10": "1"
     },
     "summary": {
-      "total_abstract_numbering": 5,
-      "total_num_mappings": 12,
-      "total_bwa_levels": 9,
-      "level_mappings_count": 12,
+      "total_abstract_numbering": 4,
+      "total_num_mappings": 10,
+      "total_bwa_levels": 8,
+      "level_mappings_count": 10,
       "level_types": {},
-      "analysis_timestamp": "2025-07-15T12:12:26.526989"
+      "analysis_timestamp": "2025-07-15T14:26:46.637215"
     }
   }
 }

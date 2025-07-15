@@ -1,8 +1,8 @@
 {
-  "template_path": "templates\\test_template_cleaned.docx",
+  "template_path": "../templates/test_template_cleaned.docx",
   "bwa_list_levels": {
     "BWA-PART": {
-      "level_number": -1,
+      "level_number": null,
       "numbering_id": null,
       "abstract_num_id": null,
       "level_text": null,
@@ -15,7 +15,7 @@
       "is_bwa_level": true
     },
     "BWA-SUBSECTION": {
-      "level_number": -1,
+      "level_number": null,
       "numbering_id": null,
       "abstract_num_id": null,
       "level_text": null,
@@ -28,7 +28,7 @@
       "is_bwa_level": true
     },
     "BWA-Item": {
-      "level_number": -1,
+      "level_number": null,
       "numbering_id": null,
       "abstract_num_id": null,
       "level_text": null,
@@ -41,7 +41,7 @@
       "is_bwa_level": true
     },
     "BWA-List": {
-      "level_number": -1,
+      "level_number": null,
       "numbering_id": null,
       "abstract_num_id": null,
       "level_text": null,
@@ -54,7 +54,7 @@
       "is_bwa_level": true
     },
     "BWA-SubItem": {
-      "level_number": -1,
+      "level_number": null,
       "numbering_id": null,
       "abstract_num_id": null,
       "level_text": null,
@@ -67,7 +67,7 @@
       "is_bwa_level": true
     },
     "BWA-SubList": {
-      "level_number": -1,
+      "level_number": null,
       "numbering_id": null,
       "abstract_num_id": null,
       "level_text": null,
@@ -80,7 +80,7 @@
       "is_bwa_level": true
     },
     "BWA-SubSubItem": {
-      "level_number": -1,
+      "level_number": null,
       "numbering_id": null,
       "abstract_num_id": null,
       "level_text": null,
@@ -93,7 +93,7 @@
       "is_bwa_level": true
     },
     "BWA-SubSubList": {
-      "level_number": -1,
+      "level_number": null,
       "numbering_id": null,
       "abstract_num_id": null,
       "level_text": null,
@@ -1042,6 +1042,6 @@
     "total_bwa_levels": 8,
     "level_mappings_count": 10,
     "level_types": {},
-    "analysis_timestamp": "2025-07-15T14:26:46.637215"
+    "analysis_timestamp": "2025-07-15T14:04:06.058074"
   }
 }

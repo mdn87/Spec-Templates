@@ -300,21 +300,20 @@ class TemplateListDetector:
             
             # Find BWA levels by style name
             for paragraph in doc.paragraphs:
-                style_name = getattr(paragraph.style, "name", None)
-                if style_name and "bwa" in style_name.lower():
+                if paragraph.style and "BWA" in paragraph.style.name.upper():
                     level = self.get_paragraph_level(paragraph)
                     numbering_id = self.get_paragraph_numbering_id(paragraph)
                     
                     list_level_info = ListLevelInfo(
-                        level_number=level if level is not None else -1,
+                        level_number=level,
                         numbering_id=numbering_id,
-                        style_name=getattr(paragraph.style, "name", ""),
+                        style_name=paragraph.style.name,
                         is_bwa_level=True
                     )
-                    # Only add to bwa_list_levels if style_name is not None
-                    if style_name:
-                        bwa_list_levels[style_name] = list_level_info
-
+                    
+                    # Map by style name
+                    bwa_list_levels[paragraph.style.name] = list_level_info
+                    
                     # Map by numbering ID if available
                     if numbering_id:
                         bwa_list_levels[f"num_{numbering_id}"] = list_level_info

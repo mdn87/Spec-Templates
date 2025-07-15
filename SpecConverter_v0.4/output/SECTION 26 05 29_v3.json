@@ -1,0 +1,2517 @@
+{
+  "header": {
+    "paragraphs": [
+      "BW&A 26 05 29                                                                                           26 05 29-1",
+      "RW 7-7-25                                                            Hangers and Supports for Electrical Systems"
+    ],
+    "tables": [],
+    "text_boxes": []
+  },
+  "footer": {
+    "paragraphs": [],
+    "tables": [],
+    "text_boxes": []
+  },
+  "margins": {
+    "top_margin": 1.0,
+    "bottom_margin": 1.0,
+    "left_margin": 1.0,
+    "right_margin": 1.0,
+    "header_distance": 0.3,
+    "footer_distance": 0.3
+  },
+  "comments": [],
+  "section_number": "260529",
+  "section_title": "HANGERS AND SUPPORTS for Electrical Systems",
+  "end_of_section": "",
+  "content_blocks": [
+    {
+      "text": "SECTION 26-05-29",
+      "level_type": "section",
+      "number": "26-05-29",
+      "content": "",
+      "level_number": null,
+      "bwa_level_name": null,
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "HANGERS AND SUPPORTS for Electrical Systems",
+      "level_type": "title",
+      "number": null,
+      "content": "HANGERS AND SUPPORTS for Electrical Systems",
+      "level_number": null,
+      "bwa_level_name": null,
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "1.0\tGENERAL",
+      "level_type": "part",
+      "number": "1.0",
+      "content": "GENERAL",
+      "level_number": 0,
+      "bwa_level_name": "BWA_Level_0",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "1.01\tDESCRIPTION",
+      "level_type": "subsection",
+      "number": "1.01",
+      "content": "DESCRIPTION",
+      "level_number": 1,
+      "bwa_level_name": "BWA_Level_1",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "A.\tAll work specified in this Section shall comply with the provisions of Section 26-05-00.",
+      "level_type": "item",
+      "number": "A",
+      "content": "All work specified in this Section shall comply with the provisions of Section 26-05-00.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "B.\tThis Section describes the basic electrical materials and installation methods that are acceptable and applicable to Division 26.",
+      "level_type": "item",
+      "number": "B",
+      "content": "This Section describes the basic electrical materials and installation methods that are acceptable and applicable to Division 26.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "2.0\tPRODUCTS",
+      "level_type": "part",
+      "number": "2.0",
+      "content": "PRODUCTS",
+      "level_number": 0,
+      "bwa_level_name": "BWA_Level_0",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "2.01      SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS",
+      "level_type": "subsection",
+      "number": "2.01",
+      "content": "SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS",
+      "level_number": 1,
+      "bwa_level_name": "BWA_Level_1",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "A. \t\tSteel Slotted Support Systems: Comply with MFMA-4, factory-fabricated components for field assembly. Construct with 9/16\" dia. holes, nominal 2\" o.c. on top surface, with standard factory finish, and with the all necessary fittings which mate and match with U-channel. Select channel dimensions for applicable load criteria. Metallic Coatings shall be hot-dip galvanized after fabrication with threading applied accordance to MFMA-4. Subject to compliance with requirements, manufacturers offering products that may be incorporated into the Work include, but are not limited to, the following:",
+      "level_type": "item",
+      "number": "A",
+      "content": "Steel Slotted Support Systems: Comply with MFMA-4, factory-fabricated components for field assembly. Construct with 9/16\" dia. holes, nominal 2\" o.c. on top surface, with standard factory finish, and with the all necessary fittings which mate and match with U-channel. Select channel dimensions for applicable load criteria. Metallic Coatings shall be hot-dip galvanized after fabrication with threading applied accordance to MFMA-4. Subject to compliance with requirements, manufacturers offering products that may be incorporated into the Work include, but are not limited to, the following:",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "1. \tAllied Tube & Conduit",
+      "level_type": "list",
+      "number": "1",
+      "content": "Allied Tube & Conduit",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "2. \tCaddy",
+      "level_type": "list",
+      "number": "2",
+      "content": "Caddy",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "3. \tCooper B-Line, Inc.; a division of Cooper Industries",
+      "level_type": "list",
+      "number": "3",
+      "content": "Cooper B-Line, Inc.; a division of Cooper Industries",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "4. \tERICO International Corporation",
+      "level_type": "list",
+      "number": "4",
+      "content": "ERICO International Corporation",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "5. \tGS Metals Corporation",
+      "level_type": "list",
+      "number": "5",
+      "content": "GS Metals Corporation",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "6. \tHilti",
+      "level_type": "list",
+      "number": "6",
+      "content": "Hilti",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "7. \tPowers",
+      "level_type": "list",
+      "number": "7",
+      "content": "Powers",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "8. \tThomas & Betts Corporation",
+      "level_type": "list",
+      "number": "8",
+      "content": "Thomas & Betts Corporation",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "9. \tUnistrut; Tyco International, Ltd.",
+      "level_type": "list",
+      "number": "9",
+      "content": "Unistrut; Tyco International, Ltd.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "10. \tWesanco, Inc.",
+      "level_type": "list",
+      "number": "10",
+      "content": "Wesanco, Inc.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "11.\tPerma-Cote",
+      "level_type": "list",
+      "number": "11",
+      "content": "Perma-Cote",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "B. \tRaceway and Cable Supports: As described in NECA 1 and NECA 101.",
+      "level_type": "item",
+      "number": "B",
+      "content": "Raceway and Cable Supports: As described in NECA 1 and NECA 101.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "C. \tConduit and Cable Support Devices: Steel hangers, clamps, and associated fittings, designed for types and sizes of raceway or cable to be supported.",
+      "level_type": "item",
+      "number": "C",
+      "content": "Conduit and Cable Support Devices: Steel hangers, clamps, and associated fittings, designed for types and sizes of raceway or cable to be supported.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "1.\tRiser clamps for supporting rigid metal conduit; galvanized steel; with 2 bolts and nuts, and 4\" ears.",
+      "level_type": "list",
+      "number": "1",
+      "content": "Riser clamps for supporting rigid metal conduit; galvanized steel; with 2 bolts and nuts, and 4\" ears.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "2. \tClevis hangers: For supporting rigid metal conduit; galvanized steel; with 1/2\" dia. hole for round steel rod.",
+      "level_type": "list",
+      "number": "2",
+      "content": "Clevis hangers: For supporting rigid metal conduit; galvanized steel; with 1/2\" dia. hole for round steel rod.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "3. \tGalvanized steel clamps; 1/2\" rod size.",
+      "level_type": "list",
+      "number": "3",
+      "content": "Galvanized steel clamps; 1/2\" rod size.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "4. \tGalvanized steel clamps, 1-1/4\" x 3/16\" stock; 3/8\" cross bolt; flange width 2\".",
+      "level_type": "list",
+      "number": "4",
+      "content": "Galvanized steel clamps, 1-1/4\" x 3/16\" stock; 3/8\" cross bolt; flange width 2\".",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "5. \tOne-hole conduit straps for supporting 3/4\" rigid metal conduit; galvanized steel.",
+      "level_type": "list",
+      "number": "5",
+      "content": "One-hole conduit straps for supporting 3/4\" rigid metal conduit; galvanized steel.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "6. \tTwo-hole conduit straps for supporting 3/4\" rigid metal conduit, galvanized steel; 3/4\" strap width; and 2-1/8\" between center of screw holes.",
+      "level_type": "list",
+      "number": "6",
+      "content": "Two-hole conduit straps for supporting 3/4\" rigid metal conduit, galvanized steel; 3/4\" strap width; and 2-1/8\" between center of screw holes.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "7. \tOffset conduit clamps for supporting rigid metal conduit; galvanized steel.",
+      "level_type": "list",
+      "number": "7",
+      "content": "Offset conduit clamps for supporting rigid metal conduit; galvanized steel.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "D. \tSupport for Conductors in Vertical Conduit: Factory-fabricated assembly consisting of threaded body and insulating wedging plug or plugs for non-armored electrical conductors or cables in riser conduits. Plugs shall have number, size, and shape of conductor gripping pieces as required to suit individual conductors or cables supported. Body shall be malleable iron.",
+      "level_type": "item",
+      "number": "D",
+      "content": "Support for Conductors in Vertical Conduit: Factory-fabricated assembly consisting of threaded body and insulating wedging plug or plugs for non-armored electrical conductors or cables in riser conduits. Plugs shall have number, size, and shape of conductor gripping pieces as required to suit individual conductors or cables supported. Body shall be malleable iron.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "E. \tStructural Steel for Fabricated Supports and Restraints: ASTM A 36/A 36M, steel plates, shapes, and bars; black and galvanized.",
+      "level_type": "item",
+      "number": "E",
+      "content": "Structural Steel for Fabricated Supports and Restraints: ASTM A 36/A 36M, steel plates, shapes, and bars; black and galvanized.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "F. \tMounting, Anchoring, and Attachment Components: Items for fastening electrical items or their supports to building surfaces include the following.",
+      "level_type": "item",
+      "number": "F",
+      "content": "Mounting, Anchoring, and Attachment Components: Items for fastening electrical items or their supports to building surfaces include the following.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "Products: Subject to compliance with requirements, manufacturers offering products that may be incorporated into the Work include, but are not limited to, the following:",
+      "level_type": "content",
+      "number": null,
+      "content": "Products: Subject to compliance with requirements, manufacturers offering products that may be incorporated into the Work include, but are not limited to, the following:",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "a. \tCooper B-Line, Inc.; a division of Cooper Industries.",
+      "level_type": "sub_list",
+      "number": "a",
+      "content": "Cooper B-Line, Inc.; a division of Cooper Industries.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "b. \tEmpire Tool and Manufacturing Co., Inc.",
+      "level_type": "sub_list",
+      "number": "b",
+      "content": "Empire Tool and Manufacturing Co., Inc.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "c. \tHilti, Inc.",
+      "level_type": "sub_list",
+      "number": "c",
+      "content": "Hilti, Inc.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "d.\tITW Ramset/Red Head; a division of Illinois Tool Works, Inc.",
+      "level_type": "sub_list",
+      "number": "d",
+      "content": "ITW Ramset/Red Head; a division of Illinois Tool Works, Inc.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "e. \tMKT Fastening, LLC.",
+      "level_type": "sub_list",
+      "number": "e",
+      "content": "MKT Fastening, LLC.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "f. \tSimpson Strong-Tie Co., Inc.",
+      "level_type": "sub_list",
+      "number": "f",
+      "content": "Simpson Strong-Tie Co., Inc.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "Capacities: Provide materials and installed systems with tension, shear, and pullout capacities appropriate for supported loads and building materials in which used, plus 100% safety factor.",
+      "level_type": "content",
+      "number": null,
+      "content": "Capacities: Provide materials and installed systems with tension, shear, and pullout capacities appropriate for supported loads and building materials in which used, plus 100% safety factor.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Adverse and/or Corrosive Environment Areas: Provide stainless steel anchors. Provide hot-dipped galvanized (after fabrication) product and material versions of what is specified in this section for steel hangers, supports, systems, etc. (supported from stainless steel anchors), unless stainless steel is specified or otherwise indicated. Such applications and areas include, but are not limited to:",
+      "level_type": "content",
+      "number": null,
+      "content": "Adverse and/or Corrosive Environment Areas: Provide stainless steel anchors. Provide hot-dipped galvanized (after fabrication) product and material versions of what is specified in this section for steel hangers, supports, systems, etc. (supported from stainless steel anchors), unless stainless steel is specified or otherwise indicated. Such applications and areas include, but are not limited to:",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "a. \tOutdoors.",
+      "level_type": "sub_list",
+      "number": "a",
+      "content": "Outdoors.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "b. \tUnconditioned Areas.",
+      "level_type": "sub_list",
+      "number": "b",
+      "content": "Unconditioned Areas.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "c. \tGarages, including ancillary garage rooms/areas.",
+      "level_type": "sub_list",
+      "number": "c",
+      "content": "Garages, including ancillary garage rooms/areas.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "d. \tShower areas.",
+      "level_type": "sub_list",
+      "number": "d",
+      "content": "Shower areas.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "e. \tMiscellaneous high-humidity or otherwise corrosive environments.",
+      "level_type": "sub_list",
+      "number": "e",
+      "content": "Miscellaneous high-humidity or otherwise corrosive environments.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "Mechanical-Expansion Anchors in Dry Conditioned Areas: Insert-wedge-type, zinc-coated steel, for use in hardened Portland cement. Provide stainless steel anchors where located in areas subject to moisture or corrosion.",
+      "level_type": "content",
+      "number": null,
+      "content": "Mechanical-Expansion Anchors in Dry Conditioned Areas: Insert-wedge-type, zinc-coated steel, for use in hardened Portland cement. Provide stainless steel anchors where located in areas subject to moisture or corrosion.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Drop-In Anchors: AISI Type 303 steel, drop-in, shell or flush type, equivalent to Hilti HDI series.",
+      "level_type": "content",
+      "number": null,
+      "content": "Drop-In Anchors: AISI Type 303 steel, drop-in, shell or flush type, equivalent to Hilti HDI series.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Normal"
+    },
+    {
+      "text": "Concrete Inserts: Steel or malleable-iron, slotted support system units similar to MSS Type 18; complying with MFMA-4 or MSS SP-58.",
+      "level_type": "content",
+      "number": null,
+      "content": "Concrete Inserts: Steel or malleable-iron, slotted support system units similar to MSS Type 18; complying with MFMA-4 or MSS SP-58.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Clamps for Attachment to Steel Structural Elements: MSS SP-58, type suitable for attached structural element.",
+      "level_type": "content",
+      "number": null,
+      "content": "Clamps for Attachment to Steel Structural Elements: MSS SP-58, type suitable for attached structural element.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Through Bolts: Steel structural type, hex head, and high strength. Comply with ASTM A 325.",
+      "level_type": "content",
+      "number": null,
+      "content": "Through Bolts: Steel structural type, hex head, and high strength. Comply with ASTM A 325.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Toggle Bolts: All-steel galvanized springhead type, minimum 3/16” x 4”.",
+      "level_type": "content",
+      "number": null,
+      "content": "Toggle Bolts: All-steel galvanized springhead type, minimum 3/16” x 4”.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Hanger Rods: Threaded steel, Galvanized steel rods; 1/2\" minimum diameter.",
+      "level_type": "content",
+      "number": null,
+      "content": "Hanger Rods: Threaded steel, Galvanized steel rods; 1/2\" minimum diameter.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Clevis hangers: For supporting rigid metal conduit; galvanized steel; with 1/2\" minimum diameter hole for round steel rod.",
+      "level_type": "content",
+      "number": null,
+      "content": "Clevis hangers: For supporting rigid metal conduit; galvanized steel; with 1/2\" minimum diameter hole for round steel rod.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Galvanized steel rod reducing couplings: 1/2\" x 5/8” minimum.",
+      "level_type": "content",
+      "number": null,
+      "content": "Galvanized steel rod reducing couplings: 1/2\" x 5/8” minimum.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Galvanized steel clamps: 1/2\" minimum rod size; Galvanized steel clamps: Minimum 1-1/4\" x 3/16\" stock; minimum 3/8\" cross bolt; minimum flange width 2\".",
+      "level_type": "content",
+      "number": null,
+      "content": "Galvanized steel clamps: 1/2\" minimum rod size; Galvanized steel clamps: Minimum 1-1/4\" x 3/16\" stock; minimum 3/8\" cross bolt; minimum flange width 2\".",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Hexagon nuts: Galvanized steel.",
+      "level_type": "content",
+      "number": null,
+      "content": "Hexagon nuts: Galvanized steel.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "3",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "15. \tExpansion anchors: Minimum 1/2\".",
+      "level_type": "list",
+      "number": "15",
+      "content": "Expansion anchors: Minimum 1/2\".",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "3.0\tEXECUTION",
+      "level_type": "part",
+      "number": "3.0",
+      "content": "EXECUTION",
+      "level_number": 0,
+      "bwa_level_name": "BWA_Level_0",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "3.01 \tINSTALLATION",
+      "level_type": "subsection",
+      "number": "3.01",
+      "content": "INSTALLATION",
+      "level_number": 1,
+      "bwa_level_name": "BWA_Level_1",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "It shall be the responsibility of the electrical contractor to supervise the installation of and pay for all additional members, wood or metal and labor which may be required to support any type of permanent or temporary electrical apparatus employed in the execution of the electrical contractor's work. Provide supports, anchors, sleeves and seals furnished as part of factory-fabricated equipment as required.",
+      "level_type": "content",
+      "number": null,
+      "content": "It shall be the responsibility of the electrical contractor to supervise the installation of and pay for all additional members, wood or metal and labor which may be required to support any type of permanent or temporary electrical apparatus employed in the execution of the electrical contractor's work. Provide supports, anchors, sleeves and seals furnished as part of factory-fabricated equipment as required.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Coordinate layout and installation of equipment and components with other construction that penetrates walls or is supported by them, including electrical and other types of equipment, raceways, piping, encumbrances to workspace clearance requirements, and adjacent surfaces. Maintain required workspace clearances and required clearances for equipment access doors and panels.",
+      "level_type": "content",
+      "number": null,
+      "content": "Coordinate layout and installation of equipment and components with other construction that penetrates walls or is supported by them, including electrical and other types of equipment, raceways, piping, encumbrances to workspace clearance requirements, and adjacent surfaces. Maintain required workspace clearances and required clearances for equipment access doors and panels.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Provide supports for multiple raceways capable of supporting combined weight of supported systems and its contents, plus minimum 100% factor of safety. Provide equipment supports capable of supporting combined operating weight of supported equipment and connected systems and components. Provide rated strengths adequate in tension, shear, and pullout force to resist maximum loads calculated or imposed for this project, with a minimum structural safety factor of five times the applied force.",
+      "level_type": "content",
+      "number": null,
+      "content": "Provide supports for multiple raceways capable of supporting combined weight of supported systems and its contents, plus minimum 100% factor of safety. Provide equipment supports capable of supporting combined operating weight of supported equipment and connected systems and components. Provide rated strengths adequate in tension, shear, and pullout force to resist maximum loads calculated or imposed for this project, with a minimum structural safety factor of five times the applied force.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Locate all structural elements within concrete prior to pre-drilling anchors. Contractor is responsible for repairing all damage to structural elements resulting from the scope of this work. Anchor hole dimensions shall be per manufacturer recommendations. Drill and install anchors to depths as recommended by respective anchor manufacturer. Select and apply anchor products based on collective weight being supported, plus 100% factor of safety.",
+      "level_type": "subsection_title",
+      "number": null,
+      "content": "SCOPE",
+      "level_number": 1,
+      "bwa_level_name": "BWA_Level_1",
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Normal"
+    },
+    {
+      "text": "Comply with NECA 1 and NECA 101 for application and installation requirements of hangers and supports for electrical equipment and systems except if requirements in this Section are stricter.",
+      "level_type": "content",
+      "number": null,
+      "content": "Comply with NECA 1 and NECA 101 for application and installation requirements of hangers and supports for electrical equipment and systems except if requirements in this Section are stricter.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "All electrically related work shall be supported directly from building structural members. Electrically related work shall not be supported from ductwork, ductwork hangers, ceiling supports, existing conduit supports, etc. Install supports with spacing’s indicated and in compliance with NEC requirements, as well as maintaining all requirements of Article 110.26. Cut, fit, and place miscellaneous metal fabrications accurately in location, alignment, and elevation to support and anchor electrical materials and equipment.",
+      "level_type": "content",
+      "number": null,
+      "content": "All electrically related work shall be supported directly from building structural members. Electrically related work shall not be supported from ductwork, ductwork hangers, ceiling supports, existing conduit supports, etc. Install supports with spacing’s indicated and in compliance with NEC requirements, as well as maintaining all requirements of Article 110.26. Cut, fit, and place miscellaneous metal fabrications accurately in location, alignment, and elevation to support and anchor electrical materials and equipment.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Cut, fit, and place miscellaneous metal supports accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Field Welding: Comply with AWS D1.1/D1.1M.",
+      "level_type": "content",
+      "number": null,
+      "content": "Cut, fit, and place miscellaneous metal supports accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Field Welding: Comply with AWS D1.1/D1.1M.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Touchup Painting: Clean field welds and abraded areas of shop paint. Paint exposed areas immediately after erecting hangers and supports. Use same materials as used for shop painting. Comply with SSPC-PA 1 requirements for touching up field-painted surfaces. Apply paint by brush or spray to provide minimum dry film thickness of 2.0 mils. For galvanized surfaces, clean welds, bolted connections, and abraded areas and apply galvanizing-repair paint to comply with ASTM A 780.",
+      "level_type": "content",
+      "number": null,
+      "content": "Touchup Painting: Clean field welds and abraded areas of shop paint. Paint exposed areas immediately after erecting hangers and supports. Use same materials as used for shop painting. Comply with SSPC-PA 1 requirements for touching up field-painted surfaces. Apply paint by brush or spray to provide minimum dry film thickness of 2.0 mils. For galvanized surfaces, clean welds, bolted connections, and abraded areas and apply galvanizing-repair paint to comply with ASTM A 780.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Install equipment and enclosures on walls with tops at uniform height unless otherwise indicated, and by bolting units to structural wall or mounting on structural-steel channels bolted to wall. For equipment and enclosures not at walls provide freestanding structural-steel channel racks that are anchored to floor structure and overhead structure.",
+      "level_type": "content",
+      "number": null,
+      "content": "Install equipment and enclosures on walls with tops at uniform height unless otherwise indicated, and by bolting units to structural wall or mounting on structural-steel channels bolted to wall. For equipment and enclosures not at walls provide freestanding structural-steel channel racks that are anchored to floor structure and overhead structure.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Use of synthetic or plastic “tie-wraps”, “zip ties”, “wire ties” and similar products are not permitted as a permanent means of anchoring, securing, supporting or otherwise installing any cables, conductors, conduits, raceways, devices, equipment or other electrical work. Provide metal clamps, clips, etc. that are manufactured for use for respective applications where they are used. Use of perforated straps is not permitted.",
+      "level_type": "content",
+      "number": null,
+      "content": "Use of synthetic or plastic “tie-wraps”, “zip ties”, “wire ties” and similar products are not permitted as a permanent means of anchoring, securing, supporting or otherwise installing any cables, conductors, conduits, raceways, devices, equipment or other electrical work. Provide metal clamps, clips, etc. that are manufactured for use for respective applications where they are used. Use of perforated straps is not permitted.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Route all conduits, raceways and cables (where applicable) parallel and perpendicular to building structural members. Any and all noncompliant work installed by the electrical contractor shall be removed and reinstalled by the electrical contractor to the satisfaction of the Owner's Representative and the Design Professionals, at the expense of the electrical contractor.",
+      "level_type": "content",
+      "number": null,
+      "content": "Route all conduits, raceways and cables (where applicable) parallel and perpendicular to building structural members. Any and all noncompliant work installed by the electrical contractor shall be removed and reinstalled by the electrical contractor to the satisfaction of the Owner's Representative and the Design Professionals, at the expense of the electrical contractor.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "All fasteners, hangers and methods of hanging exposed work in finished areas shall be submitted to the Owner's Representative for review before installation. Fasteners shall be zinc-coated, type, grade, and class as required for a neat finished installation.",
+      "level_type": "content",
+      "number": null,
+      "content": "All fasteners, hangers and methods of hanging exposed work in finished areas shall be submitted to the Owner's Representative for review before installation. Fasteners shall be zinc-coated, type, grade, and class as required for a neat finished installation.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Space supports for conduits and raceways required by NFPA 70 as a minimum. Minimum rod size shall be 1/4 inch in diameter. For multiple raceways or cables, install trapeze-type supports fabricated with steel slotted, sized so capacity can be increased by at least 100 percent in future without exceeding specified design load limits. Secure raceways and cables to these supports with two-bolt conduit clamps, single-bolt conduit clamps, or single-bolt conduit clamps using spring friction action for retention in support channel as applicable.",
+      "level_type": "content",
+      "number": null,
+      "content": "Space supports for conduits and raceways required by NFPA 70 as a minimum. Minimum rod size shall be 1/4 inch in diameter. For multiple raceways or cables, install trapeze-type supports fabricated with steel slotted, sized so capacity can be increased by at least 100 percent in future without exceeding specified design load limits. Secure raceways and cables to these supports with two-bolt conduit clamps, single-bolt conduit clamps, or single-bolt conduit clamps using spring friction action for retention in support channel as applicable.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Coordinate with installation of roof curbs, equipment supports, and roof penetrations as applicable. Suspend and support overhead electrical work from roof trusses and joists/joist girders only at panel points, at top chord only, unless otherwise indicated. Roof penetrations to have pipe boots or other approved method to maintain warrantee of roof.",
+      "level_type": "content",
+      "number": null,
+      "content": "Coordinate with installation of roof curbs, equipment supports, and roof penetrations as applicable. Suspend and support overhead electrical work from roof trusses and joists/joist girders only at panel points, at top chord only, unless otherwise indicated. Roof penetrations to have pipe boots or other approved method to maintain warrantee of roof.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Do not drill any concrete structural members or decks without prior case-by-case written approval of means and methods from Owner and Design Professionals.",
+      "level_type": "content",
+      "number": null,
+      "content": "Do not drill any concrete structural members or decks without prior case-by-case written approval of means and methods from Owner and Design Professionals.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Do not suspend overhead hangers, or support any other overhead electrical work, from non-poured-concrete roof decks, without coordination with roofing vendor/installer.",
+      "level_type": "subsection_title",
+      "number": null,
+      "content": "COORDINATION",
+      "level_number": 1,
+      "bwa_level_name": "BWA_Level_1",
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Field-verify lengths of stems, pendants, cables, suspensions, etc. for all suspended luminaires with Architect.",
+      "level_type": "content",
+      "number": null,
+      "content": "Field-verify lengths of stems, pendants, cables, suspensions, etc. for all suspended luminaires with Architect.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Strength of Support Assemblies: Where not indicated, select sizes of components so strength will be adequate to carry present and future static loads within specified loading limits. Minimum static design load used for strength determination shall be weight of supported components plus 200 lb. or 100 percent factor of safety, whichever is greater.",
+      "level_type": "content",
+      "number": null,
+      "content": "Strength of Support Assemblies: Where not indicated, select sizes of components so strength will be adequate to carry present and future static loads within specified loading limits. Minimum static design load used for strength determination shall be weight of supported components plus 200 lb. or 100 percent factor of safety, whichever is greater.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Mounting and Anchorage of Surface-Mounted Equipment and Components: Anchor and fasten electrical items and their supports to building structural elements by the following methods unless otherwise indicated by code. Use supported equipment manufacturer's setting drawings, templates, diagrams, instructions, and directions furnished with items to be embedded. Install anchor bolts to elevations required for proper attachment to supported equipment. Install anchor bolts according to anchor-bolt manufacturer's written instructions. Provide female expansion anchors, and install studs and nuts after equipment is positioned. Torque bolts and nuts on studs to values recommended by equipment manufacturer. Provide bushings for floor-mounted equipment anchors to allow for resilient media between anchor bolts/studs and mounting hole in concrete. Provide anchor bolt bushing assemblies for wall-mounted equipment to allow for resilient media where equipment and equipment-mounting channels are attached to wall.",
+      "level_type": "content",
+      "number": null,
+      "content": "Mounting and Anchorage of Surface-Mounted Equipment and Components: Anchor and fasten electrical items and their supports to building structural elements by the following methods unless otherwise indicated by code. Use supported equipment manufacturer's setting drawings, templates, diagrams, instructions, and directions furnished with items to be embedded. Install anchor bolts to elevations required for proper attachment to supported equipment. Install anchor bolts according to anchor-bolt manufacturer's written instructions. Provide female expansion anchors, and install studs and nuts after equipment is positioned. Torque bolts and nuts on studs to values recommended by equipment manufacturer. Provide bushings for floor-mounted equipment anchors to allow for resilient media between anchor bolts/studs and mounting hole in concrete. Provide anchor bolt bushing assemblies for wall-mounted equipment to allow for resilient media where equipment and equipment-mounting channels are attached to wall.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "To Wood: Fasten with lag screws or through-bolts. Provide Standard Grade, light-framing-size lumber of any species. Number 3 Common or Standard Grade boards complying with WCLIB or AWPA rules, or Number 3 boards complying with SPIB rules. Lumber shall be preservative treated in accordance with AWPB LP-2, and kiln dried to a moisture content of not more than 19 percent. Provide marine grade products where subject to moisture conditions. Provide Simpson Strong Tie (or equal) expansion screw anchors. Cut, fit, and place wood grounds, nailers, blocking, and anchorage accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Select fastener sizes that will not penetrate members where opposite side will be exposed to view or will receive finish materials. Make tight connections between members. Install fasteners without splitting wood members. Attach to substrates as required to support applied loads.",
+      "level_type": "content",
+      "number": null,
+      "content": "To Wood: Fasten with lag screws or through-bolts. Provide Standard Grade, light-framing-size lumber of any species. Number 3 Common or Standard Grade boards complying with WCLIB or AWPA rules, or Number 3 boards complying with SPIB rules. Lumber shall be preservative treated in accordance with AWPB LP-2, and kiln dried to a moisture content of not more than 19 percent. Provide marine grade products where subject to moisture conditions. Provide Simpson Strong Tie (or equal) expansion screw anchors. Cut, fit, and place wood grounds, nailers, blocking, and anchorage accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Select fastener sizes that will not penetrate members where opposite side will be exposed to view or will receive finish materials. Make tight connections between members. Install fasteners without splitting wood members. Attach to substrates as required to support applied loads.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Normal"
+    },
+    {
+      "text": "To Wood Structural Members: Provide bolts installed through members.",
+      "level_type": "content",
+      "number": null,
+      "content": "To Wood Structural Members: Provide bolts installed through members.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "To New Concrete: Provide channel-type concrete inserts and bolt to inserts, or provide expansion anchors for applications where inserts are not practical.",
+      "level_type": "content",
+      "number": null,
+      "content": "To New Concrete: Provide channel-type concrete inserts and bolt to inserts, or provide expansion anchors for applications where inserts are not practical.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "To Existing Concrete: Expansion anchor fasteners.",
+      "level_type": "content",
+      "number": null,
+      "content": "To Existing Concrete: Expansion anchor fasteners.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Holes for Expansion Anchors in Concrete: Drill at locations and to depths that avoid reinforcing bars and other structural elements. Review proposed means, methods, locations, etc. in advance with Owner and Design Professionals.",
+      "level_type": "content",
+      "number": null,
+      "content": "Holes for Expansion Anchors in Concrete: Drill at locations and to depths that avoid reinforcing bars and other structural elements. Review proposed means, methods, locations, etc. in advance with Owner and Design Professionals.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "To Masonry: Approved toggle-type bolts on hollow masonry units and expansion anchor fasteners on solid masonry units.",
+      "level_type": "content",
+      "number": null,
+      "content": "To Masonry: Approved toggle-type bolts on hollow masonry units and expansion anchor fasteners on solid masonry units.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "To Steel: Welded threaded steel studs complying with AWS D1.1/D1.1M, with lock washers and nuts, or beam clamps (MSS Type 19, 21, 23, 25, or 27) complying with MSS SP-69, clamped to flanges of beams or on upper truss chords of bar joists.",
+      "level_type": "content",
+      "number": null,
+      "content": "To Steel: Welded threaded steel studs complying with AWS D1.1/D1.1M, with lock washers and nuts, or beam clamps (MSS Type 19, 21, 23, 25, or 27) complying with MSS SP-69, clamped to flanges of beams or on upper truss chords of bar joists.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "To Light Steel: Sheet metal screws.",
+      "level_type": "content",
+      "number": null,
+      "content": "To Light Steel: Sheet metal screws.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Items Mounted on Hollow Walls and Nonstructural Building Surfaces in finished areas: Provide blocking between studs behind finished wall surface. Mount equipment, devices and boxes with backs of enclosures flush to front of finished wall surface.",
+      "level_type": "content",
+      "number": null,
+      "content": "Items Mounted on Hollow Walls and Nonstructural Building Surfaces in finished areas: Provide blocking between studs behind finished wall surface. Mount equipment, devices and boxes with backs of enclosures flush to front of finished wall surface.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Items Mounted on Hollow Walls and Nonstructural Building Surfaces in unfinished areas: Mount equipment on slotted-channel racks attached to substrate.",
+      "level_type": "content",
+      "number": null,
+      "content": "Items Mounted on Hollow Walls and Nonstructural Building Surfaces in unfinished areas: Mount equipment on slotted-channel racks attached to substrate.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "5",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "11. \tDo not use powder/gas-actuated driven methods.",
+      "level_type": "list",
+      "number": "11",
+      "content": "Do not use powder/gas-actuated driven methods.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "Coordinate all work with all other trades prior to commencement of the work. Layout and install all electrical work in strict compliance with Chapter 1, Part B, Section 110.26 of the latest adopted edition of NFPA 70. Locations and routing that may be shown on plans are schematic and diagrammatic in nature.",
+      "level_type": "content",
+      "number": null,
+      "content": "Coordinate all work with all other trades prior to commencement of the work. Layout and install all electrical work in strict compliance with Chapter 1, Part B, Section 110.26 of the latest adopted edition of NFPA 70. Locations and routing that may be shown on plans are schematic and diagrammatic in nature.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Fabricated Support Devices:",
+      "level_type": "content",
+      "number": null,
+      "content": "Fabricated Support Devices:",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "4",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Conform to the manufacturer’s recommendations for selection and installation of supports.",
+      "level_type": "content",
+      "number": null,
+      "content": "Conform to the manufacturer’s recommendations for selection and installation of supports.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "6",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Install individual and multiple (trapeze) raceway hangers and riser clamps as necessary to support raceways. Provide U-bolts, clamps, attachments, and other hardware necessary for hanger assembly and for securing hanger rods and conduits.",
+      "level_type": "content",
+      "number": null,
+      "content": "Install individual and multiple (trapeze) raceway hangers and riser clamps as necessary to support raceways. Provide U-bolts, clamps, attachments, and other hardware necessary for hanger assembly and for securing hanger rods and conduits.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "6",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Support parallel runs of horizontal raceways together on trapeze-type hangers.",
+      "level_type": "content",
+      "number": null,
+      "content": "Support parallel runs of horizontal raceways together on trapeze-type hangers.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "6",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Support individual horizontal raceways by separate pipe hangers. Spring steel fasteners shall be used in lieu of hangers for 1-1/2 inches and smaller raceways above suspended ceilings only.",
+      "level_type": "content",
+      "number": null,
+      "content": "Support individual horizontal raceways by separate pipe hangers. Spring steel fasteners shall be used in lieu of hangers for 1-1/2 inches and smaller raceways above suspended ceilings only.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "6",
+      "numbering_level": 0,
+      "style_name": "Normal"
+    },
+    {
+      "text": "For hanger rods with spring steel fasteners, use 1/4 inch diameter or larger threaded steel. Use spring steel fasteners that are specifically designed for supporting single conduits.",
+      "level_type": "content",
+      "number": null,
+      "content": "For hanger rods with spring steel fasteners, use 1/4 inch diameter or larger threaded steel. Use spring steel fasteners that are specifically designed for supporting single conduits.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "6",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Support exposed and concealed raceway within 1 foot of box and access fittings. In horizontal runs, support at the box and access fittings shall be omitted where box or access fittings are independently supported and raceway terminals are not made with chase nipples or threadless box connectors.",
+      "level_type": "content",
+      "number": null,
+      "content": "Support exposed and concealed raceway within 1 foot of box and access fittings. In horizontal runs, support at the box and access fittings shall be omitted where box or access fittings are independently supported and raceway terminals are not made with chase nipples or threadless box connectors.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "6",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "In vertical runs, arrange supports so the load produced by the weight of the raceway and the enclosed conductors is carried entirely by the conduit supports with no weight load on the ends of the raceway.",
+      "level_type": "content",
+      "number": null,
+      "content": "In vertical runs, arrange supports so the load produced by the weight of the raceway and the enclosed conductors is carried entirely by the conduit supports with no weight load on the ends of the raceway.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "6",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "8. \tMiscellaneous supports:",
+      "level_type": "list",
+      "number": "8",
+      "content": "Miscellaneous supports:",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "a. \tSupport miscellaneous electrical components as required to produce the same structural safety factors as specified for raceway supports. Install metal channel racks for mounting cabinets, pull boxes, junction boxes, and other devices.",
+      "level_type": "sub_list",
+      "number": "a",
+      "content": "Support miscellaneous electrical components as required to produce the same structural safety factors as specified for raceway supports. Install metal channel racks for mounting cabinets, pull boxes, junction boxes, and other devices.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "b. \tSupport outlet boxes directly from the building structure or by bar hangers. Where bar hangers are used, attach the bar to raceways on opposite sides of the box and support the raceway with an approved type of fastener not more than 24 inches from the box.",
+      "level_type": "sub_list",
+      "number": "b",
+      "content": "Support outlet boxes directly from the building structure or by bar hangers. Where bar hangers are used, attach the bar to raceways on opposite sides of the box and support the raceway with an approved type of fastener not more than 24 inches from the box.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "c. \tSupport junction boxes, pull boxes and other boxes directly from the building structure.",
+      "level_type": "sub_list",
+      "number": "c",
+      "content": "Support junction boxes, pull boxes and other boxes directly from the building structure.",
+      "level_number": 4,
+      "bwa_level_name": "BWA_Level_4",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "Fastening:",
+      "level_type": "content",
+      "number": null,
+      "content": "Fastening:",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "6",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Fasten pathway products and associated supporting hardware securely to the building structure.",
+      "level_type": "content",
+      "number": null,
+      "content": "Fasten pathway products and associated supporting hardware securely to the building structure.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "7",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Fasten by means of wood screws on wood, toggle bolts on hollow masonry units.",
+      "level_type": "content",
+      "number": null,
+      "content": "Fasten by means of wood screws on wood, toggle bolts on hollow masonry units.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "7",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Fasten by means of concrete inserts or expansion bolts on concrete or solid masonry.",
+      "level_type": "content",
+      "number": null,
+      "content": "Fasten by means of concrete inserts or expansion bolts on concrete or solid masonry.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "7",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Fasten by means of bolts with lock washers and nuts, machine screws, welded threaded studs, or clamps on steel (spring-tension where applicable).",
+      "level_type": "content",
+      "number": null,
+      "content": "Fasten by means of bolts with lock washers and nuts, machine screws, welded threaded studs, or clamps on steel (spring-tension where applicable).",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "7",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Do not weld conduit, pipe straps, or items other than threaded studs to steel structures.",
+      "level_type": "content",
+      "number": null,
+      "content": "Do not weld conduit, pipe straps, or items other than threaded studs to steel structures.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "7",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "In partitions of light steel construction, use sheet metal screws.",
+      "level_type": "content",
+      "number": null,
+      "content": "In partitions of light steel construction, use sheet metal screws.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "7",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "When installing fasteners in concrete or CMU structures, do not cut, drill or damage reinforcing bars or other structural elements.",
+      "level_type": "content",
+      "number": null,
+      "content": "When installing fasteners in concrete or CMU structures, do not cut, drill or damage reinforcing bars or other structural elements.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "7",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Ensure that the load applied to any fasteners does not exceed 25-percent of the proof test load. Use vibration-and shock-resistant fasteners for attachments to concrete slabs.",
+      "level_type": "content",
+      "number": null,
+      "content": "Ensure that the load applied to any fasteners does not exceed 25-percent of the proof test load. Use vibration-and shock-resistant fasteners for attachments to concrete slabs.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "7",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Raceway supports: Hanger spacing shall be as required for adequate support of the raceway, but in no case shall there be less than one hanger per 8 feet of raceway length.",
+      "level_type": "content",
+      "number": null,
+      "content": "Raceway supports: Hanger spacing shall be as required for adequate support of the raceway, but in no case shall there be less than one hanger per 8 feet of raceway length.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "7",
+      "numbering_level": 0,
+      "style_name": "Normal"
+    },
+    {
+      "text": "10. \tLocate all structural elements within existing concrete prior to pre-drilling or setting anchors. Contractor is responsible for repairing all damage to structural elements resulting from the scope of this work.",
+      "level_type": "list",
+      "number": "10",
+      "content": "Locate all structural elements within existing concrete prior to pre-drilling or setting anchors. Contractor is responsible for repairing all damage to structural elements resulting from the scope of this work.",
+      "level_number": 3,
+      "bwa_level_name": "BWA_Level_3",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "3.02 \tCONCRETE BASES",
+      "level_type": "subsection",
+      "number": "3.02",
+      "content": "CONCRETE BASES",
+      "level_number": 1,
+      "bwa_level_name": "BWA_Level_1",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "Provide dowel rods to connect concrete bases to concrete floors/slabs/substrates. Unless otherwise indicated, install dowel rods on maximum 18-inch centers around the full perimeter of concrete base.",
+      "level_type": "content",
+      "number": null,
+      "content": "Provide dowel rods to connect concrete bases to concrete floors/slabs/substrates. Unless otherwise indicated, install dowel rods on maximum 18-inch centers around the full perimeter of concrete base.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "8",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Provide epoxy-coated anchor bolts that extend through concrete base and anchor into structural concrete floor/slab/substrate, unless concrete bases are installed directly on grade. Place and secure anchorage devices. Use setting drawings, templates, diagrams, instructions, and directions furnished with items to be embedded. Install anchor bolts to elevations required for proper attachment to supported equipment.",
+      "level_type": "content",
+      "number": null,
+      "content": "Provide epoxy-coated anchor bolts that extend through concrete base and anchor into structural concrete floor/slab/substrate, unless concrete bases are installed directly on grade. Place and secure anchorage devices. Use setting drawings, templates, diagrams, instructions, and directions furnished with items to be embedded. Install anchor bolts to elevations required for proper attachment to supported equipment.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "8",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Construct concrete bases of dimensions indicated but not less than 4 inches larger in both directions than supported unit, and so anchors will be a minimum of 10 bolt diameters from edge of the base. Coordinate sizes and locations of concrete bases with actual equipment provided. Cast galvanized or stainless-steel anchor-bolt inserts into bases.",
+      "level_type": "content",
+      "number": null,
+      "content": "Construct concrete bases of dimensions indicated but not less than 4 inches larger in both directions than supported unit, and so anchors will be a minimum of 10 bolt diameters from edge of the base. Coordinate sizes and locations of concrete bases with actual equipment provided. Cast galvanized or stainless-steel anchor-bolt inserts into bases.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "8",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Indoor bases shall be at least 4\" thick and shall have straight and finished sides and a 1\"-45 degree chamfer at the top perimeter. Reinforcing steel bars shall be placed in both directions of the bases. Where required for supplemental support, provide lateral support work to adjacent wall(s). Provide concrete bases/housekeeping pads beneath all electrical power and systems distribution equipment that is floor mounted or wall mounted within 4\" of the floor.",
+      "level_type": "content",
+      "number": null,
+      "content": "Indoor bases shall be at least 4\" thick and shall have straight and finished sides and a 1\"-45 degree chamfer at the top perimeter. Reinforcing steel bars shall be placed in both directions of the bases. Where required for supplemental support, provide lateral support work to adjacent wall(s). Provide concrete bases/housekeeping pads beneath all electrical power and systems distribution equipment that is floor mounted or wall mounted within 4\" of the floor.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "8",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Outdoor bases shall be at least 6\" thick and shall have straight and finished sides and a 1\"-45 degree chamfer at the top perimeter. Perimeter of pads shall extend down below the frostline. Reinforcing steel bars shall be placed in both directions of the bases and a mesh overlay shall be provided. Where required for supplemental support, provide lateral support work to adjacent wall(s). Provide concrete bases/housekeeping pads beneath all electrical power and systems distribution equipment that is slab or grade mounted or mounted within 6\" of slab or grade.",
+      "level_type": "content",
+      "number": null,
+      "content": "Outdoor bases shall be at least 6\" thick and shall have straight and finished sides and a 1\"-45 degree chamfer at the top perimeter. Perimeter of pads shall extend down below the frostline. Reinforcing steel bars shall be placed in both directions of the bases and a mesh overlay shall be provided. Where required for supplemental support, provide lateral support work to adjacent wall(s). Provide concrete bases/housekeeping pads beneath all electrical power and systems distribution equipment that is slab or grade mounted or mounted within 6\" of slab or grade.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "8",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Unless indicated otherwise in specifications or on drawings, use minimum 3000-psi, 28-day compressive-strength concrete. Size and provide concrete bases so expansion anchors will be a minimum of 10 bolt diameters from the edge of the concrete base.",
+      "level_type": "content",
+      "number": null,
+      "content": "Unless indicated otherwise in specifications or on drawings, use minimum 3000-psi, 28-day compressive-strength concrete. Size and provide concrete bases so expansion anchors will be a minimum of 10 bolt diameters from the edge of the concrete base.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "8",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Forms: As required for equipment pads or other special applications in field, provide forms made of steel, wood, or other suitable material of size and strength to resist movement during concrete placement, and to retain horizontal and vertical alignment until removal. Use straight forms, free of distortion and defects. Use flexible spring steel forms or laminated boards to form radius bends. Do not remove forms for 24 hours after concrete has been placed. Set forms to required grades and lines, rigidly braced and secured. Provide sufficient quantity of forms to allow continuous progress of work, and so that forms can remain in place at least 24 hours after concrete placement. Clean forms after each use, and coat with form release agent as often as required to ensure separation from concrete without damage. Form areas that involve termination of spare conduits below grade, or that involve continuation of conduits by others, accordingly to accommodate easy future access to the ends of conduits for future extensions.",
+      "level_type": "content",
+      "number": null,
+      "content": "Forms: As required for equipment pads or other special applications in field, provide forms made of steel, wood, or other suitable material of size and strength to resist movement during concrete placement, and to retain horizontal and vertical alignment until removal. Use straight forms, free of distortion and defects. Use flexible spring steel forms or laminated boards to form radius bends. Do not remove forms for 24 hours after concrete has been placed. Set forms to required grades and lines, rigidly braced and secured. Provide sufficient quantity of forms to allow continuous progress of work, and so that forms can remain in place at least 24 hours after concrete placement. Clean forms after each use, and coat with form release agent as often as required to ensure separation from concrete without damage. Form areas that involve termination of spare conduits below grade, or that involve continuation of conduits by others, accordingly to accommodate easy future access to the ends of conduits for future extensions.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "8",
+      "numbering_level": 0,
+      "style_name": "Normal"
+    },
+    {
+      "text": "Reinforcement: Cut bars true to length with ends square and free of burrs. Provide metal expansion caps for one end of each dowel bar in expansion joints. Design caps with one end closed and a minimum length of 3\" to allow bars movement of not less than 1\", unless otherwise indicated. Provide these for joining applications where continuous pouring cannot be accomplished.",
+      "level_type": "content",
+      "number": null,
+      "content": "Reinforcement: Cut bars true to length with ends square and free of burrs. Provide metal expansion caps for one end of each dowel bar in expansion joints. Design caps with one end closed and a minimum length of 3\" to allow bars movement of not less than 1\", unless otherwise indicated. Provide these for joining applications where continuous pouring cannot be accomplished.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "8",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Concrete Placement: Remove loose material from subbase surface immediately before placing concrete. Check subbase and forms for line and grade before placing concrete. Moisten subbase if required to provide a uniform dampened condition at time concrete is placed. Place concrete using methods that prevent segregation of mix. Use splash boards to divert the flow of concrete away from the trench sides, and to avoid dislodging soil and stones. Coordinate with Owner's Representative at least 72 hours prior to placing concrete. Line up concrete trucks as required to achieve one continuous pour where applicable. Do not backfill until a minimum of 48 hours have passed.",
+      "level_type": "content",
+      "number": null,
+      "content": "Concrete Placement: Remove loose material from subbase surface immediately before placing concrete. Check subbase and forms for line and grade before placing concrete. Moisten subbase if required to provide a uniform dampened condition at time concrete is placed. Place concrete using methods that prevent segregation of mix. Use splash boards to divert the flow of concrete away from the trench sides, and to avoid dislodging soil and stones. Coordinate with Owner's Representative at least 72 hours prior to placing concrete. Line up concrete trucks as required to achieve one continuous pour where applicable. Do not backfill until a minimum of 48 hours have passed.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "8",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "J. \tConcrete Finishing: Smooth surface by screeding after striking-off and consolidating concrete. Provide Class A finishing. Broom finish concrete pads, and aprons around pullboxes and structures. Protect concrete from damage until acceptance of work. Exclude traffic over affected areas for at least 14 days after placement.",
+      "level_type": "item",
+      "number": "J",
+      "content": "Concrete Finishing: Smooth surface by screeding after striking-off and consolidating concrete. Provide Class A finishing. Broom finish concrete pads, and aprons around pullboxes and structures. Protect concrete from damage until acceptance of work. Exclude traffic over affected areas for at least 14 days after placement.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "K.\tFor pad mounted generator follow manufacturers installation instructions. Unless directed otherwise by manufacturer, pad to be a minimum of 6\" above finished grade with overall depth as required for pad weight to be greater than or equal to the combined weight of generator, enclosure, and a full fuel tank. maintain a minimum of 36\" around the perimeter of the enclosure.  Provide minimum 3000psi concrete with broom finish and #6 rebar spaced 12\" on-center along length and width at top and bottom with 3\" from surface on all sides; refer to structural plans for additional details.",
+      "level_type": "item",
+      "number": "K",
+      "content": "For pad mounted generator follow manufacturers installation instructions. Unless directed otherwise by manufacturer, pad to be a minimum of 6\" above finished grade with overall depth as required for pad weight to be greater than or equal to the combined weight of generator, enclosure, and a full fuel tank. maintain a minimum of 36\" around the perimeter of the enclosure.  Provide minimum 3000psi concrete with broom finish and #6 rebar spaced 12\" on-center along length and width at top and bottom with 3\" from surface on all sides; refer to structural plans for additional details.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "3.03 \tPLYWOOD EQUIPMENT BOARDS",
+      "level_type": "subsection",
+      "number": "3.03",
+      "content": "PLYWOOD EQUIPMENT BOARDS",
+      "level_number": 1,
+      "bwa_level_name": "BWA_Level_1",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Default"
+    },
+    {
+      "text": "Plywood Equipment Boards: Lumber shall be preservative treated in accordance with AWPB LP-2, and kiln dried to a moisture content of not more than 19 percent. Provide plywood panels; APA C-D PLUGGED INT, with exterior glue; thickness as indicated, or if not indicated, not less than 3/4 inches deep. Provide marine grade plywood where subject to moisture conditions. Provide Simpson Strong Tie (or equal) expansion screw anchors.",
+      "level_type": "content",
+      "number": null,
+      "content": "Plywood Equipment Boards: Lumber shall be preservative treated in accordance with AWPB LP-2, and kiln dried to a moisture content of not more than 19 percent. Provide plywood panels; APA C-D PLUGGED INT, with exterior glue; thickness as indicated, or if not indicated, not less than 3/4 inches deep. Provide marine grade plywood where subject to moisture conditions. Provide Simpson Strong Tie (or equal) expansion screw anchors.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "9",
+      "numbering_level": 0,
+      "style_name": "Default"
+    },
+    {
+      "text": "Unless otherwise noted, boards shall be fire rated or painted with two coats of good grade weatherproof flat gray non-conductive fire-retardant paint on all sides and edges (prior to mounting) and plumbed in a true vertical position. If fire rated board is used, leave all applicable rating label visible after painting. Provide nominal 1/2\" rustproof spacers between back of plywood and wall. Cut, fit, and place plywood equipment boards accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Select fastener sizes that will not penetrate members where opposite side will be exposed to view or will receive finish materials. Make tight connections between members. Install fasteners without splitting wood members. Attach to substrates as required to support applied loads. Maintain at least 4 inches from bottom of plywood equipment boards and the finished floor surface.",
+      "level_type": "content",
+      "number": null,
+      "content": "Unless otherwise noted, boards shall be fire rated or painted with two coats of good grade weatherproof flat gray non-conductive fire-retardant paint on all sides and edges (prior to mounting) and plumbed in a true vertical position. If fire rated board is used, leave all applicable rating label visible after painting. Provide nominal 1/2\" rustproof spacers between back of plywood and wall. Cut, fit, and place plywood equipment boards accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Select fastener sizes that will not penetrate members where opposite side will be exposed to view or will receive finish materials. Make tight connections between members. Install fasteners without splitting wood members. Attach to substrates as required to support applied loads. Maintain at least 4 inches from bottom of plywood equipment boards and the finished floor surface.",
+      "level_number": 0,
+      "bwa_level_name": null,
+      "numbering_id": "9",
+      "numbering_level": 0,
+      "style_name": "Normal"
+    },
+    {
+      "text": "C. \tUnless directed otherwise in field, plywood equipment boards shall be 8 feet high by 3/4 inches deep by length shown on drawings (as dimensioned or as scaled) or length as required to accommodate equipment if not indicated on drawings.",
+      "level_type": "item",
+      "number": "C",
+      "content": "Unless directed otherwise in field, plywood equipment boards shall be 8 feet high by 3/4 inches deep by length shown on drawings (as dimensioned or as scaled) or length as required to accommodate equipment if not indicated on drawings.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+    {
+      "text": "END OF SECTION",
+      "level_type": "end_of_section",
+      "number": null,
+      "content": "",
+      "level_number": null,
+      "bwa_level_name": null,
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    }
+  ],
+  "template_analysis": {
+    "template_path": "../templates/test_template_cleaned.docx",
+    "bwa_list_levels": {
+      "BWA-PART": {
+        "level_number": null,
+        "numbering_id": null,
+        "abstract_num_id": null,
+        "level_text": null,
+        "number_format": null,
+        "start_value": null,
+        "suffix": null,
+        "justification": null,
+        "style_name": "BWA-PART",
+        "bwa_label": null,
+        "is_bwa_level": true
+      },
+      "BWA-SUBSECTION": {
+        "level_number": null,
+        "numbering_id": null,
+        "abstract_num_id": null,
+        "level_text": null,
+        "number_format": null,
+        "start_value": null,
+        "suffix": null,
+        "justification": null,
+        "style_name": "BWA-SUBSECTION",
+        "bwa_label": null,
+        "is_bwa_level": true
+      },
+      "BWA-Item": {
+        "level_number": null,
+        "numbering_id": null,
+        "abstract_num_id": null,
+        "level_text": null,
+        "number_format": null,
+        "start_value": null,
+        "suffix": null,
+        "justification": null,
+        "style_name": "BWA-Item",
+        "bwa_label": null,
+        "is_bwa_level": true
+      },
+      "BWA-List": {
+        "level_number": null,
+        "numbering_id": null,
+        "abstract_num_id": null,
+        "level_text": null,
+        "number_format": null,
+        "start_value": null,
+        "suffix": null,
+        "justification": null,
+        "style_name": "BWA-List",
+        "bwa_label": null,
+        "is_bwa_level": true
+      },
+      "BWA-SubItem": {
+        "level_number": null,
+        "numbering_id": null,
+        "abstract_num_id": null,
+        "level_text": null,
+        "number_format": null,
+        "start_value": null,
+        "suffix": null,
+        "justification": null,
+        "style_name": "BWA-SubItem",
+        "bwa_label": null,
+        "is_bwa_level": true
+      },
+      "BWA-SubList": {
+        "level_number": null,
+        "numbering_id": null,
+        "abstract_num_id": null,
+        "level_text": null,
+        "number_format": null,
+        "start_value": null,
+        "suffix": null,
+        "justification": null,
+        "style_name": "BWA-SubList",
+        "bwa_label": null,
+        "is_bwa_level": true
+      },
+      "BWA-SubSubItem": {
+        "level_number": null,
+        "numbering_id": null,
+        "abstract_num_id": null,
+        "level_text": null,
+        "number_format": null,
+        "start_value": null,
+        "suffix": null,
+        "justification": null,
+        "style_name": "BWA-SubSubItem",
+        "bwa_label": null,
+        "is_bwa_level": true
+      },
+      "BWA-SubSubList": {
+        "level_number": null,
+        "numbering_id": null,
+        "abstract_num_id": null,
+        "level_text": null,
+        "number_format": null,
+        "start_value": null,
+        "suffix": null,
+        "justification": null,
+        "style_name": "BWA-SubSubList",
+        "bwa_label": null,
+        "is_bwa_level": true
+      }
+    },
+    "template_numbering": {
+      "0": {
+        "levels": {
+          "0": {
+            "ilvl": "0",
+            "lvlText": "PART %1 - ",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": "nothing",
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {},
+            "rPr": {}
+          },
+          "1": {
+            "ilvl": "1",
+            "lvlText": "SCHEDULE %2 - ",
+            "numFmt": "decimal",
+            "start": null,
+            "suff": "nothing",
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {},
+            "rPr": {}
+          },
+          "2": {
+            "ilvl": "2",
+            "lvlText": "PRODUCT DATA SHEET %3 - ",
+            "numFmt": "decimal",
+            "start": null,
+            "suff": "nothing",
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {},
+            "rPr": {}
+          },
+          "3": {
+            "ilvl": "3",
+            "lvlText": "%1.%4",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "864",
+                "right": null,
+                "hanging": "864",
+                "firstLine": null
+              }
+            },
+            "rPr": {}
+          },
+          "4": {
+            "ilvl": "4",
+            "lvlText": "%5.",
+            "numFmt": "upperLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "864",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {}
+          },
+          "5": {
+            "ilvl": "5",
+            "lvlText": "%6.",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "RPA3-PR2",
+            "pPr": {
+              "indent": {
+                "left": "1440",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {}
+          },
+          "6": {
+            "ilvl": "6",
+            "lvlText": "%7.",
+            "numFmt": "lowerLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "RPA3-PR3",
+            "pPr": {
+              "indent": {
+                "left": "2016",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {}
+          },
+          "7": {
+            "ilvl": "7",
+            "lvlText": "%8)",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "RPA3-PR4",
+            "pPr": {
+              "indent": {
+                "left": "2592",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {}
+          },
+          "8": {
+            "ilvl": "8",
+            "lvlText": "%9)",
+            "numFmt": "lowerLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "RPA3-PR5",
+            "pPr": {
+              "indent": {
+                "left": "3168",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {}
+          }
+        },
+        "bwa_label": null,
+        "nsid": null,
+        "multiLevelType": null,
+        "tmpl": null
+      },
+      "1": {
+        "levels": {
+          "0": {
+            "ilvl": "0",
+            "lvlText": "%1.0",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "BWA-PART",
+            "pPr": {
+              "indent": {
+                "left": "576",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20",
+              "bold": "0",
+              "italic": "0"
+            }
+          },
+          "1": {
+            "ilvl": "1",
+            "lvlText": "%1.%2",
+            "numFmt": "decimalZero",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "BWA-SUBSECTION",
+            "pPr": {
+              "indent": {
+                "left": "1152",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20",
+              "bold": "0",
+              "italic": "0"
+            }
+          },
+          "2": {
+            "ilvl": "2",
+            "lvlText": "%3.",
+            "numFmt": "upperLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "BWA-Item",
+            "pPr": {
+              "indent": {
+                "left": "1728",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20",
+              "bold": "0",
+              "italic": "0"
+            }
+          },
+          "3": {
+            "ilvl": "3",
+            "lvlText": "%4.",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "BWA-List",
+            "pPr": {
+              "indent": {
+                "left": "2304",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20",
+              "bold": "0",
+              "italic": "0"
+            }
+          },
+          "4": {
+            "ilvl": "4",
+            "lvlText": "%5.",
+            "numFmt": "lowerLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "BWA-SubItem",
+            "pPr": {
+              "indent": {
+                "left": "2880",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20",
+              "bold": "0",
+              "italic": "0"
+            }
+          },
+          "5": {
+            "ilvl": "5",
+            "lvlText": "%6.",
+            "numFmt": "lowerRoman",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "BWA-SubList",
+            "pPr": {
+              "indent": {
+                "left": "3456",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20",
+              "bold": "0",
+              "italic": "0"
+            }
+          },
+          "6": {
+            "ilvl": "6",
+            "lvlText": "%7)",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "BWA-SubSubItem",
+            "pPr": {
+              "indent": {
+                "left": "4032",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20",
+              "bold": "0",
+              "italic": "0"
+            }
+          },
+          "7": {
+            "ilvl": "7",
+            "lvlText": "%8)",
+            "numFmt": "lowerLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": "BWA-SubSubList",
+            "pPr": {
+              "indent": {
+                "left": "4608",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20",
+              "bold": "0",
+              "italic": "0"
+            }
+          },
+          "8": {
+            "ilvl": "8",
+            "lvlText": "%9)",
+            "numFmt": "lowerRoman",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "5184",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20",
+              "bold": "0",
+              "italic": "0"
+            }
+          }
+        },
+        "bwa_label": null,
+        "nsid": null,
+        "multiLevelType": null,
+        "tmpl": null
+      },
+      "2": {
+        "levels": {
+          "0": {
+            "ilvl": "0",
+            "lvlText": "1.%1",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "864",
+                "right": null,
+                "hanging": "864",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": null,
+                "cs": null
+              },
+              "sz": "20"
+            }
+          },
+          "1": {
+            "ilvl": "1",
+            "lvlText": "%2.",
+            "numFmt": "upperLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "864",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "2": {
+            "ilvl": "2",
+            "lvlText": "%3.",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "1440",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "3": {
+            "ilvl": "3",
+            "lvlText": "%4.",
+            "numFmt": "lowerLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "2016",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "4": {
+            "ilvl": "4",
+            "lvlText": "%5)",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "2592",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "5": {
+            "ilvl": "5",
+            "lvlText": "%6)",
+            "numFmt": "lowerLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "right",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "3744",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "6": {
+            "ilvl": "6",
+            "lvlText": "%7.",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "7560",
+                "right": null,
+                "hanging": "1080",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "7": {
+            "ilvl": "7",
+            "lvlText": "%8.",
+            "numFmt": "lowerLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "8640",
+                "right": null,
+                "hanging": "1080",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "8": {
+            "ilvl": "8",
+            "lvlText": "%9.",
+            "numFmt": "lowerRoman",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "right",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "9720",
+                "right": null,
+                "hanging": "1080",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          }
+        },
+        "bwa_label": null,
+        "nsid": null,
+        "multiLevelType": null,
+        "tmpl": null
+      },
+      "3": {
+        "levels": {
+          "0": {
+            "ilvl": "0",
+            "lvlText": "1.%1",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "576",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "1": {
+            "ilvl": "1",
+            "lvlText": "%2.",
+            "numFmt": "upperLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "1152",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "2": {
+            "ilvl": "2",
+            "lvlText": "%3.",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "1728",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "3": {
+            "ilvl": "3",
+            "lvlText": "%4.",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "2304",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "4": {
+            "ilvl": "4",
+            "lvlText": "%5.",
+            "numFmt": "lowerLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "2880",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "5": {
+            "ilvl": "5",
+            "lvlText": "%6.",
+            "numFmt": "lowerRoman",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "3456",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "6": {
+            "ilvl": "6",
+            "lvlText": "%7.",
+            "numFmt": "decimal",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "4032",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "7": {
+            "ilvl": "7",
+            "lvlText": "%8.",
+            "numFmt": "lowerLetter",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "left",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "4608",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          },
+          "8": {
+            "ilvl": "8",
+            "lvlText": "%9.",
+            "numFmt": "lowerRoman",
+            "start": "1",
+            "suff": null,
+            "lvlJc": "right",
+            "pStyle": null,
+            "pPr": {
+              "indent": {
+                "left": "5184",
+                "right": null,
+                "hanging": "576",
+                "firstLine": null
+              }
+            },
+            "rPr": {
+              "rFonts": {
+                "ascii": null,
+                "hAnsi": null,
+                "eastAsia": null,
+                "cs": null
+              }
+            }
+          }
+        },
+        "bwa_label": null,
+        "nsid": null,
+        "multiLevelType": null,
+        "tmpl": null
+      },
+      "num_1": {
+        "abstract_num_id": "3",
+        "bwa_label": null
+      },
+      "num_2": {
+        "abstract_num_id": "2",
+        "bwa_label": null
+      },
+      "num_3": {
+        "abstract_num_id": "0",
+        "bwa_label": null
+      },
+      "num_4": {
+        "abstract_num_id": "0",
+        "bwa_label": null
+      },
+      "num_5": {
+        "abstract_num_id": "0",
+        "bwa_label": null
+      },
+      "num_6": {
+        "abstract_num_id": "0",
+        "bwa_label": null
+      },
+      "num_7": {
+        "abstract_num_id": "0",
+        "bwa_label": null
+      },
+      "num_8": {
+        "abstract_num_id": "0",
+        "bwa_label": null
+      },
+      "num_9": {
+        "abstract_num_id": "0",
+        "bwa_label": null
+      },
+      "num_10": {
+        "abstract_num_id": "1",
+        "bwa_label": null
+      }
+    },
+    "level_mappings": {
+      "1": "3",
+      "2": "2",
+      "3": "0",
+      "4": "0",
+      "5": "0",
+      "6": "0",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "1"
+    },
+    "summary": {
+      "total_abstract_numbering": 4,
+      "total_num_mappings": 10,
+      "total_bwa_levels": 8,
+      "level_mappings_count": 10,
+      "level_types": {},
+      "analysis_timestamp": "2025-07-15T14:04:06.058074"
+    }
+  }
+}

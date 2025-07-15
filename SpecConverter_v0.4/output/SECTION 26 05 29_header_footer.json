@@ -1,0 +1,25 @@
+{
+  "header": {
+    "paragraphs": [
+      "BW&A 26 05 29                                                                                           26 05 29-1",
+      "RW 7-7-25                                                            Hangers and Supports for Electrical Systems"
+    ],
+    "tables": [],
+    "text_boxes": []
+  },
+  "footer": {
+    "paragraphs": [],
+    "tables": [],
+    "text_boxes": []
+  },
+  "margins": {
+    "top_margin": 1.0,
+    "bottom_margin": 1.0,
+    "left_margin": 1.0,
+    "right_margin": 1.0,
+    "header_distance": 0.3,
+    "footer_distance": 0.3
+  },
+  "extraction_timestamp": "2025-07-15T14:04:06.239881",
+  "source_file": "SECTION 26 05 29"
+}

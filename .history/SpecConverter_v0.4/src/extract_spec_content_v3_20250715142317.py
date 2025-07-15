@@ -264,37 +264,51 @@ class SpecContentExtractorV3:
     def map_to_bwa_level(self, paragraph, level_type: str) -> Tuple[Optional[int], Optional[str]]:
         """Map paragraph to BWA list level based on template analysis"""
         try:
-            # Standard mapping for level_number
-            level_mapping = {
-                "part": 0,
-                "part_title": 0,
-                "subsection": 1,
-                "subsection_title": 1,
-                "item": 2,
-                "list": 3,
-                "sub_list": 4
-            }
-            level_number = level_mapping.get(level_type)
-
-            # Map to BWA style name for label
+            # Get paragraph numbering info
+            level = self.get_paragraph_level(paragraph)
+            numbering_id = self.get_paragraph_numbering_id(paragraph)
+            style_name = paragraph.style.name if paragraph.style else None
+            
+            # Try to find BWA level by numbering ID first
+            if numbering_id and f"num_{numbering_id}" in self.bwa_list_levels:
+                bwa_info = self.bwa_list_levels[f"num_{numbering_id}"]
+                return bwa_info.level_number, bwa_info.bwa_label
+            
+            # Try to find BWA level by style name
+            if style_name and style_name in self.bwa_list_levels:
+                bwa_info = self.bwa_list_levels[style_name]
+                return bwa_info.level_number, bwa_info.bwa_label
+            
+            # Map based on level type to BWA style names
             level_type_to_bwa_mapping = {
                 "part": "BWA-PART",
-                "part_title": "BWA-PART",
+                "part_title": "BWA-PART", 
                 "subsection": "BWA-SUBSECTION",
                 "subsection_title": "BWA-SUBSECTION",
                 "item": "BWA-Item",
                 "list": "BWA-List",
                 "sub_list": "BWA-SubList"
             }
-            bwa_level_name = None
+            
             if level_type in level_type_to_bwa_mapping:
                 bwa_style_name = level_type_to_bwa_mapping[level_type]
+                # Find the corresponding level number from template
                 if bwa_style_name in self.bwa_list_levels:
-                    bwa_level_name = bwa_style_name
+                    bwa_info = self.bwa_list_levels[bwa_style_name]
+                    return bwa_info.level_number, bwa_style_name
                 else:
-                    bwa_level_name = bwa_style_name  # Even if not in template, use the label
-
-            return level_number, bwa_level_name
+                    # Fallback level numbers if BWA style not found in template
+                    fallback_levels = {
+                        "BWA-PART": 0,
+                        "BWA-SUBSECTION": 1,
+                        "BWA-Item": 2,
+                        "BWA-List": 3,
+                        "BWA-SubList": 4
+                    }
+                    return fallback_levels.get(bwa_style_name), bwa_style_name
+            
+            return level, None
+            
         except Exception as e:
             print(f"Error mapping to BWA level: {e}")
             return None, None
