@@ -223,7 +223,27 @@ class SpecContentExtractorV3:
         if match:
             return "subsection", match.group(1), match.group(2)
         
-        # Check for item level (A., B., C., etc.) - MOVED BEFORE subsection titles
+        # Check for subsection titles without numbering
+        subsection_titles = [
+            "SCOPE", "EXISTING CONDITIONS", "CODES AND REGULATIONS", "DEFINITIONS",
+            "DRAWINGS AND SPECIFICATIONS", "SITE VISIT", "DEVIATIONS",
+            "STANDARDS FOR MATERIALS AND WORKMANSHIP", "SHOP DRAWINGS AND SUBMITTAL",
+            "RECORD (AS-BUILT) DRAWINGS AND MAINTENANCE MANUALS",
+            "COORDINATION", "PROTECTION OF MATERIALS", "TESTS, DEMONSTRATION AND INSTRUCTIONS",
+            "GUARANTEE"
+        ]
+        
+        # Check for exact match
+        if text.upper() in [title.upper() for title in subsection_titles]:
+            return "subsection_title", None, text
+        
+        # Check for partial matches
+        text_upper = text.upper().strip()
+        for title in subsection_titles:
+            if title.upper() in text_upper or text_upper in title.upper():
+                return "subsection_title", None, title
+        
+        # Check for item level (A., B., C., etc.)
         match = self.item_pattern.match(text)
         if match:
             return "item", match.group(1), match.group(2)
@@ -237,26 +257,6 @@ class SpecContentExtractorV3:
         match = self.sub_list_pattern.match(text)
         if match:
             return "sub_list", match.group(1), match.group(2)
-        
-        # Check for subsection titles without numbering - MOVED AFTER item patterns
-        subsection_titles = [
-            "SCOPE", "EXISTING CONDITIONS", "CODES AND REGULATIONS", "DEFINITIONS",
-            "DRAWINGS AND SPECIFICATIONS", "SITE VISIT", "DEVIATIONS",
-            "STANDARDS FOR MATERIALS AND WORKMANSHIP", "SHOP DRAWINGS AND SUBMITTAL",
-            "RECORD (AS-BUILT) DRAWINGS AND MAINTENANCE MANUALS",
-            "COORDINATION", "PROTECTION OF MATERIALS", "TESTS, DEMONSTRATION AND INSTRUCTIONS",
-            "GUARANTEE"
-        ]
-        
-        # Check for exact match first (more specific)
-        if text.upper() in [title.upper() for title in subsection_titles]:
-            return "subsection_title", None, text
-        
-        # Check for partial matches last (less specific)
-        text_upper = text.upper().strip()
-        for title in subsection_titles:
-            if title.upper() in text_upper or text_upper in title.upper():
-                return "subsection_title", None, title
         
         # If no pattern matches, it's regular content
         return "content", None, text
