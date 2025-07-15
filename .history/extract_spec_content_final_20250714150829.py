@@ -380,9 +380,8 @@ class SpecContentExtractor:
             print(f"\nSummary: {analysis_data['summary']}")
             print("--- End Comprehensive Template Analysis ---\n")
             
-            # Save analysis to JSON file in output directory
-            analysis_file = os.path.join("output", "template_analysis.json")
-            os.makedirs(os.path.dirname(analysis_file), exist_ok=True)
+            # Save analysis to JSON file
+            analysis_file = "template_analysis.json"
             with open(analysis_file, 'w', encoding='utf-8') as f:
                 json.dump(analysis_data, f, indent=2, ensure_ascii=False)
             print(f"Template analysis saved to: {analysis_file}")
@@ -453,9 +452,8 @@ class SpecContentExtractor:
                 return "sub_item", None, text
             elif 'LIST' in text.upper():
                 return "sub_list", None, text
-        
-        # Default case - return content
-        return "content", None, text
+        else:
+            return "content", None, text
 
     def analyze_template_structure(self, paragraphs: List[str]) -> Dict[str, Dict]:
         """Analyze template to extract hierarchical levels and structure"""
@@ -1228,7 +1226,6 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python extract_spec_content_final.py <docx_file> [output_dir] [template_file]")
         print("Example: python extract_spec_content_final.py 'SECTION 26 05 00.docx' . 'test_template.docx'")
-        print("Note: All output files will be saved to <output_dir>/output/")
         sys.exit(1)
     
     docx_path = sys.argv[1]
@@ -1239,26 +1236,11 @@ def main():
         print(f"Error: File '{docx_path}' not found.")
         sys.exit(1)
     
-    # Auto-detect cleaned template if no template specified
-    if not template_path:
-        # Look for common template names with _cleaned suffix
-        possible_templates = [
-            "test_template_cleaned.docx",
-            "template_cleaned.docx", 
-            "spec_template_cleaned.docx"
-        ]
-        for template in possible_templates:
-            if os.path.exists(template):
-                template_path = template
-                print(f"Auto-detected cleaned template: {template_path}")
-                break
-    
     if template_path and not os.path.exists(template_path):
         print(f"Warning: Template file '{template_path}' not found. Proceeding without template validation.")
         template_path = None
     
     # Create output directory if it doesn't exist
-    output_dir = os.path.join(output_dir, "output")
     os.makedirs(output_dir, exist_ok=True)
     
     # Initialize extractor with template if provided

@@ -87,12 +87,9 @@ class SpecContentExtractor:
         """Load and analyze template structure for validation"""
         try:
             print(f"Loading template structure from: {template_path}")
-            
-            # Perform comprehensive template analysis FIRST (before any other processing)
-            self.comprehensive_template_analysis(template_path)
-            
-            # Now extract paragraphs for template structure analysis
             doc = Document(template_path)
+            
+            # Extract all paragraphs
             paragraphs = []
             for paragraph in doc.paragraphs:
                 text = paragraph.text.strip()
@@ -110,6 +107,9 @@ class SpecContentExtractor:
             self.template_structure = self.analyze_template_structure(paragraphs)
             print(f"Template structure loaded with {len(self.template_structure)} subsections")
             
+            # Perform comprehensive template analysis
+            self.comprehensive_template_analysis(template_path)
+            
         except Exception as e:
             print(f"Warning: Could not load template structure: {e}")
             self.template_structure = {}
@@ -119,10 +119,7 @@ class SpecContentExtractor:
         try:
             print("\n--- Comprehensive Template Analysis ---")
             
-            # Create a fresh Document object specifically for template analysis
             doc = Document(template_path)
-            
-            # Create a completely separate analysis data structure
             analysis_data = {
                 "template_path": template_path,
                 "analysis_timestamp": datetime.now().isoformat(),
@@ -151,19 +148,36 @@ class SpecContentExtractor:
                         para_data["word_numbering"]["ilvl"] = pPr.numPr.ilvl.val
                     if pPr.numPr.numId is not None:
                         para_data["word_numbering"]["numId"] = pPr.numPr.numId.val
+                        
+                        # Get the abstract numbering definition for this numId
+                        num_id = str(pPr.numPr.numId.val)
+                        if "num_mappings" in analysis_data and num_id in analysis_data["num_mappings"]:
+                            num_mapping = analysis_data["num_mappings"][num_id]
+                            para_data["word_numbering"]["abstract_num_id"] = num_mapping["abstract_num_id"]
+                            
+                            # Get level-specific info
+                            ilvl = para_data["word_numbering"].get("ilvl")
+                            if ilvl is not None and "abstract_num_data" in num_mapping:
+                                abstract_data = num_mapping["abstract_num_data"]
+                                if "levels" in abstract_data and str(ilvl) in abstract_data["levels"]:
+                                    level_data = abstract_data["levels"][str(ilvl)]
+                                    para_data["word_numbering"]["level_info"] = {
+                                        "pattern": level_data.get("lvlText"),
+                                        "format": level_data.get("numFmt"),
+                                        "start": level_data.get("start"),
+                                        "suffix": level_data.get("suff"),
+                                        "justification": level_data.get("lvlJc")
+                                    }
                 
-                # Classify the paragraph using a local method to avoid interference
+                # Classify the paragraph
                 if para_data["text"]:
-                    level_type, number, content = self._classify_template_paragraph(para_data["text"])
+                    level_type, number, content = self.classify_paragraph_level(para_data["text"])
                     para_data["level_type"] = level_type
                     para_data["number"] = number
                     para_data["content"] = content
                     
                     if para_data["word_numbering"]:
-                        print(f"PARA {i}: {para_data['text']!r}")
-                        print(f"  → level={level_type}, number={number}")
-                        print(f"  → ilvl={para_data['word_numbering'].get('ilvl')}, numId={para_data['word_numbering'].get('numId')}")
-                        print()
+                        print(f"PARA {i}: {para_data['text']!r} → level={level_type}, number={number}, ilvl={para_data['word_numbering'].get('ilvl')}, numId={para_data['word_numbering'].get('numId')}")
                 
                 analysis_data["paragraphs"].append(para_data)
             
@@ -373,16 +387,14 @@ class SpecContentExtractor:
                 "level_counts": level_counts,
                 "numbering_counts": numbering_counts,
                 "numbering_definitions_count": len(analysis_data["numbering_definitions"]),
-                "level_patterns_count": len(analysis_data["level_patterns"]),
-                "num_mappings_count": len(analysis_data.get("num_mappings", {}))
+                "level_patterns_count": len(analysis_data["level_patterns"])
             }
             
             print(f"\nSummary: {analysis_data['summary']}")
             print("--- End Comprehensive Template Analysis ---\n")
             
-            # Save analysis to JSON file in output directory
-            analysis_file = os.path.join("output", "template_analysis.json")
-            os.makedirs(os.path.dirname(analysis_file), exist_ok=True)
+            # Save analysis to JSON file
+            analysis_file = "template_analysis.json"
             with open(analysis_file, 'w', encoding='utf-8') as f:
                 json.dump(analysis_data, f, indent=2, ensure_ascii=False)
             print(f"Template analysis saved to: {analysis_file}")
@@ -428,34 +440,6 @@ class SpecContentExtractor:
                 patterns.append(('sub_list', match.group(1)))
         
         return patterns
-
-    def _classify_template_paragraph(self, text: str) -> Tuple[str, Optional[str], str]:
-        """
-        Classify a template paragraph into its hierarchical level
-        This is a simplified version for template analysis only
-        Returns: (level_type, number, content)
-        """
-        text = text.strip()
-        if not text:
-            return "empty", None, ""
-        
-        # Simple classification for template paragraphs
-        if text.upper().startswith('PART'):
-            return "part", None, text
-        elif text.upper().startswith('SUBSECTION'):
-            return "subsection", None, text
-        elif text.upper().startswith('ITEM'):
-            return "item", None, text
-        elif text.upper().startswith('LIST'):
-            return "list", None, text
-        elif text.upper().startswith('SUB'):
-            if 'ITEM' in text.upper():
-                return "sub_item", None, text
-            elif 'LIST' in text.upper():
-                return "sub_list", None, text
-        
-        # Default case - return content
-        return "content", None, text
 
     def analyze_template_structure(self, paragraphs: List[str]) -> Dict[str, Dict]:
         """Analyze template to extract hierarchical levels and structure"""
@@ -1228,7 +1212,6 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python extract_spec_content_final.py <docx_file> [output_dir] [template_file]")
         print("Example: python extract_spec_content_final.py 'SECTION 26 05 00.docx' . 'test_template.docx'")
-        print("Note: All output files will be saved to <output_dir>/output/")
         sys.exit(1)
     
     docx_path = sys.argv[1]
@@ -1239,26 +1222,11 @@ def main():
         print(f"Error: File '{docx_path}' not found.")
         sys.exit(1)
     
-    # Auto-detect cleaned template if no template specified
-    if not template_path:
-        # Look for common template names with _cleaned suffix
-        possible_templates = [
-            "test_template_cleaned.docx",
-            "template_cleaned.docx", 
-            "spec_template_cleaned.docx"
-        ]
-        for template in possible_templates:
-            if os.path.exists(template):
-                template_path = template
-                print(f"Auto-detected cleaned template: {template_path}")
-                break
-    
     if template_path and not os.path.exists(template_path):
         print(f"Warning: Template file '{template_path}' not found. Proceeding without template validation.")
         template_path = None
     
     # Create output directory if it doesn't exist
-    output_dir = os.path.join(output_dir, "output")
     os.makedirs(output_dir, exist_ok=True)
     
     # Initialize extractor with template if provided

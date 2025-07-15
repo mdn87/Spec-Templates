@@ -1,0 +1,562 @@
+ERROR REPORT - 2025-07-14 15:00:21
+============================================================
+
+Structure Error ERRORS (24 found):
+----------------------------------------
+1. Line 131: Found subsection inside subsection - possible document structure issue
+   Context: 1.01	DESCRIPTION
+   Expected: Item or list content, Found: subsection
+
+2. Line 131: Found subsection inside subsection - possible document structure issue
+   Context: 2.01      SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS
+   Expected: Item or list content, Found: subsection
+
+3. Line 131: Sub-list item found without parent list
+   Context: a. 	Cooper B-Line, Inc.; a division of Cooper Industries.
+   Expected: List 1, 2, 3, etc., Found: Sub-list a
+
+4. Line 131: Sub-list item found without parent list
+   Context: b. 	Empire Tool and Manufacturing Co., Inc.
+   Expected: List 1, 2, 3, etc., Found: Sub-list b
+
+5. Line 131: Sub-list item found without parent list
+   Context: c. 	Hilti, Inc.
+   Expected: List 1, 2, 3, etc., Found: Sub-list c
+
+6. Line 131: Sub-list item found without parent list
+   Context: d.	ITW Ramset/Red Head; a division of Illinois Tool Works, Inc.
+   Expected: List 1, 2, 3, etc., Found: Sub-list d
+
+7. Line 131: Sub-list item found without parent list
+   Context: e. 	MKT Fastening, LLC.
+   Expected: List 1, 2, 3, etc., Found: Sub-list e
+
+8. Line 131: Sub-list item found without parent list
+   Context: f. 	Simpson Strong-Tie Co., Inc.
+   Expected: List 1, 2, 3, etc., Found: Sub-list f
+
+9. Line 131: Sub-list item found without parent list
+   Context: a. 	Outdoors.
+   Expected: List 1, 2, 3, etc., Found: Sub-list a
+
+10. Line 131: Sub-list item found without parent list
+   Context: b. 	Unconditioned Areas.
+   Expected: List 1, 2, 3, etc., Found: Sub-list b
+
+11. Line 131: Sub-list item found without parent list
+   Context: c. 	Garages, including ancillary garage rooms/areas.
+   Expected: List 1, 2, 3, etc., Found: Sub-list c
+
+12. Line 131: Sub-list item found without parent list
+   Context: d. 	Shower areas.
+   Expected: List 1, 2, 3, etc., Found: Sub-list d
+
+13. Line 131: Sub-list item found without parent list
+   Context: e. 	Miscellaneous high-humidity or otherwise corrosive environments.
+   Expected: List 1, 2, 3, etc., Found: Sub-list e
+
+14. Line 131: Found subsection inside subsection - possible document structure issue
+   Context: 3.01 	INSTALLATION
+   Expected: Item or list content, Found: subsection
+
+15. Line 131: Found subsection_title inside subsection - possible document structure issue
+   Context: Locate all structural elements within concrete prior to pre-drilling anchors. Contractor is responsible for repairing all damage to structural elements resulting from the scope of this work. Anchor hole dimensions shall be per manufacturer recommendations. Drill and install anchors to depths as recommended by respective anchor manufacturer. Select and apply anchor products based on collective weight being supported, plus 100% factor of safety.
+   Expected: Item or list content, Found: subsection_title
+
+16. Line 131: Found subsection_title inside subsection - possible document structure issue
+   Context: Do not suspend overhead hangers, or support any other overhead electrical work, from non-poured-concrete roof decks, without coordination with roofing vendor/installer.
+   Expected: Item or list content, Found: subsection_title
+
+17. Line 131: List item found without parent item
+   Context: 11. 	Do not use powder/gas-actuated driven methods.
+   Expected: Item A, B, C, etc., Found: List 11
+
+18. Line 131: List item found without parent item
+   Context: 8. 	Miscellaneous supports:
+   Expected: Item A, B, C, etc., Found: List 8
+
+19. Line 131: Sub-list item found without parent list
+   Context: a. 	Support miscellaneous electrical components as required to produce the same structural safety factors as specified for raceway supports. Install metal channel racks for mounting cabinets, pull boxes, junction boxes, and other devices.
+   Expected: List 1, 2, 3, etc., Found: Sub-list a
+
+20. Line 131: Sub-list item found without parent list
+   Context: b. 	Support outlet boxes directly from the building structure or by bar hangers. Where bar hangers are used, attach the bar to raceways on opposite sides of the box and support the raceway with an approved type of fastener not more than 24 inches from the box.
+   Expected: List 1, 2, 3, etc., Found: Sub-list b
+
+21. Line 131: Sub-list item found without parent list
+   Context: c. 	Support junction boxes, pull boxes and other boxes directly from the building structure.
+   Expected: List 1, 2, 3, etc., Found: Sub-list c
+
+22. Line 131: Found subsection_title inside subsection - possible document structure issue
+   Context: 10. 	Locate all structural elements within existing concrete prior to pre-drilling or setting anchors. Contractor is responsible for repairing all damage to structural elements resulting from the scope of this work.
+   Expected: Item or list content, Found: subsection_title
+
+23. Line 131: Found subsection inside subsection - possible document structure issue
+   Context: 3.02 	CONCRETE BASES
+   Expected: Item or list content, Found: subsection
+
+24. Line 131: Found subsection inside subsection - possible document structure issue
+   Context: 3.03 	PLYWOOD EQUIPMENT BOARDS
+   Expected: Item or list content, Found: subsection
+
+Content Block Error ERRORS (8 found):
+----------------------------------------
+1. Line 131: Found 1 unexpected content blocks in subsection
+   Context: 1.01	DESCRIPTION
+   Expected: Properly structured items and lists, Found: Unexpected content
+
+2. Line 131: Found 12 unexpected content blocks in subsection
+   Content Block:
+   > 2.01      SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS
+   > a. 	Cooper B-Line, Inc.; a division of Cooper Industries.
+   > b. 	Empire Tool and Manufacturing Co., Inc.
+   > c. 	Hilti, Inc.
+   > d.	ITW Ramset/Red Head; a division of Illinois Tool Works, Inc.
+   > e. 	MKT Fastening, LLC.
+   > f. 	Simpson Strong-Tie Co., Inc.
+   > a. 	Outdoors.
+   > b. 	Unconditioned Areas.
+   > c. 	Garages, including ancillary garage rooms/areas.
+   > d. 	Shower areas.
+   > e. 	Miscellaneous high-humidity or otherwise corrosive environments.
+   Expected: Properly structured items and lists, Found: Unexpected content
+
+3. Line 131: Found 4 unexpected content blocks in subsection
+   Content Block:
+   > 3.01 	INSTALLATION
+   > It shall be the responsibility of the electrical contractor to supervise the installation of and pay for all additional members, wood or metal and labor which may be required to support any type of permanent or temporary electrical apparatus employed in the execution of the electrical contractor's work. Provide supports, anchors, sleeves and seals furnished as part of factory-fabricated equipment as required.
+   > Coordinate layout and installation of equipment and components with other construction that penetrates walls or is supported by them, including electrical and other types of equipment, raceways, piping, encumbrances to workspace clearance requirements, and adjacent surfaces. Maintain required workspace clearances and required clearances for equipment access doors and panels.
+   > Provide supports for multiple raceways capable of supporting combined weight of supported systems and its contents, plus minimum 100% factor of safety. Provide equipment supports capable of supporting combined operating weight of supported equipment and connected systems and components. Provide rated strengths adequate in tension, shear, and pullout force to resist maximum loads calculated or imposed for this project, with a minimum structural safety factor of five times the applied force.
+   Expected: Properly structured items and lists, Found: Unexpected content
+
+4. Line 131: Found 12 unexpected content blocks in subsection
+   Content Block:
+   > Locate all structural elements within concrete prior to pre-drilling anchors. Contractor is responsible for repairing all damage to structural elements resulting from the scope of this work. Anchor hole dimensions shall be per manufacturer recommendations. Drill and install anchors to depths as recommended by respective anchor manufacturer. Select and apply anchor products based on collective weight being supported, plus 100% factor of safety.
+   > Comply with NECA 1 and NECA 101 for application and installation requirements of hangers and supports for electrical equipment and systems except if requirements in this Section are stricter.
+   > All electrically related work shall be supported directly from building structural members. Electrically related work shall not be supported from ductwork, ductwork hangers, ceiling supports, existing conduit supports, etc. Install supports with spacing’s indicated and in compliance with NEC requirements, as well as maintaining all requirements of Article 110.26. Cut, fit, and place miscellaneous metal fabrications accurately in location, alignment, and elevation to support and anchor electrical materials and equipment.
+   > Cut, fit, and place miscellaneous metal supports accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Field Welding: Comply with AWS D1.1/D1.1M.
+   > Touchup Painting: Clean field welds and abraded areas of shop paint. Paint exposed areas immediately after erecting hangers and supports. Use same materials as used for shop painting. Comply with SSPC-PA 1 requirements for touching up field-painted surfaces. Apply paint by brush or spray to provide minimum dry film thickness of 2.0 mils. For galvanized surfaces, clean welds, bolted connections, and abraded areas and apply galvanizing-repair paint to comply with ASTM A 780.
+   > Install equipment and enclosures on walls with tops at uniform height unless otherwise indicated, and by bolting units to structural wall or mounting on structural-steel channels bolted to wall. For equipment and enclosures not at walls provide freestanding structural-steel channel racks that are anchored to floor structure and overhead structure.
+   > Use of synthetic or plastic “tie-wraps”, “zip ties”, “wire ties” and similar products are not permitted as a permanent means of anchoring, securing, supporting or otherwise installing any cables, conductors, conduits, raceways, devices, equipment or other electrical work. Provide metal clamps, clips, etc. that are manufactured for use for respective applications where they are used. Use of perforated straps is not permitted.
+   > Route all conduits, raceways and cables (where applicable) parallel and perpendicular to building structural members. Any and all noncompliant work installed by the electrical contractor shall be removed and reinstalled by the electrical contractor to the satisfaction of the Owner's Representative and the Design Professionals, at the expense of the electrical contractor.
+   > All fasteners, hangers and methods of hanging exposed work in finished areas shall be submitted to the Owner's Representative for review before installation. Fasteners shall be zinc-coated, type, grade, and class as required for a neat finished installation.
+   > Space supports for conduits and raceways required by NFPA 70 as a minimum. Minimum rod size shall be 1/4 inch in diameter. For multiple raceways or cables, install trapeze-type supports fabricated with steel slotted, sized so capacity can be increased by at least 100 percent in future without exceeding specified design load limits. Secure raceways and cables to these supports with two-bolt conduit clamps, single-bolt conduit clamps, or single-bolt conduit clamps using spring friction action for retention in support channel as applicable.
+   > Coordinate with installation of roof curbs, equipment supports, and roof penetrations as applicable. Suspend and support overhead electrical work from roof trusses and joists/joist girders only at panel points, at top chord only, unless otherwise indicated. Roof penetrations to have pipe boots or other approved method to maintain warrantee of roof.
+   > Do not drill any concrete structural members or decks without prior case-by-case written approval of means and methods from Owner and Design Professionals.
+   Expected: Properly structured items and lists, Found: Unexpected content
+
+5. Line 131: Found 38 unexpected content blocks in subsection
+   Content Block:
+   > Do not suspend overhead hangers, or support any other overhead electrical work, from non-poured-concrete roof decks, without coordination with roofing vendor/installer.
+   > Field-verify lengths of stems, pendants, cables, suspensions, etc. for all suspended luminaires with Architect.
+   > Strength of Support Assemblies: Where not indicated, select sizes of components so strength will be adequate to carry present and future static loads within specified loading limits. Minimum static design load used for strength determination shall be weight of supported components plus 200 lb. or 100 percent factor of safety, whichever is greater.
+   > Mounting and Anchorage of Surface-Mounted Equipment and Components: Anchor and fasten electrical items and their supports to building structural elements by the following methods unless otherwise indicated by code. Use supported equipment manufacturer's setting drawings, templates, diagrams, instructions, and directions furnished with items to be embedded. Install anchor bolts to elevations required for proper attachment to supported equipment. Install anchor bolts according to anchor-bolt manufacturer's written instructions. Provide female expansion anchors, and install studs and nuts after equipment is positioned. Torque bolts and nuts on studs to values recommended by equipment manufacturer. Provide bushings for floor-mounted equipment anchors to allow for resilient media between anchor bolts/studs and mounting hole in concrete. Provide anchor bolt bushing assemblies for wall-mounted equipment to allow for resilient media where equipment and equipment-mounting channels are attached to wall.
+   > To Wood: Fasten with lag screws or through-bolts. Provide Standard Grade, light-framing-size lumber of any species. Number 3 Common or Standard Grade boards complying with WCLIB or AWPA rules, or Number 3 boards complying with SPIB rules. Lumber shall be preservative treated in accordance with AWPB LP-2, and kiln dried to a moisture content of not more than 19 percent. Provide marine grade products where subject to moisture conditions. Provide Simpson Strong Tie (or equal) expansion screw anchors. Cut, fit, and place wood grounds, nailers, blocking, and anchorage accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Select fastener sizes that will not penetrate members where opposite side will be exposed to view or will receive finish materials. Make tight connections between members. Install fasteners without splitting wood members. Attach to substrates as required to support applied loads.
+   > To Wood Structural Members: Provide bolts installed through members.
+   > To New Concrete: Provide channel-type concrete inserts and bolt to inserts, or provide expansion anchors for applications where inserts are not practical.
+   > To Existing Concrete: Expansion anchor fasteners.
+   > Holes for Expansion Anchors in Concrete: Drill at locations and to depths that avoid reinforcing bars and other structural elements. Review proposed means, methods, locations, etc. in advance with Owner and Design Professionals.
+   > To Masonry: Approved toggle-type bolts on hollow masonry units and expansion anchor fasteners on solid masonry units.
+   > To Steel: Welded threaded steel studs complying with AWS D1.1/D1.1M, with lock washers and nuts, or beam clamps (MSS Type 19, 21, 23, 25, or 27) complying with MSS SP-69, clamped to flanges of beams or on upper truss chords of bar joists.
+   > To Light Steel: Sheet metal screws.
+   > Items Mounted on Hollow Walls and Nonstructural Building Surfaces in finished areas: Provide blocking between studs behind finished wall surface. Mount equipment, devices and boxes with backs of enclosures flush to front of finished wall surface.
+   > Items Mounted on Hollow Walls and Nonstructural Building Surfaces in unfinished areas: Mount equipment on slotted-channel racks attached to substrate.
+   > 11. 	Do not use powder/gas-actuated driven methods.
+   > Coordinate all work with all other trades prior to commencement of the work. Layout and install all electrical work in strict compliance with Chapter 1, Part B, Section 110.26 of the latest adopted edition of NFPA 70. Locations and routing that may be shown on plans are schematic and diagrammatic in nature.
+   > Fabricated Support Devices:
+   > Conform to the manufacturer’s recommendations for selection and installation of supports.
+   > Install individual and multiple (trapeze) raceway hangers and riser clamps as necessary to support raceways. Provide U-bolts, clamps, attachments, and other hardware necessary for hanger assembly and for securing hanger rods and conduits.
+   > Support parallel runs of horizontal raceways together on trapeze-type hangers.
+   > Support individual horizontal raceways by separate pipe hangers. Spring steel fasteners shall be used in lieu of hangers for 1-1/2 inches and smaller raceways above suspended ceilings only.
+   > For hanger rods with spring steel fasteners, use 1/4 inch diameter or larger threaded steel. Use spring steel fasteners that are specifically designed for supporting single conduits.
+   > Support exposed and concealed raceway within 1 foot of box and access fittings. In horizontal runs, support at the box and access fittings shall be omitted where box or access fittings are independently supported and raceway terminals are not made with chase nipples or threadless box connectors.
+   > In vertical runs, arrange supports so the load produced by the weight of the raceway and the enclosed conductors is carried entirely by the conduit supports with no weight load on the ends of the raceway.
+   > 8. 	Miscellaneous supports:
+   > a. 	Support miscellaneous electrical components as required to produce the same structural safety factors as specified for raceway supports. Install metal channel racks for mounting cabinets, pull boxes, junction boxes, and other devices.
+   > b. 	Support outlet boxes directly from the building structure or by bar hangers. Where bar hangers are used, attach the bar to raceways on opposite sides of the box and support the raceway with an approved type of fastener not more than 24 inches from the box.
+   > c. 	Support junction boxes, pull boxes and other boxes directly from the building structure.
+   > Fastening:
+   > Fasten pathway products and associated supporting hardware securely to the building structure.
+   > Fasten by means of wood screws on wood, toggle bolts on hollow masonry units.
+   > Fasten by means of concrete inserts or expansion bolts on concrete or solid masonry.
+   > Fasten by means of bolts with lock washers and nuts, machine screws, welded threaded studs, or clamps on steel (spring-tension where applicable).
+   > Do not weld conduit, pipe straps, or items other than threaded studs to steel structures.
+   > In partitions of light steel construction, use sheet metal screws.
+   > When installing fasteners in concrete or CMU structures, do not cut, drill or damage reinforcing bars or other structural elements.
+   > Ensure that the load applied to any fasteners does not exceed 25-percent of the proof test load. Use vibration-and shock-resistant fasteners for attachments to concrete slabs.
+   > Raceway supports: Hanger spacing shall be as required for adequate support of the raceway, but in no case shall there be less than one hanger per 8 feet of raceway length.
+   Expected: Properly structured items and lists, Found: Unexpected content
+
+6. Line 131: Found 1 unexpected content blocks in subsection
+   Context: 10. 	Locate all structural elements within existing concrete prior to pre-drilling or setting anchors. Contractor is responsible for repairing all damage to structural elements resulting from the scope of this work.
+   Expected: Properly structured items and lists, Found: Unexpected content
+
+7. Line 131: Found 10 unexpected content blocks in subsection
+   Content Block:
+   > 3.02 	CONCRETE BASES
+   > Provide dowel rods to connect concrete bases to concrete floors/slabs/substrates. Unless otherwise indicated, install dowel rods on maximum 18-inch centers around the full perimeter of concrete base.
+   > Provide epoxy-coated anchor bolts that extend through concrete base and anchor into structural concrete floor/slab/substrate, unless concrete bases are installed directly on grade. Place and secure anchorage devices. Use setting drawings, templates, diagrams, instructions, and directions furnished with items to be embedded. Install anchor bolts to elevations required for proper attachment to supported equipment.
+   > Construct concrete bases of dimensions indicated but not less than 4 inches larger in both directions than supported unit, and so anchors will be a minimum of 10 bolt diameters from edge of the base. Coordinate sizes and locations of concrete bases with actual equipment provided. Cast galvanized or stainless-steel anchor-bolt inserts into bases.
+   > Indoor bases shall be at least 4" thick and shall have straight and finished sides and a 1"-45 degree chamfer at the top perimeter. Reinforcing steel bars shall be placed in both directions of the bases. Where required for supplemental support, provide lateral support work to adjacent wall(s). Provide concrete bases/housekeeping pads beneath all electrical power and systems distribution equipment that is floor mounted or wall mounted within 4" of the floor.
+   > Outdoor bases shall be at least 6" thick and shall have straight and finished sides and a 1"-45 degree chamfer at the top perimeter. Perimeter of pads shall extend down below the frostline. Reinforcing steel bars shall be placed in both directions of the bases and a mesh overlay shall be provided. Where required for supplemental support, provide lateral support work to adjacent wall(s). Provide concrete bases/housekeeping pads beneath all electrical power and systems distribution equipment that is slab or grade mounted or mounted within 6" of slab or grade.
+   > Unless indicated otherwise in specifications or on drawings, use minimum 3000-psi, 28-day compressive-strength concrete. Size and provide concrete bases so expansion anchors will be a minimum of 10 bolt diameters from the edge of the concrete base.
+   > Forms: As required for equipment pads or other special applications in field, provide forms made of steel, wood, or other suitable material of size and strength to resist movement during concrete placement, and to retain horizontal and vertical alignment until removal. Use straight forms, free of distortion and defects. Use flexible spring steel forms or laminated boards to form radius bends. Do not remove forms for 24 hours after concrete has been placed. Set forms to required grades and lines, rigidly braced and secured. Provide sufficient quantity of forms to allow continuous progress of work, and so that forms can remain in place at least 24 hours after concrete placement. Clean forms after each use, and coat with form release agent as often as required to ensure separation from concrete without damage. Form areas that involve termination of spare conduits below grade, or that involve continuation of conduits by others, accordingly to accommodate easy future access to the ends of conduits for future extensions.
+   > Reinforcement: Cut bars true to length with ends square and free of burrs. Provide metal expansion caps for one end of each dowel bar in expansion joints. Design caps with one end closed and a minimum length of 3" to allow bars movement of not less than 1", unless otherwise indicated. Provide these for joining applications where continuous pouring cannot be accomplished.
+   > Concrete Placement: Remove loose material from subbase surface immediately before placing concrete. Check subbase and forms for line and grade before placing concrete. Moisten subbase if required to provide a uniform dampened condition at time concrete is placed. Place concrete using methods that prevent segregation of mix. Use splash boards to divert the flow of concrete away from the trench sides, and to avoid dislodging soil and stones. Coordinate with Owner's Representative at least 72 hours prior to placing concrete. Line up concrete trucks as required to achieve one continuous pour where applicable. Do not backfill until a minimum of 48 hours have passed.
+   Expected: Properly structured items and lists, Found: Unexpected content
+
+8. Line 131: Found 3 unexpected content blocks in subsection
+   Content Block:
+   > 3.03 	PLYWOOD EQUIPMENT BOARDS
+   > Plywood Equipment Boards: Lumber shall be preservative treated in accordance with AWPB LP-2, and kiln dried to a moisture content of not more than 19 percent. Provide plywood panels; APA C-D PLUGGED INT, with exterior glue; thickness as indicated, or if not indicated, not less than 3/4 inches deep. Provide marine grade plywood where subject to moisture conditions. Provide Simpson Strong Tie (or equal) expansion screw anchors.
+   > Unless otherwise noted, boards shall be fire rated or painted with two coats of good grade weatherproof flat gray non-conductive fire-retardant paint on all sides and edges (prior to mounting) and plumbed in a true vertical position. If fire rated board is used, leave all applicable rating label visible after painting. Provide nominal 1/2" rustproof spacers between back of plywood and wall. Cut, fit, and place plywood equipment boards accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Select fastener sizes that will not penetrate members where opposite side will be exposed to view or will receive finish materials. Make tight connections between members. Install fasteners without splitting wood members. Attach to substrates as required to support applied loads. Maintain at least 4 inches from bottom of plywood equipment boards and the finished floor surface.
+   Expected: Properly structured items and lists, Found: Unexpected content
+
+Template Validation Error ERRORS (30 found):
+----------------------------------------
+1. Line 131: Level mismatch at position 1. Expected: part, Found: item
+   Context: DESCRIPTION
+
+2. Line 131: Level mismatch at position 2. Expected: subsection, Found: item
+   Context: DESCRIPTION
+
+3. Line 131: Missing expected level: item at position 3
+   Context: DESCRIPTION
+
+4. Line 131: Missing expected level: list at position 4
+   Context: DESCRIPTION
+
+5. Line 131: Missing expected level: part at position 5
+   Context: DESCRIPTION
+
+6. Line 131: Missing expected level: subsection at position 6
+   Context: DESCRIPTION
+
+7. Line 131: Missing expected level: item at position 7
+   Context: DESCRIPTION
+
+8. Line 131: Missing expected level: list at position 8
+   Context: DESCRIPTION
+
+9. Line 131: Level mismatch at position 1. Expected: part, Found: item
+   Context: SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS
+
+10. Line 131: Level mismatch at position 2. Expected: subsection, Found: list
+   Context: SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS
+
+11. Line 131: Level mismatch at position 4. Expected: list, Found: item
+   Context: SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS
+
+12. Line 131: Level mismatch at position 5. Expected: part, Found: list
+   Context: SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS
+
+13. Line 131: Level mismatch at position 6. Expected: subsection, Found: item
+   Context: SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS
+
+14. Line 131: Level mismatch at position 8. Expected: list, Found: item
+   Context: SUPPORT, ANCHORAGE, AND ATTACHMENT COMPONENTS
+
+15. Line 131: Level mismatch at position 1. Expected: part, Found: item
+   Context: CONCRETE BASES
+
+16. Line 131: Level mismatch at position 2. Expected: subsection, Found: item
+   Context: CONCRETE BASES
+
+17. Line 131: Missing expected level: item at position 3
+   Context: CONCRETE BASES
+
+18. Line 131: Missing expected level: list at position 4
+   Context: CONCRETE BASES
+
+19. Line 131: Missing expected level: part at position 5
+   Context: CONCRETE BASES
+
+20. Line 131: Missing expected level: subsection at position 6
+   Context: CONCRETE BASES
+
+21. Line 131: Missing expected level: item at position 7
+   Context: CONCRETE BASES
+
+22. Line 131: Missing expected level: list at position 8
+   Context: CONCRETE BASES
+
+23. Line 131: Level mismatch at position 1. Expected: part, Found: item
+   Context: PLYWOOD EQUIPMENT BOARDS
+
+24. Line 131: Missing expected level: subsection at position 2
+   Context: PLYWOOD EQUIPMENT BOARDS
+
+25. Line 131: Missing expected level: item at position 3
+   Context: PLYWOOD EQUIPMENT BOARDS
+
+26. Line 131: Missing expected level: list at position 4
+   Context: PLYWOOD EQUIPMENT BOARDS
+
+27. Line 131: Missing expected level: part at position 5
+   Context: PLYWOOD EQUIPMENT BOARDS
+
+28. Line 131: Missing expected level: subsection at position 6
+   Context: PLYWOOD EQUIPMENT BOARDS
+
+29. Line 131: Missing expected level: item at position 7
+   Context: PLYWOOD EQUIPMENT BOARDS
+
+30. Line 131: Missing expected level: list at position 8
+   Context: PLYWOOD EQUIPMENT BOARDS
+
+Numbering Error ERRORS (4 found):
+----------------------------------------
+1. Line 131: List numbering sequence broken - expected 1, found 15
+   Context: 15. 	Expansion anchors: Minimum 1/2".
+   Expected: 1, Found: 15
+
+2. Line 131: Item numbering sequence broken - expected A, found J
+   Context: J. 	Concrete Finishing: Smooth surface by screeding after striking-off and consolidating concrete. Provide Class A finishing. Broom finish concrete pads, and aprons around pullboxes and structures. Protect concrete from damage until acceptance of work. Exclude traffic over affected areas for at least 14 days after placement.
+   Expected: A, Found: J
+
+3. Line 131: Item numbering sequence broken - expected B, found K
+   Context: K.	For pad mounted generator follow manufacturers installation instructions. Unless directed otherwise by manufacturer, pad to be a minimum of 6" above finished grade with overall depth as required for pad weight to be greater than or equal to the combined weight of generator, enclosure, and a full fuel tank. maintain a minimum of 36" around the perimeter of the enclosure.  Provide minimum 3000psi concrete with broom finish and #6 rebar spaced 12" on-center along length and width at top and bottom with 3" from surface on all sides; refer to structural plans for additional details.
+   Expected: B, Found: K
+
+4. Line 131: Item numbering sequence broken - expected A, found C
+   Context: C. 	Unless directed otherwise in field, plywood equipment boards shall be 8 feet high by 3/4 inches deep by length shown on drawings (as dimensioned or as scaled) or length as required to accommodate equipment if not indicated on drawings.
+   Expected: A, Found: C
+
+Content Error ERRORS (57 found):
+----------------------------------------
+1. Line 131: Standalone content found without item structure
+   Context: It shall be the responsibility of the electrical contractor to supervise the installation of and pay for all additional members, wood or metal and labor which may be required to support any type of permanent or temporary electrical apparatus employed in the execution of the electrical contractor's work. Provide supports, anchors, sleeves and seals furnished as part of factory-fabricated equipment as required.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+2. Line 131: Standalone content found without item structure
+   Context: Coordinate layout and installation of equipment and components with other construction that penetrates walls or is supported by them, including electrical and other types of equipment, raceways, piping, encumbrances to workspace clearance requirements, and adjacent surfaces. Maintain required workspace clearances and required clearances for equipment access doors and panels.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+3. Line 131: Standalone content found without item structure
+   Context: Provide supports for multiple raceways capable of supporting combined weight of supported systems and its contents, plus minimum 100% factor of safety. Provide equipment supports capable of supporting combined operating weight of supported equipment and connected systems and components. Provide rated strengths adequate in tension, shear, and pullout force to resist maximum loads calculated or imposed for this project, with a minimum structural safety factor of five times the applied force.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+4. Line 131: Standalone content found without item structure
+   Context: Comply with NECA 1 and NECA 101 for application and installation requirements of hangers and supports for electrical equipment and systems except if requirements in this Section are stricter.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+5. Line 131: Standalone content found without item structure
+   Context: All electrically related work shall be supported directly from building structural members. Electrically related work shall not be supported from ductwork, ductwork hangers, ceiling supports, existing conduit supports, etc. Install supports with spacing’s indicated and in compliance with NEC requirements, as well as maintaining all requirements of Article 110.26. Cut, fit, and place miscellaneous metal fabrications accurately in location, alignment, and elevation to support and anchor electrical materials and equipment.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+6. Line 131: Standalone content found without item structure
+   Context: Cut, fit, and place miscellaneous metal supports accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Field Welding: Comply with AWS D1.1/D1.1M.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+7. Line 131: Standalone content found without item structure
+   Context: Touchup Painting: Clean field welds and abraded areas of shop paint. Paint exposed areas immediately after erecting hangers and supports. Use same materials as used for shop painting. Comply with SSPC-PA 1 requirements for touching up field-painted surfaces. Apply paint by brush or spray to provide minimum dry film thickness of 2.0 mils. For galvanized surfaces, clean welds, bolted connections, and abraded areas and apply galvanizing-repair paint to comply with ASTM A 780.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+8. Line 131: Standalone content found without item structure
+   Context: Install equipment and enclosures on walls with tops at uniform height unless otherwise indicated, and by bolting units to structural wall or mounting on structural-steel channels bolted to wall. For equipment and enclosures not at walls provide freestanding structural-steel channel racks that are anchored to floor structure and overhead structure.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+9. Line 131: Standalone content found without item structure
+   Context: Use of synthetic or plastic “tie-wraps”, “zip ties”, “wire ties” and similar products are not permitted as a permanent means of anchoring, securing, supporting or otherwise installing any cables, conductors, conduits, raceways, devices, equipment or other electrical work. Provide metal clamps, clips, etc. that are manufactured for use for respective applications where they are used. Use of perforated straps is not permitted.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+10. Line 131: Standalone content found without item structure
+   Context: Route all conduits, raceways and cables (where applicable) parallel and perpendicular to building structural members. Any and all noncompliant work installed by the electrical contractor shall be removed and reinstalled by the electrical contractor to the satisfaction of the Owner's Representative and the Design Professionals, at the expense of the electrical contractor.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+11. Line 131: Standalone content found without item structure
+   Context: All fasteners, hangers and methods of hanging exposed work in finished areas shall be submitted to the Owner's Representative for review before installation. Fasteners shall be zinc-coated, type, grade, and class as required for a neat finished installation.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+12. Line 131: Standalone content found without item structure
+   Context: Space supports for conduits and raceways required by NFPA 70 as a minimum. Minimum rod size shall be 1/4 inch in diameter. For multiple raceways or cables, install trapeze-type supports fabricated with steel slotted, sized so capacity can be increased by at least 100 percent in future without exceeding specified design load limits. Secure raceways and cables to these supports with two-bolt conduit clamps, single-bolt conduit clamps, or single-bolt conduit clamps using spring friction action for retention in support channel as applicable.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+13. Line 131: Standalone content found without item structure
+   Context: Coordinate with installation of roof curbs, equipment supports, and roof penetrations as applicable. Suspend and support overhead electrical work from roof trusses and joists/joist girders only at panel points, at top chord only, unless otherwise indicated. Roof penetrations to have pipe boots or other approved method to maintain warrantee of roof.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+14. Line 131: Standalone content found without item structure
+   Context: Do not drill any concrete structural members or decks without prior case-by-case written approval of means and methods from Owner and Design Professionals.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+15. Line 131: Standalone content found without item structure
+   Context: Field-verify lengths of stems, pendants, cables, suspensions, etc. for all suspended luminaires with Architect.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+16. Line 131: Standalone content found without item structure
+   Context: Strength of Support Assemblies: Where not indicated, select sizes of components so strength will be adequate to carry present and future static loads within specified loading limits. Minimum static design load used for strength determination shall be weight of supported components plus 200 lb. or 100 percent factor of safety, whichever is greater.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+17. Line 131: Standalone content found without item structure
+   Context: Mounting and Anchorage of Surface-Mounted Equipment and Components: Anchor and fasten electrical items and their supports to building structural elements by the following methods unless otherwise indicated by code. Use supported equipment manufacturer's setting drawings, templates, diagrams, instructions, and directions furnished with items to be embedded. Install anchor bolts to elevations required for proper attachment to supported equipment. Install anchor bolts according to anchor-bolt manufacturer's written instructions. Provide female expansion anchors, and install studs and nuts after equipment is positioned. Torque bolts and nuts on studs to values recommended by equipment manufacturer. Provide bushings for floor-mounted equipment anchors to allow for resilient media between anchor bolts/studs and mounting hole in concrete. Provide anchor bolt bushing assemblies for wall-mounted equipment to allow for resilient media where equipment and equipment-mounting channels are attached to wall.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+18. Line 131: Standalone content found without item structure
+   Context: To Wood: Fasten with lag screws or through-bolts. Provide Standard Grade, light-framing-size lumber of any species. Number 3 Common or Standard Grade boards complying with WCLIB or AWPA rules, or Number 3 boards complying with SPIB rules. Lumber shall be preservative treated in accordance with AWPB LP-2, and kiln dried to a moisture content of not more than 19 percent. Provide marine grade products where subject to moisture conditions. Provide Simpson Strong Tie (or equal) expansion screw anchors. Cut, fit, and place wood grounds, nailers, blocking, and anchorage accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Select fastener sizes that will not penetrate members where opposite side will be exposed to view or will receive finish materials. Make tight connections between members. Install fasteners without splitting wood members. Attach to substrates as required to support applied loads.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+19. Line 131: Standalone content found without item structure
+   Context: To Wood Structural Members: Provide bolts installed through members.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+20. Line 131: Standalone content found without item structure
+   Context: To New Concrete: Provide channel-type concrete inserts and bolt to inserts, or provide expansion anchors for applications where inserts are not practical.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+21. Line 131: Standalone content found without item structure
+   Context: To Existing Concrete: Expansion anchor fasteners.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+22. Line 131: Standalone content found without item structure
+   Context: Holes for Expansion Anchors in Concrete: Drill at locations and to depths that avoid reinforcing bars and other structural elements. Review proposed means, methods, locations, etc. in advance with Owner and Design Professionals.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+23. Line 131: Standalone content found without item structure
+   Context: To Masonry: Approved toggle-type bolts on hollow masonry units and expansion anchor fasteners on solid masonry units.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+24. Line 131: Standalone content found without item structure
+   Context: To Steel: Welded threaded steel studs complying with AWS D1.1/D1.1M, with lock washers and nuts, or beam clamps (MSS Type 19, 21, 23, 25, or 27) complying with MSS SP-69, clamped to flanges of beams or on upper truss chords of bar joists.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+25. Line 131: Standalone content found without item structure
+   Context: To Light Steel: Sheet metal screws.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+26. Line 131: Standalone content found without item structure
+   Context: Items Mounted on Hollow Walls and Nonstructural Building Surfaces in finished areas: Provide blocking between studs behind finished wall surface. Mount equipment, devices and boxes with backs of enclosures flush to front of finished wall surface.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+27. Line 131: Standalone content found without item structure
+   Context: Items Mounted on Hollow Walls and Nonstructural Building Surfaces in unfinished areas: Mount equipment on slotted-channel racks attached to substrate.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+28. Line 131: Standalone content found without item structure
+   Context: Coordinate all work with all other trades prior to commencement of the work. Layout and install all electrical work in strict compliance with Chapter 1, Part B, Section 110.26 of the latest adopted edition of NFPA 70. Locations and routing that may be shown on plans are schematic and diagrammatic in nature.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+29. Line 131: Standalone content found without item structure
+   Context: Fabricated Support Devices:
+   Expected: Item A, B, C, etc., Found: Plain text
+
+30. Line 131: Standalone content found without item structure
+   Context: Conform to the manufacturer’s recommendations for selection and installation of supports.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+31. Line 131: Standalone content found without item structure
+   Context: Install individual and multiple (trapeze) raceway hangers and riser clamps as necessary to support raceways. Provide U-bolts, clamps, attachments, and other hardware necessary for hanger assembly and for securing hanger rods and conduits.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+32. Line 131: Standalone content found without item structure
+   Context: Support parallel runs of horizontal raceways together on trapeze-type hangers.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+33. Line 131: Standalone content found without item structure
+   Context: Support individual horizontal raceways by separate pipe hangers. Spring steel fasteners shall be used in lieu of hangers for 1-1/2 inches and smaller raceways above suspended ceilings only.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+34. Line 131: Standalone content found without item structure
+   Context: For hanger rods with spring steel fasteners, use 1/4 inch diameter or larger threaded steel. Use spring steel fasteners that are specifically designed for supporting single conduits.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+35. Line 131: Standalone content found without item structure
+   Context: Support exposed and concealed raceway within 1 foot of box and access fittings. In horizontal runs, support at the box and access fittings shall be omitted where box or access fittings are independently supported and raceway terminals are not made with chase nipples or threadless box connectors.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+36. Line 131: Standalone content found without item structure
+   Context: In vertical runs, arrange supports so the load produced by the weight of the raceway and the enclosed conductors is carried entirely by the conduit supports with no weight load on the ends of the raceway.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+37. Line 131: Standalone content found without item structure
+   Context: Fastening:
+   Expected: Item A, B, C, etc., Found: Plain text
+
+38. Line 131: Standalone content found without item structure
+   Context: Fasten pathway products and associated supporting hardware securely to the building structure.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+39. Line 131: Standalone content found without item structure
+   Context: Fasten by means of wood screws on wood, toggle bolts on hollow masonry units.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+40. Line 131: Standalone content found without item structure
+   Context: Fasten by means of concrete inserts or expansion bolts on concrete or solid masonry.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+41. Line 131: Standalone content found without item structure
+   Context: Fasten by means of bolts with lock washers and nuts, machine screws, welded threaded studs, or clamps on steel (spring-tension where applicable).
+   Expected: Item A, B, C, etc., Found: Plain text
+
+42. Line 131: Standalone content found without item structure
+   Context: Do not weld conduit, pipe straps, or items other than threaded studs to steel structures.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+43. Line 131: Standalone content found without item structure
+   Context: In partitions of light steel construction, use sheet metal screws.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+44. Line 131: Standalone content found without item structure
+   Context: When installing fasteners in concrete or CMU structures, do not cut, drill or damage reinforcing bars or other structural elements.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+45. Line 131: Standalone content found without item structure
+   Context: Ensure that the load applied to any fasteners does not exceed 25-percent of the proof test load. Use vibration-and shock-resistant fasteners for attachments to concrete slabs.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+46. Line 131: Standalone content found without item structure
+   Context: Raceway supports: Hanger spacing shall be as required for adequate support of the raceway, but in no case shall there be less than one hanger per 8 feet of raceway length.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+47. Line 131: Standalone content found without item structure
+   Context: Provide dowel rods to connect concrete bases to concrete floors/slabs/substrates. Unless otherwise indicated, install dowel rods on maximum 18-inch centers around the full perimeter of concrete base.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+48. Line 131: Standalone content found without item structure
+   Context: Provide epoxy-coated anchor bolts that extend through concrete base and anchor into structural concrete floor/slab/substrate, unless concrete bases are installed directly on grade. Place and secure anchorage devices. Use setting drawings, templates, diagrams, instructions, and directions furnished with items to be embedded. Install anchor bolts to elevations required for proper attachment to supported equipment.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+49. Line 131: Standalone content found without item structure
+   Context: Construct concrete bases of dimensions indicated but not less than 4 inches larger in both directions than supported unit, and so anchors will be a minimum of 10 bolt diameters from edge of the base. Coordinate sizes and locations of concrete bases with actual equipment provided. Cast galvanized or stainless-steel anchor-bolt inserts into bases.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+50. Line 131: Standalone content found without item structure
+   Context: Indoor bases shall be at least 4" thick and shall have straight and finished sides and a 1"-45 degree chamfer at the top perimeter. Reinforcing steel bars shall be placed in both directions of the bases. Where required for supplemental support, provide lateral support work to adjacent wall(s). Provide concrete bases/housekeeping pads beneath all electrical power and systems distribution equipment that is floor mounted or wall mounted within 4" of the floor.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+51. Line 131: Standalone content found without item structure
+   Context: Outdoor bases shall be at least 6" thick and shall have straight and finished sides and a 1"-45 degree chamfer at the top perimeter. Perimeter of pads shall extend down below the frostline. Reinforcing steel bars shall be placed in both directions of the bases and a mesh overlay shall be provided. Where required for supplemental support, provide lateral support work to adjacent wall(s). Provide concrete bases/housekeeping pads beneath all electrical power and systems distribution equipment that is slab or grade mounted or mounted within 6" of slab or grade.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+52. Line 131: Standalone content found without item structure
+   Context: Unless indicated otherwise in specifications or on drawings, use minimum 3000-psi, 28-day compressive-strength concrete. Size and provide concrete bases so expansion anchors will be a minimum of 10 bolt diameters from the edge of the concrete base.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+53. Line 131: Standalone content found without item structure
+   Context: Forms: As required for equipment pads or other special applications in field, provide forms made of steel, wood, or other suitable material of size and strength to resist movement during concrete placement, and to retain horizontal and vertical alignment until removal. Use straight forms, free of distortion and defects. Use flexible spring steel forms or laminated boards to form radius bends. Do not remove forms for 24 hours after concrete has been placed. Set forms to required grades and lines, rigidly braced and secured. Provide sufficient quantity of forms to allow continuous progress of work, and so that forms can remain in place at least 24 hours after concrete placement. Clean forms after each use, and coat with form release agent as often as required to ensure separation from concrete without damage. Form areas that involve termination of spare conduits below grade, or that involve continuation of conduits by others, accordingly to accommodate easy future access to the ends of conduits for future extensions.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+54. Line 131: Standalone content found without item structure
+   Context: Reinforcement: Cut bars true to length with ends square and free of burrs. Provide metal expansion caps for one end of each dowel bar in expansion joints. Design caps with one end closed and a minimum length of 3" to allow bars movement of not less than 1", unless otherwise indicated. Provide these for joining applications where continuous pouring cannot be accomplished.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+55. Line 131: Standalone content found without item structure
+   Context: Concrete Placement: Remove loose material from subbase surface immediately before placing concrete. Check subbase and forms for line and grade before placing concrete. Moisten subbase if required to provide a uniform dampened condition at time concrete is placed. Place concrete using methods that prevent segregation of mix. Use splash boards to divert the flow of concrete away from the trench sides, and to avoid dislodging soil and stones. Coordinate with Owner's Representative at least 72 hours prior to placing concrete. Line up concrete trucks as required to achieve one continuous pour where applicable. Do not backfill until a minimum of 48 hours have passed.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+56. Line 131: Standalone content found without item structure
+   Context: Plywood Equipment Boards: Lumber shall be preservative treated in accordance with AWPB LP-2, and kiln dried to a moisture content of not more than 19 percent. Provide plywood panels; APA C-D PLUGGED INT, with exterior glue; thickness as indicated, or if not indicated, not less than 3/4 inches deep. Provide marine grade plywood where subject to moisture conditions. Provide Simpson Strong Tie (or equal) expansion screw anchors.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+57. Line 131: Standalone content found without item structure
+   Context: Unless otherwise noted, boards shall be fire rated or painted with two coats of good grade weatherproof flat gray non-conductive fire-retardant paint on all sides and edges (prior to mounting) and plumbed in a true vertical position. If fire rated board is used, leave all applicable rating label visible after painting. Provide nominal 1/2" rustproof spacers between back of plywood and wall. Cut, fit, and place plywood equipment boards accurately in location, alignment, and elevation to support and anchor electrical materials and equipment. Select fastener sizes that will not penetrate members where opposite side will be exposed to view or will receive finish materials. Make tight connections between members. Install fasteners without splitting wood members. Attach to substrates as required to support applied loads. Maintain at least 4 inches from bottom of plywood equipment boards and the finished floor surface.
+   Expected: Item A, B, C, etc., Found: Plain text
+
+SUMMARY:
+--------------------
+Total errors: 123
+Structure Error: 24 errors
+Content Block Error: 8 errors
+Template Validation Error: 30 errors
+Numbering Error: 4 errors
+Content Error: 57 errors

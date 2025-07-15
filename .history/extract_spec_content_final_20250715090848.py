@@ -1228,7 +1228,6 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python extract_spec_content_final.py <docx_file> [output_dir] [template_file]")
         print("Example: python extract_spec_content_final.py 'SECTION 26 05 00.docx' . 'test_template.docx'")
-        print("Note: All output files will be saved to <output_dir>/output/")
         sys.exit(1)
     
     docx_path = sys.argv[1]

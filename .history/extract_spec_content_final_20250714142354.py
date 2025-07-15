@@ -87,12 +87,9 @@ class SpecContentExtractor:
         """Load and analyze template structure for validation"""
         try:
             print(f"Loading template structure from: {template_path}")
-            
-            # Perform comprehensive template analysis FIRST (before any other processing)
-            self.comprehensive_template_analysis(template_path)
-            
-            # Now extract paragraphs for template structure analysis
             doc = Document(template_path)
+            
+            # Extract all paragraphs
             paragraphs = []
             for paragraph in doc.paragraphs:
                 text = paragraph.text.strip()
@@ -114,395 +111,51 @@ class SpecContentExtractor:
             print(f"Warning: Could not load template structure: {e}")
             self.template_structure = {}
     
-    def comprehensive_template_analysis(self, template_path: str):
-        """Perform comprehensive analysis of template numbering structure"""
-        try:
-            print("\n--- Comprehensive Template Analysis ---")
-            
-            # Create a fresh Document object specifically for template analysis
-            doc = Document(template_path)
-            
-            # Create a completely separate analysis data structure
-            analysis_data = {
-                "template_path": template_path,
-                "analysis_timestamp": datetime.now().isoformat(),
-                "paragraphs": [],
-                "numbering_definitions": {},
-                "level_patterns": {},
-                "summary": {}
-            }
-            
-            # 1. Analyze each paragraph for numbering information
-            print("Analyzing paragraph numbering...")
-            for i, para in enumerate(doc.paragraphs):
-                para_data = {
-                    "index": i,
-                    "text": para.text.strip(),
-                    "level_type": None,
-                    "number": None,
-                    "content": None,
-                    "word_numbering": {}
-                }
-                
-                # Get Word document numbering info
-                pPr = para._p.pPr
-                if pPr is not None and pPr.numPr is not None:
-                    if pPr.numPr.ilvl is not None:
-                        para_data["word_numbering"]["ilvl"] = pPr.numPr.ilvl.val
-                    if pPr.numPr.numId is not None:
-                        para_data["word_numbering"]["numId"] = pPr.numPr.numId.val
-                
-                # Classify the paragraph using a local method to avoid interference
-                if para_data["text"]:
-                    level_type, number, content = self._classify_template_paragraph(para_data["text"])
-                    para_data["level_type"] = level_type
-                    para_data["number"] = number
-                    para_data["content"] = content
-                    
-                    if para_data["word_numbering"]:
-                        print(f"PARA {i}: {para_data['text']!r}")
-                        print(f"  → level={level_type}, number={number}")
-                        print(f"  → ilvl={para_data['word_numbering'].get('ilvl')}, numId={para_data['word_numbering'].get('numId')}")
-                        print()
-                
-                analysis_data["paragraphs"].append(para_data)
-            
-            # 2. Extract numbering.xml information
-            print("\nExtracting numbering.xml patterns...")
-            try:
-                import zipfile
-                import lxml.etree as ET
-                
-                with zipfile.ZipFile(template_path) as zf:
-                    if "word/numbering.xml" in zf.namelist():
-                        num_xml = zf.read("word/numbering.xml")
-                        root = ET.fromstring(num_xml)
-                        ns = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
-                        
-                        # Find all abstract numbering definitions
-                        for abstract_num in root.findall(".//w:abstractNum", ns):
-                            abstract_num_id = abstract_num.get(qn("w:abstractNumId"))
-                            analysis_data["numbering_definitions"][abstract_num_id] = {
-                                "levels": {},
-                                "nsid": abstract_num.get(qn("w:nsid")),
-                                "multiLevelType": abstract_num.get(qn("w:multiLevelType")),
-                                "tmpl": abstract_num.get(qn("w:tmpl"))
-                            }
-                            
-                            for lvl in abstract_num.findall("w:lvl", ns):
-                                ilvl = lvl.get(qn("w:ilvl"))
-                                level_data = {
-                                    "ilvl": ilvl,
-                                    "lvlText": None,
-                                    "numFmt": None,
-                                    "lvlPicBulletId": None,
-                                    "lvlJc": None,
-                                    "pPr": {},
-                                    "rPr": {},
-                                    "start": None,
-                                    "numFmt": None,
-                                    "suff": None,
-                                    "lvlRestart": None,
-                                    "isLgl": None,
-                                    "pStyle": None,
-                                    "legacy": {},
-                                    "legacyIndent": None,
-                                    "legacySpace": None,
-                                    "legacyNum": None
-                                }
-                                
-                                # Extract lvlText (the pattern like "%1.0", "%1.%2")
-                                lvl_text_elem = lvl.find("w:lvlText", ns)
-                                if lvl_text_elem is not None:
-                                    level_data["lvlText"] = lvl_text_elem.get(qn("w:val"))
-                                
-                                # Extract numFmt (decimal, lowerLetter, upperLetter, etc.)
-                                num_fmt_elem = lvl.find("w:numFmt", ns)
-                                if num_fmt_elem is not None:
-                                    level_data["numFmt"] = num_fmt_elem.get(qn("w:val"))
-                                
-                                # Extract lvlJc (justification: left, center, right)
-                                lvl_jc_elem = lvl.find("w:lvlJc", ns)
-                                if lvl_jc_elem is not None:
-                                    level_data["lvlJc"] = lvl_jc_elem.get(qn("w:val"))
-                                
-                                # Extract start value
-                                start_elem = lvl.find("w:start", ns)
-                                if start_elem is not None:
-                                    level_data["start"] = start_elem.get(qn("w:val"))
-                                
-                                # Extract suffix (tab, space, nothing)
-                                suff_elem = lvl.find("w:suff", ns)
-                                if suff_elem is not None:
-                                    level_data["suff"] = suff_elem.get(qn("w:val"))
-                                
-                                # Extract lvlRestart
-                                lvl_restart_elem = lvl.find("w:lvlRestart", ns)
-                                if lvl_restart_elem is not None:
-                                    level_data["lvlRestart"] = lvl_restart_elem.get(qn("w:val"))
-                                
-                                # Extract isLgl (legal numbering)
-                                is_lgl_elem = lvl.find("w:isLgl", ns)
-                                if is_lgl_elem is not None:
-                                    level_data["isLgl"] = is_lgl_elem.get(qn("w:val"))
-                                
-                                # Extract pStyle (paragraph style)
-                                p_style_elem = lvl.find("w:pStyle", ns)
-                                if p_style_elem is not None:
-                                    level_data["pStyle"] = p_style_elem.get(qn("w:val"))
-                                
-                                # Extract paragraph properties (pPr)
-                                p_pr_elem = lvl.find("w:pPr", ns)
-                                if p_pr_elem is not None:
-                                    # Indentation
-                                    indent_elem = p_pr_elem.find("w:ind", ns)
-                                    if indent_elem is not None:
-                                        level_data["pPr"]["indent"] = {
-                                            "left": indent_elem.get(qn("w:left")),
-                                            "right": indent_elem.get(qn("w:right")),
-                                            "hanging": indent_elem.get(qn("w:hanging")),
-                                            "firstLine": indent_elem.get(qn("w:firstLine"))
-                                        }
-                                    
-                                    # Spacing
-                                    spacing_elem = p_pr_elem.find("w:spacing", ns)
-                                    if spacing_elem is not None:
-                                        level_data["pPr"]["spacing"] = {
-                                            "before": spacing_elem.get(qn("w:before")),
-                                            "after": spacing_elem.get(qn("w:after")),
-                                            "line": spacing_elem.get(qn("w:line")),
-                                            "lineRule": spacing_elem.get(qn("w:lineRule"))
-                                        }
-                                
-                                # Extract run properties (rPr) - font info
-                                r_pr_elem = lvl.find("w:rPr", ns)
-                                if r_pr_elem is not None:
-                                    # Font family
-                                    r_fonts_elem = r_pr_elem.find("w:rFonts", ns)
-                                    if r_fonts_elem is not None:
-                                        level_data["rPr"]["rFonts"] = {
-                                            "ascii": r_fonts_elem.get(qn("w:ascii")),
-                                            "hAnsi": r_fonts_elem.get(qn("w:hAnsi")),
-                                            "eastAsia": r_fonts_elem.get(qn("w:eastAsia")),
-                                            "cs": r_fonts_elem.get(qn("w:cs"))
-                                        }
-                                    
-                                    # Font size
-                                    sz_elem = r_pr_elem.find("w:sz", ns)
-                                    if sz_elem is not None:
-                                        level_data["rPr"]["sz"] = sz_elem.get(qn("w:val"))
-                                    
-                                    # Bold
-                                    b_elem = r_pr_elem.find("w:b", ns)
-                                    if b_elem is not None:
-                                        level_data["rPr"]["bold"] = b_elem.get(qn("w:val"))
-                                    
-                                    # Italic
-                                    i_elem = r_pr_elem.find("w:i", ns)
-                                    if i_elem is not None:
-                                        level_data["rPr"]["italic"] = i_elem.get(qn("w:val"))
-                                
-                                # Extract legacy numbering info
-                                legacy_elem = lvl.find("w:legacy", ns)
-                                if legacy_elem is not None:
-                                    level_data["legacy"] = {
-                                        "legacyIndent": legacy_elem.get(qn("w:legacyIndent")),
-                                        "legacySpace": legacy_elem.get(qn("w:legacySpace")),
-                                        "legacyNum": legacy_elem.get(qn("w:legacyNum"))
-                                    }
-                                
-                                analysis_data["numbering_definitions"][abstract_num_id]["levels"][ilvl] = level_data
-                                
-                                # Print detailed level info
-                                print(f"Level {ilvl}:")
-                                print(f"  Pattern: {level_data['lvlText']}")
-                                print(f"  Format: {level_data['numFmt']}")
-                                print(f"  Start: {level_data['start']}")
-                                print(f"  Suffix: {level_data['suff']}")
-                                print(f"  Justification: {level_data['lvlJc']}")
-                                if level_data['pPr'].get('indent'):
-                                    print(f"  Indent: {level_data['pPr']['indent']}")
-                                
-                                # Store in level patterns for easy access
-                                analysis_data["level_patterns"][f"level_{ilvl}"] = {
-                                    "ilvl": ilvl,
-                                    "pattern": level_data["lvlText"],
-                                    "format": level_data["numFmt"],
-                                    "start": level_data["start"],
-                                    "suffix": level_data["suff"],
-                                    "abstract_num_id": abstract_num_id,
-                                    "full_data": level_data
-                                }
-                        
-                        # Find all num elements that map abstractNum to numId
-                        print("\nExtracting num mappings...")
-                        for num_elem in root.findall(".//w:num", ns):
-                            num_id = num_elem.get(qn("w:numId"))
-                            abstract_num_ref = num_elem.find("w:abstractNumId", ns)
-                            if abstract_num_ref is not None:
-                                abstract_num_id_ref = abstract_num_ref.get(qn("w:val"))
-                                analysis_data["num_mappings"] = analysis_data.get("num_mappings", {})
-                                analysis_data["num_mappings"][num_id] = {
-                                    "abstract_num_id": abstract_num_id_ref,
-                                    "abstract_num_data": analysis_data["numbering_definitions"].get(abstract_num_id_ref, {})
-                                }
-                                print(f"numId {num_id} → abstractNumId {abstract_num_id_ref}")
-                    else:
-                        print("No numbering.xml found in template")
-                        
-            except ImportError:
-                print("lxml not available, skipping numbering.xml analysis")
-            except Exception as e:
-                print(f"Error reading numbering.xml: {e}")
-            
-            # 3. Generate summary statistics
-            level_counts = {}
-            numbering_counts = {}
-            
-            for para in analysis_data["paragraphs"]:
-                if para["level_type"]:
-                    level_counts[para["level_type"]] = level_counts.get(para["level_type"], 0) + 1
-                
-                if para["word_numbering"]:
-                    ilvl = para["word_numbering"].get("ilvl")
-                    if ilvl is not None:
-                        numbering_counts[f"ilvl_{ilvl}"] = numbering_counts.get(f"ilvl_{ilvl}", 0) + 1
-            
-            analysis_data["summary"] = {
-                "total_paragraphs": len(analysis_data["paragraphs"]),
-                "level_counts": level_counts,
-                "numbering_counts": numbering_counts,
-                "numbering_definitions_count": len(analysis_data["numbering_definitions"]),
-                "level_patterns_count": len(analysis_data["level_patterns"]),
-                "num_mappings_count": len(analysis_data.get("num_mappings", {}))
-            }
-            
-            print(f"\nSummary: {analysis_data['summary']}")
-            print("--- End Comprehensive Template Analysis ---\n")
-            
-            # Save analysis to JSON file in output directory
-            analysis_file = os.path.join("output", "template_analysis.json")
-            os.makedirs(os.path.dirname(analysis_file), exist_ok=True)
-            with open(analysis_file, 'w', encoding='utf-8') as f:
-                json.dump(analysis_data, f, indent=2, ensure_ascii=False)
-            print(f"Template analysis saved to: {analysis_file}")
-            
-        except Exception as e:
-            print(f"Error in comprehensive template analysis: {e}")
-            import traceback
-            traceback.print_exc()
-    
-    def extract_numbering_patterns(self, text: str) -> List[Tuple[str, str]]:
-        """Extract numbering patterns from text, returning (level_type, number) pairs"""
-        patterns = []
-        
-        # Check for various numbering patterns
-        if re.match(r'^\d+\.0\s', text):
-            match = re.match(r'^(\d+\.0)\s', text)
-            if match:
-                patterns.append(('part', match.group(1)))
-                
-        elif re.match(r'^\d+\.\d{2}\s', text):
-            match = re.match(r'^(\d+\.\d{2})\s', text)
-            if match:
-                patterns.append(('subsection', match.group(1)))
-                
-        elif re.match(r'^\d+\.\d\s', text):
-            match = re.match(r'^(\d+\.\d)\s', text)
-            if match:
-                patterns.append(('subsection', match.group(1)))
-                
-        elif re.match(r'^[A-Z]\.\s', text):
-            match = re.match(r'^([A-Z])\.\s', text)
-            if match:
-                patterns.append(('item', match.group(1)))
-                
-        elif re.match(r'^\d+\.\s', text):
-            match = re.match(r'^(\d+)\.\s', text)
-            if match:
-                patterns.append(('list', match.group(1)))
-                
-        elif re.match(r'^[a-z]\.\s', text):
-            match = re.match(r'^([a-z])\.\s', text)
-            if match:
-                patterns.append(('sub_list', match.group(1)))
-        
-        return patterns
-
-    def _classify_template_paragraph(self, text: str) -> Tuple[str, Optional[str], str]:
-        """
-        Classify a template paragraph into its hierarchical level
-        This is a simplified version for template analysis only
-        Returns: (level_type, number, content)
-        """
-        text = text.strip()
-        if not text:
-            return "empty", None, ""
-        
-        # Simple classification for template paragraphs
-        if text.upper().startswith('PART'):
-            return "part", None, text
-        elif text.upper().startswith('SUBSECTION'):
-            return "subsection", None, text
-        elif text.upper().startswith('ITEM'):
-            return "item", None, text
-        elif text.upper().startswith('LIST'):
-            return "list", None, text
-        elif text.upper().startswith('SUB'):
-            if 'ITEM' in text.upper():
-                return "sub_item", None, text
-            elif 'LIST' in text.upper():
-                return "sub_list", None, text
-        
-        # Default case - return content
-        return "content", None, text
-
     def analyze_template_structure(self, paragraphs: List[str]) -> Dict[str, Dict]:
-        """Analyze template to extract hierarchical levels and structure"""
-        template_structure = {
-            "levels": [],  # Array of level types (part, subsection, item, list, sub_list)
-            "labels": [],  # Array of corresponding labels
-            "hierarchy": {}  # Detailed structure for validation
-        }
-        
-        print("\n--- Template Level Analysis ---")
+        """Analyze template to extract expected numbering structure for each subsection"""
+        template_structure = {}
+        current_part = None
+        current_subsection = None
         
         for text in paragraphs:
-            text = text.strip()
-            if not text:
-                continue
-                
-            # Determine the level based on the label
-            level_type = None
-            if text.upper().startswith('PART'):
-                level_type = 'part'
-            elif text.upper().startswith('SUBSECTION'):
-                level_type = 'subsection'
-            elif text.upper().startswith('ITEM'):
-                level_type = 'item'
-            elif text.upper().startswith('LIST'):
-                level_type = 'list'
-            elif text.upper().startswith('SUBLIST'):
-                level_type = 'sub_list'
-            elif text.upper().startswith('SUBITEM'):
-                level_type = 'sub_item'
+            level_type, number, content = self.classify_paragraph_level(text)
             
-            if level_type:
-                template_structure["levels"].append(level_type)
-                template_structure["labels"].append(text)
-                print(f"Level {len(template_structure['levels'])}: {level_type} - {text}")
-        
-        print(f"Template has {len(template_structure['levels'])} levels")
-        print("Level sequence:", template_structure["levels"])
-        print("Label sequence:", template_structure["labels"])
-        print("--- End Template Level Analysis ---\n")
+            if level_type in ["part", "part_title"]:
+                current_part = content
+                current_subsection = None
+                
+            elif level_type in ["subsection", "subsection_title"]:
+                current_subsection = content
+                if current_part and current_subsection:
+                    key = f"{current_part}:{current_subsection}"
+                    template_structure[key] = {
+                        "part": current_part,
+                        "subsection": current_subsection,
+                        "expected_items": [],
+                        "expected_lists": {}
+                    }
+                    
+            elif level_type == "item" and current_part and current_subsection:
+                key = f"{current_part}:{current_subsection}"
+                if key in template_structure:
+                    template_structure[key]["expected_items"].append(number)
+                    
+            elif level_type == "list" and current_part and current_subsection:
+                key = f"{current_part}:{current_subsection}"
+                if key in template_structure:
+                    # Find the current item (last item in the subsection)
+                    if template_structure[key]["expected_items"]:
+                        current_item = template_structure[key]["expected_items"][-1]
+                        if current_item not in template_structure[key]["expected_lists"]:
+                            template_structure[key]["expected_lists"][current_item] = []
+                        template_structure[key]["expected_lists"][current_item].append(number)
         
         return template_structure
     
     def get_expected_structure(self, part_title: str, subsection_title: str) -> Optional[Dict]:
         """Get expected structure for a specific part/subsection combination"""
-        # For now, return the overall template structure
-        return self.template_structure if self.template_structure else None
+        key = f"{part_title}:{subsection_title}"
+        return self.template_structure.get(key)
     
     def validate_against_template(self, part_title: str, subsection_title: str, 
                                 found_items: List[Dict]) -> List[str]:
@@ -510,38 +163,30 @@ class SpecContentExtractor:
         validation_errors = []
         expected_structure = self.get_expected_structure(part_title, subsection_title)
         
-        if not expected_structure or not expected_structure.get("levels"):
+        if not expected_structure:
             return validation_errors  # No template to validate against
         
-        # Check if the found structure follows the expected levels
-        expected_levels = expected_structure["levels"]
-        print(f"Validating {part_title}:{subsection_title} against template levels: {expected_levels}")
+        # Check item sequence
+        expected_items = expected_structure["expected_items"]
+        found_item_numbers = [item["item_number"] for item in found_items if item["item_number"]]
         
-        # Analyze the found structure
-        found_levels = []
+        if found_item_numbers != expected_items:
+            validation_errors.append(
+                f"Item sequence mismatch in {part_title}:{subsection_title}. "
+                f"Expected: {expected_items}, Found: {found_item_numbers}"
+            )
+        
+        # Check list sequences for each item
         for item in found_items:
-            found_levels.append("item")
-            if item.get("lists"):
-                found_levels.append("list")
-                for list_item in item["lists"]:
-                    if list_item.get("sub_lists"):
-                        found_levels.append("sub_list")
-        
-        print(f"Found levels: {found_levels}")
-        
-        # Check if the found levels match the expected pattern
-        if found_levels and expected_levels:
-            # Look for the expected pattern in the found levels
-            for i, expected_level in enumerate(expected_levels):
-                if i < len(found_levels):
-                    if found_levels[i] != expected_level:
-                        validation_errors.append(
-                            f"Level mismatch at position {i+1}. "
-                            f"Expected: {expected_level}, Found: {found_levels[i]}"
-                        )
-                else:
+            item_number = item["item_number"]
+            if item_number in expected_structure["expected_lists"]:
+                expected_lists = expected_structure["expected_lists"][item_number]
+                found_lists = [list_item["list_number"] for list_item in item["lists"]]
+                
+                if found_lists != expected_lists:
                     validation_errors.append(
-                        f"Missing expected level: {expected_level} at position {i+1}"
+                        f"List sequence mismatch in {part_title}:{subsection_title}, "
+                        f"Item {item_number}. Expected: {expected_lists}, Found: {found_lists}"
                     )
         
         return validation_errors
@@ -1228,7 +873,6 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python extract_spec_content_final.py <docx_file> [output_dir] [template_file]")
         print("Example: python extract_spec_content_final.py 'SECTION 26 05 00.docx' . 'test_template.docx'")
-        print("Note: All output files will be saved to <output_dir>/output/")
         sys.exit(1)
     
     docx_path = sys.argv[1]
@@ -1239,26 +883,11 @@ def main():
         print(f"Error: File '{docx_path}' not found.")
         sys.exit(1)
     
-    # Auto-detect cleaned template if no template specified
-    if not template_path:
-        # Look for common template names with _cleaned suffix
-        possible_templates = [
-            "test_template_cleaned.docx",
-            "template_cleaned.docx", 
-            "spec_template_cleaned.docx"
-        ]
-        for template in possible_templates:
-            if os.path.exists(template):
-                template_path = template
-                print(f"Auto-detected cleaned template: {template_path}")
-                break
-    
     if template_path and not os.path.exists(template_path):
         print(f"Warning: Template file '{template_path}' not found. Proceeding without template validation.")
         template_path = None
     
     # Create output directory if it doesn't exist
-    output_dir = os.path.join(output_dir, "output")
     os.makedirs(output_dir, exist_ok=True)
     
     # Initialize extractor with template if provided
