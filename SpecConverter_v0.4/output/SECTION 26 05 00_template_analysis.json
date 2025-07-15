@@ -1,0 +1,1330 @@
+{
+  "template_path": "test_template_cleaned.docx",
+  "bwa_list_levels": {
+    "BWA-SUBSECTION": {
+      "level_number": 0,
+      "numbering_id": "0",
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-SUBSECTION",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "BWA-Item": {
+      "level_number": null,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-Item",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "BWA-List": {
+      "level_number": null,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-List",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "BWA-SubItem": {
+      "level_number": null,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-SubItem",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "BWA-SubList": {
+      "level_number": null,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-SubList",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "BWA-SubSubItem": {
+      "level_number": null,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-SubSubItem",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "BWA-SubSubList": {
+      "level_number": null,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-SubSubList",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "BWA-PART": {
+      "level_number": null,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-PART",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "num_0": {
+      "level_number": 0,
+      "numbering_id": "0",
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-SUBSECTION",
+      "bwa_label": null,
+      "is_bwa_level": true
+    }
+  },
+  "template_numbering": {
+    "0": {
+      "levels": {
+        "0": {
+          "ilvl": "0",
+          "lvlText": "PART %1 - ",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": "nothing",
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {},
+          "rPr": {}
+        },
+        "1": {
+          "ilvl": "1",
+          "lvlText": "SCHEDULE %2 - ",
+          "numFmt": "decimal",
+          "start": null,
+          "suff": "nothing",
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {},
+          "rPr": {}
+        },
+        "2": {
+          "ilvl": "2",
+          "lvlText": "PRODUCT DATA SHEET %3 - ",
+          "numFmt": "decimal",
+          "start": null,
+          "suff": "nothing",
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {},
+          "rPr": {}
+        },
+        "3": {
+          "ilvl": "3",
+          "lvlText": "%1.%4",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "864",
+              "right": null,
+              "hanging": "864",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "4": {
+          "ilvl": "4",
+          "lvlText": "%5.",
+          "numFmt": "upperLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "864",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "5": {
+          "ilvl": "5",
+          "lvlText": "%6.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "1440",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "6": {
+          "ilvl": "6",
+          "lvlText": "%7.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "2016",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "7": {
+          "ilvl": "7",
+          "lvlText": "%8)",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "2592",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "8": {
+          "ilvl": "8",
+          "lvlText": "%9)",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "3168",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        }
+      },
+      "bwa_label": null,
+      "nsid": null,
+      "multiLevelType": null,
+      "tmpl": null
+    },
+    "1": {
+      "levels": {
+        "0": {
+          "ilvl": "0",
+          "lvlText": "%1.0",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "576",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "1": {
+          "ilvl": "1",
+          "lvlText": "%1.%2",
+          "numFmt": "decimalZero",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "1152",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "2": {
+          "ilvl": "2",
+          "lvlText": "%3.",
+          "numFmt": "upperLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "1728",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "3": {
+          "ilvl": "3",
+          "lvlText": "%4.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "2304",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "4": {
+          "ilvl": "4",
+          "lvlText": "%5.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "2880",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "5": {
+          "ilvl": "5",
+          "lvlText": "%6.",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "3456",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "6": {
+          "ilvl": "6",
+          "lvlText": "%7)",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "4032",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "7": {
+          "ilvl": "7",
+          "lvlText": "%8)",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "4608",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "8": {
+          "ilvl": "8",
+          "lvlText": "%9)",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "5184",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        }
+      },
+      "bwa_label": null,
+      "nsid": null,
+      "multiLevelType": null,
+      "tmpl": null
+    },
+    "2": {
+      "levels": {
+        "0": {
+          "ilvl": "0",
+          "lvlText": "%1.0",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-PART",
+          "pPr": {
+            "indent": {
+              "left": "576",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "1": {
+          "ilvl": "1",
+          "lvlText": "%1.%2",
+          "numFmt": "decimalZero",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SUBSECTION",
+          "pPr": {
+            "indent": {
+              "left": "1152",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "2": {
+          "ilvl": "2",
+          "lvlText": "%3.",
+          "numFmt": "upperLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-Item",
+          "pPr": {
+            "indent": {
+              "left": "1728",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "3": {
+          "ilvl": "3",
+          "lvlText": "%4.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-List",
+          "pPr": {
+            "indent": {
+              "left": "2304",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "4": {
+          "ilvl": "4",
+          "lvlText": "%5.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SubItem",
+          "pPr": {
+            "indent": {
+              "left": "2880",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "5": {
+          "ilvl": "5",
+          "lvlText": "%6.",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SubList",
+          "pPr": {
+            "indent": {
+              "left": "3456",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "6": {
+          "ilvl": "6",
+          "lvlText": "%7)",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SubSubItem",
+          "pPr": {
+            "indent": {
+              "left": "4032",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "7": {
+          "ilvl": "7",
+          "lvlText": "%8)",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SubSubList",
+          "pPr": {
+            "indent": {
+              "left": "4608",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "8": {
+          "ilvl": "8",
+          "lvlText": "%9)",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "5184",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        }
+      },
+      "bwa_label": null,
+      "nsid": null,
+      "multiLevelType": null,
+      "tmpl": null
+    },
+    "3": {
+      "levels": {
+        "0": {
+          "ilvl": "0",
+          "lvlText": "1.%1",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "864",
+              "right": null,
+              "hanging": "864",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20"
+          }
+        },
+        "1": {
+          "ilvl": "1",
+          "lvlText": "%2.",
+          "numFmt": "upperLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "864",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "2": {
+          "ilvl": "2",
+          "lvlText": "%3.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "1440",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "3": {
+          "ilvl": "3",
+          "lvlText": "%4.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "2016",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "4": {
+          "ilvl": "4",
+          "lvlText": "%5)",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "2592",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "5": {
+          "ilvl": "5",
+          "lvlText": "%6)",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "right",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "3744",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "6": {
+          "ilvl": "6",
+          "lvlText": "%7.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "7560",
+              "right": null,
+              "hanging": "1080",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "7": {
+          "ilvl": "7",
+          "lvlText": "%8.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "8640",
+              "right": null,
+              "hanging": "1080",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "8": {
+          "ilvl": "8",
+          "lvlText": "%9.",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "right",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "9720",
+              "right": null,
+              "hanging": "1080",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        }
+      },
+      "bwa_label": null,
+      "nsid": null,
+      "multiLevelType": null,
+      "tmpl": null
+    },
+    "4": {
+      "levels": {
+        "0": {
+          "ilvl": "0",
+          "lvlText": "1.%1",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "576",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "1": {
+          "ilvl": "1",
+          "lvlText": "%2.",
+          "numFmt": "upperLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "1152",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "2": {
+          "ilvl": "2",
+          "lvlText": "%3.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "1728",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "3": {
+          "ilvl": "3",
+          "lvlText": "%4.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "2304",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "4": {
+          "ilvl": "4",
+          "lvlText": "%5.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "2880",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "5": {
+          "ilvl": "5",
+          "lvlText": "%6.",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "3456",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "6": {
+          "ilvl": "6",
+          "lvlText": "%7.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "4032",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "7": {
+          "ilvl": "7",
+          "lvlText": "%8.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "4608",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "8": {
+          "ilvl": "8",
+          "lvlText": "%9.",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "right",
+          "pStyle": null,
+          "pPr": {
+            "indent": {
+              "left": "5184",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        }
+      },
+      "bwa_label": null,
+      "nsid": null,
+      "multiLevelType": null,
+      "tmpl": null
+    },
+    "num_1": {
+      "abstract_num_id": "4",
+      "bwa_label": null
+    },
+    "num_2": {
+      "abstract_num_id": "3",
+      "bwa_label": null
+    },
+    "num_3": {
+      "abstract_num_id": "0",
+      "bwa_label": null
+    },
+    "num_4": {
+      "abstract_num_id": "0",
+      "bwa_label": null
+    },
+    "num_5": {
+      "abstract_num_id": "0",
+      "bwa_label": null
+    },
+    "num_6": {
+      "abstract_num_id": "0",
+      "bwa_label": null
+    },
+    "num_7": {
+      "abstract_num_id": "0",
+      "bwa_label": null
+    },
+    "num_8": {
+      "abstract_num_id": "0",
+      "bwa_label": null
+    },
+    "num_9": {
+      "abstract_num_id": "0",
+      "bwa_label": null
+    },
+    "num_10": {
+      "abstract_num_id": "2",
+      "bwa_label": null
+    },
+    "num_11": {
+      "abstract_num_id": "2",
+      "bwa_label": null
+    },
+    "num_12": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    }
+  },
+  "level_mappings": {
+    "1": "4",
+    "2": "3",
+    "3": "0",
+    "4": "0",
+    "5": "0",
+    "6": "0",
+    "7": "0",
+    "8": "0",
+    "9": "0",
+    "10": "2",
+    "11": "2",
+    "12": "1"
+  },
+  "summary": {
+    "total_abstract_numbering": 5,
+    "total_num_mappings": 12,
+    "total_bwa_levels": 9,
+    "level_mappings_count": 12,
+    "level_types": {},
+    "analysis_timestamp": "2025-07-15T12:12:26.526989"
+  }
+}
