@@ -73,44 +73,6 @@ def get_style_for_bwa_level(bwa_level_name):
     }
     return style_mapping.get(bwa_level_name, "Normal")
 
-def clean_text_for_display(text, level_type, number):
-    """Clean text by removing numbering prefixes while preserving content"""
-    if not text:
-        return text
-    
-    # Remove common numbering patterns from the beginning of text
-    import re
-    
-    # Patterns to remove (in order of specificity)
-    patterns = [
-        # Item patterns: "A.\t", "B.\t", "C.\t", etc.
-        r'^[A-Z]\.\s*\t\s*',
-        # List patterns: "1.\t", "2.\t", "3.\t", etc.
-        r'^\d+\.\s*\t\s*',
-        # Sub-list patterns: "a.\t", "b.\t", "c.\t", etc.
-        r'^[a-z]\.\s*\t\s*',
-        # Part patterns: "1.0\t", "2.0\t", etc.
-        r'^\d+\.0\s*\t\s*',
-        # Subsection patterns: "1.01\t", "1.02\t", etc.
-        r'^\d+\.\d{2}\s*\t\s*',
-        # Alternative subsection patterns: "1.1\t", "1.2\t", etc.
-        r'^\d+\.\d\s*\t\s*',
-        # Section patterns: "SECTION 26 05 00\t"
-        r'^SECTION\s+[^\t]*\s*\t\s*',
-        # Generic tab removal at start
-        r'^\s*\t\s*'
-    ]
-    
-    cleaned_text = text
-    for pattern in patterns:
-        cleaned_text = re.sub(pattern, '', cleaned_text, flags=re.IGNORECASE)
-    
-    # If we removed everything, return the original text
-    if not cleaned_text.strip():
-        return text
-    
-    return cleaned_text.strip()
-
 def generate_content_from_v3_json(doc, json_data):
     """Generate document content from v3 JSON data using template styles"""
     print(f"DEBUG: Starting content generation from v3 JSON data")
@@ -135,10 +97,6 @@ def generate_content_from_v3_json(doc, json_data):
         if not text.strip():
             continue
         
-        # Clean the text for display (remove numbering prefixes)
-        display_text = clean_text_for_display(text, level_type, number)
-        print(f"DEBUG: Original: '{text[:50]}...' -> Cleaned: '{display_text[:50]}...'")
-        
         # Determine the style to use
         if bwa_level_name:
             style_name = get_style_for_bwa_level(bwa_level_name)
@@ -157,14 +115,14 @@ def generate_content_from_v3_json(doc, json_data):
                 style_name = "Normal"
             print(f"DEBUG: Using fallback style: {style_name}")
         
-        # Add paragraph with appropriate style using cleaned text
+        # Add paragraph with appropriate style
         try:
-            paragraph = doc.add_paragraph(display_text, style=style_name)
+            paragraph = doc.add_paragraph(text, style=style_name)
             set_font_and_size(paragraph)
-            print(f"DEBUG: Added paragraph with style '{style_name}': {display_text[:50]}...")
+            print(f"DEBUG: Added paragraph with style '{style_name}': {text[:50]}...")
         except Exception as e:
             print(f"DEBUG: Style '{style_name}' not found, using Normal: {e}")
-            paragraph = doc.add_paragraph(display_text, style="Normal")
+            paragraph = doc.add_paragraph(text, style="Normal")
             set_font_and_size(paragraph)
         
         # Add some spacing for better readability
