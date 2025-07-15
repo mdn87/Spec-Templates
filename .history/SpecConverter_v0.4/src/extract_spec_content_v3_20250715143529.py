@@ -90,10 +90,6 @@ class SpecContentExtractorV3:
         # Content blocks
         self.content_blocks: List[ContentBlock] = []
         
-        # List numbering tracking
-        self.list_counters = {}  # {(numId, ilvl): current_number}
-        self.list_fixes = []  # Track numbering fixes for reporting
-        
         # Regex patterns
         self.section_pattern = re.compile(r'^SECTION\s+(.+)$', re.IGNORECASE)
         self.end_section_pattern = re.compile(r'^END\s+OF\s+SECTION\s*(.+)?$', re.IGNORECASE)
@@ -283,41 +279,6 @@ class SpecContentExtractorV3:
         
         return level_type
 
-    def extract_list_number(self, numbering_id: Optional[str], numbering_level: Optional[int], 
-                          detected_number: Optional[str], text: str) -> Tuple[Optional[str], bool]:
-        """
-        Extract the correct list number from Word's numbering system
-        Returns: (correct_number, was_fixed)
-        """
-        if numbering_id is None or numbering_level is None:
-            return detected_number, False
-        
-        # Create key for tracking this specific list
-        key = (numbering_id, numbering_level)
-        
-        # Initialize counter if this is a new list or level
-        if key not in self.list_counters:
-            self.list_counters[key] = 1
-        else:
-            self.list_counters[key] += 1
-        
-        correct_number = str(self.list_counters[key])
-        
-        # Check if we need to fix the detected number
-        was_fixed = False
-        if detected_number is not None and detected_number != correct_number:
-            was_fixed = True
-            self.list_fixes.append({
-                "line_number": self.line_count,
-                "text": text[:50] + "..." if len(text) > 50 else text,
-                "detected_number": detected_number,
-                "correct_number": correct_number,
-                "numbering_id": numbering_id,
-                "numbering_level": numbering_level
-            })
-        
-        return correct_number, was_fixed
-
     def map_to_bwa_level(self, paragraph, level_type: str) -> Tuple[Optional[int], Optional[str]]:
         """Map paragraph to BWA list level based on template analysis"""
         try:
@@ -407,11 +368,6 @@ class SpecContentExtractorV3:
                     level_type, numbering_id, numbering_level, text
                 )
                 
-                # Extract correct list number and check for fixes
-                correct_number, was_fixed = self.extract_list_number(
-                    numbering_id, numbering_level, number, text
-                )
-                
                 # Map to BWA level using corrected level type
                 level_number, bwa_level_name = self.map_to_bwa_level(paragraph, corrected_level_type)
                 
@@ -419,7 +375,7 @@ class SpecContentExtractorV3:
                 block = ContentBlock(
                     text=text,
                     level_type=corrected_level_type,
-                    number=correct_number,  # Use the correct number from Word's numbering system
+                    number=number,
                     content=content,
                     level_number=level_number,
                     bwa_level_name=bwa_level_name,
@@ -543,60 +499,38 @@ class SpecContentExtractorV3:
     
     def generate_error_report(self) -> str:
         """Generate a comprehensive error report"""
+        if not self.errors:
+            return "No errors found during extraction.\n"
+        
         report = f"ERROR REPORT - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
         report += "=" * 60 + "\n\n"
         
-        # Report list numbering fixes
-        if self.list_fixes:
-            report += f"LIST NUMBERING FIXES ({len(self.list_fixes)} found):\n"
+        # Group errors by type
+        error_types = {}
+        for error in self.errors:
+            if error.error_type not in error_types:
+                error_types[error.error_type] = []
+            error_types[error.error_type].append(error)
+        
+        for error_type, errors in error_types.items():
+            report += f"{error_type} ERRORS ({len(errors)} found):\n"
             report += "-" * 40 + "\n"
             
-            for i, fix in enumerate(self.list_fixes, 1):
-                report += f"{i}. Line {fix['line_number']}: {fix['text']}\n"
-                report += f"   Detected: {fix['detected_number']}, Corrected: {fix['correct_number']}\n"
-                report += f"   Numbering ID: {fix['numbering_id']}, Level: {fix['numbering_level']}\n"
+            for i, error in enumerate(errors, 1):
+                report += f"{i}. Line {error.line_number}: {error.message}\n"
+                if error.context:
+                    report += f"   Context: {error.context}\n"
+                if error.expected and error.found:
+                    report += f"   Expected: {error.expected}, Found: {error.found}\n"
                 report += "\n"
-        
-        # Report other errors
-        if self.errors:
-            # Group errors by type
-            error_types = {}
-            for error in self.errors:
-                if error.error_type not in error_types:
-                    error_types[error.error_type] = []
-                error_types[error.error_type].append(error)
-            
-            for error_type, errors in error_types.items():
-                report += f"{error_type} ERRORS ({len(errors)} found):\n"
-                report += "-" * 40 + "\n"
-                
-                for i, error in enumerate(errors, 1):
-                    report += f"{i}. Line {error.line_number}: {error.message}\n"
-                    if error.context:
-                        report += f"   Context: {error.context}\n"
-                    if error.expected and error.found:
-                        report += f"   Expected: {error.expected}, Found: {error.found}\n"
-                    report += "\n"
-        else:
-            report += "No errors found during extraction.\n\n"
         
         # Add summary statistics
         report += "SUMMARY:\n"
         report += "-" * 20 + "\n"
         total_errors = len(self.errors)
-        total_fixes = len(self.list_fixes)
         report += f"Total errors: {total_errors}\n"
-        report += f"List numbering fixes: {total_fixes}\n"
-        
-        if self.errors:
-            error_types = {}
-            for error in self.errors:
-                if error.error_type not in error_types:
-                    error_types[error.error_type] = []
-                error_types[error.error_type].append(error)
-            
-            for error_type, errors in error_types.items():
-                report += f"{error_type}: {len(errors)} errors\n"
+        for error_type, errors in error_types.items():
+            report += f"{error_type}: {len(errors)} errors\n"
         
         return report
     

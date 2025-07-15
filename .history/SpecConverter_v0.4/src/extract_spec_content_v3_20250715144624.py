@@ -407,11 +407,6 @@ class SpecContentExtractorV3:
                     level_type, numbering_id, numbering_level, text
                 )
                 
-                # Extract correct list number and check for fixes
-                correct_number, was_fixed = self.extract_list_number(
-                    numbering_id, numbering_level, number, text
-                )
-                
                 # Map to BWA level using corrected level type
                 level_number, bwa_level_name = self.map_to_bwa_level(paragraph, corrected_level_type)
                 
@@ -419,7 +414,7 @@ class SpecContentExtractorV3:
                 block = ContentBlock(
                     text=text,
                     level_type=corrected_level_type,
-                    number=correct_number,  # Use the correct number from Word's numbering system
+                    number=number,
                     content=content,
                     level_number=level_number,
                     bwa_level_name=bwa_level_name,
@@ -543,60 +538,38 @@ class SpecContentExtractorV3:
     
     def generate_error_report(self) -> str:
         """Generate a comprehensive error report"""
+        if not self.errors:
+            return "No errors found during extraction.\n"
+        
         report = f"ERROR REPORT - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
         report += "=" * 60 + "\n\n"
         
-        # Report list numbering fixes
-        if self.list_fixes:
-            report += f"LIST NUMBERING FIXES ({len(self.list_fixes)} found):\n"
+        # Group errors by type
+        error_types = {}
+        for error in self.errors:
+            if error.error_type not in error_types:
+                error_types[error.error_type] = []
+            error_types[error.error_type].append(error)
+        
+        for error_type, errors in error_types.items():
+            report += f"{error_type} ERRORS ({len(errors)} found):\n"
             report += "-" * 40 + "\n"
             
-            for i, fix in enumerate(self.list_fixes, 1):
-                report += f"{i}. Line {fix['line_number']}: {fix['text']}\n"
-                report += f"   Detected: {fix['detected_number']}, Corrected: {fix['correct_number']}\n"
-                report += f"   Numbering ID: {fix['numbering_id']}, Level: {fix['numbering_level']}\n"
+            for i, error in enumerate(errors, 1):
+                report += f"{i}. Line {error.line_number}: {error.message}\n"
+                if error.context:
+                    report += f"   Context: {error.context}\n"
+                if error.expected and error.found:
+                    report += f"   Expected: {error.expected}, Found: {error.found}\n"
                 report += "\n"
-        
-        # Report other errors
-        if self.errors:
-            # Group errors by type
-            error_types = {}
-            for error in self.errors:
-                if error.error_type not in error_types:
-                    error_types[error.error_type] = []
-                error_types[error.error_type].append(error)
-            
-            for error_type, errors in error_types.items():
-                report += f"{error_type} ERRORS ({len(errors)} found):\n"
-                report += "-" * 40 + "\n"
-                
-                for i, error in enumerate(errors, 1):
-                    report += f"{i}. Line {error.line_number}: {error.message}\n"
-                    if error.context:
-                        report += f"   Context: {error.context}\n"
-                    if error.expected and error.found:
-                        report += f"   Expected: {error.expected}, Found: {error.found}\n"
-                    report += "\n"
-        else:
-            report += "No errors found during extraction.\n\n"
         
         # Add summary statistics
         report += "SUMMARY:\n"
         report += "-" * 20 + "\n"
         total_errors = len(self.errors)
-        total_fixes = len(self.list_fixes)
         report += f"Total errors: {total_errors}\n"
-        report += f"List numbering fixes: {total_fixes}\n"
-        
-        if self.errors:
-            error_types = {}
-            for error in self.errors:
-                if error.error_type not in error_types:
-                    error_types[error.error_type] = []
-                error_types[error.error_type].append(error)
-            
-            for error_type, errors in error_types.items():
-                report += f"{error_type}: {len(errors)} errors\n"
+        for error_type, errors in error_types.items():
+            report += f"{error_type}: {len(errors)} errors\n"
         
         return report
     
