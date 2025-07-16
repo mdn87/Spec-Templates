@@ -7,7 +7,6 @@ import os
 from docx.oxml import OxmlElement
 from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
-from typing import Dict, List, Any, Optional
 
 # Configuration variables - change these to modify font and size for all text
 TEMPLATE_PATH = '../templates/test_template_cleaned.docx'
@@ -16,13 +15,13 @@ CONTENT_PATH  = '../output/SECTION 26 05 00_v3.json'
 FONT_NAME = 'Arial'
 FONT_SIZE = 10
 
-def list_available_styles(doc: Any) -> None:
+def list_available_styles(doc):
     """List all available styles in the document"""
     print("DEBUG: Available styles in template:")
     for style in doc.styles:
         print(f"  - {style.name}")
 
-def clear_document(doc: Any) -> None:
+def clear_document(doc):
     # Remove all paragraphs
     for _ in range(len(doc.paragraphs)):
         p = doc.paragraphs[0]
@@ -32,7 +31,7 @@ def clear_document(doc: Any) -> None:
         t = doc.tables[0]
         t._element.getparent().remove(t._element)
 
-def set_font_and_size(paragraph: Any) -> None:
+def set_font_and_size(paragraph):
     """Set font and size for all runs in a paragraph"""
     for run in paragraph.runs:
         run.font.name = FONT_NAME
@@ -41,7 +40,7 @@ def set_font_and_size(paragraph: Any) -> None:
         r = run._element
         r.rPr.rFonts.set(qn('w:eastAsia'), FONT_NAME)
 
-def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
+def apply_styling_from_json(paragraph, block):
     """Apply styling information from JSON block to paragraph"""
     try:
         # Font properties
@@ -157,11 +156,9 @@ def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
         # Fallback to default styling
         set_font_and_size(paragraph)
 
-def apply_style_definitions_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def apply_style_definitions_from_json(doc, json_data):
     """Apply style definitions from JSON to ensure proper styling in regenerated document"""
     try:
-        if json_data is None:
-            return
         content_blocks = json_data.get('content_blocks', [])
         if not content_blocks:
             return
@@ -182,7 +179,7 @@ def apply_style_definitions_from_json(doc: Any, json_data: Optional[Dict[str, An
     except Exception as e:
         print(f"Warning: Could not apply style definitions: {e}")
 
-def apply_style_definition(doc: Any, style_name: str, content_blocks: List[Dict[str, Any]]) -> None:
+def apply_style_definition(doc, style_name, content_blocks):
     """Apply definition for a specific style based on content blocks using that style"""
     try:
         # Get or create the style
@@ -303,11 +300,9 @@ def apply_style_definition(doc: Any, style_name: str, content_blocks: List[Dict[
     except Exception as e:
         print(f"Warning: Could not apply style definition for {style_name}: {e}")
 
-def apply_document_settings_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def apply_document_settings_from_json(doc, json_data):
     """Apply document-level settings from JSON to the document"""
     try:
-        if json_data is None:
-            return
         document_settings = json_data.get('document_settings', {})
         if not document_settings:
             return
@@ -404,7 +399,7 @@ def apply_document_settings_from_json(doc: Any, json_data: Optional[Dict[str, An
     except Exception as e:
         print(f"Warning: Could not apply document settings from JSON: {e}")
 
-def apply_default_formatting_from_json(doc: Any, default_formatting: Dict[str, Any]) -> None:
+def apply_default_formatting_from_json(doc, default_formatting):
     """Apply default formatting settings from JSON to document styles"""
     try:
         # Get the Normal style
@@ -513,7 +508,7 @@ def apply_default_formatting_from_json(doc: Any, default_formatting: Dict[str, A
     except Exception as e:
         print(f"Warning: Could not apply default formatting from JSON: {e}")
 
-def apply_document_wide_settings_from_json(doc: Any, doc_wide_settings: Dict[str, Any]) -> None:
+def apply_document_wide_settings_from_json(doc, doc_wide_settings):
     """Apply document-wide settings from JSON to document"""
     try:
         # Note: Most document-wide settings are read-only or require direct XML manipulation
@@ -542,11 +537,9 @@ def apply_document_wide_settings_from_json(doc: Any, doc_wide_settings: Dict[str
     except Exception as e:
         print(f"Warning: Could not apply document-wide settings from JSON: {e}")
 
-def apply_margins_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def apply_margins_from_json(doc, json_data):
     """Apply margin settings from JSON to the document"""
     try:
-        if json_data is None:
-            return
         margins = json_data.get('margins', {})
         if not margins:
             return
@@ -570,7 +563,7 @@ def apply_margins_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> No
     except Exception as e:
         print(f"Warning: Could not apply margins from JSON: {e}")
 
-def parse_spec_json(json_path: str) -> Optional[Dict[str, Any]]:
+def parse_spec_json(json_path):
     """Parse JSON file and return structured data"""
     
     if not os.path.exists(json_path):
@@ -588,7 +581,7 @@ def parse_spec_json(json_path: str) -> Optional[Dict[str, Any]]:
         print(f"ERROR: Failed to read JSON file: {e}")
         return None
 
-def get_style_for_bwa_level(bwa_level_name: str) -> str:
+def get_style_for_bwa_level(bwa_level_name):
     """Map BWA level names to template style names"""
     style_mapping = {
         "BWA-SectionNumber": "BWA-SectionNumber",
@@ -604,7 +597,7 @@ def get_style_for_bwa_level(bwa_level_name: str) -> str:
     }
     return style_mapping.get(bwa_level_name, "Normal")
 
-def clean_text_for_display(text: str, level_type: str, number: Optional[str]) -> str:
+def clean_text_for_display(text, level_type, number):
     """Clean text by removing numbering prefixes while preserving content"""
     if not text:
         return text
@@ -642,7 +635,7 @@ def clean_text_for_display(text: str, level_type: str, number: Optional[str]) ->
     
     return cleaned_text.strip()
 
-def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def generate_content_from_v3_json(doc, json_data):
     """Generate document content from v3 JSON data using template styles"""
     
     if json_data is None:
@@ -695,7 +688,7 @@ def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]])
         if level_type in ["section", "title", "part_title"]:
             doc.add_paragraph()  # Add blank line after major sections
 
-def check_template_styles(template_path: str) -> None:
+def check_template_styles(template_path):
     """Check template styles and provide feedback about style definitions"""
     try:
         doc = Document(template_path)
@@ -730,7 +723,7 @@ def check_template_styles(template_path: str) -> None:
     except Exception as e:
         print(f"Warning: Could not analyze template styles: {e}")
 
-def clone_header_footer_styles(template_doc: Any, target_doc: Any) -> None:
+def clone_header_footer_styles(template_doc, target_doc):
     """Clone header and footer styles from template to target document"""
     try:
         print("Cloning header/footer styles from template...")

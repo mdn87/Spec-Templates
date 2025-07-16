@@ -542,11 +542,9 @@ def apply_document_wide_settings_from_json(doc: Any, doc_wide_settings: Dict[str
     except Exception as e:
         print(f"Warning: Could not apply document-wide settings from JSON: {e}")
 
-def apply_margins_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def apply_margins_from_json(doc: Any, json_data: Dict[str, Any]) -> None:
     """Apply margin settings from JSON to the document"""
     try:
-        if json_data is None:
-            return
         margins = json_data.get('margins', {})
         if not margins:
             return
@@ -642,7 +640,7 @@ def clean_text_for_display(text: str, level_type: str, number: Optional[str]) ->
     
     return cleaned_text.strip()
 
-def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def generate_content_from_v3_json(doc: Any, json_data: Dict[str, Any]) -> None:
     """Generate document content from v3 JSON data using template styles"""
     
     if json_data is None:

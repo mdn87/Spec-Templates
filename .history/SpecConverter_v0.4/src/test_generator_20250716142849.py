@@ -7,7 +7,6 @@ import os
 from docx.oxml import OxmlElement
 from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
-from typing import Dict, List, Any, Optional
 
 # Configuration variables - change these to modify font and size for all text
 TEMPLATE_PATH = '../templates/test_template_cleaned.docx'
@@ -16,13 +15,13 @@ CONTENT_PATH  = '../output/SECTION 26 05 00_v3.json'
 FONT_NAME = 'Arial'
 FONT_SIZE = 10
 
-def list_available_styles(doc: Any) -> None:
+def list_available_styles(doc):
     """List all available styles in the document"""
     print("DEBUG: Available styles in template:")
     for style in doc.styles:
         print(f"  - {style.name}")
 
-def clear_document(doc: Any) -> None:
+def clear_document(doc):
     # Remove all paragraphs
     for _ in range(len(doc.paragraphs)):
         p = doc.paragraphs[0]
@@ -32,7 +31,7 @@ def clear_document(doc: Any) -> None:
         t = doc.tables[0]
         t._element.getparent().remove(t._element)
 
-def set_font_and_size(paragraph: Any) -> None:
+def set_font_and_size(paragraph):
     """Set font and size for all runs in a paragraph"""
     for run in paragraph.runs:
         run.font.name = FONT_NAME
@@ -41,7 +40,7 @@ def set_font_and_size(paragraph: Any) -> None:
         r = run._element
         r.rPr.rFonts.set(qn('w:eastAsia'), FONT_NAME)
 
-def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
+def apply_styling_from_json(paragraph, block):
     """Apply styling information from JSON block to paragraph"""
     try:
         # Font properties
@@ -157,11 +156,9 @@ def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
         # Fallback to default styling
         set_font_and_size(paragraph)
 
-def apply_style_definitions_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def apply_style_definitions_from_json(doc, json_data):
     """Apply style definitions from JSON to ensure proper styling in regenerated document"""
     try:
-        if json_data is None:
-            return
         content_blocks = json_data.get('content_blocks', [])
         if not content_blocks:
             return
@@ -182,7 +179,7 @@ def apply_style_definitions_from_json(doc: Any, json_data: Optional[Dict[str, An
     except Exception as e:
         print(f"Warning: Could not apply style definitions: {e}")
 
-def apply_style_definition(doc: Any, style_name: str, content_blocks: List[Dict[str, Any]]) -> None:
+def apply_style_definition(doc, style_name, content_blocks):
     """Apply definition for a specific style based on content blocks using that style"""
     try:
         # Get or create the style
@@ -303,11 +300,9 @@ def apply_style_definition(doc: Any, style_name: str, content_blocks: List[Dict[
     except Exception as e:
         print(f"Warning: Could not apply style definition for {style_name}: {e}")
 
-def apply_document_settings_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def apply_document_settings_from_json(doc, json_data):
     """Apply document-level settings from JSON to the document"""
     try:
-        if json_data is None:
-            return
         document_settings = json_data.get('document_settings', {})
         if not document_settings:
             return
@@ -404,7 +399,7 @@ def apply_document_settings_from_json(doc: Any, json_data: Optional[Dict[str, An
     except Exception as e:
         print(f"Warning: Could not apply document settings from JSON: {e}")
 
-def apply_default_formatting_from_json(doc: Any, default_formatting: Dict[str, Any]) -> None:
+def apply_default_formatting_from_json(doc, default_formatting):
     """Apply default formatting settings from JSON to document styles"""
     try:
         # Get the Normal style
@@ -513,7 +508,7 @@ def apply_default_formatting_from_json(doc: Any, default_formatting: Dict[str, A
     except Exception as e:
         print(f"Warning: Could not apply default formatting from JSON: {e}")
 
-def apply_document_wide_settings_from_json(doc: Any, doc_wide_settings: Dict[str, Any]) -> None:
+def apply_document_wide_settings_from_json(doc, doc_wide_settings):
     """Apply document-wide settings from JSON to document"""
     try:
         # Note: Most document-wide settings are read-only or require direct XML manipulation
@@ -542,11 +537,9 @@ def apply_document_wide_settings_from_json(doc: Any, doc_wide_settings: Dict[str
     except Exception as e:
         print(f"Warning: Could not apply document-wide settings from JSON: {e}")
 
-def apply_margins_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def apply_margins_from_json(doc, json_data):
     """Apply margin settings from JSON to the document"""
     try:
-        if json_data is None:
-            return
         margins = json_data.get('margins', {})
         if not margins:
             return
@@ -570,7 +563,7 @@ def apply_margins_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> No
     except Exception as e:
         print(f"Warning: Could not apply margins from JSON: {e}")
 
-def parse_spec_json(json_path: str) -> Optional[Dict[str, Any]]:
+def parse_spec_json(json_path):
     """Parse JSON file and return structured data"""
     
     if not os.path.exists(json_path):
@@ -588,7 +581,7 @@ def parse_spec_json(json_path: str) -> Optional[Dict[str, Any]]:
         print(f"ERROR: Failed to read JSON file: {e}")
         return None
 
-def get_style_for_bwa_level(bwa_level_name: str) -> str:
+def get_style_for_bwa_level(bwa_level_name):
     """Map BWA level names to template style names"""
     style_mapping = {
         "BWA-SectionNumber": "BWA-SectionNumber",
@@ -604,7 +597,7 @@ def get_style_for_bwa_level(bwa_level_name: str) -> str:
     }
     return style_mapping.get(bwa_level_name, "Normal")
 
-def clean_text_for_display(text: str, level_type: str, number: Optional[str]) -> str:
+def clean_text_for_display(text, level_type, number):
     """Clean text by removing numbering prefixes while preserving content"""
     if not text:
         return text
@@ -642,7 +635,7 @@ def clean_text_for_display(text: str, level_type: str, number: Optional[str]) ->
     
     return cleaned_text.strip()
 
-def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def generate_content_from_v3_json(doc, json_data):
     """Generate document content from v3 JSON data using template styles"""
     
     if json_data is None:
@@ -695,7 +688,7 @@ def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]])
         if level_type in ["section", "title", "part_title"]:
             doc.add_paragraph()  # Add blank line after major sections
 
-def check_template_styles(template_path: str) -> None:
+def check_template_styles(template_path):
     """Check template styles and provide feedback about style definitions"""
     try:
         doc = Document(template_path)
@@ -730,67 +723,207 @@ def check_template_styles(template_path: str) -> None:
     except Exception as e:
         print(f"Warning: Could not analyze template styles: {e}")
 
-def clone_header_footer_styles(template_doc: Any, target_doc: Any) -> None:
-    """Clone header and footer styles from template to target document"""
+def clone_template_styles(template_doc, target_doc):
+    """Clone all styles from template document to target document, removing default inheritance"""
     try:
-        print("Cloning header/footer styles from template...")
+        print("Cloning template styles to generated document...")
         
-        if not template_doc.sections or not target_doc.sections:
-            return
+        # Clear existing styles from target document (except built-in ones we can't remove)
+        styles_to_remove = []
+        for style in target_doc.styles:
+            # Don't remove built-in styles that can't be deleted
+            if style.name not in ['Normal', 'Default Paragraph Font', 'Default Paragraph Font (Asian)', 'Default Paragraph Font (Complex Script)']:
+                styles_to_remove.append(style.name)
         
-        template_section = template_doc.sections[0]
-        target_section = target_doc.sections[0]
+        # Remove custom styles
+        for style_name in styles_to_remove:
+            try:
+                del target_doc.styles[style_name]
+            except:
+                pass  # Some styles can't be deleted
         
-        # Clone header styles
-        if template_section.header and target_section.header:
-            for i, template_para in enumerate(template_section.header.paragraphs):
-                if i < len(target_section.header.paragraphs):
-                    target_para = target_section.header.paragraphs[i]
-                    # Apply the same style
-                    if template_para.style:
-                        target_para.style = template_para.style
-                    # Apply individual run styling
-                    for j, template_run in enumerate(template_para.runs):
-                        if j < len(target_para.runs):
-                            target_run = target_para.runs[j]
-                            if template_run.font.name:
-                                target_run.font.name = template_run.font.name
-                            if template_run.font.size:
-                                target_run.font.size = template_run.font.size
-                            if template_run.font.bold is not None:
-                                target_run.font.bold = template_run.font.bold
-                            if template_run.font.italic is not None:
-                                target_run.font.italic = template_run.font.italic
-                            if template_run.font.color.rgb:
-                                target_run.font.color.rgb = template_run.font.color.rgb
+        # Clone styles from template
+        cloned_styles = 0
+        for template_style in template_doc.styles:
+            try:
+                # Skip built-in styles that already exist
+                if template_style.name in ['Normal', 'Default Paragraph Font', 'Default Paragraph Font (Asian)', 'Default Paragraph Font (Complex Script)']:
+                    continue
+                
+                # Check if style already exists in target
+                if template_style.name in target_doc.styles:
+                    # Update existing style
+                    target_style = target_doc.styles[template_style.name]
+                else:
+                    # Create new style
+                    target_style = target_doc.styles.add_style(template_style.name, WD_STYLE_TYPE.PARAGRAPH)
+                
+                # Clone paragraph format
+                if hasattr(template_style, 'paragraph_format') and template_style.paragraph_format:
+                    if hasattr(target_style, 'paragraph_format') and target_style.paragraph_format:
+                        pf_template = template_style.paragraph_format
+                        pf_target = target_style.paragraph_format
+                        
+                        # Copy all paragraph format properties
+                        if pf_template.alignment:
+                            pf_target.alignment = pf_template.alignment
+                        if pf_template.left_indent:
+                            pf_target.left_indent = pf_template.left_indent
+                        if pf_template.right_indent:
+                            pf_target.right_indent = pf_template.right_indent
+                        if pf_template.first_line_indent:
+                            pf_target.first_line_indent = pf_template.first_line_indent
+                        if pf_template.space_before:
+                            pf_target.space_before = pf_template.space_before
+                        if pf_template.space_after:
+                            pf_target.space_after = pf_template.space_after
+                        if pf_template.line_spacing:
+                            pf_target.line_spacing = pf_template.line_spacing
+                        if pf_template.keep_with_next is not None:
+                            pf_target.keep_with_next = pf_template.keep_with_next
+                        if hasattr(pf_template, 'keep_lines_together') and pf_template.keep_lines_together is not None:
+                            pf_target.keep_lines_together = pf_template.keep_lines_together
+                        if pf_template.page_break_before is not None:
+                            pf_target.page_break_before = pf_template.page_break_before
+                        if pf_template.widow_control is not None:
+                            pf_target.widow_control = pf_template.widow_control
+                
+                # Clone font properties
+                if hasattr(template_style, 'font') and template_style.font:
+                    if hasattr(target_style, 'font') and target_style.font:
+                        font_template = template_style.font
+                        font_target = target_style.font
+                        
+                        # Copy all font properties
+                        if font_template.name:
+                            font_target.name = font_template.name
+                        if font_template.size:
+                            font_target.size = font_template.size
+                        if font_template.bold is not None:
+                            font_target.bold = font_template.bold
+                        if font_template.italic is not None:
+                            font_target.italic = font_template.italic
+                        if font_template.underline:
+                            font_target.underline = font_template.underline
+                        if font_template.color.rgb:
+                            font_target.color.rgb = font_template.color.rgb
+                        if font_template.strike is not None:
+                            font_target.strike = font_template.strike
+                        if font_template.small_caps is not None:
+                            font_target.small_caps = font_template.small_caps
+                        if font_template.all_caps is not None:
+                            font_target.all_caps = font_template.all_caps
+                
+                cloned_styles += 1
+                
+            except Exception as e:
+                print(f"Warning: Could not clone style {template_style.name}: {e}")
         
-        # Clone footer styles
-        if template_section.footer and target_section.footer:
-            for i, template_para in enumerate(template_section.footer.paragraphs):
-                if i < len(target_section.footer.paragraphs):
-                    target_para = target_section.footer.paragraphs[i]
-                    # Apply the same style
-                    if template_para.style:
-                        target_para.style = template_para.style
-                    # Apply individual run styling
-                    for j, template_run in enumerate(template_para.runs):
-                        if j < len(target_para.runs):
-                            target_run = target_para.runs[j]
-                            if template_run.font.name:
-                                target_run.font.name = template_run.font.name
-                            if template_run.font.size:
-                                target_run.font.size = template_run.font.size
-                            if template_run.font.bold is not None:
-                                target_run.font.bold = template_run.font.bold
-                            if template_run.font.italic is not None:
-                                target_run.font.italic = template_run.font.italic
-                            if template_run.font.color.rgb:
-                                target_run.font.color.rgb = template_run.font.color.rgb
+        print(f"Successfully cloned {cloned_styles} styles from template")
         
-        print("Header/footer styles cloned successfully")
+        # Also clone the Normal style to ensure it doesn't inherit unwanted properties
+        if 'Normal' in template_doc.styles and 'Normal' in target_doc.styles:
+            try:
+                normal_template = template_doc.styles['Normal']
+                normal_target = target_doc.styles['Normal']
+                
+                # Clone Normal style properties
+                if hasattr(normal_template, 'paragraph_format') and normal_template.paragraph_format:
+                    if hasattr(normal_target, 'paragraph_format') and normal_target.paragraph_format:
+                        pf_template = normal_template.paragraph_format
+                        pf_target = normal_target.paragraph_format
+                        
+                        if pf_template.alignment:
+                            pf_target.alignment = pf_template.alignment
+                        if pf_template.left_indent:
+                            pf_target.left_indent = pf_template.left_indent
+                        if pf_template.right_indent:
+                            pf_target.right_indent = pf_template.right_indent
+                        if pf_template.first_line_indent:
+                            pf_target.first_line_indent = pf_template.first_line_indent
+                        if pf_template.space_before:
+                            pf_target.space_before = pf_template.space_before
+                        if pf_template.space_after:
+                            pf_target.space_after = pf_template.space_after
+                        if pf_template.line_spacing:
+                            pf_target.line_spacing = pf_template.line_spacing
+                        if hasattr(pf_template, 'keep_with_next') and pf_template.keep_with_next is not None:
+                            pf_target.keep_with_next = pf_template.keep_with_next
+                        if hasattr(pf_template, 'keep_lines_together') and pf_template.keep_lines_together is not None:
+                            pf_target.keep_lines_together = pf_template.keep_lines_together
+                        if hasattr(pf_template, 'page_break_before') and pf_template.page_break_before is not None:
+                            pf_target.page_break_before = pf_template.page_break_before
+                        if hasattr(pf_template, 'widow_control') and pf_template.widow_control is not None:
+                            pf_target.widow_control = pf_template.widow_control
+                
+                if hasattr(normal_template, 'font') and normal_template.font:
+                    if hasattr(normal_target, 'font') and normal_target.font:
+                        font_template = normal_template.font
+                        font_target = normal_target.font
+                        
+                        if font_template.name:
+                            font_target.name = font_template.name
+                        if font_template.size:
+                            font_target.size = font_template.size
+                        if font_template.bold is not None:
+                            font_target.bold = font_template.bold
+                        if font_template.italic is not None:
+                            font_target.italic = font_template.italic
+                        if font_template.underline:
+                            font_target.underline = font_template.underline
+                        if font_template.color.rgb:
+                            font_target.color.rgb = font_template.color.rgb
+                
+                print("Cloned Normal style from template")
+                
+            except Exception as e:
+                print(f"Warning: Could not clone Normal style: {e}")
         
     except Exception as e:
-        print(f"Warning: Could not clone header/footer styles: {e}")
+        print(f"Warning: Could not clone template styles: {e}")
+
+def create_document_from_template(template_path):
+    """Create a new document by cloning the template completely"""
+    try:
+        # Load the template
+        template_doc = Document(template_path)
+        
+        # Create a new document
+        new_doc = Document()
+        
+        # Clone all styles from template
+        clone_template_styles(template_doc, new_doc)
+        
+        # Clone document settings
+        if template_doc.sections and new_doc.sections:
+            template_section = template_doc.sections[0]
+            new_section = new_doc.sections[0]
+            
+            # Copy page size and margins
+            if template_section.page_width:
+                new_section.page_width = template_section.page_width
+            if template_section.page_height:
+                new_section.page_height = template_section.page_height
+            if template_section.top_margin:
+                new_section.top_margin = template_section.top_margin
+            if template_section.bottom_margin:
+                new_section.bottom_margin = template_section.bottom_margin
+            if template_section.left_margin:
+                new_section.left_margin = template_section.left_margin
+            if template_section.right_margin:
+                new_section.right_margin = template_section.right_margin
+            if template_section.header_distance:
+                new_section.header_distance = template_section.header_distance
+            if template_section.footer_distance:
+                new_section.footer_distance = template_section.footer_distance
+        
+        print("Created new document with cloned template styles and settings")
+        return new_doc
+        
+    except Exception as e:
+        print(f"Error creating document from template: {e}")
+        # Fallback to regular document creation
+        return Document()
 
 # Main execution
 print("Starting document generation process...")
@@ -798,11 +931,8 @@ print("Starting document generation process...")
 # Check template styles first
 check_template_styles(TEMPLATE_PATH)
 
-# Load template
-doc = Document(TEMPLATE_PATH)
-
-# Clone header/footer styles from template
-clone_header_footer_styles(doc, doc)
+# Create document by cloning template instead of loading it directly
+doc = create_document_from_template(TEMPLATE_PATH)
 
 # Clear existing content
 clear_document(doc)
@@ -821,9 +951,6 @@ apply_style_definitions_from_json(doc, json_data)
 
 # Generate content from JSON
 generate_content_from_v3_json(doc, json_data)
-
-# Fix header and footer fonts
-# The hardcoded Arial font fix is removed. Header/footer styles are now cloned.
 
 # Save document
 doc.save(OUTPUT_PATH)

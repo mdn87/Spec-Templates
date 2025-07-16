@@ -642,7 +642,7 @@ def clean_text_for_display(text: str, level_type: str, number: Optional[str]) ->
     
     return cleaned_text.strip()
 
-def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
+def generate_content_from_v3_json(doc: Any, json_data: Dict[str, Any]) -> None:
     """Generate document content from v3 JSON data using template styles"""
     
     if json_data is None:

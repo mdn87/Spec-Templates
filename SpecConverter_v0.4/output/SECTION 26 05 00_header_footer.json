@@ -1,15 +1,15 @@
 {
   "header": {
     "paragraphs": [
-      "BW&A 26 05 26 05 00-1",
-      "RW 7-7-25Common Work Results for Electrical"
+      "BW&A 26 05 \t26 05 00-1 B W&A 26 05  26 05 00- 1",
+      "RW 7-7-25\t\tCommon Work Results for Electrical RW 7-7 -2 5  Common Work Results for Electrical"
     ],
     "tables": [],
     "text_boxes": []
   },
   "footer": {
     "paragraphs": [
-      "JUST SOME TEXT"
+      "JUST SOME TEXT JUST SOME TEXT"
     ],
     "tables": [],
     "text_boxes": []
@@ -22,6 +22,6 @@
     "header_distance": 1.0,
     "footer_distance": 1.0
   },
-  "extraction_timestamp": "2025-07-16T14:11:04.507879",
+  "extraction_timestamp": "2025-07-16T14:59:30.683427",
   "source_file": "SECTION 26 05 00"
 }

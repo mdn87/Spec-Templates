@@ -218,52 +218,159 @@ class HeaderFooterExtractor:
         
         return settings
     
-    def _extract_default_formatting(self, doc: Any) -> Dict[str, Any]:
-        """Extract default formatting settings from document styles"""
-        default_formatting = {}
+    def _extract_default_formatting(self, doc) -> Dict[str, Any]:
+        """Extract default paragraph and run formatting from document styles"""
+        default_formatting = {
+            "default_paragraph_format": {},
+            "default_run_format": {}
+        }
         
         try:
-            # Get the Normal style
-            normal_style = doc.styles.get('Normal')
+            # Get the Normal style which contains default formatting
+            normal_style = doc.styles['Normal'] if 'Normal' in doc.styles else None
             if normal_style:
-                # Default paragraph format
-                if normal_style.paragraph_format:
+                # Extract default paragraph format
+                if hasattr(normal_style, 'paragraph_format') and normal_style.paragraph_format:
                     pf = normal_style.paragraph_format
-                    default_formatting["default_paragraph_format"] = {
-                        "alignment": str(pf.alignment) if pf.alignment else None,
-                        "left_indent": pf.left_indent.inches if pf.left_indent else None,
-                        "right_indent": pf.right_indent.inches if pf.right_indent else None,
-                        "first_line_indent": pf.first_line_indent.inches if pf.first_line_indent else None,
-                        "space_before": pf.space_before.pt if pf.space_before else None,
-                        "space_after": pf.space_after.pt if pf.space_after else None,
-                        "line_spacing": pf.line_spacing,
-                        "keep_with_next": pf.keep_with_next,
-                        "keep_lines_together": pf.keep_lines_together,
-                        "page_break_before": pf.page_break_before,
-                        "widow_control": pf.widow_control
-                    }
-                
-                # Default run format (font)
-                if normal_style.font:
-                    font = normal_style.font
-                    default_formatting["default_run_format"] = {
-                        "name": font.name,
-                        "size": font.size.pt if font.size else None,
-                        "bold": font.bold,
-                        "italic": font.italic,
-                        "underline": str(font.underline) if font.underline else None,
-                        "color": str(font.color.rgb) if font.color.rgb else None,
-                        "strike": font.strike,
-                        "small_caps": font.small_caps,
-                        "all_caps": font.all_caps
-                    }
+                    pf_data = {}
                     
+                    # Handle each attribute safely
+                    try:
+                        if pf.alignment:
+                            pf_data["alignment"] = str(pf.alignment)
+                    except:
+                        pass
+                    
+                    try:
+                        if pf.left_indent:
+                            pf_data["left_indent"] = pf.left_indent.inches
+                    except:
+                        pass
+                    
+                    try:
+                        if pf.right_indent:
+                            pf_data["right_indent"] = pf.right_indent.inches
+                    except:
+                        pass
+                    
+                    try:
+                        if pf.first_line_indent:
+                            pf_data["first_line_indent"] = pf.first_line_indent.inches
+                    except:
+                        pass
+                    
+                    try:
+                        if pf.space_before:
+                            pf_data["space_before"] = pf.space_before.pt
+                    except:
+                        pass
+                    
+                    try:
+                        if pf.space_after:
+                            pf_data["space_after"] = pf.space_after.pt
+                    except:
+                        pass
+                    
+                    try:
+                        if pf.line_spacing:
+                            pf_data["line_spacing"] = pf.line_spacing
+                    except:
+                        pass
+                    
+                    try:
+                        if hasattr(pf, 'keep_with_next'):
+                            pf_data["keep_with_next"] = pf.keep_with_next
+                    except:
+                        pass
+                    
+                    try:
+                        if hasattr(pf, 'keep_lines_together'):
+                            pf_data["keep_lines_together"] = pf.keep_lines_together
+                    except:
+                        pass
+                    
+                    try:
+                        if hasattr(pf, 'page_break_before'):
+                            pf_data["page_break_before"] = pf.page_break_before
+                    except:
+                        pass
+                    
+                    try:
+                        if hasattr(pf, 'widow_control'):
+                            pf_data["widow_control"] = pf.widow_control
+                    except:
+                        pass
+                    
+                    default_formatting["default_paragraph_format"] = pf_data
+                
+                # Extract default run format
+                if hasattr(normal_style, 'font') and normal_style.font:
+                    font = normal_style.font
+                    font_data = {}
+                    
+                    try:
+                        if font.name:
+                            font_data["name"] = font.name
+                    except:
+                        pass
+                    
+                    try:
+                        if font.size:
+                            font_data["size"] = font.size.pt
+                    except:
+                        pass
+                    
+                    try:
+                        if font.bold is not None:
+                            font_data["bold"] = font.bold
+                    except:
+                        pass
+                    
+                    try:
+                        if font.italic is not None:
+                            font_data["italic"] = font.italic
+                    except:
+                        pass
+                    
+                    try:
+                        if font.underline:
+                            font_data["underline"] = str(font.underline)
+                    except:
+                        pass
+                    
+                    try:
+                        if font.color and font.color.rgb:
+                            font_data["color"] = str(font.color.rgb)
+                    except:
+                        pass
+                    
+                    try:
+                        if font.strike is not None:
+                            font_data["strike"] = font.strike
+                    except:
+                        pass
+                    
+                    try:
+                        if font.small_caps is not None:
+                            font_data["small_caps"] = font.small_caps
+                    except:
+                        pass
+                    
+                    try:
+                        if font.all_caps is not None:
+                            font_data["all_caps"] = font.all_caps
+                    except:
+                        pass
+                    
+                    default_formatting["default_run_format"] = font_data
+            
         except Exception as e:
-            print(f"Warning: Could not extract default formatting: {e}")
+            # Silently handle any extraction errors
+            pass
         
         return default_formatting
     
-    def _extract_document_wide_settings(self, doc: Any) -> Dict[str, Any]:
+    def _extract_document_wide_settings(self, doc) -> Dict[str, Any]:
         """Extract document-wide settings from settings.xml"""
         doc_settings = {}
         
@@ -377,15 +484,31 @@ class HeaderFooterExtractor:
         
         return doc_settings
     
-    def _extract_header_content(self, section: Any) -> Dict[str, List]:
+    def _extract_header_content(self, section) -> Dict[str, List]:
         """Extract header content from a document section"""
-        return self._extract_content_from_section(section.header._element, section.header._element.nsmap)
+        header_content = {"paragraphs": [], "tables": [], "text_boxes": []}
+        try:
+            if section.header:
+                header_element = section.header._element
+                header_content = self._extract_content_from_section(header_element, header_element.nsmap)
+        except Exception as e:
+            print(f"Warning: Could not extract header content: {e}")
+        
+        return header_content
     
-    def _extract_footer_content(self, section: Any) -> Dict[str, List]:
+    def _extract_footer_content(self, section) -> Dict[str, List]:
         """Extract footer content from a document section"""
-        return self._extract_content_from_section(section.footer._element, section.footer._element.nsmap)
+        footer_content = {"paragraphs": [], "tables": [], "text_boxes": []}
+        try:
+            if section.footer:
+                footer_element = section.footer._element
+                footer_content = self._extract_content_from_section(footer_element, footer_element.nsmap)
+        except Exception as e:
+            print(f"Warning: Could not extract footer content: {e}")
+        
+        return footer_content
     
-    def _extract_content_from_section(self, section_element: Any, nsmap: Dict[str, str]) -> Dict[str, List]:
+    def _extract_content_from_section(self, section_element, nsmap) -> Dict[str, List]:
         """
         Extract content from header or footer section
         
@@ -433,22 +556,22 @@ class HeaderFooterExtractor:
         
         return content
     
-    def _extract_text_from_element(self, element: Any, nsmap: Dict[str, str]) -> str:
-        """Extract text content from an XML element"""
-        text_parts = []
+    def _extract_text_from_element(self, element, nsmap) -> str:
+        """
+        Extract all text from an element and its children
         
-        # Extract text from the element itself
-        if element.text:
-            text_parts.append(element.text.strip())
-        
-        # Extract text from child elements
-        for child in element:
-            if child.text:
-                text_parts.append(child.text.strip())
-            if child.tail:
-                text_parts.append(child.tail.strip())
-        
-        return " ".join(text_parts).strip()
+        Args:
+            element: XML element to extract text from
+            nsmap: Namespace mapping for XML parsing
+            
+        Returns:
+            Extracted text as string
+        """
+        texts = []
+        for text_elem in element.findall('.//w:t', namespaces=nsmap):
+            if text_elem.text:
+                texts.append(text_elem.text)
+        return ''.join(texts).strip()
     
     def extract_comments(self, docx_path: str) -> List[Dict[str, Any]]:
         """

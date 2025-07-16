@@ -264,7 +264,7 @@ class TemplateListDetector:
         
         return p_pr
     
-    def extract_run_properties(self, r_pr_elem: Any) -> Dict[str, Any]:
+    def extract_run_properties(self, r_pr_elem) -> Dict[str, Any]:
         """Extract run properties from element"""
         r_pr = {}
         
@@ -374,7 +374,7 @@ class TemplateListDetector:
         
         return bwa_list_levels
     
-    def get_paragraph_level(self, paragraph: Any) -> Optional[int]:
+    def get_paragraph_level(self, paragraph) -> Optional[int]:
         """Get the list level of a paragraph"""
         try:
             pPr = paragraph._p.pPr
@@ -385,7 +385,7 @@ class TemplateListDetector:
             pass
         return None
     
-    def get_paragraph_numbering_id(self, paragraph: Any) -> Optional[str]:
+    def get_paragraph_numbering_id(self, paragraph) -> Optional[str]:
         """Get the numbering ID of a paragraph"""
         try:
             pPr = paragraph._p.pPr

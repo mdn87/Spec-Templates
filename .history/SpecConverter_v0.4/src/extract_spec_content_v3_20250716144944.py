@@ -162,7 +162,7 @@ class SpecContentExtractorV3:
             print(f"Warning: Could not load template analysis: {e}")
             self.template_analysis = None
     
-    def get_paragraph_level(self, paragraph: Any) -> Optional[int]:
+    def get_paragraph_level(self, paragraph) -> Optional[int]:
         """Get the list level of a paragraph"""
         try:
             pPr = paragraph._p.pPr
@@ -173,7 +173,7 @@ class SpecContentExtractorV3:
             pass
         return None
     
-    def get_paragraph_numbering_id(self, paragraph: Any) -> Optional[str]:
+    def get_paragraph_numbering_id(self, paragraph) -> Optional[str]:
         """Get the numbering ID of a paragraph"""
         try:
             pPr = paragraph._p.pPr
@@ -184,7 +184,7 @@ class SpecContentExtractorV3:
             pass
         return None
     
-    def extract_paragraph_styling(self, paragraph: Any) -> Dict[str, Any]:
+    def extract_paragraph_styling(self, paragraph) -> Dict[str, Any]:
         """Extract styling information from a paragraph"""
         styling = {}
         
@@ -267,7 +267,7 @@ class SpecContentExtractorV3:
         
         return styling
     
-    def extract_run_styling(self, runs: List[Any]) -> Dict[str, Any]:
+    def extract_run_styling(self, runs) -> Dict[str, Any]:
         """Extract styling information from paragraph runs"""
         styling = {}
         
@@ -632,7 +632,7 @@ class SpecContentExtractorV3:
         
         return correct_number, was_fixed
 
-    def map_to_bwa_level(self, paragraph: Any, level_type: str) -> Tuple[Optional[int], Optional[str]]:
+    def map_to_bwa_level(self, paragraph, level_type: str) -> Tuple[Optional[int], Optional[str]]:
         """Map paragraph to BWA list level based on template analysis"""
         try:
             # Standard mapping for level_number

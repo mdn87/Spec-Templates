@@ -433,22 +433,22 @@ class HeaderFooterExtractor:
         
         return content
     
-    def _extract_text_from_element(self, element: Any, nsmap: Dict[str, str]) -> str:
-        """Extract text content from an XML element"""
-        text_parts = []
+    def _extract_text_from_element(self, element, nsmap) -> str:
+        """
+        Extract all text from an element and its children
         
-        # Extract text from the element itself
-        if element.text:
-            text_parts.append(element.text.strip())
-        
-        # Extract text from child elements
-        for child in element:
-            if child.text:
-                text_parts.append(child.text.strip())
-            if child.tail:
-                text_parts.append(child.tail.strip())
-        
-        return " ".join(text_parts).strip()
+        Args:
+            element: XML element to extract text from
+            nsmap: Namespace mapping for XML parsing
+            
+        Returns:
+            Extracted text as string
+        """
+        texts = []
+        for text_elem in element.findall('.//w:t', namespaces=nsmap):
+            if text_elem.text:
+                texts.append(text_elem.text)
+        return ''.join(texts).strip()
     
     def extract_comments(self, docx_path: str) -> List[Dict[str, Any]]:
         """

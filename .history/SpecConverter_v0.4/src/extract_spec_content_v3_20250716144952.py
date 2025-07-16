@@ -267,7 +267,7 @@ class SpecContentExtractorV3:
         
         return styling
     
-    def extract_run_styling(self, runs: List[Any]) -> Dict[str, Any]:
+    def extract_run_styling(self, runs) -> Dict[str, Any]:
         """Extract styling information from paragraph runs"""
         styling = {}
         
@@ -632,7 +632,7 @@ class SpecContentExtractorV3:
         
         return correct_number, was_fixed
 
-    def map_to_bwa_level(self, paragraph: Any, level_type: str) -> Tuple[Optional[int], Optional[str]]:
+    def map_to_bwa_level(self, paragraph, level_type: str) -> Tuple[Optional[int], Optional[str]]:
         """Map paragraph to BWA list level based on template analysis"""
         try:
             # Standard mapping for level_number
