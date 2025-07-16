@@ -561,10 +561,9 @@ class SpecContentExtractorV3:
                             tabs = p_pr["tabs"]
                             if "tab" in tabs and tabs["tab"]:
                                 # Get the first tab position
-                                if isinstance(tabs["tab"], list) and len(tabs["tab"]) > 0:
-                                    tab_pos = tabs["tab"][0].get("pos")
-                                    if tab_pos:
-                                        properties["add_tab_stop_at"] = float(tab_pos) / 20.0
+                                tab_pos = tabs["tab"].get("pos")
+                                if tab_pos:
+                                    properties["add_tab_stop_at"] = float(tab_pos) / 20.0
                         
         except Exception as e:
             print(f"Error extracting level list properties: {e}")
@@ -762,7 +761,6 @@ class SpecContentExtractorV3:
                 "header": header_footer_data["header"],
                 "footer": header_footer_data["footer"],
                 "margins": header_footer_data["margins"],
-                "document_settings": header_footer_data.get("document_settings", {}),
                 "comments": comments,
                 "section_number": section_number,
                 "section_title": section_title,

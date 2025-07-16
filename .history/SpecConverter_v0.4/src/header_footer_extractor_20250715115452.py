@@ -66,13 +66,13 @@ class HeaderFooterExtractor:
     
     def extract_header_footer_margins(self, docx_path: str) -> Dict[str, Any]:
         """
-        Extract header, footer, margin, and document-level settings from a Word document
+        Extract header, footer, and margin information from a Word document
         
         Args:
             docx_path: Path to the Word document
             
         Returns:
-            Dictionary containing header, footer, margin, and document settings
+            Dictionary containing header, footer, and margin data
         """
         try:
             doc = Document(docx_path)
@@ -80,9 +80,6 @@ class HeaderFooterExtractor:
             
             # Extract margin settings
             margins = self._extract_margins(sec)
-            
-            # Extract document-level settings
-            document_settings = self._extract_document_settings(sec, doc)
             
             # Extract header content
             header_content = self._extract_header_content(sec)
@@ -93,8 +90,7 @@ class HeaderFooterExtractor:
             return {
                 "header": header_content,
                 "footer": footer_content,
-                "margins": margins,
-                "document_settings": document_settings
+                "margins": margins
             }
             
         except Exception as e:
@@ -102,8 +98,7 @@ class HeaderFooterExtractor:
             return {
                 "header": {"paragraphs": [], "tables": [], "text_boxes": []},
                 "footer": {"paragraphs": [], "tables": [], "text_boxes": []},
-                "margins": {},
-                "document_settings": {}
+                "margins": {}
             }
     
     def _extract_margins(self, section) -> Dict[str, float]:
@@ -126,87 +121,6 @@ class HeaderFooterExtractor:
             print(f"Warning: Could not extract margin settings: {e}")
         
         return margins
-    
-    def _extract_document_settings(self, section, doc) -> Dict[str, Any]:
-        """Extract comprehensive document-level settings"""
-        settings = {}
-        
-        try:
-            # Page size and orientation
-            if section.page_width:
-                settings["page_width"] = section.page_width.inches
-            if section.page_height:
-                settings["page_height"] = section.page_height.inches
-            
-            # Page orientation
-            if section.page_width and section.page_height:
-                if section.page_width.inches > section.page_height.inches:
-                    settings["page_orientation"] = "landscape"
-                else:
-                    settings["page_orientation"] = "portrait"
-            
-            # Page margins (already in margins, but keeping for completeness)
-            if section.top_margin:
-                settings["top_margin"] = section.top_margin.inches
-            if section.bottom_margin:
-                settings["bottom_margin"] = section.bottom_margin.inches
-            if section.left_margin:
-                settings["left_margin"] = section.left_margin.inches
-            if section.right_margin:
-                settings["right_margin"] = section.right_margin.inches
-            
-            # Header and footer distances
-            if section.header_distance:
-                settings["header_distance"] = section.header_distance.inches
-            if section.footer_distance:
-                settings["footer_distance"] = section.footer_distance.inches
-            
-            # Gutter settings
-            if section.gutter:
-                settings["gutter"] = section.gutter.inches
-            
-            # Different first page header/footer
-            settings["different_first_page_header_footer"] = section.different_first_page_header_footer
-            
-            # Different odd and even pages
-            settings["different_odd_and_even_pages"] = section.different_odd_and_even_pages
-            
-            # Page numbering
-            if hasattr(section, 'page_numbering') and section.page_numbering:
-                settings["page_numbering"] = {
-                    "start": section.page_numbering.start,
-                    "restart": section.page_numbering.restart,
-                    "format": section.page_numbering.format
-                }
-            
-            # Line numbering
-            if hasattr(section, 'line_numbering') and section.line_numbering:
-                settings["line_numbering"] = {
-                    "start": section.line_numbering.start,
-                    "increment": section.line_numbering.increment,
-                    "restart": section.line_numbering.restart,
-                    "distance": section.line_numbering.distance.inches if section.line_numbering.distance else None
-                }
-            
-            # Document properties
-            if doc.core_properties:
-                settings["document_properties"] = {
-                    "title": doc.core_properties.title,
-                    "subject": doc.core_properties.subject,
-                    "author": doc.core_properties.author,
-                    "keywords": doc.core_properties.keywords,
-                    "category": doc.core_properties.category,
-                    "comments": doc.core_properties.comments,
-                    "created": doc.core_properties.created.isoformat() if doc.core_properties.created else None,
-                    "modified": doc.core_properties.modified.isoformat() if doc.core_properties.modified else None,
-                    "last_modified_by": doc.core_properties.last_modified_by,
-                    "revision": doc.core_properties.revision
-                }
-            
-        except Exception as e:
-            print(f"Warning: Could not extract document settings: {e}")
-        
-        return settings
     
     def _extract_header_content(self, section) -> Dict[str, List]:
         """Extract header content from a document section"""

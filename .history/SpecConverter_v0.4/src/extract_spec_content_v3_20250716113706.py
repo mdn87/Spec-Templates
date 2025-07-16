@@ -762,7 +762,6 @@ class SpecContentExtractorV3:
                 "header": header_footer_data["header"],
                 "footer": header_footer_data["footer"],
                 "margins": header_footer_data["margins"],
-                "document_settings": header_footer_data.get("document_settings", {}),
                 "comments": comments,
                 "section_number": section_number,
                 "section_title": section_title,

@@ -90,14 +90,12 @@ class ContentBlock:
     paragraph_keep_lines_together: Optional[bool] = None
     paragraph_page_break_before: Optional[bool] = None
     paragraph_widow_control: Optional[bool] = None
-    paragraph_dont_add_space_between_same_style: Optional[bool] = None
     # Level list properties
     number_alignment: Optional[str] = None
     aligned_at: Optional[float] = None
     text_indent_at: Optional[float] = None
     follow_number_with: Optional[str] = None
     add_tab_stop_at: Optional[float] = None
-    link_level_to_style: Optional[str] = None
 
 class SpecContentExtractorV3:
     """Extracts specification content with comprehensive metadata"""
@@ -248,11 +246,6 @@ class SpecContentExtractorV3:
                 widow_control = pPr.find(qn('w:widowControl'))
                 if widow_control is not None:
                     styling['paragraph_widow_control'] = True
-                
-                # Dont add space between same style
-                dont_add_space = pPr.find(qn('w:dontAddSpaceBetweenSameStyle'))
-                if dont_add_space is not None:
-                    styling['paragraph_dont_add_space_between_same_style'] = True
             
             # Run properties (font information)
             # Get the most common font properties from all runs
@@ -279,9 +272,6 @@ class SpecContentExtractorV3:
             font_italics = []
             font_underlines = []
             font_colors = []
-            font_strikes = []
-            font_small_caps_list = []
-            font_all_caps_list = []
             
             for run in runs:
                 rPr = run._r.rPr
@@ -372,12 +362,6 @@ class SpecContentExtractorV3:
                 styling['font_underline'] = max(set(font_underlines), key=font_underlines.count)
             if font_colors:
                 styling['font_color'] = max(set(font_colors), key=font_colors.count)
-            if font_strikes:
-                styling['font_strike'] = max(set(font_strikes), key=font_strikes.count)
-            if font_small_caps_list:
-                styling['font_small_caps'] = max(set(font_small_caps_list), key=font_small_caps_list.count)
-            if font_all_caps_list:
-                styling['font_all_caps'] = max(set(font_all_caps_list), key=font_all_caps_list.count)
             
         except Exception as e:
             print(f"Warning: Could not extract run styling: {e}")
@@ -516,61 +500,7 @@ class SpecContentExtractorV3:
                     return "list"  # Default to list for any numbered content
         
         return level_type
-    
-    def extract_level_list_properties(self, numbering_id: str, numbering_level: Optional[int]) -> Dict[str, Any]:
-        """Extract level list position values from numbering definitions"""
-        properties = {}
-        
-        try:
-            # Check if we have template analysis with numbering definitions
-            if not hasattr(self, 'template_analysis') or self.template_analysis is None:
-                return properties
-            
-            # Find the numbering definition for this numbering_id
-            num_key = f"num_{numbering_id}"
-            if num_key in self.template_analysis.numbering_definitions:
-                abstract_num_id = self.template_analysis.numbering_definitions[num_key].get("abstract_num_id")
-                if abstract_num_id in self.template_analysis.numbering_definitions:
-                    abstract_info = self.template_analysis.numbering_definitions[abstract_num_id]
-                    level_str = str(numbering_level) if numbering_level is not None else "0"
-                    
-                    if level_str in abstract_info.get("levels", {}):
-                        level_info = abstract_info["levels"][level_str]
-                        
-                        # Extract number alignment (left, center, right)
-                        properties["number_alignment"] = level_info.get("lvlJc")
-                        
-                        # Extract follow number with (tab, space, nothing)
-                        properties["follow_number_with"] = level_info.get("suff")
-                        
-                        # Extract link level to style
-                        properties["link_level_to_style"] = level_info.get("pStyle")
-                        
-                        # Extract position values from paragraph properties
-                        p_pr = level_info.get("pPr", {})
-                        if "indent" in p_pr:
-                            indent = p_pr["indent"]
-                            # Convert twips to points (1 point = 20 twips)
-                            if indent.get("left"):
-                                properties["aligned_at"] = float(indent["left"]) / 20.0
-                            if indent.get("firstLine"):
-                                properties["text_indent_at"] = float(indent["firstLine"]) / 20.0
-                        
-                        # Extract tab stop information
-                        if "tabs" in p_pr:
-                            tabs = p_pr["tabs"]
-                            if "tab" in tabs and tabs["tab"]:
-                                # Get the first tab position
-                                if isinstance(tabs["tab"], list) and len(tabs["tab"]) > 0:
-                                    tab_pos = tabs["tab"][0].get("pos")
-                                    if tab_pos:
-                                        properties["add_tab_stop_at"] = float(tab_pos) / 20.0
-                        
-        except Exception as e:
-            print(f"Error extracting level list properties: {e}")
-        
-        return properties
-    
+
     def extract_list_number(self, numbering_id: Optional[str], numbering_level: Optional[int], 
                           detected_number: Optional[str], text: str) -> Tuple[Optional[str], bool]:
         """
@@ -693,11 +623,6 @@ class SpecContentExtractorV3:
                 # Extract styling information
                 styling = self.extract_paragraph_styling(paragraph)
                 
-                # Extract level list properties if this is a numbered paragraph
-                level_list_properties = {}
-                if numbering_id is not None:
-                    level_list_properties = self.extract_level_list_properties(numbering_id, numbering_level)
-                
                 # Post-process classification based on numbering information
                 corrected_level_type = self.correct_level_type_based_on_numbering(
                     level_type, numbering_id, numbering_level, text
@@ -729,30 +654,14 @@ class SpecContentExtractorV3:
                     font_italic=styling.get('font_italic'),
                     font_underline=styling.get('font_underline'),
                     font_color=styling.get('font_color'),
-                    font_strike=styling.get('font_strike'),
-                    font_small_caps=styling.get('font_small_caps'),
-                    font_all_caps=styling.get('font_all_caps'),
-                    # Paragraph formatting
                     paragraph_alignment=styling.get('paragraph_alignment'),
                     paragraph_indent_left=styling.get('paragraph_indent_left'),
                     paragraph_indent_right=styling.get('paragraph_indent_right'),
                     paragraph_indent_first_line=styling.get('paragraph_indent_first_line'),
+                    # Note: hanging_indent is calculated as left_indent + first_line_indent (where first_line_indent is negative)
                     paragraph_spacing_before=styling.get('paragraph_spacing_before'),
                     paragraph_spacing_after=styling.get('paragraph_spacing_after'),
-                    paragraph_line_spacing=styling.get('paragraph_line_spacing'),
-                    paragraph_line_spacing_rule=styling.get('paragraph_line_spacing_rule'),
-                    paragraph_keep_with_next=styling.get('paragraph_keep_with_next'),
-                    paragraph_keep_lines_together=styling.get('paragraph_keep_lines_together'),
-                    paragraph_page_break_before=styling.get('paragraph_page_break_before'),
-                    paragraph_widow_control=styling.get('paragraph_widow_control'),
-                    paragraph_dont_add_space_between_same_style=styling.get('paragraph_dont_add_space_between_same_style'),
-                    # Level list properties
-                    number_alignment=level_list_properties.get('number_alignment'),
-                    aligned_at=level_list_properties.get('aligned_at'),
-                    text_indent_at=level_list_properties.get('text_indent_at'),
-                    follow_number_with=level_list_properties.get('follow_number_with'),
-                    add_tab_stop_at=level_list_properties.get('add_tab_stop_at'),
-                    link_level_to_style=level_list_properties.get('link_level_to_style')
+                    paragraph_line_spacing=styling.get('paragraph_line_spacing')
                 )
                 
                 self.content_blocks.append(block)
@@ -762,7 +671,6 @@ class SpecContentExtractorV3:
                 "header": header_footer_data["header"],
                 "footer": header_footer_data["footer"],
                 "margins": header_footer_data["margins"],
-                "document_settings": header_footer_data.get("document_settings", {}),
                 "comments": comments,
                 "section_number": section_number,
                 "section_title": section_title,
@@ -785,28 +693,14 @@ class SpecContentExtractorV3:
                         "font_italic": block.font_italic,
                         "font_underline": block.font_underline,
                         "font_color": block.font_color,
-                        "font_strike": block.font_strike,
-                        "font_small_caps": block.font_small_caps,
-                        "font_all_caps": block.font_all_caps,
                         "paragraph_alignment": block.paragraph_alignment,
                         "paragraph_indent_left": block.paragraph_indent_left,
                         "paragraph_indent_right": block.paragraph_indent_right,
                         "paragraph_indent_first_line": block.paragraph_indent_first_line,
+                        # Note: hanging_indent is calculated as left_indent + first_line_indent (where first_line_indent is negative)
                         "paragraph_spacing_before": block.paragraph_spacing_before,
                         "paragraph_spacing_after": block.paragraph_spacing_after,
-                        "paragraph_line_spacing": block.paragraph_line_spacing,
-                        "paragraph_line_spacing_rule": block.paragraph_line_spacing_rule,
-                        "paragraph_keep_with_next": block.paragraph_keep_with_next,
-                        "paragraph_keep_lines_together": block.paragraph_keep_lines_together,
-                        "paragraph_page_break_before": block.paragraph_page_break_before,
-                        "paragraph_widow_control": block.paragraph_widow_control,
-                        "paragraph_dont_add_space_between_same_style": block.paragraph_dont_add_space_between_same_style,
-                        "number_alignment": block.number_alignment,
-                        "aligned_at": block.aligned_at,
-                        "text_indent_at": block.text_indent_at,
-                        "follow_number_with": block.follow_number_with,
-                        "add_tab_stop_at": block.add_tab_stop_at,
-                        "link_level_to_style": block.link_level_to_style
+                        "paragraph_line_spacing": block.paragraph_line_spacing
                     }
                     for block in self.content_blocks
                 ],

@@ -89,19 +89,6 @@ def apply_styling_from_json(paragraph, block):
             for run in paragraph.runs:
                 run.font.color.rgb = RGBColor.from_string(block['font_color'])
         
-        # Additional font properties
-        if block.get('font_strike') is not None:
-            for run in paragraph.runs:
-                run.font.strike = block['font_strike']
-        
-        if block.get('font_small_caps') is not None:
-            for run in paragraph.runs:
-                run.font.small_caps = block['font_small_caps']
-        
-        if block.get('font_all_caps') is not None:
-            for run in paragraph.runs:
-                run.font.all_caps = block['font_all_caps']
-        
         # Paragraph properties
         if block.get('paragraph_alignment'):
             alignment_map = {
@@ -123,6 +110,9 @@ def apply_styling_from_json(paragraph, block):
         if block.get('paragraph_indent_first_line'):
             paragraph.paragraph_format.first_line_indent = Inches(block['paragraph_indent_first_line'] / 72.0)
         
+        if block.get('paragraph_indent_hanging'):
+            paragraph.paragraph_format.hanging_indent = Inches(block['paragraph_indent_hanging'] / 72.0)
+        
         # Spacing
         if block.get('paragraph_spacing_before'):
             paragraph.paragraph_format.space_before = Pt(block['paragraph_spacing_before'])
@@ -133,148 +123,10 @@ def apply_styling_from_json(paragraph, block):
         if block.get('paragraph_line_spacing'):
             paragraph.paragraph_format.line_spacing = block['paragraph_line_spacing']
         
-        # Additional paragraph properties
-        if block.get('paragraph_keep_with_next') is not None:
-            paragraph.paragraph_format.keep_with_next = block['paragraph_keep_with_next']
-        
-        if block.get('paragraph_keep_lines_together') is not None:
-            paragraph.paragraph_format.keep_lines_together = block['paragraph_keep_lines_together']
-        
-        if block.get('paragraph_page_break_before') is not None:
-            paragraph.paragraph_format.page_break_before = block['paragraph_page_break_before']
-        
-        if block.get('paragraph_widow_control') is not None:
-            paragraph.paragraph_format.widow_control = block['paragraph_widow_control']
-        
-        # Don't add space between paragraphs of the same style
-        if block.get('paragraph_dont_add_space_between_same_style') is not None:
-            paragraph.paragraph_format.dont_add_space_between_same_style = block['paragraph_dont_add_space_between_same_style']
-        
     except Exception as e:
         print(f"Warning: Could not apply styling from JSON: {e}")
         # Fallback to default styling
         set_font_and_size(paragraph)
-
-def apply_document_settings_from_json(doc, json_data):
-    """Apply document-level settings from JSON to the document"""
-    try:
-        document_settings = json_data.get('document_settings', {})
-        if not document_settings:
-            return
-        
-        # Apply settings to the first section
-        section = doc.sections[0]
-        
-        # Page size and orientation
-        if document_settings.get('page_width') and document_settings.get('page_height'):
-            from docx.shared import Inches
-            section.page_width = Inches(document_settings['page_width'])
-            section.page_height = Inches(document_settings['page_height'])
-        
-        # Margins (if not already set by template)
-        if document_settings.get('top_margin'):
-            section.top_margin = Inches(document_settings['top_margin'])
-        if document_settings.get('bottom_margin'):
-            section.bottom_margin = Inches(document_settings['bottom_margin'])
-        if document_settings.get('left_margin'):
-            section.left_margin = Inches(document_settings['left_margin'])
-        if document_settings.get('right_margin'):
-            section.right_margin = Inches(document_settings['right_margin'])
-        
-        # Header and footer distances
-        if document_settings.get('header_distance'):
-            section.header_distance = Inches(document_settings['header_distance'])
-        if document_settings.get('footer_distance'):
-            section.footer_distance = Inches(document_settings['footer_distance'])
-        
-        # Gutter settings
-        if document_settings.get('gutter'):
-            section.gutter = Inches(document_settings['gutter'])
-        
-        # Different first page header/footer
-        if document_settings.get('different_first_page_header_footer') is not None:
-            section.different_first_page_header_footer = document_settings['different_first_page_header_footer']
-        
-        # Different odd and even pages
-        if document_settings.get('different_odd_and_even_pages') is not None:
-            section.different_odd_and_even_pages = document_settings['different_odd_and_even_pages']
-        
-        # Page numbering
-        if document_settings.get('page_numbering'):
-            page_num = document_settings['page_numbering']
-            if hasattr(section, 'page_numbering') and section.page_numbering:
-                if page_num.get('start') is not None:
-                    section.page_numbering.start = page_num['start']
-                if page_num.get('restart') is not None:
-                    section.page_numbering.restart = page_num['restart']
-                if page_num.get('format') is not None:
-                    section.page_numbering.format = page_num['format']
-        
-        # Line numbering
-        if document_settings.get('line_numbering'):
-            line_num = document_settings['line_numbering']
-            if hasattr(section, 'line_numbering') and section.line_numbering:
-                if line_num.get('start') is not None:
-                    section.line_numbering.start = line_num['start']
-                if line_num.get('increment') is not None:
-                    section.line_numbering.increment = line_num['increment']
-                if line_num.get('restart') is not None:
-                    section.line_numbering.restart = line_num['restart']
-                if line_num.get('distance') is not None:
-                    section.line_numbering.distance = Inches(line_num['distance'])
-        
-        # Document properties
-        if document_settings.get('document_properties') and doc.core_properties:
-            props = document_settings['document_properties']
-            if props.get('title'):
-                doc.core_properties.title = props['title']
-            if props.get('subject'):
-                doc.core_properties.subject = props['subject']
-            if props.get('author'):
-                doc.core_properties.author = props['author']
-            if props.get('keywords'):
-                doc.core_properties.keywords = props['keywords']
-            if props.get('category'):
-                doc.core_properties.category = props['category']
-            if props.get('comments'):
-                doc.core_properties.comments = props['comments']
-            if props.get('last_modified_by'):
-                doc.core_properties.last_modified_by = props['last_modified_by']
-            if props.get('revision'):
-                doc.core_properties.revision = props['revision']
-        
-        print("DEBUG: Applied document-level settings from JSON")
-        
-    except Exception as e:
-        print(f"Warning: Could not apply document settings from JSON: {e}")
-
-def apply_margins_from_json(doc, json_data):
-    """Apply margin settings from JSON to the document"""
-    try:
-        margins = json_data.get('margins', {})
-        if not margins:
-            return
-        
-        # Apply margins to the first section
-        section = doc.sections[0]
-        
-        if margins.get('top_margin'):
-            section.top_margin = Inches(margins['top_margin'])
-        if margins.get('bottom_margin'):
-            section.bottom_margin = Inches(margins['bottom_margin'])
-        if margins.get('left_margin'):
-            section.left_margin = Inches(margins['left_margin'])
-        if margins.get('right_margin'):
-            section.right_margin = Inches(margins['right_margin'])
-        if margins.get('header_distance'):
-            section.header_distance = Inches(margins['header_distance'])
-        if margins.get('footer_distance'):
-            section.footer_distance = Inches(margins['footer_distance'])
-        
-        print("DEBUG: Applied margin settings from JSON")
-        
-    except Exception as e:
-        print(f"Warning: Could not apply margins from JSON: {e}")
 
 def parse_spec_json(json_path):
     """Parse JSON file and return structured data"""
@@ -431,12 +283,6 @@ print("DEBUG: Cleared existing document content")
 
 # Parse JSON content
 json_data = parse_spec_json(CONTENT_PATH)
-
-# Apply document settings from JSON
-apply_document_settings_from_json(doc, json_data)
-
-# Apply margins from JSON
-apply_margins_from_json(doc, json_data)
 
 # Generate content from JSON
 generate_content_from_v3_json(doc, json_data)

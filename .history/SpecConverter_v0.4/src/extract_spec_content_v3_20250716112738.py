@@ -97,7 +97,6 @@ class ContentBlock:
     text_indent_at: Optional[float] = None
     follow_number_with: Optional[str] = None
     add_tab_stop_at: Optional[float] = None
-    link_level_to_style: Optional[str] = None
 
 class SpecContentExtractorV3:
     """Extracts specification content with comprehensive metadata"""
@@ -522,50 +521,10 @@ class SpecContentExtractorV3:
         properties = {}
         
         try:
-            # Check if we have template analysis with numbering definitions
-            if not hasattr(self, 'template_analysis') or self.template_analysis is None:
-                return properties
-            
-            # Find the numbering definition for this numbering_id
-            num_key = f"num_{numbering_id}"
-            if num_key in self.template_analysis.numbering_definitions:
-                abstract_num_id = self.template_analysis.numbering_definitions[num_key].get("abstract_num_id")
-                if abstract_num_id in self.template_analysis.numbering_definitions:
-                    abstract_info = self.template_analysis.numbering_definitions[abstract_num_id]
-                    level_str = str(numbering_level) if numbering_level is not None else "0"
-                    
-                    if level_str in abstract_info.get("levels", {}):
-                        level_info = abstract_info["levels"][level_str]
-                        
-                        # Extract number alignment (left, center, right)
-                        properties["number_alignment"] = level_info.get("lvlJc")
-                        
-                        # Extract follow number with (tab, space, nothing)
-                        properties["follow_number_with"] = level_info.get("suff")
-                        
-                        # Extract link level to style
-                        properties["link_level_to_style"] = level_info.get("pStyle")
-                        
-                        # Extract position values from paragraph properties
-                        p_pr = level_info.get("pPr", {})
-                        if "indent" in p_pr:
-                            indent = p_pr["indent"]
-                            # Convert twips to points (1 point = 20 twips)
-                            if indent.get("left"):
-                                properties["aligned_at"] = float(indent["left"]) / 20.0
-                            if indent.get("firstLine"):
-                                properties["text_indent_at"] = float(indent["firstLine"]) / 20.0
-                        
-                        # Extract tab stop information
-                        if "tabs" in p_pr:
-                            tabs = p_pr["tabs"]
-                            if "tab" in tabs and tabs["tab"]:
-                                # Get the first tab position
-                                if isinstance(tabs["tab"], list) and len(tabs["tab"]) > 0:
-                                    tab_pos = tabs["tab"][0].get("pos")
-                                    if tab_pos:
-                                        properties["add_tab_stop_at"] = float(tab_pos) / 20.0
-                        
+            # This would need to access the numbering.xml to get level list properties
+            # For now, we'll return empty properties - this can be enhanced later
+            # to extract from the template's numbering definitions
+            pass
         except Exception as e:
             print(f"Error extracting level list properties: {e}")
         
@@ -751,8 +710,7 @@ class SpecContentExtractorV3:
                     aligned_at=level_list_properties.get('aligned_at'),
                     text_indent_at=level_list_properties.get('text_indent_at'),
                     follow_number_with=level_list_properties.get('follow_number_with'),
-                    add_tab_stop_at=level_list_properties.get('add_tab_stop_at'),
-                    link_level_to_style=level_list_properties.get('link_level_to_style')
+                    add_tab_stop_at=level_list_properties.get('add_tab_stop_at')
                 )
                 
                 self.content_blocks.append(block)
@@ -762,7 +720,6 @@ class SpecContentExtractorV3:
                 "header": header_footer_data["header"],
                 "footer": header_footer_data["footer"],
                 "margins": header_footer_data["margins"],
-                "document_settings": header_footer_data.get("document_settings", {}),
                 "comments": comments,
                 "section_number": section_number,
                 "section_title": section_title,
@@ -805,8 +762,7 @@ class SpecContentExtractorV3:
                         "aligned_at": block.aligned_at,
                         "text_indent_at": block.text_indent_at,
                         "follow_number_with": block.follow_number_with,
-                        "add_tab_stop_at": block.add_tab_stop_at,
-                        "link_level_to_style": block.link_level_to_style
+                        "add_tab_stop_at": block.add_tab_stop_at
                     }
                     for block in self.content_blocks
                 ],

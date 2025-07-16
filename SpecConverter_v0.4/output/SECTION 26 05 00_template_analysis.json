@@ -1,5 +1,5 @@
 {
-  "template_path": "templates\\test_template_cleaned.docx",
+  "template_path": "../templates/test_template_cleaned.docx",
   "bwa_list_levels": {
     "BWA-PART": {
       "level_number": -1,
@@ -156,6 +156,15 @@
               "right": null,
               "hanging": "864",
               "firstLine": null
+            },
+            "tabs": {
+              "tab": [
+                {
+                  "pos": "864",
+                  "val": "left",
+                  "leader": null
+                }
+              ]
             }
           },
           "rPr": {}
@@ -174,6 +183,15 @@
               "right": null,
               "hanging": "576",
               "firstLine": null
+            },
+            "tabs": {
+              "tab": [
+                {
+                  "pos": "864",
+                  "val": "left",
+                  "leader": null
+                }
+              ]
             }
           },
           "rPr": {}
@@ -192,6 +210,15 @@
               "right": null,
               "hanging": "576",
               "firstLine": null
+            },
+            "tabs": {
+              "tab": [
+                {
+                  "pos": "1440",
+                  "val": "left",
+                  "leader": null
+                }
+              ]
             }
           },
           "rPr": {}
@@ -210,6 +237,15 @@
               "right": null,
               "hanging": "576",
               "firstLine": null
+            },
+            "tabs": {
+              "tab": [
+                {
+                  "pos": "2016",
+                  "val": "left",
+                  "leader": null
+                }
+              ]
             }
           },
           "rPr": {}
@@ -228,6 +264,15 @@
               "right": null,
               "hanging": "576",
               "firstLine": null
+            },
+            "tabs": {
+              "tab": [
+                {
+                  "pos": "2592",
+                  "val": "left",
+                  "leader": null
+                }
+              ]
             }
           },
           "rPr": {}
@@ -246,6 +291,15 @@
               "right": null,
               "hanging": "576",
               "firstLine": null
+            },
+            "tabs": {
+              "tab": [
+                {
+                  "pos": "3168",
+                  "val": "left",
+                  "leader": null
+                }
+              ]
             }
           },
           "rPr": {}
@@ -891,6 +945,15 @@
               "right": null,
               "hanging": "576",
               "firstLine": null
+            },
+            "tabs": {
+              "tab": [
+                {
+                  "pos": "7200",
+                  "val": "num",
+                  "leader": null
+                }
+              ]
             }
           },
           "rPr": {
@@ -1042,6 +1105,6 @@
     "total_bwa_levels": 8,
     "level_mappings_count": 10,
     "level_types": {},
-    "analysis_timestamp": "2025-07-15T14:46:56.676488"
+    "analysis_timestamp": "2025-07-16T11:41:58.459965"
   }
 }
