@@ -1,6 +1,32 @@
 {
   "template_path": "../templates/test_template_cleaned.docx",
   "bwa_list_levels": {
+    "BWA-SectionNumber": {
+      "level_number": -1,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-SectionNumber",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "BWA-SectionTitle": {
+      "level_number": -1,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-SectionTitle",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
     "BWA-PART": {
       "level_number": -1,
       "numbering_id": null,
@@ -102,6 +128,19 @@
       "suffix": null,
       "justification": null,
       "style_name": "BWA-SubSubList",
+      "bwa_label": null,
+      "is_bwa_level": true
+    },
+    "BWA-EndOfSection": {
+      "level_number": -1,
+      "numbering_id": null,
+      "abstract_num_id": null,
+      "level_text": null,
+      "number_format": null,
+      "start_value": null,
+      "suffix": null,
+      "justification": null,
+      "style_name": "BWA-EndOfSection",
       "bwa_label": null,
       "is_bwa_level": true
     }
@@ -1085,6 +1124,66 @@
     "num_10": {
       "abstract_num_id": "1",
       "bwa_label": null
+    },
+    "num_11": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_12": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_13": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_14": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_15": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_16": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_17": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_18": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_19": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_20": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_21": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_22": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_23": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_24": {
+      "abstract_num_id": "1",
+      "bwa_label": null
+    },
+    "num_25": {
+      "abstract_num_id": "1",
+      "bwa_label": null
     }
   },
   "level_mappings": {
@@ -1097,14 +1196,29 @@
     "7": "0",
     "8": "0",
     "9": "0",
-    "10": "1"
+    "10": "1",
+    "11": "1",
+    "12": "1",
+    "13": "1",
+    "14": "1",
+    "15": "1",
+    "16": "1",
+    "17": "1",
+    "18": "1",
+    "19": "1",
+    "20": "1",
+    "21": "1",
+    "22": "1",
+    "23": "1",
+    "24": "1",
+    "25": "1"
   },
   "summary": {
     "total_abstract_numbering": 4,
-    "total_num_mappings": 10,
-    "total_bwa_levels": 8,
-    "level_mappings_count": 10,
+    "total_num_mappings": 25,
+    "total_bwa_levels": 11,
+    "level_mappings_count": 25,
     "level_types": {},
-    "analysis_timestamp": "2025-07-16T11:41:58.459965"
+    "analysis_timestamp": "2025-07-16T12:55:13.313902"
   }
 }

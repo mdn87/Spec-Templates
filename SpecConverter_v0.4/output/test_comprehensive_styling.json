@@ -78,7 +78,7 @@
       "number": "26 05 00",
       "content": "",
       "level_number": null,
-      "bwa_level_name": "BWA-SectionNumber",
+      "bwa_level_name": null,
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal",
@@ -117,7 +117,7 @@
       "number": null,
       "content": "Common Work Results for Electrical",
       "level_number": null,
-      "bwa_level_name": "BWA-SectionTitle",
+      "bwa_level_name": null,
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal",
@@ -5233,7 +5233,7 @@
       "total_bwa_levels": 11,
       "level_mappings_count": 25,
       "level_types": {},
-      "analysis_timestamp": "2025-07-16T12:55:13.313902"
+      "analysis_timestamp": "2025-07-16T12:44:34.507236"
     }
   }
 }

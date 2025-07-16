@@ -9,7 +9,7 @@
       "number": "26 05 00",
       "content": "",
       "level_number": null,
-      "bwa_level_name": null,
+      "bwa_level_name": "BWA-SectionNumber",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal",
@@ -48,7 +48,7 @@
       "number": null,
       "content": "Common Work Results for Electrical",
       "level_number": null,
-      "bwa_level_name": null,
+      "bwa_level_name": "BWA-SectionTitle",
       "numbering_id": null,
       "numbering_level": null,
       "style_name": "Normal",
@@ -3943,6 +3943,6 @@
       "link_level_to_style": null
     }
   ],
-  "extraction_timestamp": "2025-07-16T11:41:58.678456",
+  "extraction_timestamp": "2025-07-16T12:55:13.859768",
   "source_file": "SECTION 26 05 00"
 }

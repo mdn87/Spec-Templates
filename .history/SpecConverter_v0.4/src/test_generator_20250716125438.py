@@ -301,8 +301,6 @@ def parse_spec_json(json_path):
 def get_style_for_bwa_level(bwa_level_name):
     """Map BWA level names to template style names"""
     style_mapping = {
-        "BWA-SectionNumber": "BWA-SectionNumber",
-        "BWA-SectionTitle": "BWA-SectionTitle",
         "BWA-PART": "BWA-PART",
         "BWA-SUBSECTION": "BWA-SUBSECTION", 
         "BWA-Item": "BWA-Item",
