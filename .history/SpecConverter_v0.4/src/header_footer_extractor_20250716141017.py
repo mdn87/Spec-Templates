@@ -382,105 +382,71 @@ class HeaderFooterExtractor:
                 ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
                 
                 # Default tab stop
-                try:
-                    default_tab_stop = settings_element.find('.//w:defaultTabStop', ns)
-                    if default_tab_stop is not None:
-                        doc_settings["default_tab_stop"] = default_tab_stop.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                except:
-                    pass
+                default_tab_stop = settings_element.find('.//w:defaultTabStop', ns)
+                if default_tab_stop is not None:
+                    doc_settings["default_tab_stop"] = default_tab_stop.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
                 
                 # Character spacing control
-                try:
-                    char_spacing_control = settings_element.find('.//w:characterSpacingControl', ns)
-                    if char_spacing_control is not None:
-                        doc_settings["character_spacing_control"] = char_spacing_control.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                except:
-                    pass
+                char_spacing_control = settings_element.find('.//w:characterSpacingControl', ns)
+                if char_spacing_control is not None:
+                    doc_settings["character_spacing_control"] = char_spacing_control.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
                 
                 # Compatibility settings
-                try:
-                    compatibility = settings_element.find('.//w:compat', ns)
-                    if compatibility is not None:
-                        doc_settings["compatibility_settings"] = {}
-                        for child in compatibility:
-                            try:
-                                tag = child.tag.split('}')[-1]  # Remove namespace
-                                doc_settings["compatibility_settings"][tag] = child.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                            except:
-                                continue
-                except:
-                    pass
+                compatibility = settings_element.find('.//w:compat', ns)
+                if compatibility is not None:
+                    doc_settings["compatibility_settings"] = {}
+                    for child in compatibility:
+                        tag = child.tag.split('}')[-1]  # Remove namespace
+                        doc_settings["compatibility_settings"][tag] = child.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
                 
                 # Document protection
-                try:
-                    document_protection = settings_element.find('.//w:documentProtection', ns)
-                    if document_protection is not None:
-                        doc_settings["document_protection"] = {
-                            "enforcement": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}enforcement'),
-                            "edit": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}edit'),
-                            "formatting": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}formatting')
-                        }
-                except:
-                    pass
+                document_protection = settings_element.find('.//w:documentProtection', ns)
+                if document_protection is not None:
+                    doc_settings["document_protection"] = {
+                        "enforcement": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}enforcement'),
+                        "edit": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}edit'),
+                        "formatting": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}formatting')
+                    }
                 
                 # Zoom settings
-                try:
-                    zoom = settings_element.find('.//w:zoom', ns)
-                    if zoom is not None:
-                        doc_settings["zoom"] = {
-                            "percent": zoom.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}percent'),
-                            "val": zoom.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                        }
-                except:
-                    pass
+                zoom = settings_element.find('.//w:zoom', ns)
+                if zoom is not None:
+                    doc_settings["zoom"] = {
+                        "percent": zoom.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}percent'),
+                        "val": zoom.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
+                    }
                 
                 # View settings
-                try:
-                    view = settings_element.find('.//w:view', ns)
-                    if view is not None:
-                        doc_settings["view"] = {
-                            "val": view.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val'),
-                            "zoom": view.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}zoom')
-                        }
-                except:
-                    pass
+                view = settings_element.find('.//w:view', ns)
+                if view is not None:
+                    doc_settings["view"] = {
+                        "val": view.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val'),
+                        "zoom": view.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}zoom')
+                    }
                 
                 # Grammar and spelling settings
-                try:
-                    proof_state = settings_element.find('.//w:proofState', ns)
-                    if proof_state is not None:
-                        doc_settings["proof_state"] = {
-                            "grammar": proof_state.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}grammar'),
-                            "spelling": proof_state.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}spelling')
-                        }
-                except:
-                    pass
+                proof_state = settings_element.find('.//w:proofState', ns)
+                if proof_state is not None:
+                    doc_settings["proof_state"] = {
+                        "grammar": proof_state.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}grammar'),
+                        "spelling": proof_state.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}spelling')
+                    }
                 
                 # Track changes settings
-                try:
-                    track_changes = settings_element.find('.//w:trackRevisions', ns)
-                    if track_changes is not None:
-                        doc_settings["track_changes"] = track_changes.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                except:
-                    pass
+                track_changes = settings_element.find('.//w:trackRevisions', ns)
+                if track_changes is not None:
+                    doc_settings["track_changes"] = track_changes.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
                 
                 # Print settings
-                try:
-                    print_settings = settings_element.find('.//w:printSettings', ns)
-                    if print_settings is not None:
-                        doc_settings["print_settings"] = {}
-                        for child in print_settings:
-                            try:
-                                tag = child.tag.split('}')[-1]
-                                doc_settings["print_settings"][tag] = child.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                            except:
-                                continue
-                except:
-                    pass
+                print_settings = settings_element.find('.//w:printSettings', ns)
+                if print_settings is not None:
+                    doc_settings["print_settings"] = {}
+                    for child in print_settings:
+                        tag = child.tag.split('}')[-1]
+                        doc_settings["print_settings"][tag] = child.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
             
         except Exception as e:
-            # Silently handle any extraction errors
-            pass
+            print(f"Warning: Could not extract document-wide settings: {e}")
         
         return doc_settings
     

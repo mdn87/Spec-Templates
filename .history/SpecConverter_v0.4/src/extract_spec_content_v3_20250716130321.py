@@ -481,7 +481,7 @@ class SpecContentExtractorV3:
         # Check for subsection titles without numbering - MOVED AFTER item patterns
         subsection_titles = [
             "SCOPE", "EXISTING CONDITIONS", "CODES AND REGULATIONS", "DEFINITIONS",
-            "DRAWINGS AND SPECIFICATIONS", "DRAWINGS  SPECIFICATIONS", "SITE VISIT", "DEVIATIONS",
+            "DRAWINGS AND SPECIFICATIONS", "SITE VISIT", "DEVIATIONS",
             "STANDARDS FOR MATERIALS AND WORKMANSHIP", "SHOP DRAWINGS AND SUBMITTAL",
             "RECORD (AS-BUILT) DRAWINGS AND MAINTENANCE MANUALS",
             "COORDINATION", "PROTECTION OF MATERIALS", "TESTS, DEMONSTRATION AND INSTRUCTIONS",
@@ -504,26 +504,10 @@ class SpecContentExtractorV3:
     def correct_level_type_based_on_numbering(self, level_type: str, numbering_id: Optional[str], 
                                             numbering_level: Optional[int], text: str) -> str:
         """Correct level type based on paragraph numbering information"""
-        text_clean = text.strip()
-        
-        # Check if this should be a subsection title even if it has numbering
-        subsection_titles = [
-            "SCOPE", "EXISTING CONDITIONS", "CODES AND REGULATIONS", "DEFINITIONS",
-            "DRAWINGS AND SPECIFICATIONS", "DRAWINGS  SPECIFICATIONS", "SITE VISIT", "DEVIATIONS",
-            "STANDARDS FOR MATERIALS AND WORKMANSHIP", "SHOP DRAWINGS AND SUBMITTAL",
-            "RECORD (AS-BUILT) DRAWINGS AND MAINTENANCE MANUALS",
-            "COORDINATION", "PROTECTION OF MATERIALS", "TESTS, DEMONSTRATION AND INSTRUCTIONS",
-            "GUARANTEE"
-        ]
-        
-        # If the text matches a subsection title, it should be a subsection_title regardless of numbering
-        for title in subsection_titles:
-            if text_clean.upper() == title.upper():
-                return "subsection_title"
-        
         # If it was classified as content but has numbering, it's likely a list item
         if level_type == "content" and numbering_id is not None:
             # Check if this looks like a list item (short text, no obvious structure)
+            text_clean = text.strip()
             if len(text_clean) < 100 and not text_clean.upper().startswith(("SECTION", "PART", "GENERAL", "SCOPE")):
                 # Based on numbering level, determine the type
                 if numbering_level == 0:
@@ -532,13 +516,6 @@ class SpecContentExtractorV3:
                     return "sub_list"  # Sub-list items
                 else:
                     return "list"  # Default to list for any numbered content
-        
-        # If it was classified as list but should be a subsection title
-        if level_type == "list" and numbering_id is not None:
-            # Check if this looks like a subsection title
-            for title in subsection_titles:
-                if text_clean.upper() == title.upper():
-                    return "subsection_title"
         
         return level_type
     
@@ -779,9 +756,7 @@ class SpecContentExtractorV3:
                     text_indent_at=level_list_properties.get('text_indent_at'),
                     follow_number_with=level_list_properties.get('follow_number_with'),
                     add_tab_stop_at=level_list_properties.get('add_tab_stop_at'),
-                    link_level_to_style=level_list_properties.get('link_level_to_style'),
-                    # Fallback tracking
-                    used_fallback_styling=False  # Will be set to True if fallback is used
+                    link_level_to_style=level_list_properties.get('link_level_to_style')
                 )
                 
                 self.content_blocks.append(block)
@@ -835,8 +810,7 @@ class SpecContentExtractorV3:
                         "text_indent_at": block.text_indent_at,
                         "follow_number_with": block.follow_number_with,
                         "add_tab_stop_at": block.add_tab_stop_at,
-                        "link_level_to_style": block.link_level_to_style,
-                        "used_fallback_styling": block.used_fallback_styling
+                        "link_level_to_style": block.link_level_to_style
                     }
                     for block in self.content_blocks
                 ],

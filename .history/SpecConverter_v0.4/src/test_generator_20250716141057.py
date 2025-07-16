@@ -6,7 +6,6 @@ import json
 import os
 from docx.oxml import OxmlElement
 from docx.shared import RGBColor
-from docx.enum.style import WD_STYLE_TYPE
 
 # Configuration variables - change these to modify font and size for all text
 TEMPLATE_PATH = '../templates/test_template_cleaned.docx'
@@ -156,150 +155,6 @@ def apply_styling_from_json(paragraph, block):
         # Fallback to default styling
         set_font_and_size(paragraph)
 
-def apply_style_definitions_from_json(doc, json_data):
-    """Apply style definitions from JSON to ensure proper styling in regenerated document"""
-    try:
-        content_blocks = json_data.get('content_blocks', [])
-        if not content_blocks:
-            return
-        
-        # Collect all unique BWA level names used in content blocks
-        bwa_style_names = set()
-        for block in content_blocks:
-            bwa_level_name = block.get('bwa_level_name')
-            if bwa_level_name and bwa_level_name != 'Normal':
-                bwa_style_names.add(bwa_level_name)
-        
-        # Apply styling for each BWA style
-        for bwa_style_name in bwa_style_names:
-            apply_style_definition(doc, bwa_style_name, content_blocks)
-        
-        print(f"Applied style definitions for {len(bwa_style_names)} BWA styles")
-        
-    except Exception as e:
-        print(f"Warning: Could not apply style definitions: {e}")
-
-def apply_style_definition(doc, style_name, content_blocks):
-    """Apply definition for a specific style based on content blocks using that style"""
-    try:
-        # Get or create the style
-        if style_name in doc.styles:
-            style = doc.styles[style_name]
-        else:
-            # Create new style if it doesn't exist
-            style = doc.styles.add_style(style_name, WD_STYLE_TYPE.PARAGRAPH)
-        
-        # Find content blocks using this BWA level name to determine its properties
-        style_blocks = [block for block in content_blocks if block.get('bwa_level_name') == style_name]
-        if not style_blocks:
-            return
-        
-        # Use the first block to determine style properties (they should be consistent)
-        sample_block = style_blocks[0]
-        
-        # Apply paragraph format properties
-        if hasattr(style, 'paragraph_format') and style.paragraph_format:
-            pf = style.paragraph_format
-            
-            # Alignment
-            if sample_block.get('paragraph_alignment'):
-                from docx.enum.text import WD_ALIGN_PARAGRAPH
-                alignment_map = {
-                    'left': WD_ALIGN_PARAGRAPH.LEFT,
-                    'center': WD_ALIGN_PARAGRAPH.CENTER,
-                    'right': WD_ALIGN_PARAGRAPH.RIGHT,
-                    'both': WD_ALIGN_PARAGRAPH.JUSTIFY
-                }
-                if sample_block['paragraph_alignment'] in alignment_map:
-                    pf.alignment = alignment_map[sample_block['paragraph_alignment']]
-            
-            # Indentation
-            if sample_block.get('paragraph_indent_left'):
-                from docx.shared import Inches
-                pf.left_indent = Inches(sample_block['paragraph_indent_left'] / 72.0)
-            
-            if sample_block.get('paragraph_indent_right'):
-                from docx.shared import Inches
-                pf.right_indent = Inches(sample_block['paragraph_indent_right'] / 72.0)
-            
-            if sample_block.get('paragraph_indent_first_line'):
-                from docx.shared import Inches
-                pf.first_line_indent = Inches(sample_block['paragraph_indent_first_line'] / 72.0)
-            
-            # Spacing
-            if sample_block.get('paragraph_spacing_before'):
-                from docx.shared import Pt
-                pf.space_before = Pt(sample_block['paragraph_spacing_before'])
-            
-            if sample_block.get('paragraph_spacing_after'):
-                from docx.shared import Pt
-                pf.space_after = Pt(sample_block['paragraph_spacing_after'])
-            
-            if sample_block.get('paragraph_line_spacing'):
-                pf.line_spacing = sample_block['paragraph_line_spacing']
-            
-            # Other paragraph properties
-            if sample_block.get('paragraph_keep_with_next') is not None:
-                pf.keep_with_next = sample_block['paragraph_keep_with_next']
-            
-            if sample_block.get('paragraph_keep_lines_together') is not None:
-                pf.keep_lines_together = sample_block['paragraph_keep_lines_together']
-            
-            if sample_block.get('paragraph_page_break_before') is not None:
-                pf.page_break_before = sample_block['paragraph_page_break_before']
-            
-            if sample_block.get('paragraph_widow_control') is not None:
-                pf.widow_control = sample_block['paragraph_widow_control']
-        
-        # Apply font properties
-        if hasattr(style, 'font') and style.font:
-            font = style.font
-            
-            if sample_block.get('font_name'):
-                font.name = sample_block['font_name']
-            
-            if sample_block.get('font_size'):
-                from docx.shared import Pt
-                font.size = Pt(sample_block['font_size'])
-            
-            if sample_block.get('font_bold') is not None:
-                font.bold = sample_block['font_bold']
-            
-            if sample_block.get('font_italic') is not None:
-                font.italic = sample_block['font_italic']
-            
-            if sample_block.get('font_underline'):
-                from docx.enum.text import WD_UNDERLINE
-                underline_map = {
-                    'single': WD_UNDERLINE.SINGLE,
-                    'double': WD_UNDERLINE.DOUBLE,
-                    'thick': WD_UNDERLINE.THICK,
-                    'dotted': WD_UNDERLINE.DOTTED,
-                    'dash': WD_UNDERLINE.DASH,
-                    'dotDash': WD_UNDERLINE.DOT_DASH,
-                    'dotDotDash': WD_UNDERLINE.DOT_DOT_DASH,
-                    'wavy': WD_UNDERLINE.WAVY,
-                    'none': WD_UNDERLINE.NONE
-                }
-                if sample_block['font_underline'] in underline_map:
-                    font.underline = underline_map[sample_block['font_underline']]
-            
-            if sample_block.get('font_color'):
-                from docx.shared import RGBColor
-                font.color.rgb = RGBColor.from_string(sample_block['font_color'])
-            
-            if sample_block.get('font_strike') is not None:
-                font.strike = sample_block['font_strike']
-            
-            if sample_block.get('font_small_caps') is not None:
-                font.small_caps = sample_block['font_small_caps']
-            
-            if sample_block.get('font_all_caps') is not None:
-                font.all_caps = sample_block['font_all_caps']
-        
-    except Exception as e:
-        print(f"Warning: Could not apply style definition for {style_name}: {e}")
-
 def apply_document_settings_from_json(doc, json_data):
     """Apply document-level settings from JSON to the document"""
     try:
@@ -403,7 +258,7 @@ def apply_default_formatting_from_json(doc, default_formatting):
     """Apply default formatting settings from JSON to document styles"""
     try:
         # Get the Normal style
-        normal_style = doc.styles['Normal'] if 'Normal' in doc.styles else None
+        normal_style = doc.styles.get('Normal')
         if not normal_style:
             return
         
@@ -688,46 +543,8 @@ def generate_content_from_v3_json(doc, json_data):
         if level_type in ["section", "title", "part_title"]:
             doc.add_paragraph()  # Add blank line after major sections
 
-def check_template_styles(template_path):
-    """Check template styles and provide feedback about style definitions"""
-    try:
-        doc = Document(template_path)
-        print(f"\nTemplate Style Analysis for: {template_path}")
-        print("-" * 50)
-        
-        # Check for BWA styles specifically
-        bwa_styles = []
-        other_styles = []
-        
-        for style in doc.styles:
-            if style.name and style.name.startswith('BWA-'):
-                bwa_styles.append(style.name)
-            elif style.name and style.name not in ['Normal', 'Default Paragraph Font', 'Default Paragraph Font (Asian)', 'Default Paragraph Font (Complex Script)']:
-                other_styles.append(style.name)
-        
-        print(f"BWA Styles found: {len(bwa_styles)}")
-        for style_name in bwa_styles:
-            print(f"  - {style_name}")
-        
-        if other_styles:
-            print(f"\nOther custom styles found: {len(other_styles)}")
-            for style_name in other_styles[:10]:  # Show first 10
-                print(f"  - {style_name}")
-            if len(other_styles) > 10:
-                print(f"  ... and {len(other_styles) - 10} more")
-        
-        print(f"\nTotal styles in template: {len(doc.styles)}")
-        print("\nNote: If styles appear with default formatting in regenerated documents,")
-        print("consider setting them to 'New documents based on this template' in Word.")
-        
-    except Exception as e:
-        print(f"Warning: Could not analyze template styles: {e}")
-
 # Main execution
 print("Starting document generation process...")
-
-# Check template styles first
-check_template_styles(TEMPLATE_PATH)
 
 # Load template
 try:
@@ -747,9 +564,6 @@ apply_document_settings_from_json(doc, json_data)
 
 # Apply margins from JSON
 apply_margins_from_json(doc, json_data)
-
-# Apply style definitions from JSON
-apply_style_definitions_from_json(doc, json_data)
 
 # Generate content from JSON
 generate_content_from_v3_json(doc, json_data)

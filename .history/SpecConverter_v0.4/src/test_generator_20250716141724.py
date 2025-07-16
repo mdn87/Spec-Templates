@@ -163,18 +163,18 @@ def apply_style_definitions_from_json(doc, json_data):
         if not content_blocks:
             return
         
-        # Collect all unique BWA level names used in content blocks
-        bwa_style_names = set()
+        # Collect all unique style names used in content blocks
+        style_names = set()
         for block in content_blocks:
-            bwa_level_name = block.get('bwa_level_name')
-            if bwa_level_name and bwa_level_name != 'Normal':
-                bwa_style_names.add(bwa_level_name)
+            style_name = block.get('style_name')
+            if style_name and style_name != 'Normal':
+                style_names.add(style_name)
         
-        # Apply styling for each BWA style
-        for bwa_style_name in bwa_style_names:
-            apply_style_definition(doc, bwa_style_name, content_blocks)
+        # Apply styling for each style
+        for style_name in style_names:
+            apply_style_definition(doc, style_name, content_blocks)
         
-        print(f"Applied style definitions for {len(bwa_style_names)} BWA styles")
+        print(f"Applied style definitions for {len(style_names)} styles")
         
     except Exception as e:
         print(f"Warning: Could not apply style definitions: {e}")
@@ -189,8 +189,8 @@ def apply_style_definition(doc, style_name, content_blocks):
             # Create new style if it doesn't exist
             style = doc.styles.add_style(style_name, WD_STYLE_TYPE.PARAGRAPH)
         
-        # Find content blocks using this BWA level name to determine its properties
-        style_blocks = [block for block in content_blocks if block.get('bwa_level_name') == style_name]
+        # Find content blocks using this style to determine its properties
+        style_blocks = [block for block in content_blocks if block.get('style_name') == style_name]
         if not style_blocks:
             return
         
@@ -688,46 +688,8 @@ def generate_content_from_v3_json(doc, json_data):
         if level_type in ["section", "title", "part_title"]:
             doc.add_paragraph()  # Add blank line after major sections
 
-def check_template_styles(template_path):
-    """Check template styles and provide feedback about style definitions"""
-    try:
-        doc = Document(template_path)
-        print(f"\nTemplate Style Analysis for: {template_path}")
-        print("-" * 50)
-        
-        # Check for BWA styles specifically
-        bwa_styles = []
-        other_styles = []
-        
-        for style in doc.styles:
-            if style.name and style.name.startswith('BWA-'):
-                bwa_styles.append(style.name)
-            elif style.name and style.name not in ['Normal', 'Default Paragraph Font', 'Default Paragraph Font (Asian)', 'Default Paragraph Font (Complex Script)']:
-                other_styles.append(style.name)
-        
-        print(f"BWA Styles found: {len(bwa_styles)}")
-        for style_name in bwa_styles:
-            print(f"  - {style_name}")
-        
-        if other_styles:
-            print(f"\nOther custom styles found: {len(other_styles)}")
-            for style_name in other_styles[:10]:  # Show first 10
-                print(f"  - {style_name}")
-            if len(other_styles) > 10:
-                print(f"  ... and {len(other_styles) - 10} more")
-        
-        print(f"\nTotal styles in template: {len(doc.styles)}")
-        print("\nNote: If styles appear with default formatting in regenerated documents,")
-        print("consider setting them to 'New documents based on this template' in Word.")
-        
-    except Exception as e:
-        print(f"Warning: Could not analyze template styles: {e}")
-
 # Main execution
 print("Starting document generation process...")
-
-# Check template styles first
-check_template_styles(TEMPLATE_PATH)
 
 # Load template
 try:

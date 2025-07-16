@@ -779,9 +779,7 @@ class SpecContentExtractorV3:
                     text_indent_at=level_list_properties.get('text_indent_at'),
                     follow_number_with=level_list_properties.get('follow_number_with'),
                     add_tab_stop_at=level_list_properties.get('add_tab_stop_at'),
-                    link_level_to_style=level_list_properties.get('link_level_to_style'),
-                    # Fallback tracking
-                    used_fallback_styling=False  # Will be set to True if fallback is used
+                    link_level_to_style=level_list_properties.get('link_level_to_style')
                 )
                 
                 self.content_blocks.append(block)
@@ -835,8 +833,7 @@ class SpecContentExtractorV3:
                         "text_indent_at": block.text_indent_at,
                         "follow_number_with": block.follow_number_with,
                         "add_tab_stop_at": block.add_tab_stop_at,
-                        "link_level_to_style": block.link_level_to_style,
-                        "used_fallback_styling": block.used_fallback_styling
+                        "link_level_to_style": block.link_level_to_style
                     }
                     for block in self.content_blocks
                 ],

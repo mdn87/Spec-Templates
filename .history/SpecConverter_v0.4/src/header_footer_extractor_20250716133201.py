@@ -209,13 +209,16 @@ class HeaderFooterExtractor:
             
             # Extract default paragraph and run formatting from styles
             settings["default_formatting"] = self._extract_default_formatting(doc)
+            print(f"DEBUG: Extracted default formatting: {len(settings['default_formatting'])} items")
             
             # Extract document-wide settings from settings.xml
             settings["document_wide_settings"] = self._extract_document_wide_settings(doc)
+            print(f"DEBUG: Extracted document-wide settings: {len(settings['document_wide_settings'])} items")
             
         except Exception as e:
             print(f"Warning: Could not extract document settings: {e}")
         
+        print(f"DEBUG: Total document settings extracted: {len(settings)} items")
         return settings
     
     def _extract_default_formatting(self, doc) -> Dict[str, Any]:
@@ -227,146 +230,42 @@ class HeaderFooterExtractor:
         
         try:
             # Get the Normal style which contains default formatting
-            normal_style = doc.styles['Normal'] if 'Normal' in doc.styles else None
+            normal_style = doc.styles.get('Normal')
             if normal_style:
                 # Extract default paragraph format
                 if hasattr(normal_style, 'paragraph_format') and normal_style.paragraph_format:
                     pf = normal_style.paragraph_format
-                    pf_data = {}
-                    
-                    # Handle each attribute safely
-                    try:
-                        if pf.alignment:
-                            pf_data["alignment"] = str(pf.alignment)
-                    except:
-                        pass
-                    
-                    try:
-                        if pf.left_indent:
-                            pf_data["left_indent"] = pf.left_indent.inches
-                    except:
-                        pass
-                    
-                    try:
-                        if pf.right_indent:
-                            pf_data["right_indent"] = pf.right_indent.inches
-                    except:
-                        pass
-                    
-                    try:
-                        if pf.first_line_indent:
-                            pf_data["first_line_indent"] = pf.first_line_indent.inches
-                    except:
-                        pass
-                    
-                    try:
-                        if pf.space_before:
-                            pf_data["space_before"] = pf.space_before.pt
-                    except:
-                        pass
-                    
-                    try:
-                        if pf.space_after:
-                            pf_data["space_after"] = pf.space_after.pt
-                    except:
-                        pass
-                    
-                    try:
-                        if pf.line_spacing:
-                            pf_data["line_spacing"] = pf.line_spacing
-                    except:
-                        pass
-                    
-                    try:
-                        if hasattr(pf, 'keep_with_next'):
-                            pf_data["keep_with_next"] = pf.keep_with_next
-                    except:
-                        pass
-                    
-                    try:
-                        if hasattr(pf, 'keep_lines_together'):
-                            pf_data["keep_lines_together"] = pf.keep_lines_together
-                    except:
-                        pass
-                    
-                    try:
-                        if hasattr(pf, 'page_break_before'):
-                            pf_data["page_break_before"] = pf.page_break_before
-                    except:
-                        pass
-                    
-                    try:
-                        if hasattr(pf, 'widow_control'):
-                            pf_data["widow_control"] = pf.widow_control
-                    except:
-                        pass
-                    
-                    default_formatting["default_paragraph_format"] = pf_data
+                    default_formatting["default_paragraph_format"] = {
+                        "alignment": str(pf.alignment) if pf.alignment else None,
+                        "left_indent": pf.left_indent.inches if pf.left_indent else None,
+                        "right_indent": pf.right_indent.inches if pf.right_indent else None,
+                        "first_line_indent": pf.first_line_indent.inches if pf.first_line_indent else None,
+                        "space_before": pf.space_before.pt if pf.space_before else None,
+                        "space_after": pf.space_after.pt if pf.space_after else None,
+                        "line_spacing": pf.line_spacing if pf.line_spacing else None,
+                        "keep_with_next": pf.keep_with_next if pf.keep_with_next else None,
+                        "keep_lines_together": pf.keep_lines_together if pf.keep_lines_together else None,
+                        "page_break_before": pf.page_break_before if pf.page_break_before else None,
+                        "widow_control": pf.widow_control if pf.widow_control else None
+                    }
                 
                 # Extract default run format
                 if hasattr(normal_style, 'font') and normal_style.font:
                     font = normal_style.font
-                    font_data = {}
-                    
-                    try:
-                        if font.name:
-                            font_data["name"] = font.name
-                    except:
-                        pass
-                    
-                    try:
-                        if font.size:
-                            font_data["size"] = font.size.pt
-                    except:
-                        pass
-                    
-                    try:
-                        if font.bold is not None:
-                            font_data["bold"] = font.bold
-                    except:
-                        pass
-                    
-                    try:
-                        if font.italic is not None:
-                            font_data["italic"] = font.italic
-                    except:
-                        pass
-                    
-                    try:
-                        if font.underline:
-                            font_data["underline"] = str(font.underline)
-                    except:
-                        pass
-                    
-                    try:
-                        if font.color and font.color.rgb:
-                            font_data["color"] = str(font.color.rgb)
-                    except:
-                        pass
-                    
-                    try:
-                        if font.strike is not None:
-                            font_data["strike"] = font.strike
-                    except:
-                        pass
-                    
-                    try:
-                        if font.small_caps is not None:
-                            font_data["small_caps"] = font.small_caps
-                    except:
-                        pass
-                    
-                    try:
-                        if font.all_caps is not None:
-                            font_data["all_caps"] = font.all_caps
-                    except:
-                        pass
-                    
-                    default_formatting["default_run_format"] = font_data
+                    default_formatting["default_run_format"] = {
+                        "name": font.name if font.name else None,
+                        "size": font.size.pt if font.size else None,
+                        "bold": font.bold if font.bold else None,
+                        "italic": font.italic if font.italic else None,
+                        "underline": str(font.underline) if font.underline else None,
+                        "color": str(font.color.rgb) if font.color and font.color.rgb else None,
+                        "strike": font.strike if font.strike else None,
+                        "small_caps": font.small_caps if font.small_caps else None,
+                        "all_caps": font.all_caps if font.all_caps else None
+                    }
             
         except Exception as e:
-            # Silently handle any extraction errors
-            pass
+            print(f"Warning: Could not extract default formatting: {e}")
         
         return default_formatting
     
@@ -382,105 +281,71 @@ class HeaderFooterExtractor:
                 ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
                 
                 # Default tab stop
-                try:
-                    default_tab_stop = settings_element.find('.//w:defaultTabStop', ns)
-                    if default_tab_stop is not None:
-                        doc_settings["default_tab_stop"] = default_tab_stop.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                except:
-                    pass
+                default_tab_stop = settings_element.find('.//w:defaultTabStop', ns)
+                if default_tab_stop is not None:
+                    doc_settings["default_tab_stop"] = default_tab_stop.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
                 
                 # Character spacing control
-                try:
-                    char_spacing_control = settings_element.find('.//w:characterSpacingControl', ns)
-                    if char_spacing_control is not None:
-                        doc_settings["character_spacing_control"] = char_spacing_control.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                except:
-                    pass
+                char_spacing_control = settings_element.find('.//w:characterSpacingControl', ns)
+                if char_spacing_control is not None:
+                    doc_settings["character_spacing_control"] = char_spacing_control.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
                 
                 # Compatibility settings
-                try:
-                    compatibility = settings_element.find('.//w:compat', ns)
-                    if compatibility is not None:
-                        doc_settings["compatibility_settings"] = {}
-                        for child in compatibility:
-                            try:
-                                tag = child.tag.split('}')[-1]  # Remove namespace
-                                doc_settings["compatibility_settings"][tag] = child.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                            except:
-                                continue
-                except:
-                    pass
+                compatibility = settings_element.find('.//w:compat', ns)
+                if compatibility is not None:
+                    doc_settings["compatibility_settings"] = {}
+                    for child in compatibility:
+                        tag = child.tag.split('}')[-1]  # Remove namespace
+                        doc_settings["compatibility_settings"][tag] = child.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
                 
                 # Document protection
-                try:
-                    document_protection = settings_element.find('.//w:documentProtection', ns)
-                    if document_protection is not None:
-                        doc_settings["document_protection"] = {
-                            "enforcement": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}enforcement'),
-                            "edit": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}edit'),
-                            "formatting": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}formatting')
-                        }
-                except:
-                    pass
+                document_protection = settings_element.find('.//w:documentProtection', ns)
+                if document_protection is not None:
+                    doc_settings["document_protection"] = {
+                        "enforcement": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}enforcement'),
+                        "edit": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}edit'),
+                        "formatting": document_protection.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}formatting')
+                    }
                 
                 # Zoom settings
-                try:
-                    zoom = settings_element.find('.//w:zoom', ns)
-                    if zoom is not None:
-                        doc_settings["zoom"] = {
-                            "percent": zoom.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}percent'),
-                            "val": zoom.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                        }
-                except:
-                    pass
+                zoom = settings_element.find('.//w:zoom', ns)
+                if zoom is not None:
+                    doc_settings["zoom"] = {
+                        "percent": zoom.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}percent'),
+                        "val": zoom.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
+                    }
                 
                 # View settings
-                try:
-                    view = settings_element.find('.//w:view', ns)
-                    if view is not None:
-                        doc_settings["view"] = {
-                            "val": view.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val'),
-                            "zoom": view.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}zoom')
-                        }
-                except:
-                    pass
+                view = settings_element.find('.//w:view', ns)
+                if view is not None:
+                    doc_settings["view"] = {
+                        "val": view.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val'),
+                        "zoom": view.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}zoom')
+                    }
                 
                 # Grammar and spelling settings
-                try:
-                    proof_state = settings_element.find('.//w:proofState', ns)
-                    if proof_state is not None:
-                        doc_settings["proof_state"] = {
-                            "grammar": proof_state.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}grammar'),
-                            "spelling": proof_state.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}spelling')
-                        }
-                except:
-                    pass
+                proof_state = settings_element.find('.//w:proofState', ns)
+                if proof_state is not None:
+                    doc_settings["proof_state"] = {
+                        "grammar": proof_state.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}grammar'),
+                        "spelling": proof_state.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}spelling')
+                    }
                 
                 # Track changes settings
-                try:
-                    track_changes = settings_element.find('.//w:trackRevisions', ns)
-                    if track_changes is not None:
-                        doc_settings["track_changes"] = track_changes.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                except:
-                    pass
+                track_changes = settings_element.find('.//w:trackRevisions', ns)
+                if track_changes is not None:
+                    doc_settings["track_changes"] = track_changes.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
                 
                 # Print settings
-                try:
-                    print_settings = settings_element.find('.//w:printSettings', ns)
-                    if print_settings is not None:
-                        doc_settings["print_settings"] = {}
-                        for child in print_settings:
-                            try:
-                                tag = child.tag.split('}')[-1]
-                                doc_settings["print_settings"][tag] = child.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
-                            except:
-                                continue
-                except:
-                    pass
+                print_settings = settings_element.find('.//w:printSettings', ns)
+                if print_settings is not None:
+                    doc_settings["print_settings"] = {}
+                    for child in print_settings:
+                        tag = child.tag.split('}')[-1]
+                        doc_settings["print_settings"][tag] = child.get('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}val')
             
         except Exception as e:
-            # Silently handle any extraction errors
-            pass
+            print(f"Warning: Could not extract document-wide settings: {e}")
         
         return doc_settings
     

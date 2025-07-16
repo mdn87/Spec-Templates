@@ -163,18 +163,18 @@ def apply_style_definitions_from_json(doc, json_data):
         if not content_blocks:
             return
         
-        # Collect all unique BWA level names used in content blocks
-        bwa_style_names = set()
+        # Collect all unique style names used in content blocks
+        style_names = set()
         for block in content_blocks:
-            bwa_level_name = block.get('bwa_level_name')
-            if bwa_level_name and bwa_level_name != 'Normal':
-                bwa_style_names.add(bwa_level_name)
+            style_name = block.get('style_name')
+            if style_name and style_name != 'Normal':
+                style_names.add(style_name)
         
-        # Apply styling for each BWA style
-        for bwa_style_name in bwa_style_names:
-            apply_style_definition(doc, bwa_style_name, content_blocks)
+        # Apply styling for each style
+        for style_name in style_names:
+            apply_style_definition(doc, style_name, content_blocks)
         
-        print(f"Applied style definitions for {len(bwa_style_names)} BWA styles")
+        print(f"Applied style definitions for {len(style_names)} styles")
         
     except Exception as e:
         print(f"Warning: Could not apply style definitions: {e}")
@@ -189,8 +189,8 @@ def apply_style_definition(doc, style_name, content_blocks):
             # Create new style if it doesn't exist
             style = doc.styles.add_style(style_name, WD_STYLE_TYPE.PARAGRAPH)
         
-        # Find content blocks using this BWA level name to determine its properties
-        style_blocks = [block for block in content_blocks if block.get('bwa_level_name') == style_name]
+        # Find content blocks using this style to determine its properties
+        style_blocks = [block for block in content_blocks if block.get('style_name') == style_name]
         if not style_blocks:
             return
         

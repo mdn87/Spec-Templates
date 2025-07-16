@@ -32,7 +32,31 @@
     "right_margin": 1.0833333333333333,
     "header_distance": 1.0,
     "footer_distance": 1.0,
-    "different_first_page_header_footer": false
+    "different_first_page_header_footer": false,
+    "different_odd_and_even_pages": null,
+    "document_properties": {
+      "title": "SECTION 16010",
+      "subject": "",
+      "author": "Robert Maxwell Cain",
+      "keywords": "",
+      "category": "",
+      "comments": "",
+      "created": "2025-07-09T17:16:00+00:00",
+      "modified": "2025-07-09T18:45:00+00:00",
+      "last_modified_by": "Matt Newman",
+      "revision": 3
+    },
+    "default_formatting": {
+      "default_paragraph_format": {
+        "keep_with_next": null,
+        "page_break_before": null,
+        "widow_control": false
+      },
+      "default_run_format": {
+        "name": "Courier"
+      }
+    },
+    "document_wide_settings": {}
   },
   "comments": [
     {
@@ -109,7 +133,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Common Work Results for Electrical",
@@ -148,7 +173,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "GENERAL",
@@ -187,7 +213,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "SCOPE",
@@ -226,7 +253,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tDivision 26 includes all Specifications in the 26 00 00 Series and the accompanying Electrical Drawings.  Provide all labor, materials and equipment, and all necessary operations to provide the complete scope of the electrical systems intended under this Division.  Division 26 is not a stand alone document, but a part of the complete Project Documents.",
@@ -265,7 +293,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tAttention is called to the fact that there are many interfaces between the work required in this Division and the work required in other Divisions.  Provide the necessary interface and coordination with other Divisions to provide a complete project.",
@@ -304,7 +333,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "EXISTING CONDITIONS",
@@ -343,7 +373,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tAttention is called to the fact that the work is to be performed within an existing, operational facility.  Prior to the submission of bids, each bidder shall visit the project site, thoroughly investigate and be familiar with all existing conditions, which will affect their work; especially the work to be performed above the existing ceilings.",
@@ -382,7 +413,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tWhen this project is finished, the work under this Division shall be complete in every respect, completely integrated with all the existing systems, and left in perfect operating condition.  The electrical service to the building shall not be interrupted at any time without written coordination of the building's Owner.  All existing electrical equipment removed during the project shall be removed from the site after inspection of the building's Owner.  All existing electrical systems required to be operating at the project's completion or required to remain in use during the project shall be reconnected, replaced, rerouted or otherwise made to fit with proper workmanship techniques and left in safe working order.",
@@ -421,7 +453,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "C.\tConnect new work to existing work in a neat and workmanlike manner.  Where an existing structure must be cut or existing utilities interfere, such obstructions shall be bypassed, removed, replaced or relocated, patched and repaired.  Work disturbed or damaged shall be replaced or repaired to its prior condition.",
@@ -460,7 +493,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "D.\tPrior to the start of any demolition or construction, secure the services of a qualified, EPA Certified asbestos abatement agency to check the existing insulation, etc. for asbestos.  Should asbestos be found, do not proceed with demolition or construction; notify the Architect in any case in writing of the agency's findings.",
@@ -499,7 +533,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "CODES AND REGULATIONS",
@@ -538,7 +573,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tAll work under this Division shall comply with all local building codes, laws, regulations, ordinances and the requirements of the 2023 National Electrical Code.",
@@ -577,7 +613,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tWhere conflicts of installation requirements occur between the aforementioned codes, regulations or the Contract Documents, the most restrictive shall govern.",
@@ -616,7 +653,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "C.\tObtain all permits and licenses and pay all fees required by local authorities.  Arrange for all necessary inspections required by the authorities having jurisdiction and provide written certificates of approval to the project Owner or his designated representative.",
@@ -655,7 +693,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "DEFINITIONS",
@@ -694,7 +733,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tContract Documents:  The complete set of project Drawings and Specifications.",
@@ -733,7 +773,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tProvide:  Furnish, install and connect.",
@@ -772,7 +813,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "C.\tWork:  All materials installed, including all labor to provide complete system.",
@@ -811,7 +853,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "D.\tWiring or Wired:  All wire or cable installed in conduit from panelboard to equipment and connected at both ends with all required boxes, connectors, couplings, etc.",
@@ -850,7 +893,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "E.\tConduit:  Rigid steel conduit intermediate metal conduit (I.M.C.), electrical metallic tubing () plastic conduit (PVC), electrical non-metal tubing (), or flexible steel conduit.",
@@ -889,15 +933,16 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "DRAWINGS  SPECIFICATIONS",
-      "level_type": "list",
+      "level_type": "subsection_title",
       "number": "5",
       "content": "DRAWINGS  SPECIFICATIONS",
-      "level_number": 3,
-      "bwa_level_name": "BWA-List",
+      "level_number": 1,
+      "bwa_level_name": "BWA-SUBSECTION",
       "numbering_id": "7",
       "numbering_level": 0,
       "style_name": "Normal",
@@ -928,7 +973,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tThe Drawings and Specifications together are to be considered as the Contract Documents. Any work shown in one and not shown in the other, or implied by either, shall be provided to give a complete project.",
@@ -967,7 +1013,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tShould any conflicts exist between the Drawings and Specifications or there is an item shown/called for which is not clearly defined, immediately submit a request for clarification.  No additional monies will be granted later when a conflict is resolved or an item is more clearly defined.",
@@ -1006,7 +1053,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "C.\tThe Drawings are schematic and are not intended to show the exact location outlets, etc. or the routing of conduit.",
@@ -1045,7 +1093,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "D.\tThe exact location of equipment requiring electrical connections (mechanical equipment, elevators, lights, etc.) shall be as located by other Divisions of the Contract Documents. Refer to the Architectural, Structural and Mechanical Documents for dimensions and details of building construction and provide work described in this Division so that it conforms to the details of the project.  The right is reserved to relocate any receptacle, switch or other outlet a maximum of 10'-0\" before it is permanently installed without incurring additions to the Contract amount.",
@@ -1084,7 +1133,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "SITE VISIT",
@@ -1123,7 +1173,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tVisit the site and become familiar with all aspects of the site and existing conditions before submitting Contract price.",
@@ -1162,7 +1213,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tNo allowance will be made for lack of knowledge of existing conditions.",
@@ -1201,7 +1253,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "DEVIATIONS",
@@ -1240,7 +1293,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tNo deviations from the Contract Documents shall be made without the full knowledge and written consent of the Architect.",
@@ -1279,7 +1333,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tIf the existing conditions make it desirable to modify the Contract Documents in regard to any item, provide a written request to the Architect.",
@@ -1318,7 +1373,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "2.0\tPRODUCTS",
@@ -1357,7 +1413,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "2.01\tSTANDARDS FOR MATERIALS  WORKMANSHIP",
@@ -1396,7 +1453,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tAll materials used shall be new and shall be stamped with the label of Underwriters Laboratories, Inc. (UL), or other approved third-party listing agency.",
@@ -1435,7 +1493,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tAll materials shall meet the standards of the following associations and institutes where applicable:",
@@ -1474,7 +1533,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "1.\tNational Fire Protection Association (NFPA)",
@@ -1513,7 +1573,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "2.\tAmerican Society of Testing Materials ()",
@@ -1552,7 +1613,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "3.\tAmerican National Standards Institute ()",
@@ -1591,7 +1653,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "4.\tNational Electrical Manufacturer's Association (NEMA)",
@@ -1630,7 +1693,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "5.\tInstitute of Electrical and Electronic Engineers (IEEE)",
@@ -1669,7 +1733,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "6.\tNational Electrical Installation Standards (NECA)",
@@ -1708,7 +1773,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "C.\tManufacturer’s names and catalog numbers specified herein are intended to describe the material and set the standard of quality. All bids shall be based on material specified.  Requests for approval of material not specified shall be considered if the request is in written form and submitted to the Architect no later than fourteen (14) days before bid date.  All requests shall conform with the provisions of the general and supplementary conditions. If alternate/substitute equipment is submitted, it is the contractors responsibility to provide redesign required in order to make, a code compliant, complete working system.",
@@ -1747,7 +1813,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "D.\tSamples of materials requested to be substituted shall be furnished upon the request of the Architect.",
@@ -1786,7 +1853,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "2.02\t DRAWINGS  SUBMITTAL",
@@ -1825,7 +1893,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tThe Engineer's review of shop drawings or submittals is a cursory review to check for general compliances of submittals with the design intent of the Contract Documents.  The Engineer's review does not relieve the Contractor of his responsibility of complying with the Contract Documents.  All coordination of the work in strict compliance with the Contract Documents is the sole responsibility of the Contractor.",
@@ -1864,7 +1933,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tThe following items shall be submitted for review:",
@@ -1903,7 +1973,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Conduit and wire",
@@ -1942,7 +2013,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Grounding system",
@@ -1981,7 +2053,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Devices",
@@ -2020,7 +2093,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Coverplates",
@@ -2059,7 +2133,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Under floor duct",
@@ -2098,7 +2173,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Metering equipment",
@@ -2137,7 +2213,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Panelboards",
@@ -2176,7 +2253,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Switchboards",
@@ -2215,7 +2293,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Transformers",
@@ -2254,7 +2333,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Fuses",
@@ -2293,7 +2373,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Overcurrent devices",
@@ -2332,7 +2413,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Busway",
@@ -2371,7 +2453,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Ground fault system",
@@ -2410,7 +2493,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Disconnect switches",
@@ -2449,7 +2533,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Lighting fixtures",
@@ -2488,7 +2573,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Lighting control system",
@@ -2527,7 +2613,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Dimming system",
@@ -2566,7 +2653,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Life safety system",
@@ -2605,7 +2693,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Emergency system",
@@ -2644,7 +2733,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Motor starters",
@@ -2683,7 +2773,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Motor control center",
@@ -2722,7 +2813,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Surge Protective Devices",
@@ -2761,7 +2853,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Lightning Protection System",
@@ -2800,7 +2893,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "C.\tAll shop drawings and submittals shall be submitted in compliance with the requirements of the general and supplementary conditions. All submittals are to be received electronically in .pdf format only.",
@@ -2839,7 +2933,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "D.\tAll submittals shall bear the name of the manufacturer to be used. All selections to be made for product options critical to design.",
@@ -2878,7 +2973,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "E.\tAll shop drawings and submittals shall include a stamped indication signifying that the submittal has been reviewed for compliance with the Contract Documents by the Electrical and General Contractors.  This stamped indication also represents the fact that the Contractor has checked this submittal for its interaction with all other Divisions and certifies by his signature or initials that all coordination has taken place.  The stamp shall include the date, name of the Contracting Firm, the signature of the Contractor, certification of compliance and approval.  This stamp shall be on the submittal before the Engineer will review it.",
@@ -2917,7 +3013,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "F.\tThe engineer will review an individual submittal not more than twice.  If the submittal is rejected again on the second review, the contractor will bare all responsibility for paying for the engineer's time for additional reviews.  Such payments to the engineer shall be withheld from the next monthly pay application.",
@@ -2956,7 +3053,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "G. submittal to be dated upon creation. Engineer to have at least one (1) working week of review time.",
@@ -2995,7 +3093,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "2.03\tRECORD (AS-BUILT) DRAWINGS  MAINTENANCE MANUALS",
@@ -3034,7 +3133,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tAt job completion, submit to the Architect, a set of prints showing all deviations from the Contract Documents.  The Drawings shall also have dimensions locating all underground conduits.",
@@ -3073,7 +3173,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tAt job completion, submit to the Architect, color .pdf format document of maintenance, instruction manuals, final submittals, record shop drawings and sequence of operations for all equipment/systems furnished on the project. Confirm with owner if hard copies are required.",
@@ -3112,7 +3213,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "3.0\tEXECUTION",
@@ -3151,7 +3253,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "3.01\tCOORDINATION",
@@ -3190,7 +3293,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tCoordinate all space requirements with all other Divisions before installing any work.  Install work such that adequate space will be allotted for all other work from other Divisions to be installed and also will allow room for future access for repair and maintenance.",
@@ -3229,7 +3333,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tAny work installed without proper coordination shall be relocated at the Architect's direction without increasing the contract price.",
@@ -3268,7 +3373,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "C.\tDuring the bidding process or the pricing for a guaranteed maximum price, coordinate with all other Divisions for the total amount of work required in Division 26, as well as, any alternate equipment that would cause deviations in the contract price.  Any work shown or implied in another Division requiring work in Division 26 shall be included in the contract price regardless of whether or not it is addressed in Division 26.",
@@ -3307,7 +3413,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "3.02\tPROTECTION OF MATERIALS",
@@ -3346,7 +3453,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tAll equipment shall have the original finish when the building is turned over to the Owner.",
@@ -3385,7 +3493,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tProtect equipment during construction from dirt, water, chemical, mechanical damage, etc.  Protect all conduit openings so that no foreign material will enter the conduit.",
@@ -3424,7 +3533,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "3.03\tTESTS, DEMONSTRATION  INSTRUCTIONS",
@@ -3463,7 +3573,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tFunctional Testing:",
@@ -3502,7 +3613,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Test all systems described in this Division in the presence of the Owner or a designated representative upon completion of the work.  Demonstrate that the installation is in accordance with Contract Documents.",
@@ -3541,7 +3653,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "For all new lighting ad lighting control systems within the contract documents, the contractor shall obtain the service of a licensed professional engineer (registered in the state this project is within) to perform system commissioning in compliance with local energy conservation codes. The contractor shall demonstrate in the presence of the commissioning agent that the installation of such systems are in accordance with the contract documents.",
@@ -3580,7 +3693,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tAny work found not to be in compliance with the Contract Documents shall be repaired or replaced without incurring any additions to the Contract price.",
@@ -3619,7 +3733,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "C.\tProvide to the Owner, all instruction on maintenance and operation of all systems and equipment provided under this Division.  Provide all necessary tools and personnel to thoroughly present these instructions. The documentation shall include the following, at a minimum:",
@@ -3658,7 +3773,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Submittal data including all selected options.",
@@ -3697,7 +3813,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "Operation and maintenance manual for all equipment and systems, Include routine maintenance actions and cleaning procedures.",
@@ -3736,7 +3853,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A schedule for inspecting and recalibrating, where applicable.",
@@ -3775,7 +3893,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A narrative of how each system is intended to operate including any recommended set points where adjustment is available.",
@@ -3814,7 +3933,8 @@
       "text_indent_at": null,
       "follow_number_with": "nothing",
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "D.\tAt project completion, prior to obtaining Certificate of Occupancy, present at final inspection to the jurisdiction AHJ a signed and dated statement of system commissioning for all lighting and lighting control systems. The format of the statement of system commissioning shall be in the format of the state’s energy conservations codes and/or AHJ requirements. The document shall be signed by the contractor’s licensed professional representative.",
@@ -3853,7 +3973,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "3.04\tGUARANTEE",
@@ -3892,7 +4013,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "A.\tAll systems, equipment, components, work, etc. provided under this Division shall be covered by a one year guarantee starting at the time of final acceptance of the work by the Owner.  Any defects in the work, systems, equipment or components found during this year shall be corrected at no charge.  The guarantee shall include providing all necessary cutting, patchwork, repainting, etc. to make the work complete and new.",
@@ -3931,7 +4053,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "B.\tPresent this guarantee and any additional warranties or guarantees on furnished equipment or systems to the Architect.  All equipment or system guarantees are in addition to the general guarantee.",
@@ -3970,7 +4093,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     },
     {
       "text": "END OF SECTION",
@@ -4009,7 +4133,8 @@
       "text_indent_at": null,
       "follow_number_with": null,
       "add_tab_stop_at": null,
-      "link_level_to_style": null
+      "link_level_to_style": null,
+      "used_fallback_styling": false
     }
   ],
   "template_analysis": {
@@ -5233,7 +5358,7 @@
       "total_bwa_levels": 11,
       "level_mappings_count": 25,
       "level_types": {},
-      "analysis_timestamp": "2025-07-16T12:55:13.313902"
+      "analysis_timestamp": "2025-07-16T14:11:04.255593"
     }
   }
 }

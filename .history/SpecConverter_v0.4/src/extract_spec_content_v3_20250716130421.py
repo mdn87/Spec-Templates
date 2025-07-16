@@ -835,8 +835,7 @@ class SpecContentExtractorV3:
                         "text_indent_at": block.text_indent_at,
                         "follow_number_with": block.follow_number_with,
                         "add_tab_stop_at": block.add_tab_stop_at,
-                        "link_level_to_style": block.link_level_to_style,
-                        "used_fallback_styling": block.used_fallback_styling
+                        "link_level_to_style": block.link_level_to_style
                     }
                     for block in self.content_blocks
                 ],
