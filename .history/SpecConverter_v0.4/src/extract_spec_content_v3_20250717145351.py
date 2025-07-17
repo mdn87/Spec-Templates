@@ -799,16 +799,16 @@ class SpecContentExtractorV3:
                         # If we're jumping from level 1 (subsection) to level 3+ (list/sub_list),
                         # the content should probably be level 2 (item)
                         if prev_level == 1 and current_level >= 3:
-                            print(f"DEBUG: Found jump from level {prev_level} to {current_level} at block {i}: {block.text[:50]}...")
+                            # Check if the source numbering appears to be correct
+                            # If the detected number matches what we'd expect logically, trust the source
+                            detected_number = block.number
+                            if detected_number and self._is_numbering_logically_correct(detected_number, level_type, i):
+                                # Source numbering looks correct, don't "fix" it
+                                continue
                             
                             # This should probably be an item (level 2), not a list (level 3+)
                             suggested_level_type = "item"
                             suggested_level = 2
-                            
-                            # Adjust the Word numbering level to match the corrected level
-                            # If we're changing from sub_list (numbering_level: 1) to item (numbering_level: 0)
-                            # or from list (numbering_level: 2) to item (numbering_level: 0)
-                            suggested_numbering_level = 0  # Items typically use numbering_level 0
                             
                             inconsistency = {
                                 "block_index": i,
@@ -825,10 +825,8 @@ class SpecContentExtractorV3:
                             # Apply correction
                             old_level_type = block.level_type
                             old_level = block.level_number
-                            old_numbering_level = block.numbering_level
                             block.level_type = suggested_level_type
                             block.level_number = suggested_level
-                            block.numbering_level = suggested_numbering_level
                             block.bwa_level_name = "BWA-Item"  # Update BWA level name
                             block.used_fallback_styling = True
                             
@@ -839,8 +837,6 @@ class SpecContentExtractorV3:
                                 "new_level_type": suggested_level_type,
                                 "old_level": old_level,
                                 "new_level": suggested_level,
-                                "old_numbering_level": old_numbering_level,
-                                "new_numbering_level": suggested_numbering_level,
                                 "reason": "Corrected jump from subsection to list - should be item level"
                             })
                             inconsistency["correction_applied"] = True

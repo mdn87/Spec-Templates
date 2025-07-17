@@ -10,9 +10,9 @@ from docx.enum.style import WD_STYLE_TYPE
 from typing import Dict, List, Any, Optional
 
 # Configuration variables - change these to modify font and size for all text
-TEMPLATE_PATH = '../templates/test_template_RPA.docx'
-OUTPUT_PATH   = '../output/210500 Common Work Results For Fire Suppression.docx'
-CONTENT_PATH  = '../output/210500 Common Work Results For Fire Suppression_v3.json'
+TEMPLATE_PATH = '../templates/test_template_cleaned.docx'
+OUTPUT_PATH   = '..\output\Specs\210500 Common Work Results For Fire Suppression NEED TO CHECK WITH ELEC_regenerated.docx'
+CONTENT_PATH  = '../output/SECTION 26 05 29_v3.json'
 FONT_NAME = 'Arial'
 FONT_SIZE = 10
 
@@ -51,8 +51,7 @@ def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
                 # For compatibility with some versions of Word
                 r = run._element
                 if r.rPr is None:
-                    r_pr = OxmlElement('w:rPr')
-                    r.insert(0, r_pr)
+                    r.rPr = OxmlElement('w:rPr')
                 r_fonts = r.rPr.find(qn('w:rFonts'))
                 if r_fonts is None:
                     r_fonts = OxmlElement('w:rFonts')
@@ -87,10 +86,6 @@ def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
                 }
                 underline_value = underline_map.get(block['font_underline'], WD_UNDERLINE.SINGLE)
                 run.font.underline = underline_value
-                r = run._element
-                if r.rPr is None:
-                    r_pr = OxmlElement('w:rPr')
-                    r.insert(0, r_pr)
         
         if block.get('font_color'):
             for run in paragraph.runs:
@@ -170,13 +165,11 @@ def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
     # Highlight corrected blocks (used_fallback_styling) in yellow
     if block.get('used_fallback_styling'):
         for run in paragraph.runs:
-            r = run._element
-            if r.rPr is None:
-                r_pr = OxmlElement('w:rPr')
-                r.insert(0, r_pr)
+            if run._element.rPr is None:
+                run._element.rPr = OxmlElement('w:rPr')
             highlight = OxmlElement('w:highlight')
             highlight.set(qn('w:val'), 'yellow')
-            r.rPr.append(highlight)
+            run._element.rPr.append(highlight)
 
 def apply_style_definitions_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
     """Apply style definitions from JSON to ensure proper styling in regenerated document"""
@@ -1011,9 +1004,8 @@ generate_content_from_v3_json(doc, json_data)
 # The hardcoded Arial font fix is removed. Header/footer styles are now cloned.
 
 # Save document
-# Suppress the final print statement to avoid UnicodeEncodeError in batch runs
 doc.save(OUTPUT_PATH)
-# print(f"Document saved as '{OUTPUT_PATH}' with {FONT_SIZE}pt {FONT_NAME} font")
+print(f"Document saved as '{OUTPUT_PATH}' with {FONT_SIZE}pt {FONT_NAME} font")
 print(f"Content source: {CONTENT_PATH}")
 print("Note: The template's multilevel list style should be applied automatically")
 print("if the paragraphs use the correct style names from the template.")

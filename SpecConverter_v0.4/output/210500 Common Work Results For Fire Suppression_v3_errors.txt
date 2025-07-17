@@ -1,0 +1,403 @@
+ERROR REPORT - 2025-07-17 15:00:47
+============================================================
+
+LEVEL CONSISTENCY VALIDATION:
+----------------------------------------
+Total blocks: 157
+Hierarchical blocks: 154
+Inconsistencies found: 31
+Corrections applied: 31
+Level transitions: 153
+
+Transition Analysis:
+  increase_by_one: 42
+  jump_up: 16
+  same_level: 54
+  decrease_by_one: 23
+  jump_down: 18
+  Irregular transitions: 34
+
+LEVEL INCONSISTENCIES FOUND:
+----------------------------------------
+1. Block 3: DESCRIPTION
+   Type: part_title
+   Current: part_title (level 0)
+   Suggested: subsection_title (level 1)
+   Reason: Two level 0 blocks in sequence (prev: 0, current: 0) - second should be level 1
+   Correction applied: Yes
+
+2. Block 4: All work specified in this Section is governed by the Common Work Results for Plumbing Section 22 05...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+3. Block 11: Coordinate the Seismic Design Category with the Structural and Civil Engineers. Provide and install ...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+4. Block 20: The standpipes and sprinkler systems shall be designed and installed in conformance with the applica...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+5. Block 24: Upon completion of the work, provide record as-built documentation of the fire protection systems as...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+6. Block 26: All control, check, drain, test and alarm valves and alarms shall be provided with identification si...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+7. Block 28: Hose threads shall conform to the standards of the local Fire Department. The exact threads used sha...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+8. Block 30: Where piping, conduit, etc. pass through fire partitions, fire walls and floors, a firestop shall be...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+9. Block 46: All equipment and materials provided under this Section 21 05 00 shall be new and of the best grade ...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+10. Block 48: The fire pump, jockey pump, controllers, **automatic transfer switch and all associated accessories ...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+11. Block 52: The diesel fire pump, jockey pump, controllers, and all associated accessories shall be provided in ...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+12. Block 56: Air compressor shall be a Reliable Model A, minimum ¾ HP. All trim, such as, but not limited to, the...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+13. Block 61: All fittings shall be products of a domestic Manufacturer and made in the USA.
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+14. Block 82: Roof manifolds shall be Y-type, 4" x 2 1/2" x 2 1/2"; brass construction complete with caps and chai...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+15. Block 84: Drains shall be provided in all risers and auxiliary drains at all low points in the system. Inspect...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+16. Block 88: Water flow switches with normally closed electrical contacts shall be provided in all required locat...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+17. Block 90: Tamper switches with normally closed electrical contacts shall be provided in all required locations...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+18. Block 92: ** Provide a supervised sprinkler alarm system to be tied into an approved remote location with adeq...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+19. Block 95: All sprinkler heads shall be automatic, closed-type, quick-response, standard spray heads.
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+20. Block 106: All piping shall be products of a domestic Manufacturer and made in the USA.
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+21. Block 112: Provide all necessary hangers, supports, bracing, accessories, etc., as required for proper installa...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+22. Block 117: Hose cabinets with hose racks shall be provided to achieve complete coverage of the floor area. Hose...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+23. Block 119: Each penetration through walls and ceilings shall be equipped with a escutcheon, finish to be select...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+24. Block 122: The design and installation of the fire suppression systems shall be based on the hazards and classe...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+25. Block 125: The exterior surfaces of all equipment, piping, conduit, etc., shall be cleaned and free of all dirt...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+26. Block 130: Steel items exposed outside the building, such as equipment supports, uninsulated piping and hangers...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+27. Block 133: Before preparing submittals, study all Contract Drawings and specifications in detail, obtain manufa...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+28. Block 149: Fire Pump, Jockey Pump, and Controllers
+   Type: list
+   Current: list (level 3)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 3 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+29. Block 151: All underground lines, before connecting to the sprinkler systems, shall be flushed thoroughly in ac...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+30. Block 153: The entire sprinkler system shall be tested at not less than 200 psi for not less than 2 hours. All ...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+31. Block 155: All work provided under this Division 21 shall be subject to a minimum one year warranty. The warran...
+   Type: sub_list
+   Current: sub_list (level 4)
+   Suggested: item (level 2)
+   Reason: Jump from level 1 to 4 suggests misclassification - should be level 2
+   Correction applied: Yes
+
+LEVEL CORRECTIONS APPLIED:
+----------------------------------------
+1. Block 3: DESCRIPTION
+   Type: part_title → subsection_title
+   Level: 0 → 1
+   Reason: Corrected consecutive level 0 blocks - second should be level 1
+
+2. Block 4: All work specified in this Section is governed by the Common Work Results for Plumbing Section 22 05...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+3. Block 11: Coordinate the Seismic Design Category with the Structural and Civil Engineers. Provide and install ...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+4. Block 20: The standpipes and sprinkler systems shall be designed and installed in conformance with the applica...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+5. Block 24: Upon completion of the work, provide record as-built documentation of the fire protection systems as...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+6. Block 26: All control, check, drain, test and alarm valves and alarms shall be provided with identification si...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+7. Block 28: Hose threads shall conform to the standards of the local Fire Department. The exact threads used sha...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+8. Block 30: Where piping, conduit, etc. pass through fire partitions, fire walls and floors, a firestop shall be...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+9. Block 46: All equipment and materials provided under this Section 21 05 00 shall be new and of the best grade ...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+10. Block 48: The fire pump, jockey pump, controllers, **automatic transfer switch and all associated accessories ...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+11. Block 52: The diesel fire pump, jockey pump, controllers, and all associated accessories shall be provided in ...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+12. Block 56: Air compressor shall be a Reliable Model A, minimum ¾ HP. All trim, such as, but not limited to, the...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+13. Block 61: All fittings shall be products of a domestic Manufacturer and made in the USA.
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+14. Block 82: Roof manifolds shall be Y-type, 4" x 2 1/2" x 2 1/2"; brass construction complete with caps and chai...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+15. Block 84: Drains shall be provided in all risers and auxiliary drains at all low points in the system. Inspect...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+16. Block 88: Water flow switches with normally closed electrical contacts shall be provided in all required locat...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+17. Block 90: Tamper switches with normally closed electrical contacts shall be provided in all required locations...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+18. Block 92: ** Provide a supervised sprinkler alarm system to be tied into an approved remote location with adeq...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+19. Block 95: All sprinkler heads shall be automatic, closed-type, quick-response, standard spray heads.
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+20. Block 106: All piping shall be products of a domestic Manufacturer and made in the USA.
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+21. Block 112: Provide all necessary hangers, supports, bracing, accessories, etc., as required for proper installa...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+22. Block 117: Hose cabinets with hose racks shall be provided to achieve complete coverage of the floor area. Hose...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+23. Block 119: Each penetration through walls and ceilings shall be equipped with a escutcheon, finish to be select...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+24. Block 122: The design and installation of the fire suppression systems shall be based on the hazards and classe...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+25. Block 125: The exterior surfaces of all equipment, piping, conduit, etc., shall be cleaned and free of all dirt...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+26. Block 130: Steel items exposed outside the building, such as equipment supports, uninsulated piping and hangers...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+27. Block 133: Before preparing submittals, study all Contract Drawings and specifications in detail, obtain manufa...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+28. Block 149: Fire Pump, Jockey Pump, and Controllers
+   Type: list → item
+   Level: 3 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+29. Block 151: All underground lines, before connecting to the sprinkler systems, shall be flushed thoroughly in ac...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+30. Block 153: The entire sprinkler system shall be tested at not less than 200 psi for not less than 2 hours. All ...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+31. Block 155: All work provided under this Division 21 shall be subject to a minimum one year warranty. The warran...
+   Type: sub_list → item
+   Level: 4 → 2
+   Reason: Corrected jump from subsection to list - should be item level
+
+No errors found during extraction.
+
+SUMMARY:
+--------------------
+Total errors: 0
+List numbering fixes: 0
+Level inconsistencies: 31
+Level corrections: 31

@@ -87,10 +87,6 @@ def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
                 }
                 underline_value = underline_map.get(block['font_underline'], WD_UNDERLINE.SINGLE)
                 run.font.underline = underline_value
-                r = run._element
-                if r.rPr is None:
-                    r_pr = OxmlElement('w:rPr')
-                    r.insert(0, r_pr)
         
         if block.get('font_color'):
             for run in paragraph.runs:
@@ -170,13 +166,11 @@ def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
     # Highlight corrected blocks (used_fallback_styling) in yellow
     if block.get('used_fallback_styling'):
         for run in paragraph.runs:
-            r = run._element
-            if r.rPr is None:
-                r_pr = OxmlElement('w:rPr')
-                r.insert(0, r_pr)
+            if run._element.rPr is None:
+                run._element.rPr = OxmlElement('w:rPr')
             highlight = OxmlElement('w:highlight')
             highlight.set(qn('w:val'), 'yellow')
-            r.rPr.append(highlight)
+            run._element.rPr.append(highlight)
 
 def apply_style_definitions_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
     """Apply style definitions from JSON to ensure proper styling in regenerated document"""

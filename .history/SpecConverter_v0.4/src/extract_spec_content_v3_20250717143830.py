@@ -676,140 +676,131 @@ class SpecContentExtractorV3:
         if not self.content_blocks:
             return validation_results
         
-        # ENHANCED: Loop until no more corrections are made
-        iteration = 0
-        max_iterations = 10  # Prevent infinite loops
-        corrections_made_this_iteration = True
+                # Track expected level progression
+        expected_level = None
+        level_transitions = []
         
-        while corrections_made_this_iteration and iteration < max_iterations:
-            iteration += 1
-            corrections_made_this_iteration = False
+        for i, block in enumerate(self.content_blocks):
+            current_level = block.level_number
+            level_type = block.level_type
             
-            # Track expected level progression
-            expected_level = None
-            level_transitions = []
+            # Skip non-hierarchical content
+            if level_type in ["section", "title", "end_of_section"]:
+                continue
             
-            for i, block in enumerate(self.content_blocks):
-                current_level = block.level_number
-                level_type = block.level_type
+            # Define expected level based on level_type
+            expected_level_for_type = {
+                "part": 0,
+                "part_title": 0,
+                "subsection": 1,
+                "subsection_title": 1,
+                "item": 2,
+                "list": 3,
+                "sub_list": 4
+            }.get(level_type)
+            
+            # Check if current level matches expected level for type
+            if expected_level_for_type is not None and current_level != expected_level_for_type:
+                inconsistency = {
+                    "block_index": i,
+                    "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
+                    "level_type": level_type,
+                    "current_level": current_level,
+                    "expected_level": expected_level_for_type,
+                    "correction_applied": False
+                }
+                validation_results["inconsistencies_found"].append(inconsistency)
                 
-                # Skip non-hierarchical content
-                if level_type in ["section", "title", "end_of_section"]:
-                    continue
+                # Apply correction
+                old_level = block.level_number
+                block.level_number = expected_level_for_type
+                block.used_fallback_styling = True  # Mark as corrected
                 
-                # Define expected level based on level_type
-                expected_level_for_type = {
-                    "part": 0,
-                    "part_title": 0,
-                    "subsection": 1,
-                    "subsection_title": 1,
-                    "item": 2,
-                    "list": 3,
-                    "sub_list": 4
-                }.get(level_type)
+                validation_results["corrections_made"].append({
+                    "block_index": i,
+                    "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
+                    "old_level_type": old_level_type,
+                    "new_level_type": suggested_level_type,
+                    "old_level": old_level,
+                    "new_level": suggested_level,
+                    "reason": "Corrected consecutive level 0 blocks - second should be level 1"
+                })
+                inconsistency["correction_applied"] = True
+            
+            # ENHANCED: Check for logical hierarchy inconsistencies
+            # This detects when a block should be at a different level based on context
+            skip_remaining_checks = False
+            if expected_level is not None and current_level is not None:
+                # Check for jumps that don't make logical sense
+                level_diff = current_level - expected_level
                 
-                # Check if current level matches expected level for type
-                if expected_level_for_type is not None and current_level != expected_level_for_type:
-                    inconsistency = {
-                        "block_index": i,
-                        "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                        "level_type": level_type,
-                        "current_level": current_level,
-                        "expected_level": expected_level_for_type,
-                        "correction_applied": False
-                    }
-                    validation_results["inconsistencies_found"].append(inconsistency)
+                # CRITICAL RULE: Part level 0's should never be empty of children and should never appear in sequence
+                # If we have two level 0 blocks in a row, the second one should be level 1
+                if current_level == 0 and i > 0:
+                    prev_block = self.content_blocks[i - 1]
+                    prev_level = prev_block.level_number
                     
-                    # Apply correction
-                    old_level = block.level_number
-                    block.level_number = expected_level_for_type
-                    block.used_fallback_styling = True  # Mark as corrected
-                    
-                    validation_results["corrections_made"].append({
-                        "block_index": i,
-                        "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                        "level_type": level_type,
-                        "old_level": old_level,
-                        "new_level": expected_level_for_type
-                    })
-                    inconsistency["correction_applied"] = True
-                    corrections_made_this_iteration = True
+                    if prev_level == 0:
+                        # Two level 0 blocks in a row - this violates the rule
+                        # The second one should be a subsection title (level 1)
+                        suggested_level_type = "subsection_title"
+                        suggested_level = 1
+                        
+                        inconsistency = {
+                            "block_index": i,
+                            "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
+                            "level_type": level_type,
+                            "current_level": current_level,
+                            "suggested_level_type": suggested_level_type,
+                            "suggested_level": suggested_level,
+                            "reason": f"Two level 0 blocks in sequence (prev: {prev_level}, current: {current_level}) - second should be level 1",
+                            "correction_applied": False
+                        }
+                        validation_results["inconsistencies_found"].append(inconsistency)
+                        
+                        # Apply correction
+                        old_level_type = block.level_type
+                        old_level = block.level_number
+                        block.level_type = suggested_level_type
+                        block.level_number = suggested_level
+                        block.bwa_level_name = "BWA-SUBSECTION"  # Update BWA level name
+                        block.used_fallback_styling = True
+                        
+                        validation_results["corrections_made"].append({
+                            "block_index": i,
+                            "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
+                            "old_level_type": old_level_type,
+                            "new_level_type": suggested_level_type,
+                            "old_level": old_level,
+                            "new_level": suggested_level,
+                            "reason": "Corrected consecutive level 0 blocks - second should be level 1"
+                        })
+                        inconsistency["correction_applied"] = True
+                        # Skip other checks for this block since we've already corrected it
+                        expected_level = suggested_level
+                        skip_remaining_checks = True
                 
-                # ENHANCED: Check for logical hierarchy inconsistencies
-                # This detects when a block should be at a different level based on context
-                skip_remaining_checks = False
-                if expected_level is not None and current_level is not None:
-                    # Check for jumps that don't make logical sense
-                    level_diff = current_level - expected_level
-                    
-                    # CRITICAL RULE: Part level 0's should never be empty of children and should never appear in sequence
-                    # If we have two level 0 blocks in a row, the second one should be level 1
-                    if current_level == 0 and i > 0:
+                # If we jump up by more than 1 level, it might be a misclassification
+                if not skip_remaining_checks and level_diff > 1:
+                    # Look at the previous block to understand context
+                    if i > 0:
                         prev_block = self.content_blocks[i - 1]
                         prev_level = prev_block.level_number
                         
-                        if prev_level == 0:
-                            # Two level 0 blocks in a row - this violates the rule
-                            # The second one should be a subsection title (level 1)
-                            suggested_level_type = "subsection_title"
-                            suggested_level = 1
+                        # If we're jumping from level 1 (subsection) to level 3 (list),
+                        # but there's no level 2 (item) in between, this might be wrong
+                        if prev_level == 1 and current_level == 3:
+                            # Check if the source numbering appears to be correct
+                            # If the detected number matches what we'd expect logically, trust the source
+                            detected_number = block.number
+                            if detected_number and self._is_numbering_logically_correct(detected_number, level_type, i):
+                                # Source numbering looks correct, don't "fix" it
+                                continue
                             
-                            inconsistency = {
-                                "block_index": i,
-                                "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                                "level_type": level_type,
-                                "current_level": current_level,
-                                "suggested_level_type": suggested_level_type,
-                                "suggested_level": suggested_level,
-                                "reason": f"Two level 0 blocks in sequence (prev: {prev_level}, current: {current_level}) - second should be level 1",
-                                "correction_applied": False
-                            }
-                            validation_results["inconsistencies_found"].append(inconsistency)
-                            
-                            # Apply correction
-                            old_level_type = block.level_type
-                            old_level = block.level_number
-                            block.level_type = suggested_level_type
-                            block.level_number = suggested_level
-                            block.bwa_level_name = "BWA-SUBSECTION"  # Update BWA level name
-                            block.used_fallback_styling = True
-                            
-                            validation_results["corrections_made"].append({
-                                "block_index": i,
-                                "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                                "old_level_type": old_level_type,
-                                "new_level_type": suggested_level_type,
-                                "old_level": old_level,
-                                "new_level": suggested_level,
-                                "reason": "Corrected consecutive level 0 blocks - second should be level 1"
-                            })
-                            inconsistency["correction_applied"] = True
-                            corrections_made_this_iteration = True
-                            # Skip other checks for this block since we've already corrected it
-                            expected_level = suggested_level
-                            skip_remaining_checks = True
-                    
-                    # ENHANCED: Check for jumps from subsection (level 1) to list (level 3+)
-                    # If we jump from level 1 to level 3 or higher, the content should probably be level 2 (item)
-                    if not skip_remaining_checks and i > 0:
-                        # Look at the previous block to understand context
-                        prev_block = self.content_blocks[i - 1]
-                        prev_level = prev_block.level_number
-                        
-                        # If we're jumping from level 1 (subsection) to level 3+ (list/sub_list),
-                        # the content should probably be level 2 (item)
-                        if prev_level == 1 and current_level >= 3:
-                            print(f"DEBUG: Found jump from level {prev_level} to {current_level} at block {i}: {block.text[:50]}...")
-                            
-                            # This should probably be an item (level 2), not a list (level 3+)
+                            # This should probably be an item (level 2), not a list (level 3)
                             suggested_level_type = "item"
                             suggested_level = 2
                             
-                            # Adjust the Word numbering level to match the corrected level
-                            # If we're changing from sub_list (numbering_level: 1) to item (numbering_level: 0)
-                            # or from list (numbering_level: 2) to item (numbering_level: 0)
-                            suggested_numbering_level = 0  # Items typically use numbering_level 0
-                            
                             inconsistency = {
                                 "block_index": i,
                                 "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
@@ -817,7 +808,7 @@ class SpecContentExtractorV3:
                                 "current_level": current_level,
                                 "suggested_level_type": suggested_level_type,
                                 "suggested_level": suggested_level,
-                                "reason": f"Jump from level {prev_level} to {current_level} suggests misclassification - should be level 2",
+                                "reason": f"Jump from level {prev_level} to {current_level} suggests misclassification",
                                 "correction_applied": False
                             }
                             validation_results["inconsistencies_found"].append(inconsistency)
@@ -825,10 +816,8 @@ class SpecContentExtractorV3:
                             # Apply correction
                             old_level_type = block.level_type
                             old_level = block.level_number
-                            old_numbering_level = block.numbering_level
                             block.level_type = suggested_level_type
                             block.level_number = suggested_level
-                            block.numbering_level = suggested_numbering_level
                             block.bwa_level_name = "BWA-Item"  # Update BWA level name
                             block.used_fallback_styling = True
                             
@@ -839,30 +828,21 @@ class SpecContentExtractorV3:
                                 "new_level_type": suggested_level_type,
                                 "old_level": old_level,
                                 "new_level": suggested_level,
-                                "old_numbering_level": old_numbering_level,
-                                "new_numbering_level": suggested_numbering_level,
-                                "reason": "Corrected jump from subsection to list - should be item level"
+                                "reason": "Corrected misclassification based on hierarchy context"
                             })
                             inconsistency["correction_applied"] = True
-                            corrections_made_this_iteration = True
-                
-                # Track level transitions for sequence validation
-                if current_level is not None:
-                    if expected_level is not None:
-                        level_transitions.append({
-                            "from_block": i - 1,
-                            "to_block": i,
-                            "from_level": expected_level,
-                            "to_level": current_level,
-                            "transition_type": self._classify_transition(expected_level, current_level)
-                        })
-                    expected_level = current_level
-                    
-                    # Debug: Print level transitions for troubleshooting
-                    if i < 10:  # Only print first 10 blocks for debugging
-                        print(f"Block {i}: {block.text[:50]}... -> Level {current_level} (expected: {expected_level})")
             
-            print(f"Validation iteration {iteration}: {'Corrections made' if corrections_made_this_iteration else 'No corrections needed'}")
+            # Track level transitions for sequence validation
+            if current_level is not None:
+                if expected_level is not None:
+                    level_transitions.append({
+                        "from_block": i - 1,
+                        "to_block": i,
+                        "from_level": expected_level,
+                        "to_level": current_level,
+                        "transition_type": self._classify_transition(expected_level, current_level)
+                    })
+                expected_level = current_level
         
         # Analyze level transitions for logical consistency
         transition_analysis = self._analyze_level_transitions(level_transitions)
@@ -872,8 +852,7 @@ class SpecContentExtractorV3:
             "inconsistencies_found": len(validation_results["inconsistencies_found"]),
             "corrections_applied": len(validation_results["corrections_made"]),
             "level_transitions": len(level_transitions),
-            "transition_analysis": transition_analysis,
-            "validation_iterations": iteration
+            "transition_analysis": transition_analysis
         }
         
         return validation_results

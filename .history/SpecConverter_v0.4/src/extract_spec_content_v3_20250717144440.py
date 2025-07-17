@@ -791,60 +791,57 @@ class SpecContentExtractorV3:
                     
                     # ENHANCED: Check for jumps from subsection (level 1) to list (level 3+)
                     # If we jump from level 1 to level 3 or higher, the content should probably be level 2 (item)
-                    if not skip_remaining_checks and i > 0:
+                    if not skip_remaining_checks and level_diff >= 2:
                         # Look at the previous block to understand context
-                        prev_block = self.content_blocks[i - 1]
-                        prev_level = prev_block.level_number
-                        
-                        # If we're jumping from level 1 (subsection) to level 3+ (list/sub_list),
-                        # the content should probably be level 2 (item)
-                        if prev_level == 1 and current_level >= 3:
-                            print(f"DEBUG: Found jump from level {prev_level} to {current_level} at block {i}: {block.text[:50]}...")
+                        if i > 0:
+                            prev_block = self.content_blocks[i - 1]
+                            prev_level = prev_block.level_number
                             
-                            # This should probably be an item (level 2), not a list (level 3+)
-                            suggested_level_type = "item"
-                            suggested_level = 2
-                            
-                            # Adjust the Word numbering level to match the corrected level
-                            # If we're changing from sub_list (numbering_level: 1) to item (numbering_level: 0)
-                            # or from list (numbering_level: 2) to item (numbering_level: 0)
-                            suggested_numbering_level = 0  # Items typically use numbering_level 0
-                            
-                            inconsistency = {
-                                "block_index": i,
-                                "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                                "level_type": level_type,
-                                "current_level": current_level,
-                                "suggested_level_type": suggested_level_type,
-                                "suggested_level": suggested_level,
-                                "reason": f"Jump from level {prev_level} to {current_level} suggests misclassification - should be level 2",
-                                "correction_applied": False
-                            }
-                            validation_results["inconsistencies_found"].append(inconsistency)
-                            
-                            # Apply correction
-                            old_level_type = block.level_type
-                            old_level = block.level_number
-                            old_numbering_level = block.numbering_level
-                            block.level_type = suggested_level_type
-                            block.level_number = suggested_level
-                            block.numbering_level = suggested_numbering_level
-                            block.bwa_level_name = "BWA-Item"  # Update BWA level name
-                            block.used_fallback_styling = True
-                            
-                            validation_results["corrections_made"].append({
-                                "block_index": i,
-                                "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                                "old_level_type": old_level_type,
-                                "new_level_type": suggested_level_type,
-                                "old_level": old_level,
-                                "new_level": suggested_level,
-                                "old_numbering_level": old_numbering_level,
-                                "new_numbering_level": suggested_numbering_level,
-                                "reason": "Corrected jump from subsection to list - should be item level"
-                            })
-                            inconsistency["correction_applied"] = True
-                            corrections_made_this_iteration = True
+                            # If we're jumping from level 1 (subsection) to level 3+ (list/sub_list),
+                            # the content should probably be level 2 (item)
+                            if prev_level == 1 and current_level >= 3:
+                                # Check if the source numbering appears to be correct
+                                # If the detected number matches what we'd expect logically, trust the source
+                                detected_number = block.number
+                                if detected_number and self._is_numbering_logically_correct(detected_number, level_type, i):
+                                    # Source numbering looks correct, don't "fix" it
+                                    continue
+                                
+                                # This should probably be an item (level 2), not a list (level 3+)
+                                suggested_level_type = "item"
+                                suggested_level = 2
+                                
+                                inconsistency = {
+                                    "block_index": i,
+                                    "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
+                                    "level_type": level_type,
+                                    "current_level": current_level,
+                                    "suggested_level_type": suggested_level_type,
+                                    "suggested_level": suggested_level,
+                                    "reason": f"Jump from level {prev_level} to {current_level} suggests misclassification - should be level 2",
+                                    "correction_applied": False
+                                }
+                                validation_results["inconsistencies_found"].append(inconsistency)
+                                
+                                # Apply correction
+                                old_level_type = block.level_type
+                                old_level = block.level_number
+                                block.level_type = suggested_level_type
+                                block.level_number = suggested_level
+                                block.bwa_level_name = "BWA-Item"  # Update BWA level name
+                                block.used_fallback_styling = True
+                                
+                                validation_results["corrections_made"].append({
+                                    "block_index": i,
+                                    "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
+                                    "old_level_type": old_level_type,
+                                    "new_level_type": suggested_level_type,
+                                    "old_level": old_level,
+                                    "new_level": suggested_level,
+                                    "reason": "Corrected jump from subsection to list - should be item level"
+                                })
+                                inconsistency["correction_applied"] = True
+                                corrections_made_this_iteration = True
                 
                 # Track level transitions for sequence validation
                 if current_level is not None:
@@ -857,10 +854,6 @@ class SpecContentExtractorV3:
                             "transition_type": self._classify_transition(expected_level, current_level)
                         })
                     expected_level = current_level
-                    
-                    # Debug: Print level transitions for troubleshooting
-                    if i < 10:  # Only print first 10 blocks for debugging
-                        print(f"Block {i}: {block.text[:50]}... -> Level {current_level} (expected: {expected_level})")
             
             print(f"Validation iteration {iteration}: {'Corrections made' if corrections_made_this_iteration else 'No corrections needed'}")
         
