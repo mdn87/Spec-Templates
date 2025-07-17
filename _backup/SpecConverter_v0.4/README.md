@@ -11,6 +11,10 @@ SpecConverter_v0.4/
 │   ├── header_footer_extractor.py      # Modular header/footer extraction
 │   ├── template_list_detector.py       # Template list level detection
 │   ├── clean_template.py               # Template cleaning utility
+│   ├── rip-header-footer.py           # Legacy header/footer extraction
+│   ├── rip-comments-to-json.py        # Comments extraction utility
+│   ├── debug_doc_content.py           # Debug utility for document content
+│   ├── format_xml.py                  # XML formatting utility
 │   └── test_generator.py              # Test document generator
 ├── templates/              # Template files
 │   ├── test_template.docx             # Original template
@@ -19,17 +23,16 @@ SpecConverter_v0.4/
 ├── output/                 # Generated output files
 │   ├── *.json              # JSON output files
 │   ├── *_errors.txt        # Error reports
-│   └── generated_spec_v3_fixed.docx   # Regenerated documents
+│   ├── *_processed.docx    # Processed documents
+│   └── template_analysis.json # Template analysis results
 ├── docs/                   # Documentation
-│   ├── Dev goals for Spec Templates script.docx # Development goals
 │   ├── README_extract_spec_content.md  # Detailed usage guide
+│   ├── Dev goals for Spec Templates script.docx # Development goals
 │   └── new-multilevel-list-steps.txt  # Implementation steps
 ├── examples/               # Example documents
 │   ├── SECTION 26 05 00.docx          # Example specification section
 │   ├── SECTION 26 05 29.docx          # Example specification section
 │   └── SECTION 00 00 00.docx          # Example specification section
-├── run_extraction.bat      # Windows batch file for easy execution
-├── requirements.txt        # Python dependencies
 └── README.md              # This file
 ```
 
@@ -71,6 +74,7 @@ The main script generates several output files:
   - `{document_name}_template_analysis.json` - Template analysis
   - `{document_name}_content_blocks.json` - Content blocks with list levels
 - **Error report**: `{document_name}_v3_errors.txt` - Validation errors
+- **Processing report**: `{document_name}_processing_report.txt` - Summary
 
 ## Key Features
 
@@ -250,13 +254,19 @@ After setting up your template:
 ### Main Scripts
 
 - **`extract_spec_content_v3.py`**: Latest version with modular architecture and comprehensive JSON output
-- **`test_generator.py`**: Regenerates Word documents from extracted JSON data
+- **`extract_spec_content_final.py`**: Previous version with template validation
+- **`extract_spec_content_final_v2.py`**: Version with document processing and output generation
 
 ### Utility Scripts
 
 - **`header_footer_extractor.py`**: Modular header/footer extraction
 - **`template_list_detector.py`**: Template list level detection and analysis
 - **`clean_template.py`**: Template cleaning utility
+- **`rip-header-footer.py`**: Legacy header/footer extraction
+- **`rip-comments-to-json.py`**: Comments extraction utility
+- **`debug_doc_content.py`**: Debug utility for document content analysis
+- **`format_xml.py`**: XML formatting utility
+- **`test_generator.py`**: Test document generator
 
 ## JSON Output Structure
 

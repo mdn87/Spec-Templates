@@ -1,0 +1,1861 @@
+{
+  "template_path": "../templates/test_template_cleaned.docx",
+  "styles": {
+    "Normal": {
+      "name": "Normal",
+      "type": 1,
+      "base_style": null,
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null
+    },
+    "Heading 1": {
+      "name": "Heading 1",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "space_before": 18.0,
+      "space_after": 4.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_size": 20.0,
+      "font_color": "0F4761"
+    },
+    "Heading 2": {
+      "name": "Heading 2",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "space_before": 8.0,
+      "space_after": 4.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_size": 16.0,
+      "font_color": "0F4761"
+    },
+    "Heading 3": {
+      "name": "Heading 3",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "space_before": 8.0,
+      "space_after": 4.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_size": 14.0,
+      "font_color": "0F4761"
+    },
+    "Heading 4": {
+      "name": "Heading 4",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "space_before": 4.0,
+      "space_after": 2.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_italic": true,
+      "font_color": "0F4761"
+    },
+    "Heading 5": {
+      "name": "Heading 5",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "space_before": 4.0,
+      "space_after": 2.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_color": "0F4761"
+    },
+    "Heading 6": {
+      "name": "Heading 6",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "space_before": 2.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_italic": true,
+      "font_color": "595959"
+    },
+    "Heading 7": {
+      "name": "Heading 7",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "space_before": 2.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_color": "595959"
+    },
+    "Heading 8": {
+      "name": "Heading 8",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "line_spacing_rule": "None",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_italic": true,
+      "font_color": "272727"
+    },
+    "Heading 9": {
+      "name": "Heading 9",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "line_spacing_rule": "None",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_color": "272727"
+    },
+    "Default Paragraph Font": {
+      "name": "Default Paragraph Font",
+      "type": 2,
+      "base_style": null,
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null
+    },
+    "Normal Table": {
+      "name": "Normal Table",
+      "type": 3,
+      "base_style": null,
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null
+    },
+    "No List": {
+      "name": "No List",
+      "type": 4,
+      "base_style": null,
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null
+    },
+    "TVS List": {
+      "name": "TVS List",
+      "type": 4,
+      "base_style": null,
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "numbering_id": "1",
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 28.8,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "RPA-StyleMatt": {
+      "name": "RPA-StyleMatt",
+      "type": 4,
+      "base_style": null,
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "numbering_id": "2",
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 43.2,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "RPA1-PRT": {
+      "name": "RPA1-PRT",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "alignment": "justify",
+      "space_before": 12.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Times New Roman"
+    },
+    "RPA2-ART": {
+      "name": "RPA2-ART",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "alignment": "justify",
+      "space_before": 12.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": true,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Times New Roman"
+    },
+    "RPA3-PR1": {
+      "name": "RPA3-PR1",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "alignment": "justify",
+      "space_before": 12.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Times New Roman"
+    },
+    "RPA3-PR1 Char": {
+      "name": "RPA3-PR1 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_name": "Times New Roman"
+    },
+    "RPA3-PR2": {
+      "name": "RPA3-PR2",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Times New Roman",
+      "numbering_id": "9",
+      "numbering_level": 5,
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 72.0,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "RPA3-PR2 Char": {
+      "name": "RPA3-PR2 Char",
+      "type": 2,
+      "base_style": null,
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_name": "Times New Roman"
+    },
+    "RPA3-PR3": {
+      "name": "RPA3-PR3",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "alignment": "justify",
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Times New Roman",
+      "numbering_id": "9",
+      "numbering_level": 6,
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 100.8,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "RPA3-PR4": {
+      "name": "RPA3-PR4",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "alignment": "justify",
+      "space_before": 3.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Times New Roman",
+      "numbering_id": "9",
+      "numbering_level": 7,
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 129.6,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "RPA3-PR5": {
+      "name": "RPA3-PR5",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "alignment": "justify",
+      "space_before": 3.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Times New Roman",
+      "numbering_id": "9",
+      "numbering_level": 8,
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 158.4,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "Heading 1 Char": {
+      "name": "Heading 1 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_size": 20.0,
+      "font_color": "0F4761"
+    },
+    "Heading 2 Char": {
+      "name": "Heading 2 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_size": 16.0,
+      "font_color": "0F4761"
+    },
+    "Heading 3 Char": {
+      "name": "Heading 3 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_size": 14.0,
+      "font_color": "0F4761"
+    },
+    "Heading 4 Char": {
+      "name": "Heading 4 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_italic": true,
+      "font_color": "0F4761"
+    },
+    "Heading 5 Char": {
+      "name": "Heading 5 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_color": "0F4761"
+    },
+    "Heading 6 Char": {
+      "name": "Heading 6 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_italic": true,
+      "font_color": "595959"
+    },
+    "Heading 7 Char": {
+      "name": "Heading 7 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_color": "595959"
+    },
+    "Heading 8 Char": {
+      "name": "Heading 8 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_italic": true,
+      "font_color": "272727"
+    },
+    "Heading 9 Char": {
+      "name": "Heading 9 Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_color": "272727"
+    },
+    "Title": {
+      "name": "Title",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "space_after": 4.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_size": 28.0
+    },
+    "Title Char": {
+      "name": "Title Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_size": 28.0
+    },
+    "Subtitle": {
+      "name": "Subtitle",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_size": 14.0,
+      "font_color": "595959",
+      "numbering_level": 1
+    },
+    "Subtitle Char": {
+      "name": "Subtitle Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_size": 14.0,
+      "font_color": "595959"
+    },
+    "Quote": {
+      "name": "Quote",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "alignment": "center",
+      "space_before": 8.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_italic": true,
+      "font_color": "404040"
+    },
+    "Quote Char": {
+      "name": "Quote Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_italic": true,
+      "font_color": "404040"
+    },
+    "List Paragraph": {
+      "name": "List Paragraph",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "left_indent": 36.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null
+    },
+    "Intense Emphasis": {
+      "name": "Intense Emphasis",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_italic": true,
+      "font_color": "0F4761"
+    },
+    "Intense Quote": {
+      "name": "Intense Quote",
+      "type": 1,
+      "base_style": "Normal",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "alignment": "center",
+      "left_indent": 43.2,
+      "right_indent": 43.2,
+      "space_before": 18.0,
+      "space_after": 18.0,
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_italic": true,
+      "font_color": "0F4761"
+    },
+    "Intense Quote Char": {
+      "name": "Intense Quote Char",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_italic": true,
+      "font_color": "0F4761"
+    },
+    "Intense Reference": {
+      "name": "Intense Reference",
+      "type": 2,
+      "base_style": "Default Paragraph Font",
+      "next_style": null,
+      "is_bwa_style": false,
+      "bwa_level_name": null,
+      "font_bold": true,
+      "font_color": "0F4761",
+      "font_small_caps": true
+    },
+    "BWA-PART": {
+      "name": "BWA-PART",
+      "type": 1,
+      "base_style": "Heading 1",
+      "next_style": null,
+      "is_bwa_style": true,
+      "bwa_level_name": "BWA-PART",
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Arial",
+      "font_size": 10.0,
+      "numbering_id": "10",
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 28.8,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "BWA-SUBSECTION": {
+      "name": "BWA-SUBSECTION",
+      "type": 1,
+      "base_style": "Heading 2",
+      "next_style": null,
+      "is_bwa_style": true,
+      "bwa_level_name": "BWA-SUBSECTION",
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Arial",
+      "font_size": 10.0,
+      "numbering_id": "10",
+      "numbering_level": 1,
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 57.6,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "BWA-Item": {
+      "name": "BWA-Item",
+      "type": 1,
+      "base_style": "List Paragraph",
+      "next_style": null,
+      "is_bwa_style": true,
+      "bwa_level_name": "BWA-Item",
+      "left_indent": 36.0,
+      "space_after": 12.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Arial",
+      "font_size": 10.0,
+      "numbering_id": "10",
+      "numbering_level": 2,
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 86.4,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "BWA-List": {
+      "name": "BWA-List",
+      "type": 1,
+      "base_style": "List Paragraph",
+      "next_style": null,
+      "is_bwa_style": true,
+      "bwa_level_name": "BWA-List",
+      "left_indent": 36.0,
+      "space_after": 12.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Arial",
+      "font_size": 10.0,
+      "numbering_id": "10",
+      "numbering_level": 3,
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 115.2,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "BWA-SubItem": {
+      "name": "BWA-SubItem",
+      "type": 1,
+      "base_style": "List Paragraph",
+      "next_style": null,
+      "is_bwa_style": true,
+      "bwa_level_name": "BWA-SubItem",
+      "left_indent": 36.0,
+      "space_after": 12.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Arial",
+      "font_size": 10.0,
+      "numbering_id": "10",
+      "numbering_level": 4,
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 144.0,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "BWA-SubList": {
+      "name": "BWA-SubList",
+      "type": 1,
+      "base_style": "List Paragraph",
+      "next_style": null,
+      "is_bwa_style": true,
+      "bwa_level_name": "BWA-SubList",
+      "left_indent": 36.0,
+      "space_after": 12.0,
+      "line_spacing": 1.0,
+      "line_spacing_rule": "SINGLE (0)",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "font_name": "Arial",
+      "font_size": 10.0,
+      "numbering_id": "10",
+      "numbering_level": 5,
+      "number_alignment": "left",
+      "follow_number_with": null,
+      "aligned_at": 172.8,
+      "has_tab_stops": "tab_stops_available_in_xml"
+    },
+    "BWA-SubSubItem": {
+      "name": "BWA-SubSubItem",
+      "type": 1,
+      "base_style": "BWA-SubList",
+      "next_style": null,
+      "is_bwa_style": true,
+      "bwa_level_name": "BWA-SubSubItem",
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "numbering_level": 6
+    },
+    "BWA-SubSubList": {
+      "name": "BWA-SubSubList",
+      "type": 1,
+      "base_style": "BWA-SubList",
+      "next_style": null,
+      "is_bwa_style": true,
+      "bwa_level_name": "BWA-SubSubList",
+      "line_spacing_rule": "None",
+      "keep_with_next": null,
+      "page_break_before": null,
+      "widow_control": null,
+      "numbering_level": 7
+    }
+  },
+  "numbering_definitions": {
+    "0": {
+      "levels": {
+        "0": {
+          "ilvl": "0",
+          "lvlText": "PART %1 - ",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": "nothing",
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {},
+          "rPr": {}
+        },
+        "1": {
+          "ilvl": "1",
+          "lvlText": "SCHEDULE %2 - ",
+          "numFmt": "decimal",
+          "start": null,
+          "suff": "nothing",
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {},
+          "rPr": {}
+        },
+        "2": {
+          "ilvl": "2",
+          "lvlText": "PRODUCT DATA SHEET %3 - ",
+          "numFmt": "decimal",
+          "start": null,
+          "suff": "nothing",
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {},
+          "rPr": {}
+        },
+        "3": {
+          "ilvl": "3",
+          "lvlText": "%1.%4",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "864",
+              "right": null,
+              "hanging": "864",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "4": {
+          "ilvl": "4",
+          "lvlText": "%5.",
+          "numFmt": "upperLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "864",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "5": {
+          "ilvl": "5",
+          "lvlText": "%6.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "RPA3-PR2",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "1440",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "6": {
+          "ilvl": "6",
+          "lvlText": "%7.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "RPA3-PR3",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "2016",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "7": {
+          "ilvl": "7",
+          "lvlText": "%8)",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "RPA3-PR4",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "2592",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        },
+        "8": {
+          "ilvl": "8",
+          "lvlText": "%9)",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "RPA3-PR5",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "3168",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {}
+        }
+      },
+      "bwa_label": null
+    },
+    "1": {
+      "levels": {
+        "0": {
+          "ilvl": "0",
+          "lvlText": "%1.0",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-PART",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "576",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "1": {
+          "ilvl": "1",
+          "lvlText": "%1.%2",
+          "numFmt": "decimalZero",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SUBSECTION",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "1152",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "2": {
+          "ilvl": "2",
+          "lvlText": "%3.",
+          "numFmt": "upperLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-Item",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "1728",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "3": {
+          "ilvl": "3",
+          "lvlText": "%4.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-List",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "2304",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "4": {
+          "ilvl": "4",
+          "lvlText": "%5.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SubItem",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "2880",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "5": {
+          "ilvl": "5",
+          "lvlText": "%6.",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SubList",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "3456",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "6": {
+          "ilvl": "6",
+          "lvlText": "%7)",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SubSubItem",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "4032",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "7": {
+          "ilvl": "7",
+          "lvlText": "%8)",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": "BWA-SubSubList",
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "4608",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        },
+        "8": {
+          "ilvl": "8",
+          "lvlText": "%9)",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "5184",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20",
+            "bold": "0",
+            "italic": "0"
+          }
+        }
+      },
+      "bwa_label": null
+    },
+    "2": {
+      "levels": {
+        "0": {
+          "ilvl": "0",
+          "lvlText": "1.%1",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "864",
+              "right": null,
+              "hanging": "864",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": null,
+              "cs": null
+            },
+            "sz": "20"
+          }
+        },
+        "1": {
+          "ilvl": "1",
+          "lvlText": "%2.",
+          "numFmt": "upperLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "864",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "2": {
+          "ilvl": "2",
+          "lvlText": "%3.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "1440",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "3": {
+          "ilvl": "3",
+          "lvlText": "%4.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "2016",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "4": {
+          "ilvl": "4",
+          "lvlText": "%5)",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "2592",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "5": {
+          "ilvl": "5",
+          "lvlText": "%6)",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "right",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "3744",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "6": {
+          "ilvl": "6",
+          "lvlText": "%7.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "7560",
+              "right": null,
+              "hanging": "1080",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "7": {
+          "ilvl": "7",
+          "lvlText": "%8.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "8640",
+              "right": null,
+              "hanging": "1080",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "8": {
+          "ilvl": "8",
+          "lvlText": "%9.",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "right",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "9720",
+              "right": null,
+              "hanging": "1080",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        }
+      },
+      "bwa_label": null
+    },
+    "3": {
+      "levels": {
+        "0": {
+          "ilvl": "0",
+          "lvlText": "1.%1",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "576",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "1": {
+          "ilvl": "1",
+          "lvlText": "%2.",
+          "numFmt": "upperLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "1152",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "2": {
+          "ilvl": "2",
+          "lvlText": "%3.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "1728",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "3": {
+          "ilvl": "3",
+          "lvlText": "%4.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "2304",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "4": {
+          "ilvl": "4",
+          "lvlText": "%5.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "2880",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "5": {
+          "ilvl": "5",
+          "lvlText": "%6.",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "3456",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "6": {
+          "ilvl": "6",
+          "lvlText": "%7.",
+          "numFmt": "decimal",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "4032",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "7": {
+          "ilvl": "7",
+          "lvlText": "%8.",
+          "numFmt": "lowerLetter",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "left",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "4608",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        },
+        "8": {
+          "ilvl": "8",
+          "lvlText": "%9.",
+          "numFmt": "lowerRoman",
+          "start": "1",
+          "suff": null,
+          "lvlJc": "right",
+          "pStyle": null,
+          "lvlPicBulletId": null,
+          "legacy": null,
+          "lvlRestart": null,
+          "isLgl": null,
+          "startOverride": null,
+          "lvlOverride": null,
+          "pPr": {
+            "indent": {
+              "left": "5184",
+              "right": null,
+              "hanging": "576",
+              "firstLine": null
+            }
+          },
+          "rPr": {
+            "rFonts": {
+              "ascii": null,
+              "hAnsi": null,
+              "eastAsia": null,
+              "cs": null
+            }
+          }
+        }
+      },
+      "bwa_label": null
+    },
+    "num_1": {
+      "abstract_num_id": "3"
+    },
+    "num_2": {
+      "abstract_num_id": "2"
+    },
+    "num_3": {
+      "abstract_num_id": "0"
+    },
+    "num_4": {
+      "abstract_num_id": "0"
+    },
+    "num_5": {
+      "abstract_num_id": "0"
+    },
+    "num_6": {
+      "abstract_num_id": "0"
+    },
+    "num_7": {
+      "abstract_num_id": "0"
+    },
+    "num_8": {
+      "abstract_num_id": "0"
+    },
+    "num_9": {
+      "abstract_num_id": "0"
+    },
+    "num_10": {
+      "abstract_num_id": "1"
+    }
+  },
+  "summary": {
+    "total_styles": 52,
+    "paragraph_styles": 30,
+    "character_styles": 18,
+    "table_styles": 1,
+    "bwa_styles": 8,
+    "styles_with_numbering": 12,
+    "styles_with_spacing": 19,
+    "styles_with_indentation": 6
+  }
+}

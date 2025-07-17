@@ -1,0 +1,25 @@
+correct:
+    {
+      "text": "C.\tConnect new work to existing work in a neat and workmanlike manner.  Where an existing structure must be cut or existing utilities interfere, such obstructions shall be bypassed, removed, replaced or relocated, patched and repaired.  Work disturbed or damaged shall be replaced or repaired to its prior condition.",
+      "level_type": "item",
+      "number": "C",
+      "content": "Connect new work to existing work in a neat and workmanlike manner.  Where an existing structure must be cut or existing utilities interfere, such obstructions shall be bypassed, removed, replaced or relocated, patched and repaired.  Work disturbed or damaged shall be replaced or repaired to its prior condition.",
+      "level_number": 2,
+      "bwa_level_name": "BWA_Level_2",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },
+
+incorrect:
+    {
+      "text": "A.\tAttention is called to the fact that the work is to be performed within an existing, operational facility.  Prior to the submission of bids, each bidder shall visit the project site, thoroughly investigate and be familiar with all existing conditions, which will affect their work; especially the work to be performed above the existing ceilings.",
+      "level_type": "subsection_title",
+      "number": null,
+      "content": "EXISTING CONDITIONS",
+      "level_number": 1,
+      "bwa_level_name": "BWA_Level_1",
+      "numbering_id": null,
+      "numbering_level": null,
+      "style_name": "Normal"
+    },

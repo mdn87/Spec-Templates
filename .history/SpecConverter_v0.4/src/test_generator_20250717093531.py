@@ -89,12 +89,7 @@ def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
         
         if block.get('font_color'):
             for run in paragraph.runs:
-                color_val = block['font_color']
-                try:
-                    run.font.color.rgb = RGBColor.from_string(color_val)
-                except Exception:
-                    # Default to black if invalid
-                    run.font.color.rgb = RGBColor.from_string('000000')
+                run.font.color.rgb = RGBColor.from_string(block['font_color'])
         
         # Additional font properties
         if block.get('font_strike') is not None:

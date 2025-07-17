@@ -1,0 +1,19 @@
+ERROR REPORT - 2025-07-16 14:59:30
+============================================================
+
+LIST NUMBERING FIXES (2 found):
+----------------------------------------
+1. Line 101: GENERAL
+   Detected: 1.0, Corrected: 1
+   Numbering ID: 6, Level: 0
+
+2. Line 101: 2.01	STANDARDS FOR MATERIALS  WORKMANSHIP
+   Detected: 2.01, Corrected: 1
+   Numbering ID: 9, Level: 0
+
+No errors found during extraction.
+
+SUMMARY:
+--------------------
+Total errors: 0
+List numbering fixes: 2
