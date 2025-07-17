@@ -507,16 +507,55 @@ class SpecContentExtractorV3:
     def correct_level_type_based_on_numbering(self, level_type: str, numbering_id: Optional[str], 
                                             numbering_level: Optional[int], text: str) -> str:
         """Correct level type based on paragraph numbering information"""
-        # Simplified logic: If content has numbering, it's a list item
+        text_clean = text.strip()
+        
+        # If it was classified as content but has numbering, analyze what type it should be
         if level_type == "content" and numbering_id is not None:
-            # Any content with numbering should be classified as a list item
-            # Use numbering level to determine list vs sub_list
-            if numbering_level == 0:
-                return "list"  # Top-level list items
-            elif numbering_level == 1:
-                return "sub_list"  # Sub-list items
-            else:
-                return "list"  # Default to list for any numbered content
+            # Check if this looks like a subsection title based on characteristics:
+            # 1. Short text (typically subsection titles are concise)
+            # 2. All caps or title case (common for subsection titles)
+            # 3. No obvious list-like content
+            # 4. Not starting with common list patterns
+            
+            is_short_text = len(text_clean) < 100
+            is_all_caps_or_title_case = (text_clean.isupper() or 
+                                        text_clean.istitle() or 
+                                        text_clean == text_clean.title())
+            doesnt_start_with_list_patterns = not any(text_clean.upper().startswith(prefix) 
+                                                     for prefix in ["SECTION", "PART", "GENERAL", "1.", "2.", "A.", "B."])
+            no_list_indicators = not any(indicator in text_clean.lower() 
+                                       for indicator in ["shall", "will", "must", "should", "note:", "example:"])
+            
+            # If it has numbering and looks like a subsection title, classify it as such
+            if (is_short_text and is_all_caps_or_title_case and 
+                doesnt_start_with_list_patterns and no_list_indicators):
+                return "subsection_title"
+            
+            # Otherwise, it's likely a list item
+            if is_short_text:
+                # Based on numbering level, determine the type
+                if numbering_level == 0:
+                    return "list"  # Top-level list items
+                elif numbering_level == 1:
+                    return "sub_list"  # Sub-list items
+                else:
+                    return "list"  # Default to list for any numbered content
+        
+        # If it was classified as list but should be a subsection title
+        if level_type == "list" and numbering_id is not None:
+            # Check if this looks like a subsection title using the same logic
+            is_short_text = len(text_clean) < 100
+            is_all_caps_or_title_case = (text_clean.isupper() or 
+                                        text_clean.istitle() or 
+                                        text_clean == text_clean.title())
+            doesnt_start_with_list_patterns = not any(text_clean.upper().startswith(prefix) 
+                                                     for prefix in ["SECTION", "PART", "GENERAL", "1.", "2.", "A.", "B."])
+            no_list_indicators = not any(indicator in text_clean.lower() 
+                                       for indicator in ["shall", "will", "must", "should", "note:", "example:"])
+            
+            if (is_short_text and is_all_caps_or_title_case and 
+                doesnt_start_with_list_patterns and no_list_indicators):
+                return "subsection_title"
         
         return level_type
     
@@ -662,246 +701,6 @@ class SpecContentExtractorV3:
         )
         self.errors.append(error)
     
-    def validate_and_correct_level_consistency(self) -> Dict[str, Any]:
-        """
-        Second pass: Validate and correct logical list level patterns
-        Returns: Dictionary with validation results and corrections made
-        """
-        validation_results = {
-            "inconsistencies_found": [],
-            "corrections_made": [],
-            "validation_summary": {}
-        }
-        
-        if not self.content_blocks:
-            return validation_results
-        
-        # Track expected level progression
-        expected_level = None
-        level_transitions = []
-        
-        for i, block in enumerate(self.content_blocks):
-            current_level = block.level_number
-            level_type = block.level_type
-            
-            # Skip non-hierarchical content
-            if level_type in ["section", "title", "end_of_section"]:
-                continue
-            
-            # Define expected level based on level_type
-            expected_level_for_type = {
-                "part": 0,
-                "part_title": 0,
-                "subsection": 1,
-                "subsection_title": 1,
-                "item": 2,
-                "list": 3,
-                "sub_list": 4
-            }.get(level_type)
-            
-            # Check if current level matches expected level for type
-            if expected_level_for_type is not None and current_level != expected_level_for_type:
-                inconsistency = {
-                    "block_index": i,
-                    "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                    "level_type": level_type,
-                    "current_level": current_level,
-                    "expected_level": expected_level_for_type,
-                    "correction_applied": False
-                }
-                validation_results["inconsistencies_found"].append(inconsistency)
-                
-                # Apply correction
-                old_level = block.level_number
-                block.level_number = expected_level_for_type
-                block.used_fallback_styling = True  # Mark as corrected
-                
-                validation_results["corrections_made"].append({
-                    "block_index": i,
-                    "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                    "level_type": level_type,
-                    "old_level": old_level,
-                    "new_level": expected_level_for_type
-                })
-                inconsistency["correction_applied"] = True
-            
-            # ENHANCED: Check for logical hierarchy inconsistencies
-            # This detects when a block should be at a different level based on context
-            if expected_level is not None and current_level is not None:
-                # Check for jumps that don't make logical sense
-                level_diff = current_level - expected_level
-                
-                # If we jump up by more than 1 level, it might be a misclassification
-                if level_diff > 1:
-                    # Look at the previous block to understand context
-                    if i > 0:
-                        prev_block = self.content_blocks[i - 1]
-                        prev_level = prev_block.level_number
-                        
-                        # If we're jumping from level 1 (subsection) to level 3 (list),
-                        # but there's no level 2 (item) in between, this might be wrong
-                        if prev_level == 1 and current_level == 3:
-                            # Check if the source numbering appears to be correct
-                            # If the detected number matches what we'd expect logically, trust the source
-                            detected_number = block.number
-                            if detected_number and self._is_numbering_logically_correct(detected_number, level_type, i):
-                                # Source numbering looks correct, don't "fix" it
-                                continue
-                            
-                            # This should probably be an item (level 2), not a list (level 3)
-                            suggested_level_type = "item"
-                            suggested_level = 2
-                            
-                            inconsistency = {
-                                "block_index": i,
-                                "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                                "level_type": level_type,
-                                "current_level": current_level,
-                                "suggested_level_type": suggested_level_type,
-                                "suggested_level": suggested_level,
-                                "reason": f"Jump from level {prev_level} to {current_level} suggests misclassification",
-                                "correction_applied": False
-                            }
-                            validation_results["inconsistencies_found"].append(inconsistency)
-                            
-                            # Apply correction
-                            old_level_type = block.level_type
-                            old_level = block.level_number
-                            block.level_type = suggested_level_type
-                            block.level_number = suggested_level
-                            block.bwa_level_name = "BWA-Item"  # Update BWA level name
-                            block.used_fallback_styling = True
-                            
-                            validation_results["corrections_made"].append({
-                                "block_index": i,
-                                "text": block.text[:100] + "..." if len(block.text) > 100 else block.text,
-                                "old_level_type": old_level_type,
-                                "new_level_type": suggested_level_type,
-                                "old_level": old_level,
-                                "new_level": suggested_level,
-                                "reason": "Corrected misclassification based on hierarchy context"
-                            })
-                            inconsistency["correction_applied"] = True
-            
-            # Track level transitions for sequence validation
-            if current_level is not None:
-                if expected_level is not None:
-                    level_transitions.append({
-                        "from_block": i - 1,
-                        "to_block": i,
-                        "from_level": expected_level,
-                        "to_level": current_level,
-                        "transition_type": self._classify_transition(expected_level, current_level)
-                    })
-                expected_level = current_level
-        
-        # Analyze level transitions for logical consistency
-        transition_analysis = self._analyze_level_transitions(level_transitions)
-        validation_results["validation_summary"] = {
-            "total_blocks": len(self.content_blocks),
-            "hierarchical_blocks": len([b for b in self.content_blocks if b.level_type not in ["section", "title", "end_of_section"]]),
-            "inconsistencies_found": len(validation_results["inconsistencies_found"]),
-            "corrections_applied": len(validation_results["corrections_made"]),
-            "level_transitions": len(level_transitions),
-            "transition_analysis": transition_analysis
-        }
-        
-        return validation_results
-    
-    def _classify_transition(self, from_level: int, to_level: int) -> str:
-        """Classify the type of level transition"""
-        if to_level == from_level:
-            return "same_level"
-        elif to_level == from_level + 1:
-            return "increase_by_one"
-        elif to_level == from_level - 1:
-            return "decrease_by_one"
-        elif to_level > from_level + 1:
-            return "jump_up"
-        elif to_level < from_level - 1:
-            return "jump_down"
-        else:
-            return "irregular"
-    
-    def _is_numbering_logically_correct(self, detected_number: str, level_type: str, block_index: int) -> bool:
-        """
-        Check if the detected number appears to be logically correct based on context
-        
-        Args:
-            detected_number: The number detected in the source document
-            level_type: The current level type
-            block_index: Index of the current block
-            
-        Returns:
-            True if the numbering appears to be logically correct, False otherwise
-        """
-        try:
-            # For item level (A, B, C, etc.), check if it's a reasonable letter
-            if level_type == "item" and detected_number.isalpha():
-                # Check if it's a reasonable letter (A-Z)
-                if detected_number.upper() in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
-                    # Look at previous items to see if this makes sense
-                    if block_index > 0:
-                        prev_block = self.content_blocks[block_index - 1]
-                        if prev_block.level_type == "item" and prev_block.number:
-                            # If previous was A, this could be B, C, D, etc.
-                            # If previous was J, this could be K, L, M, etc.
-                            # Allow reasonable progression
-                            return True
-                    # First item in a section, A is always reasonable
-                    return True
-            
-            # For list level (1, 2, 3, etc.), check if it's a reasonable number
-            elif level_type == "list" and detected_number.isdigit():
-                num = int(detected_number)
-                # Check if it's a reasonable number (1-99)
-                if 1 <= num <= 99:
-                    # Look at previous lists to see if this makes sense
-                    if block_index > 0:
-                        prev_block = self.content_blocks[block_index - 1]
-                        if prev_block.level_type == "list" and prev_block.number:
-                            try:
-                                prev_num = int(prev_block.number)
-                                # Allow reasonable progression (prev + 1, or reasonable jump)
-                                if num == prev_num + 1 or (num > prev_num and num <= prev_num + 10):
-                                    return True
-                            except ValueError:
-                                pass
-                    # First list item, 1 is always reasonable
-                    return True
-            
-            # For other level types, be more permissive
-            else:
-                return True
-                
-        except Exception as e:
-            print(f"Warning: Error checking numbering logic: {e}")
-            return True  # Default to trusting the source if we can't determine
-        
-        return False
-    
-    def _analyze_level_transitions(self, transitions: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """Analyze level transitions for patterns and issues"""
-        if not transitions:
-            return {"total_transitions": 0, "patterns": {}}
-        
-        transition_counts = {}
-        irregular_transitions = []
-        
-        for transition in transitions:
-            transition_type = transition["transition_type"]
-            transition_counts[transition_type] = transition_counts.get(transition_type, 0) + 1
-            
-            if transition_type in ["jump_up", "jump_down", "irregular"]:
-                irregular_transitions.append(transition)
-        
-        return {
-            "total_transitions": len(transitions),
-            "patterns": transition_counts,
-            "irregular_transitions": len(irregular_transitions),
-            "irregular_details": irregular_transitions[:10]  # Limit to first 10 for reporting
-        }
-    
     def extract_content(self, docx_path: str) -> Dict[str, Any]:
         """Extract content from a Word document"""
         try:
@@ -956,14 +755,11 @@ class SpecContentExtractorV3:
                 # Map to BWA level using corrected level type
                 level_number, bwa_level_name = self.map_to_bwa_level(paragraph, corrected_level_type)
                 
-                # Normalize level_number: Use logical mapping for known level types, otherwise use Word's numbering_level
-                if corrected_level_type in ["part", "part_title", "subsection", "subsection_title", "item", "list", "sub_list"]:
-                    # Use our logical mapping for known level types
-                    # This ensures consistent level numbering regardless of Word's internal numbering
-                    pass  # level_number is already set by map_to_bwa_level
-                elif numbering_level is not None:
-                    # For unknown level types, use Word's numbering level as fallback
+                # Normalize level_number: Use Word's numbering_level if available, otherwise use our logical mapping
+                if numbering_level is not None:
+                    # Use Word's numbering level directly
                     level_number = numbering_level
+                # If no Word numbering but we have a logical level, keep it
                 # If neither, level_number remains None
                 
                 # Create content block with styling information
@@ -1014,10 +810,6 @@ class SpecContentExtractorV3:
                 
                 self.content_blocks.append(block)
             
-            # Second pass: Validate and correct level consistency
-            print("Performing second pass validation and correction...")
-            self.validation_results = self.validate_and_correct_level_consistency()
-            
             # Build the final data structure
             extracted_data = {
                 "header": header_footer_data["header"],
@@ -1028,7 +820,6 @@ class SpecContentExtractorV3:
                 "section_number": section_number,
                 "section_title": section_title,
                 "end_of_section": self.end_of_section,
-                "validation_results": self.validation_results,
                 "content_blocks": [
                     {
                         "text": block.text,
@@ -1177,76 +968,6 @@ class SpecContentExtractorV3:
                 report += f"   Numbering ID: {fix['numbering_id']}, Level: {fix['numbering_level']}\n"
                 report += "\n"
         
-        # Report level consistency validation results
-        if hasattr(self, 'validation_results') and self.validation_results:
-            validation = self.validation_results
-            report += f"LEVEL CONSISTENCY VALIDATION:\n"
-            report += "-" * 40 + "\n"
-            
-            summary = validation.get("validation_summary", {})
-            report += f"Total blocks: {summary.get('total_blocks', 0)}\n"
-            report += f"Hierarchical blocks: {summary.get('hierarchical_blocks', 0)}\n"
-            report += f"Inconsistencies found: {summary.get('inconsistencies_found', 0)}\n"
-            report += f"Corrections applied: {summary.get('corrections_applied', 0)}\n"
-            report += f"Level transitions: {summary.get('level_transitions', 0)}\n"
-            
-            # Report transition analysis
-            transition_analysis = summary.get("transition_analysis", {})
-            if transition_analysis:
-                report += f"\nTransition Analysis:\n"
-                patterns = transition_analysis.get("patterns", {})
-                for pattern, count in patterns.items():
-                    report += f"  {pattern}: {count}\n"
-                
-                irregular_count = transition_analysis.get("irregular_transitions", 0)
-                if irregular_count > 0:
-                    report += f"  Irregular transitions: {irregular_count}\n"
-            
-            # Report specific inconsistencies
-            inconsistencies = validation.get("inconsistencies_found", [])
-            if inconsistencies:
-                report += f"\nLEVEL INCONSISTENCIES FOUND:\n"
-                report += "-" * 40 + "\n"
-                
-                for i, inconsistency in enumerate(inconsistencies, 1):
-                    report += f"{i}. Block {inconsistency['block_index']}: {inconsistency['text']}\n"
-                    report += f"   Type: {inconsistency['level_type']}\n"
-                    
-                    # Handle both old and new inconsistency formats
-                    if 'expected_level' in inconsistency:
-                        # Old format: level number mismatch
-                        report += f"   Current level: {inconsistency['current_level']}, Expected: {inconsistency['expected_level']}\n"
-                    elif 'suggested_level_type' in inconsistency:
-                        # New format: hierarchy inconsistency
-                        report += f"   Current: {inconsistency['level_type']} (level {inconsistency['current_level']})\n"
-                        report += f"   Suggested: {inconsistency['suggested_level_type']} (level {inconsistency['suggested_level']})\n"
-                        report += f"   Reason: {inconsistency['reason']}\n"
-                    
-                    report += f"   Correction applied: {'Yes' if inconsistency['correction_applied'] else 'No'}\n"
-                    report += "\n"
-            
-            # Report corrections made
-            corrections = validation.get("corrections_made", [])
-            if corrections:
-                report += f"LEVEL CORRECTIONS APPLIED:\n"
-                report += "-" * 40 + "\n"
-                
-                for i, correction in enumerate(corrections, 1):
-                    report += f"{i}. Block {correction['block_index']}: {correction['text']}\n"
-                    
-                    # Handle both old and new correction formats
-                    if 'old_level_type' in correction:
-                        # New format: hierarchy correction
-                        report += f"   Type: {correction['old_level_type']} → {correction['new_level_type']}\n"
-                        report += f"   Level: {correction['old_level']} → {correction['new_level']}\n"
-                        report += f"   Reason: {correction['reason']}\n"
-                    else:
-                        # Old format: level number correction
-                        report += f"   Type: {correction['level_type']}\n"
-                        report += f"   Level: {correction['old_level']} → {correction['new_level']}\n"
-                    
-                    report += "\n"
-        
         # Report other errors
         if self.errors:
             # Group errors by type
@@ -1277,12 +998,6 @@ class SpecContentExtractorV3:
         total_fixes = len(self.list_fixes)
         report += f"Total errors: {total_errors}\n"
         report += f"List numbering fixes: {total_fixes}\n"
-        
-        if hasattr(self, 'validation_results') and self.validation_results:
-            validation = self.validation_results
-            summary = validation.get("validation_summary", {})
-            report += f"Level inconsistencies: {summary.get('inconsistencies_found', 0)}\n"
-            report += f"Level corrections: {summary.get('corrections_applied', 0)}\n"
         
         if self.errors:
             error_types = {}

@@ -11,7 +11,7 @@ from typing import Dict, List, Any, Optional
 
 # Configuration variables - change these to modify font and size for all text
 TEMPLATE_PATH = '../templates/test_template_cleaned.docx'
-OUTPUT_PATH   = '../output/generated_spec_v3_fixed_new2.docx'
+OUTPUT_PATH   = '../output/generated_spec_v3_fixed_new.docx'
 CONTENT_PATH  = '../output/SECTION 26 05 29_v3.json'
 FONT_NAME = 'Arial'
 FONT_SIZE = 10
@@ -161,15 +161,6 @@ def apply_styling_from_json(paragraph: Any, block: Dict[str, Any]) -> None:
         print(f"Warning: Could not apply styling from JSON: {e}")
         # Fallback to default styling
         set_font_and_size(paragraph)
-
-    # Highlight corrected blocks (used_fallback_styling) in yellow
-    if block.get('used_fallback_styling'):
-        for run in paragraph.runs:
-            if run._element.rPr is None:
-                run._element.rPr = OxmlElement('w:rPr')
-            highlight = OxmlElement('w:highlight')
-            highlight.set(qn('w:val'), 'yellow')
-            run._element.rPr.append(highlight)
 
 def apply_style_definitions_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
     """Apply style definitions from JSON to ensure proper styling in regenerated document"""
@@ -556,78 +547,6 @@ def apply_document_wide_settings_from_json(doc: Any, doc_wide_settings: Dict[str
     except Exception as e:
         print(f"Warning: Could not apply document-wide settings from JSON: {e}")
 
-def apply_explicit_indentation(paragraph: Any, bwa_level_name: Optional[str], level_number: Optional[int], json_data: Optional[Dict[str, Any]]) -> None:
-    """
-    Apply explicit indentation based on template analysis to override Word's default indentation
-    
-    Args:
-        paragraph: The paragraph to apply indentation to
-        bwa_level_name: The BWA level name (e.g., "BWA-Item", "BWA-List")
-        level_number: The level number (0, 1, 2, 3, etc.)
-        json_data: The JSON data containing template analysis
-    """
-    try:
-        if not json_data or not bwa_level_name or level_number is None:
-            return
-        
-        template_analysis = json_data.get('template_analysis', {})
-        if not template_analysis:
-            return
-        
-        # Get the template numbering definitions
-        numbering_definitions = template_analysis.get('template_numbering', {})
-        if not numbering_definitions:
-            return
-        
-        # Find the correct abstract numbering definition (abstract_num_id "1" for BWA styles)
-        # This maps to numId 10-25 in the template
-        abstract_num_id = "1"  # This is the one with BWA styles
-        
-        if abstract_num_id in numbering_definitions:
-            abstract_info = numbering_definitions[abstract_num_id]
-            levels = abstract_info.get('levels', {})
-            
-            # Get the level info for this specific level
-            level_str = str(level_number)
-            if level_str in levels:
-                level_info = levels[level_str]
-                p_pr = level_info.get('pPr', {})
-                
-                # Extract indentation values (convert from twips to inches)
-                if 'indent' in p_pr:
-                    indent = p_pr['indent']
-                    
-                    # Left indent
-                    if indent.get('left'):
-                        left_twips = float(indent['left'])
-                        left_inches = left_twips / 1440.0  # Convert twips to inches
-                        paragraph.paragraph_format.left_indent = Inches(left_inches)
-                        print(f"DEBUG: Applied left indent {left_inches:.3f} inches for {bwa_level_name} level {level_number}")
-                    
-                    # First line indent (hanging indent)
-                    if indent.get('firstLine'):
-                        first_line_twips = float(indent['firstLine'])
-                        first_line_inches = first_line_twips / 1440.0
-                        paragraph.paragraph_format.first_line_indent = Inches(first_line_inches)
-                        print(f"DEBUG: Applied first line indent {first_line_inches:.3f} inches for {bwa_level_name} level {level_number}")
-                    
-                    # Hanging indent
-                    if indent.get('hanging'):
-                        hanging_twips = float(indent['hanging'])
-                        hanging_inches = hanging_twips / 1440.0
-                        paragraph.paragraph_format.first_line_indent = Inches(-hanging_inches)  # Negative for hanging
-                        print(f"DEBUG: Applied hanging indent {hanging_inches:.3f} inches for {bwa_level_name} level {level_number}")
-                    
-                    # Right indent
-                    if indent.get('right'):
-                        right_twips = float(indent['right'])
-                        right_inches = right_twips / 1440.0
-                        paragraph.paragraph_format.right_indent = Inches(right_inches)
-                        print(f"DEBUG: Applied right indent {right_inches:.3f} inches for {bwa_level_name} level {level_number}")
-        
-    except Exception as e:
-        print(f"Warning: Could not apply explicit indentation: {e}")
-
 def apply_margins_from_json(doc: Any, json_data: Optional[Dict[str, Any]]) -> None:
     """Apply margin settings from JSON to the document"""
     try:
@@ -793,7 +712,6 @@ def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]])
     
     for i, block in enumerate(content_blocks):
         text = block.get('text', '')
-        content = block.get('content', '')  # This is the cleaned content without numbering prefixes
         level_type = block.get('level_type', 'content')
         bwa_level_name = block.get('bwa_level_name')
         original_number = block.get('number')
@@ -806,13 +724,8 @@ def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]])
         # Generate correct sequential numbering based on level type and context
         correct_number = update_numbering_context(numbering_context, level_type)
         
-        # Debug output for numbering changes
-        if level_type in ["part", "subsection", "item"] and correct_number:
-            print(f"DEBUG: {level_type.upper()} numbering: {original_number} → {correct_number}")
-        
-        # Use the cleaned content from the JSON (already has numbering prefixes stripped)
-        # Fallback to cleaning the text if content is empty
-        display_text = content if content.strip() else clean_text_for_display(text, level_type, original_number)
+        # Clean the text for display (remove numbering prefixes)
+        display_text = clean_text_for_display(text, level_type, original_number)
         
         # Determine the style to use
         if bwa_level_name:
@@ -835,9 +748,6 @@ def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]])
             paragraph = doc.add_paragraph(display_text, style=style_name)
             apply_styling_from_json(paragraph, block)
             
-            # ENHANCED: Apply explicit indentation based on template analysis
-            apply_explicit_indentation(paragraph, bwa_level_name, level_number, json_data)
-            
             # Apply list numbering if level_number is specified
             if level_number is not None and level_type in ["list", "sub_list", "item"]:
                 # Apply list numbering based on level_number
@@ -854,11 +764,11 @@ def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]])
                     
                     # For BWA-Item levels, we need to preserve the extracted letter numbers (A, B, C, etc.)
                     # rather than letting Word generate sequential numbers (1, 2, 3, etc.)
-                    if level_type == "item" and correct_number and correct_number.isalpha():
+                    if level_type == "item" and number and number.isalpha():
                         # The template's multilevel list should be configured to use upperLetter format
                         # for level 2 (BWA-Item), so Word should automatically generate A, B, C, etc.
                         # If it's not working, we may need to manually set the numbering format
-                        print(f"DEBUG: Applied list numbering for item '{correct_number}' at level {level_number} using numId 10")
+                        print(f"DEBUG: Applied list numbering for item '{number}' at level {level_number} using numId 10")
                     
                 except Exception as e:
                     print(f"Warning: Could not apply list numbering to paragraph: {e}")
@@ -867,7 +777,6 @@ def generate_content_from_v3_json(doc: Any, json_data: Optional[Dict[str, Any]])
             # Fallback to Normal style if the specified style is not found
             paragraph = doc.add_paragraph(display_text, style="Normal")
             apply_styling_from_json(paragraph, block)
-            apply_explicit_indentation(paragraph, bwa_level_name, level_number, json_data)
         
         # Add some spacing for better readability
         if level_type in ["section", "title", "part_title"]:

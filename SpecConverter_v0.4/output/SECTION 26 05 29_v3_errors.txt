@@ -1,9 +1,26 @@
-ERROR REPORT - 2025-07-17 09:34:56
+ERROR REPORT - 2025-07-17 13:22:45
 ============================================================
 
+LEVEL CONSISTENCY VALIDATION:
+----------------------------------------
+Total blocks: 131
+Hierarchical blocks: 128
+Inconsistencies found: 0
+Corrections applied: 0
+Level transitions: 124
+
+Transition Analysis:
+  increase_by_one: 11
+  same_level: 99
+  jump_down: 3
+  decrease_by_one: 8
+  jump_up: 3
+  Irregular transitions: 6
 No errors found during extraction.
 
 SUMMARY:
 --------------------
 Total errors: 0
 List numbering fixes: 0
+Level inconsistencies: 0
+Level corrections: 0

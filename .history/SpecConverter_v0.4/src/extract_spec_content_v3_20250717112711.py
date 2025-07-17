@@ -823,63 +823,6 @@ class SpecContentExtractorV3:
         else:
             return "irregular"
     
-    def _is_numbering_logically_correct(self, detected_number: str, level_type: str, block_index: int) -> bool:
-        """
-        Check if the detected number appears to be logically correct based on context
-        
-        Args:
-            detected_number: The number detected in the source document
-            level_type: The current level type
-            block_index: Index of the current block
-            
-        Returns:
-            True if the numbering appears to be logically correct, False otherwise
-        """
-        try:
-            # For item level (A, B, C, etc.), check if it's a reasonable letter
-            if level_type == "item" and detected_number.isalpha():
-                # Check if it's a reasonable letter (A-Z)
-                if detected_number.upper() in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
-                    # Look at previous items to see if this makes sense
-                    if block_index > 0:
-                        prev_block = self.content_blocks[block_index - 1]
-                        if prev_block.level_type == "item" and prev_block.number:
-                            # If previous was A, this could be B, C, D, etc.
-                            # If previous was J, this could be K, L, M, etc.
-                            # Allow reasonable progression
-                            return True
-                    # First item in a section, A is always reasonable
-                    return True
-            
-            # For list level (1, 2, 3, etc.), check if it's a reasonable number
-            elif level_type == "list" and detected_number.isdigit():
-                num = int(detected_number)
-                # Check if it's a reasonable number (1-99)
-                if 1 <= num <= 99:
-                    # Look at previous lists to see if this makes sense
-                    if block_index > 0:
-                        prev_block = self.content_blocks[block_index - 1]
-                        if prev_block.level_type == "list" and prev_block.number:
-                            try:
-                                prev_num = int(prev_block.number)
-                                # Allow reasonable progression (prev + 1, or reasonable jump)
-                                if num == prev_num + 1 or (num > prev_num and num <= prev_num + 10):
-                                    return True
-                            except ValueError:
-                                pass
-                    # First list item, 1 is always reasonable
-                    return True
-            
-            # For other level types, be more permissive
-            else:
-                return True
-                
-        except Exception as e:
-            print(f"Warning: Error checking numbering logic: {e}")
-            return True  # Default to trusting the source if we can't determine
-        
-        return False
-    
     def _analyze_level_transitions(self, transitions: List[Dict[str, Any]]) -> Dict[str, Any]:
         """Analyze level transitions for patterns and issues"""
         if not transitions:
